@@ -30,7 +30,7 @@ export default function HeroSection() {
 	} satisfies { item: Variants };
 
 	return (
-		<section className="relative h-dvh">
+		<section className="relative lg:h-dvh">
 			{/* Interactive particles */}
 			<Particles
 				className="absolute inset-0 -z-10"
@@ -75,8 +75,8 @@ export default function HeroSection() {
 								cursorClassName="w-8 overflow-hidden"
 							/>
 						</h1>
-						<div className="mt-4 text-pretty md:pr-44">
-							I enhance web presence of my clients by creating{" "}
+						<div className="mt-4 text-pretty max-w-2xl">
+							I increase web presence of my clients by creating{" "}
 							<PointerHighlight
 								containerClassName="inline-flex"
 								pointerClassName="text-blue-700"
@@ -135,7 +135,7 @@ export default function HeroSection() {
 			</div>
 			<Button
 				asChild
-				className="absolute bottom-4 left-1/2 rounded-full size-12 border border-white flex flex-col items-center justify-center animate-pulse"
+				className="absolute hidden bottom-4 right-1/2 rounded-full size-12 border border-white lg:flex items-center justify-center animate-pulse"
 			>
 				<Link className="hover:bg-transparent  text-white bg-transparent" href={"#about"} prefetch>
 					<ChevronsDown className="size-6" />
