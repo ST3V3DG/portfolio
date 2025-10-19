@@ -16,16 +16,16 @@ import {
 export function Header() {
 	const navItems = [
 		{
-			name: "Features",
-			link: "#features",
+			name: "About",
+			link: "#about",
 		},
 		{
-			name: "Pricing",
-			link: "#pricing",
+			name: "Projects",
+			link: "#projects",
 		},
 		{
-			name: "Contact",
-			link: "#contact",
+			name: "Testimonial",
+			link: "#testimonials",
 		},
 	];
 
@@ -38,7 +38,9 @@ export function Header() {
 				<NavBody>
 					<NavbarLogo />
 					<NavItems items={navItems} />
-					<NavbarButton className="rounded-full">Contact</NavbarButton>
+					<NavbarButton href="#contact" className="rounded-full">
+						Contact
+					</NavbarButton>
 				</NavBody>
 
 				{/* Mobile Navigation */}

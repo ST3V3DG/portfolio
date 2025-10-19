@@ -2,7 +2,7 @@ import { CloudOrbit, OrbitingImage } from "@/components/ui/cloud-orbit";
 
 const orbitingImagesData = [
 	{
-		speed: 20,
+		speed: 0,
 		radius: 125,
 		size: 53,
 		startAt: 1.1,
@@ -14,7 +14,7 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
+		speed: 0,
 		radius: 140,
 		size: 85,
 		startAt: 0.25,
@@ -26,7 +26,7 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
+		speed: 0,
 		radius: 130,
 		size: 73,
 		startAt: 0.4375,
@@ -38,7 +38,7 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
+		speed: 0,
 		radius: 120,
 		size: 49,
 		startAt: 0.61,
@@ -50,7 +50,7 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
+		speed: 0,
 		radius: 136,
 		size: 40,
 		startAt: 0.65625,
@@ -62,9 +62,9 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
-		radius: 140,
-		size: 80,
+		speed: 0,
+		radius: 130,
+		size: 75,
 		startAt: 0.78,
 		images: [
 			{
@@ -74,7 +74,7 @@ const orbitingImagesData = [
 		],
 	},
 	{
-		speed: 20,
+		speed: 0,
 		radius: 124,
 		size: 73,
 		startAt: 0.9375,

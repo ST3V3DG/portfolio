@@ -1,11 +1,11 @@
 import type { Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronsDown } from "lucide-react";
 import Link from "next/link";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Button } from "@/components/ui/button";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import HeroImage from "./hero-image";
 import { TypingText } from "@/components/ui/typing-text";
+import HeroImage from "./hero-image";
 import { Particles } from "./particles";
 
 export default function HeroSection() {
@@ -30,7 +30,7 @@ export default function HeroSection() {
 	} satisfies { item: Variants };
 
 	return (
-		<section className="relative min-h-dvh">
+		<section className="relative h-dvh">
 			{/* Interactive particles */}
 			<Particles
 				className="absolute inset-0 -z-10"
@@ -64,16 +64,18 @@ export default function HeroSection() {
 								</div>
 							</Link>
 						</AnimatedGroup>
-						<h1 className="mt-8 text-balance text-5xl font-bold md:text-6xl lg:mt-4 xl:text-7xl text-blue-700 z-10">
-							Hey,{" "}
+						<h1 className="mt-8 text-nowrap text-5xl font-bold md:text-6xl lg:mt-4 xl:text-7xl text-blue-700 z-10">
+							Hey there,
+							<br />
 							<TypingText
-								texts={["I'm Steve D!", "I'm a developer!"]}
+								texts={["I'm Steve D!", "I'm a developer!", "nice to meet you!"]}
 								className="italic font-serif"
 								loop={true}
 								cursor="_"
+								cursorClassName="w-8 overflow-hidden"
 							/>
 						</h1>
-						<div className="mt-8 text-pretty text-lg md:pr-44">
+						<div className="mt-4 text-pretty md:pr-44">
 							I enhance web presence of my clients by creating{" "}
 							<PointerHighlight
 								containerClassName="inline-flex"
@@ -84,14 +86,14 @@ export default function HeroSection() {
 									amazing websites
 								</span>
 							</PointerHighlight>{" "}
-							to convert visiters.
+							to convert more visitors.
 						</div>
 
 						<div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
 							<Button
 								asChild
 								size="lg"
-								className="px-0 text-base before:absolute before:top-0 before:left-0 before:w-full before:border-2 before:border-blue-700 before:h-full before:rounded-full before:-z-10 z-10 relative rounded-full hover:bg-transparent group"
+								className="px-0 text-base before:absolute before:top-0 before:left-0 before:w-full before:border-2 before:border-blue-700 before:h-full before:rounded-full before:-z-10 z-10 relative rounded-full hover:bg-transparent bg-transparent group"
 							>
 								<Link href="#">
 									<span className="px-5 rounded-full flex items-center text-nowrap text-white size-full transition duration-300 bg-blue-700 group-hover:-translate-y-2 group-active:-translate-y-1 font-serif text-lg italic">
@@ -131,6 +133,14 @@ export default function HeroSection() {
 					></path>
 				</svg>
 			</div>
+			<Button
+				asChild
+				className="absolute bottom-4 left-1/2 rounded-full size-12 border border-white flex flex-col items-center justify-center animate-pulse"
+			>
+				<Link className="hover:bg-transparent  text-white bg-transparent" href={"#about"} prefetch>
+					<ChevronsDown className="size-6" />
+				</Link>
+			</Button>
 		</section>
 	);
 }

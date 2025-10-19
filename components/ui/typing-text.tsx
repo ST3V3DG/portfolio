@@ -2,7 +2,7 @@
 
 import { motion, MotionProps, useInView, UseInViewOptions, Variants } from "motion/react";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type AnimationVariant =
 	| "fadeIn"

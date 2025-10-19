@@ -74,7 +74,7 @@ export function CloudOrbit({ duration = 2, children, size = 200, className, imag
 										damping: 7,
 									}}
 									className={cn(
-										"absolute z-10 rounded-[inherit] border border-gray-100 bg-white/5 inset-shadow-sm inset-shadow-black/2 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800 dark:inset-shadow-white/7",
+										"absolute z-10 rounded-[inherit] border border-gray-100 bg-white/5 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
 										className,
 									)}
 									style={{ width: size, height: size }}
@@ -186,7 +186,7 @@ export function OrbitingImage({
 										damping: 7,
 									}}
 									className={cn(
-										"rounded-full border border-gray-100 bg-white/5 p-[15%] inset-shadow-sm inset-shadow-black/2 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800 dark:inset-shadow-white/7",
+										"rounded-full border border-gray-100 bg-white/5 p-[15%] dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
 										className,
 									)}
 								>

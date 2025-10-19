@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/logo";
+// import { Logo } from "@/components/logo";
 
 const links = [
 	{
@@ -30,10 +30,14 @@ const links = [
 
 export default function Footer() {
 	return (
-		<footer className="py-16 md:py-32">
+		<footer className="py-16 md:py-32 bg-black border-t border-muted">
 			<div className="mx-auto max-w-5xl px-6">
-				<Link href="/" aria-label="go home" className="mx-auto block size-fit">
-					<Logo />
+				<Link
+					href="/"
+					aria-label="go home"
+					className="flex items-center justify-center mx-auto font-extrabold italic rounded-full bg-white p-2 text-black size-10 text-center"
+				>
+					SD
 				</Link>
 
 				<div className="my-8 flex flex-wrap justify-center gap-6 text-sm">

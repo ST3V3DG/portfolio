@@ -70,13 +70,13 @@ export default function FaqSection() {
 			/>
 			<div className="max-w-6xl p-16 mx-auto space-y-16">
 				<div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
-					<h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">{heading}</h2>
+					<h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-5xl">{heading}</h2>
 					<p className="text-muted-foreground lg:text-lg">{description}</p>
 				</div>
 				<Accordion type="single" collapsible className="mx-auto w-full lg:max-w-3xl">
 					{items.map((item) => (
 						<AccordionItem key={item.id} value={item.id}>
-							<AccordionTrigger className="transition-opacity duration-300 hover:no-underline hover:opacity-60">
+							<AccordionTrigger className="transition-opacity duration-300 hover:no-underline hover:opacity-60 focus-within:ring-0">
 								<div className="font-medium sm:py-1 lg:py-2 lg:text-lg">{item.question}</div>
 							</AccordionTrigger>
 							<AccordionContent className="sm:mb-1 lg:mb-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle } from "lucide-react";
 import { motion, useMotionValue, useTransform, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,7 +91,7 @@ const Requirements = ({ items }: { items: string[] }) => {
 					transition={{ delay: 0.1 * index }}
 					className="flex items-center gap-2"
 				>
-					<CheckCircle2 className="size-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0" />
+					<CheckCircle className="size-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0" />
 					<span className="text-sm text-neutral-700 dark:text-neutral-300">{item}</span>
 				</motion.li>
 			))}
@@ -196,10 +196,10 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function ProjectsSection() {
 	return (
-		<section className="relative py-24 bg-white dark:bg-black overflow-hidden">
+		<section id="projects" className="relative py-24 bg-white dark:bg-black overflow-hidden">
 			<div className="max-w-6xl px-6 mx-auto">
-				<h1 className="text-5xl text-center font-bold mb-8">Projects</h1>
-				<h2 className="text-lg opacity-80 font-medium mb-16 text-center">What I've done for other people</h2>
+				<h2 className="text-3xl lg:text-5xl text-center font-bold mb-8">Projects</h2>
+				<p className="text-lg opacity-80 font-medium mb-16 text-center">What I've done for other people</p>
 				{/* Bento Grid */}
 				<motion.div
 					initial="hidden"

@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-interface AboutProps {
+type AboutProps = {
 	title?: string;
 	description?: string;
 	mainImage?: {
@@ -31,34 +30,7 @@ interface AboutProps {
 		label: string;
 		value: string;
 	}>;
-}
-
-const defaultCompanies = [
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-1.svg",
-		alt: "Arc",
-	},
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg",
-		alt: "Descript",
-	},
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg",
-		alt: "Mercury",
-	},
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-4.svg",
-		alt: "Ramp",
-	},
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-5.svg",
-		alt: "Retool",
-	},
-	{
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-6.svg",
-		alt: "Watershed",
-	},
-];
+};
 
 const defaultAchievements = [
 	{ label: "Companies Supported", value: "300+" },
@@ -74,31 +46,16 @@ export default function AboutSection({
 		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
 		alt: "placeholder",
 	},
-	secondaryImage = {
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-		alt: "placeholder",
-	},
-	breakout = {
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
-		alt: "logo",
-		title: "Hundreds of blocks at Shadcnblocks.com",
-		description:
-			"Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-		buttonText: "Discover more",
-		buttonUrl: "https://shadcnblocks.com",
-	},
-	companiesTitle = "Valued by clients worldwide",
-	companies = defaultCompanies,
 	achievementsTitle = "Our Achievements in Numbers",
 	achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
 	achievements = defaultAchievements,
 }: AboutProps = {}) {
 	return (
-		<section className="py-32 relative bg-white">
+		<section id="about" className="py-32 relative bg-white">
 			<div className="max-w-6xl px-6 mx-auto">
 				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
-					<h1 className="text-5xl font-semibold">{title}</h1>
-					<p className="text-lg">{description}</p>
+					<h2 className="text-3xl lg:text-5xl font-semibold">{title}</h2>
+					<p className="text-normal">{description}</p>
 				</div>
 				<div className="grid mb-14 gap-6 max-h-96 md:grid-cols-2 lg:grid-cols-3 *:rounded-xl lg:grid-rows-3">
 					<div className="lg:col-span-2">
