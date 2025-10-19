@@ -583,8 +583,8 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							<h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
 								{item.title}
 							</h3>
-							<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-								<ArrowUpRight className="h-5 w-5" />
+							<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+								<ArrowUpRight className="size-5" />
 							</div>
 						</div>
 

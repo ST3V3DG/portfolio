@@ -5,6 +5,7 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Button } from "@/components/ui/button";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import HeroImage from "./hero-image";
+import { TypingText } from "@/components/ui/typing-text";
 import { Particles } from "./particles";
 
 export default function HeroSection() {
@@ -41,8 +42,8 @@ export default function HeroSection() {
 			/>
 
 			<div className="pt-36 pb-60">
-				<div className="mx-auto grid max-w-6xl px-6 lg:grid-cols-5 gap-56 lg:gap-0 items-center ">
-					<div className="text-center lg:col-span-3 lg:text-left w-full flex flex-col items-center lg:items-start">
+				<div className="mx-auto grid max-w-6xl px-6 lg:grid-cols-7 gap-56 lg:gap-0 items-center ">
+					<div className="text-center lg:col-span-5 lg:text-left w-full flex flex-col items-center lg:items-start">
 						<AnimatedGroup variants={transitionVariants}>
 							<Link
 								href="#"
@@ -64,7 +65,13 @@ export default function HeroSection() {
 							</Link>
 						</AnimatedGroup>
 						<h1 className="mt-8 text-balance text-5xl font-bold md:text-6xl lg:mt-4 xl:text-7xl text-blue-700 z-10">
-							Hey, I'm Steve !
+							Hey,{" "}
+							<TypingText
+								texts={["I'm Steve D!", "I'm a developer!"]}
+								className="italic font-serif"
+								loop={true}
+								cursor="_"
+							/>
 						</h1>
 						<div className="mt-8 text-pretty text-lg md:pr-44">
 							I enhance web presence of my clients by creating{" "}
@@ -73,7 +80,9 @@ export default function HeroSection() {
 								pointerClassName="text-blue-700"
 								rectangleClassName="border-blue-700 rounded-xs border-2"
 							>
-								<span className="text-nowrap py-1 px-2 italic font-serif">amazing websites</span>
+								<span className="text-nowrap py-1 px-2 italic font-serif text-2xl">
+									amazing websites
+								</span>
 							</PointerHighlight>{" "}
 							to convert visiters.
 						</div>
@@ -82,10 +91,10 @@ export default function HeroSection() {
 							<Button
 								asChild
 								size="lg"
-								className="px-0 text-base before:absolute before:top-0 before:left-0 before:w-full before:border-2 before:border-blue-700 before:h-full before:rounded-full before:-z-10 z-10 relative rounded-full hover:bg-transparent"
+								className="px-0 text-base before:absolute before:top-0 before:left-0 before:w-full before:border-2 before:border-blue-700 before:h-full before:rounded-full before:-z-10 z-10 relative rounded-full hover:bg-transparent group"
 							>
 								<Link href="#">
-									<span className="px-5 rounded-full flex items-center text-nowrap text-white size-full transition duration-200 bg-blue-700 hover:-translate-y-2 active:-translate-y-1 font-serif text-lg italic">
+									<span className="px-5 rounded-full flex items-center text-nowrap text-white size-full transition duration-300 bg-blue-700 group-hover:-translate-y-2 group-active:-translate-y-1 font-serif text-lg italic">
 										Contact me
 									</span>
 								</Link>
@@ -95,7 +104,7 @@ export default function HeroSection() {
 								asChild
 								size="lg"
 								variant="ghost"
-								className="px-5 text-base rounded-full hover:ring hover:ring-white/5"
+								className="relative px-5 text-base rounded-full hover:ring hover:bg-transparent hover:ring-white/5 before:absolute before:bottom-0 before:w-[80%] before:h-0.5 before:transition-all before:duration-300 before:rounded-full before:bg-white/5 hover:before:bg-transparent hover:before:size-full"
 							>
 								<Link href="#">
 									<span className="text-nowrap">Request demos</span>
@@ -108,7 +117,7 @@ export default function HeroSection() {
 					</div>
 				</div>
 			</div>
-			<div className="absolute bottom-0 left-0 w-[calc(110%)] overflow-hidden rotate-180">
+			<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
 				<svg
 					className="block relative h-24 w-full"
 					data-name="Layer 1"

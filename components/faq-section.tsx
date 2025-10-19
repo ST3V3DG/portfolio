@@ -76,7 +76,7 @@ export default function FaqSection() {
 				<Accordion type="single" collapsible className="mx-auto w-full lg:max-w-3xl">
 					{items.map((item) => (
 						<AccordionItem key={item.id} value={item.id}>
-							<AccordionTrigger className="transition-opacity duration-200 hover:no-underline hover:opacity-60">
+							<AccordionTrigger className="transition-opacity duration-300 hover:no-underline hover:opacity-60">
 								<div className="font-medium sm:py-1 lg:py-2 lg:text-lg">{item.question}</div>
 							</AccordionTrigger>
 							<AccordionContent className="sm:mb-1 lg:mb-2">

@@ -111,7 +111,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 		<motion.div
 			onMouseLeave={() => setHovered(null)}
 			className={cn(
-				"absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+				"absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-300 hover:text-zinc-800 lg:flex lg:space-x-2",
 				className,
 			)}
 		>
@@ -224,7 +224,7 @@ export const NavbarButton = ({
 	variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (React.ComponentPropsWithoutRef<"a"> | React.ComponentPropsWithoutRef<"button">)) => {
 	const baseStyles =
-		"px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+		"px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-300 inline-block text-center";
 
 	const variantStyles = {
 		primary:

@@ -4,7 +4,7 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { motion, useMotionValue, useTransform, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ThreeDMarquee } from "./ui/3d-marquee";
+import ThreeDMarquee from "./ui/3d-marquee";
 
 type BentoItem = {
 	id: string;
@@ -150,7 +150,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 			variants={fadeInUp}
 			whileHover={{ y: -5 }}
 			transition={{ type: "spring", stiffness: 300, damping: 20 }}
-			className="h-full"
+			className="size-full"
 			onMouseMove={handleMouseMove}
 			style={{
 				rotateX,
@@ -170,7 +170,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							<h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
 								{item.title}
 							</h3>
-							<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+							<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
 								<ArrowUpRight className="size-5" />
 							</div>
 						</div>
@@ -197,9 +197,9 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 export default function ProjectsSection() {
 	return (
 		<section className="relative py-24 bg-white dark:bg-black overflow-hidden">
-			<h1 className="text-5xl text-center font-bold mb-8">Projects</h1>
-			<h2 className="text-lg opacity-80 font-medium mb-16 text-center">See what I've done for other people</h2>
 			<div className="max-w-6xl px-6 mx-auto">
+				<h1 className="text-5xl text-center font-bold mb-8">Projects</h1>
+				<h2 className="text-lg opacity-80 font-medium mb-16 text-center">What I've done for other people</h2>
 				{/* Bento Grid */}
 				<motion.div
 					initial="hidden"

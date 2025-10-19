@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-export const ThreeDMarquee = ({ images, className }: { images: string[]; className?: string }) => {
+export default function ThreeDMarquee({ images, className }: { images: string[]; className?: string }) {
 	// Split the images array into 4 equal parts
 	const chunkSize = Math.ceil(images.length / 4);
 	const chunks = Array.from({ length: 4 }, (_, colIndex) => {
@@ -58,7 +58,7 @@ export const ThreeDMarquee = ({ images, className }: { images: string[]; classNa
 			</div>
 		</div>
 	);
-};
+}
 
 const GridLineHorizontal = ({ className, offset }: { className?: string; offset?: string }) => {
 	return (
