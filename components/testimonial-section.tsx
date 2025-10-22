@@ -53,7 +53,7 @@ function TestimonialCard({ item }: { item: (typeof items)[number] }) {
 
 export default function TestimonialSection() {
 	return (
-		<section id="testimonials" className="py-24 bg-white dark:bg-black overflow-hidden">
+		<section id="testimonials" className="pb-24 lg:pt-24 bg-white dark:bg-black overflow-hidden">
 			<h2 className="text-3xl lg:text-5xl text-center font-bold mb-8">Testimonials</h2>
 			<p className="text-lg opacity-80 font-medium mb-16 text-center">What people say about my work</p>
 			<div className="relative max-w-6xl px-6 mx-auto overflow-hidden">

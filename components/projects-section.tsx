@@ -26,7 +26,7 @@ const bentoItems: BentoItem[] = [
 		description: "I insure high quality websites for my clients.",
 		href: "#",
 		feature: "requirements",
-		requirementsItems: ["SEO", "Performance", "Best Practice", "Accessibility", "User Experience"],
+		requirementsItems: ["SEO", "Performance", "Best Practice", "Accessibility", "User Interface", "User Experience"],
 		// size: "lg",
 		// className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
 	},
@@ -34,17 +34,17 @@ const bentoItems: BentoItem[] = [
 		id: "landing-page",
 		title: "From a landing page",
 		description: "I create a landing page for my clients.",
-		href: "#",
+		href: "https://optiride.vercel.app",
 		image: "/images/optiride/optiride.webp",
 		feature: "landing-page",
-		size: "md",
+		size: "sm",
 		// className: "col-span-2 row-span-1 col-start-1 col-end-3",
 	},
 	{
 		id: "website",
 		title: "To entire websites",
 		description: "I also create multi-pages websites.",
-		href: "#",
+		href: "https://mckmedicalcare.vercel.app",
 		feature: "website",
 		images: [
 			"/images/mckmedicalcare/mckmedicalcare-home.webp",
@@ -101,13 +101,14 @@ const Requirements = ({ items }: { items: string[] }) => {
 
 function LandingPage({ image }: { image: string | undefined }) {
 	return (
-		<div className="mt-4 rounded-lg overflow-y-hidden">
+    <div
+      className="mt-4 rounded-lg size-full overflow-hidden">
 			<Image
 				src={image || "/images/optiride/optiride.webp"}
 				alt="Optiride landing page"
 				width={500}
-				height={200}
-				className="object-cover size-full"
+				height={500}
+				className="w-full rounded-lg hover:-translate-y-[142rem] transition duration-[20s] ease-linear"
 			/>
 		</div>
 	);
@@ -121,7 +122,7 @@ function Website({ images }: { images: string[] | undefined }) {
 		"/images/mckmedicalcare/mckmedicalcare-contact.webp",
 	];
 	return (
-		<div className="mx-auto my-10 size-full rounded-xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+		<div className="mx-auto mt-10 size-full rounded-lg bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800 overflow-hidden">
 			<ThreeDMarquee images={images} />
 		</div>
 	);
@@ -150,22 +151,24 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 			variants={fadeInUp}
 			whileHover={{ y: -5 }}
 			transition={{ type: "spring", stiffness: 300, damping: 20 }}
-			className="size-full"
+			className="size-full  "
 			onMouseMove={handleMouseMove}
 			style={{
 				rotateX,
 				rotateY,
 				transformStyle: "preserve-3d",
+				minHeight: "24rem"
 			}}
 		>
 			<Link
 				href={item.href || "#"}
+				target="_blank"
 				className={`group relative flex flex-col gap-4 h-full rounded-xl p-5 bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30 border border-neutral-200/60 dark:border-neutral-800/60 before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent before:opacity-100 before:transition-opacity before:duration-500 after:absolute after:inset-0 after:rounded-xl after:bg-neutral-50/70 dark:after:bg-neutral-900/70 after:z-[-1] backdrop-blur-[4px] shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] hover:border-neutral-300/50 dark:hover:border-neutral-700/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:backdrop-blur-[6px] hover:bg-gradient-to-b hover:from-neutral-50/60 hover:via-neutral-50/30 hover:to-neutral-50/20 dark:hover:from-neutral-800/60 dark:hover:via-neutral-800/30 dark:hover:to-neutral-800/20 transition-all duration-500 ease-out ${item.className}`}
 				tabIndex={0}
 				aria-label={`${item.title} - ${item.description}`}
 			>
 				<div className="relative flex flex-col gap-3 h-full translate-z-5">
-					<div className="space-y-2 flex-1 flex flex-col">
+					<div className="space-y-2 flex-1 flex flex-col overflow-hidden">
 						<div className="flex items-center justify-between">
 							<h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
 								{item.title}
@@ -196,7 +199,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function ProjectsSection() {
 	return (
-		<section id="projects" className="relative py-24 bg-white dark:bg-black overflow-hidden">
+		<section id="projects" className="relative py-24 bg-white dark:bg-black">
 			<div className="max-w-6xl px-6 mx-auto">
 				<h2 className="text-3xl lg:text-5xl text-center font-bold mb-8">Projects</h2>
 				<p className="text-lg opacity-80 font-medium mb-16 text-center">What I've done for other people</p>

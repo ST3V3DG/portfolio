@@ -17,11 +17,11 @@ export default function ThreeDMarquee({ images, className }: { images: string[];
 						style={{
 							transform: "rotateX(55deg) rotateY(0deg) rotateZ(-45deg)",
 						}}
-						className="relative top-96 right-1/2 grid size-full origin-top-left grid-cols-4 gap-8 transform-3d"
+						className="relative top-96 right-1/2 grid size-full origin-top-left grid-cols-2 gap-8 transform-3d"
 					>
 						{chunks.map((subarray, colIndex) => (
 							<motion.div
-								animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
+								animate={{ y: colIndex % 2 === 0 ? 150 : -150 }}
 								transition={{
 									duration: colIndex % 2 === 0 ? 10 : 15,
 									repeat: Infinity,

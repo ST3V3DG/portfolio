@@ -106,9 +106,9 @@ export default function HeroSection() {
 								asChild
 								size="lg"
 								variant="ghost"
-								className="relative px-5 text-base rounded-full hover:ring hover:bg-transparent hover:ring-white/5 before:absolute before:bottom-0 before:w-[80%] before:h-0.5 before:transition-all before:duration-300 before:rounded-full before:bg-white/5 hover:before:bg-transparent hover:before:size-full"
+								className="rounded-full"
 							>
-								<Link href="#">
+								<Link href="#" className="dark:hover:bg-transparent relative px-5 text-base hover:before:ring hover:before:ring-white/5 before:absolute before:bottom-0 before:w-[80%] before:h-0.5 before:transition-all before:duration-300 before:rounded-full before:bg-white/5 hover:before:size-full before:z-50">
 									<span className="text-nowrap">Request demos</span>
 								</Link>
 							</Button>
@@ -137,7 +137,7 @@ export default function HeroSection() {
 				asChild
 				className="absolute hidden bottom-4 right-1/2 rounded-full size-12 border border-white lg:flex items-center justify-center animate-pulse"
 			>
-				<Link className="hover:bg-transparent  text-white bg-transparent" href={"#about"} prefetch>
+				<Link className="hover:bg-transparent  text-white bg-transparent" href={"#about"}>
 					<ChevronsDown className="size-6" />
 				</Link>
 			</Button>

@@ -3,34 +3,22 @@ import Link from "next/link";
 
 const links = [
 	{
-		title: "Features",
-		href: "#",
-	},
-	{
-		title: "Solution",
-		href: "#",
-	},
-	{
-		title: "Customers",
-		href: "#",
-	},
-	{
-		title: "Pricing",
-		href: "#",
-	},
-	{
-		title: "Help",
-		href: "#",
-	},
-	{
 		title: "About",
-		href: "#",
+		href: "#about",
+	},
+	{
+		title: "Projects",
+		href: "#projects",
+	},
+	{
+		title: "Testimonial",
+		href: "#testimonial",
 	},
 ];
 
 export default function Footer() {
 	return (
-		<footer className="py-16 md:py-32 bg-black border-t border-muted">
+		<footer className="py-12 bg-black border-t border-muted">
 			<div className="mx-auto max-w-5xl px-6">
 				<Link
 					href="/"
@@ -51,7 +39,7 @@ export default function Footer() {
 						</Link>
 					))}
 				</div>
-				<div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+				{/*<div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
 					<Link
 						href="#"
 						target="_blank"
@@ -177,10 +165,10 @@ export default function Footer() {
 							></path>
 						</svg>
 					</Link>
-				</div>
+				</div>*/}
 				<span className="text-muted-foreground block text-center text-sm">
 					{" "}
-					© {new Date().getFullYear()} Tailark, All rights reserved
+					© {new Date().getFullYear()} STEVE D, All rights reserved
 				</span>
 			</div>
 		</footer>

@@ -32,12 +32,12 @@ type AboutProps = {
 	}>;
 };
 
-const defaultAchievements = [
-	{ label: "Companies Supported", value: "300+" },
-	{ label: "Projects Finalized", value: "800+" },
-	{ label: "Happy Customers", value: "99%" },
-	{ label: "Recognized Awards", value: "10+" },
-];
+// const defaultAchievements = [
+// 	{ label: "Companies Supported", value: "300+" },
+// 	{ label: "Projects Finalized", value: "800+" },
+// 	{ label: "Happy Customers", value: "99%" },
+// 	{ label: "Recognized Awards", value: "10+" },
+// ];
 
 export default function AboutSection({
 	title = "About Me",
@@ -46,9 +46,9 @@ export default function AboutSection({
 		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
 		alt: "placeholder",
 	},
-	achievementsTitle = "Our Achievements in Numbers",
-	achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-	achievements = defaultAchievements,
+	// achievementsTitle = "Our Achievements in Numbers",
+	// achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
+	// achievements = defaultAchievements,
 }: AboutProps = {}) {
 	return (
 		<section id="about" className="py-32 relative bg-white">
@@ -118,7 +118,7 @@ export default function AboutSection({
             ))}
           </div>
         </div>*/}
-				<div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
+				{/*<div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
 					<div className="flex flex-col gap-4 text-center md:text-left">
 						<h2 className="text-4xl font-semibold">{achievementsTitle}</h2>
 						<p className="text-muted-foreground max-w-xl">{achievementsDescription}</p>
@@ -132,7 +132,7 @@ export default function AboutSection({
 						))}
 					</div>
 					<div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
-				</div>
+				</div>*/}
 			</div>
 			<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
 				<svg
