@@ -1,47 +1,25 @@
-import type { Variants } from "framer-motion";
 import { ArrowRight, ChevronsDown } from "lucide-react";
 import Link from "next/link";
-import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Button } from "@/components/ui/button";
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { TypingText } from "@/components/ui/typing-text";
-import HeroImage from "./hero-image";
-import { Particles } from "./particles";
+import DotGrid from './DotGrid';
 
 export default function HeroSection() {
-	const transitionVariants = {
-		item: {
-			hidden: {
-				opacity: 0,
-				filter: "blur(12px)",
-				y: 12,
-			},
-			visible: {
-				opacity: 1,
-				filter: "blur(0px)",
-				y: 0,
-				transition: {
-					type: "spring",
-					bounce: 0.3,
-					duration: 1.5,
-				},
-			},
-		},
-	} satisfies { item: Variants };
-
 	return (
 		<section className="relative lg:h-dvh">
-			{/* Interactive particles */}
-			<Particles
-				className="absolute inset-0 -z-10"
-				quantity={1000}
-				ease={90}
-				staticity={5}
-				color="#fff"
-				size={0.9}
-			/>
+		<DotGrid
+    		className="-z-50"
+        dotSize={3}
+        gap={15}
+        baseColor="#232323"
+        activeColor="#ffffff"
+        proximity={120}
+        shockRadius={250}
+        shockStrength={5}
+        resistance={750}
+        returnDuration={1.5}
+      />
 
-			<div className="pt-36 pb-60">
+			{/*<div className="pt-36 pb-60 z-50">
 				<div className="mx-auto grid max-w-6xl px-6 lg:grid-cols-7 gap-56 lg:gap-0 items-center ">
 					<div className="text-center lg:col-span-5 lg:text-left w-full flex flex-col items-center lg:items-start">
 						<AnimatedGroup variants={transitionVariants}>
@@ -118,8 +96,8 @@ export default function HeroSection() {
 						<HeroImage className="scale-120 lg:scale-150" />
 					</div>
 				</div>
-			</div>
-			{/*<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+			</div>*/}
+			<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
 				<svg
 					className="block relative h-24 w-full"
 					data-name="Layer 1"
@@ -132,7 +110,7 @@ export default function HeroSection() {
 						className="fill-white"
 					></path>
 				</svg>
-			</div>*/}
+			</div>
 			<Button
 				asChild
 				className="absolute hidden bottom-4 right-1/2 rounded-full size-12 border border-white lg:flex items-center justify-center animate-pulse"
