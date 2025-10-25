@@ -6,12 +6,17 @@ import Image from "next/image";
 import Link from "next/link";
 import ThreeDMarquee from "./ui/3d-marquee";
 
+export type WebsitesImages = {
+  src?: string,
+  href?: string
+}
+
 type BentoItem = {
 	id: string;
 	title: string;
 	description: string;
 	image?: string;
-	images?: string[];
+	images?: WebsitesImages[];
 	href?: string;
 	feature?: "requirements" | "website" | "landing-page";
 	requirementsItems?: string[];
@@ -26,7 +31,7 @@ const bentoItems: BentoItem[] = [
 		description: "I insure high quality websites for my clients.",
 		href: "#",
 		feature: "requirements",
-		requirementsItems: ["SEO", "Performance", "Best Practice", "Accessibility", "User Interface", "User Experience"],
+		requirementsItems: ["SEO", "Accessibility", "Performance", "Best Practice", "User Interface", "User Experience", "Light and dark mode support"],
 		// size: "lg",
 		// className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
 	},
@@ -47,10 +52,22 @@ const bentoItems: BentoItem[] = [
 		href: "https://mckmedicalcare.vercel.app",
 		feature: "website",
 		images: [
-			"/images/mckmedicalcare/mckmedicalcare-home.webp",
-			"/images/mckmedicalcare/mckmedicalcare-specialities.webp",
-			"/images/mckmedicalcare/mckmedicalcare-about.webp",
-			"/images/mckmedicalcare/mckmedicalcare-contact.webp",
+		{
+  	  src: "/images/mckmedicalcare/mckmedicalcare-home.webp",
+  		href: "https://medicalcare.vercel.app"
+  	},
+  	{
+  	  src: "/images/mckmedicalcare/mckmedicalcare-specialities.webp",
+  			href: "https://medicalcare.vercel.app"
+  	},
+  	{
+   	src: "/images/mckmedicalcare/mckmedicalcare-about.webp",
+   	href: "https://medicalcare.vercel.app"
+  	},
+  	{
+   	src: "/images/mckmedicalcare/mckmedicalcare-contact.webp",
+   	href: "https://medicalcare.vercel.app"
+  	}
 		],
 		size: "md",
 		// className: "col-span-4 row-span-1",
@@ -99,9 +116,11 @@ const Requirements = ({ items }: { items: string[] }) => {
 	);
 };
 
-function LandingPage({ image }: { image: string | undefined }) {
-	return (
-    <div
+function LandingPage({ image, href }: { image: string | undefined, href: string | undefined }) {
+  return (
+    <Link
+      href={href ?? "#"}
+      target="_blank"
       className="mt-4 rounded-lg size-full overflow-hidden">
 			<Image
 				src={image || "/images/optiride/optiride.webp"}
@@ -110,16 +129,28 @@ function LandingPage({ image }: { image: string | undefined }) {
 				height={500}
 				className="w-full rounded-lg hover:-translate-y-[142rem] transition duration-[20s] ease-linear"
 			/>
-		</div>
+		</Link>
 	);
 }
 
-function Website({ images }: { images: string[] | undefined }) {
+function Website({ images }: { images: WebsitesImages[] | undefined }) {
 	images = images || [
-		"/images/mckmedicalcare/mckmedicalcare-home.webp",
-		"/images/mckmedicalcare/mckmedicalcare-specialities.webp",
-		"/images/mckmedicalcare/mckmedicalcare-about.webp",
-		"/images/mckmedicalcare/mckmedicalcare-contact.webp",
+  	{
+  	  src: "/images/mckmedicalcare/mckmedicalcare-home.webp",
+  		href: "https://medicalcare.vercel.app"
+  	},
+  	{
+  	  src: "/images/mckmedicalcare/mckmedicalcare-specialities.webp",
+  			href: "https://medicalcare.vercel.app"
+  	},
+  	{
+   	src: "/images/mckmedicalcare/mckmedicalcare-about.webp",
+   	href: "https://medicalcare.vercel.app"
+  	},
+  	{
+   	src: "/images/mckmedicalcare/mckmedicalcare-contact.webp",
+   	href: "https://medicalcare.vercel.app"
+  	}
 	];
 	return (
 		<div className="mx-auto mt-10 size-full rounded-lg bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800 overflow-hidden">
@@ -160,9 +191,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 				minHeight: "24rem"
 			}}
 		>
-			<Link
-				href={item.href || "#"}
-				target="_blank"
+			<div
 				className={`group relative flex flex-col gap-4 h-full rounded-xl p-5 bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30 border border-neutral-200/60 dark:border-neutral-800/60 before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent before:opacity-100 before:transition-opacity before:duration-500 after:absolute after:inset-0 after:rounded-xl after:bg-neutral-50/70 dark:after:bg-neutral-900/70 after:z-[-1] backdrop-blur-[4px] shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] hover:border-neutral-300/50 dark:hover:border-neutral-700/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:backdrop-blur-[6px] hover:bg-gradient-to-b hover:from-neutral-50/60 hover:via-neutral-50/30 hover:to-neutral-50/20 dark:hover:from-neutral-800/60 dark:hover:via-neutral-800/30 dark:hover:to-neutral-800/20 transition-all duration-500 ease-out ${item.className}`}
 				tabIndex={0}
 				aria-label={`${item.title} - ${item.description}`}
@@ -173,9 +202,9 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							<h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
 								{item.title}
 							</h3>
-							<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+							{/*<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
 								<ArrowUpRight className="size-5" />
-							</div>
+							</div>*/}
 						</div>
 
 						<p className="text-sm text-neutral-600 dark:text-neutral-400 tracking-tight">
@@ -187,12 +216,12 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							<Requirements items={item.requirementsItems} />
 						)}
 
-						{item.feature === "landing-page" && <LandingPage image={item.image} />}
+						{item.feature === "landing-page" && <LandingPage image={item.image} href={item.href} />}
 
 						{item.feature === "website" && <Website images={item.images} />}
 					</div>
 				</div>
-			</Link>
+			</div>
 		</motion.div>
 	);
 };

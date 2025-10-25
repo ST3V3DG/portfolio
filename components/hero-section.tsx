@@ -34,9 +34,9 @@ export default function HeroSection() {
 			{/* Interactive particles */}
 			<Particles
 				className="absolute inset-0 -z-10"
-				quantity={500}
+				quantity={1000}
 				ease={90}
-				staticity={10}
+				staticity={5}
 				color="#fff"
 				size={0.9}
 			/>
@@ -115,11 +115,11 @@ export default function HeroSection() {
 						</div>
 					</div>
 					<div className="w-full">
-						<HeroImage className="scale-120 lg:scale-125" />
+						<HeroImage className="scale-120 lg:scale-150" />
 					</div>
 				</div>
 			</div>
-			<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+			{/*<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
 				<svg
 					className="block relative h-24 w-full"
 					data-name="Layer 1"
@@ -132,7 +132,7 @@ export default function HeroSection() {
 						className="fill-white"
 					></path>
 				</svg>
-			</div>
+			</div>*/}
 			<Button
 				asChild
 				className="absolute hidden bottom-4 right-1/2 rounded-full size-12 border border-white lg:flex items-center justify-center animate-pulse"

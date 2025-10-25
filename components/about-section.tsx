@@ -1,36 +1,6 @@
 import Image from "next/image";
-
-type AboutProps = {
-	title?: string;
-	description?: string;
-	mainImage?: {
-		src: string;
-		alt: string;
-	};
-	secondaryImage?: {
-		src: string;
-		alt: string;
-	};
-	breakout?: {
-		src: string;
-		alt: string;
-		title?: string;
-		description?: string;
-		buttonText?: string;
-		buttonUrl?: string;
-	};
-	companiesTitle?: string;
-	companies?: Array<{
-		src: string;
-		alt: string;
-	}>;
-	achievementsTitle?: string;
-	achievementsDescription?: string;
-	achievements?: Array<{
-		label: string;
-		value: string;
-	}>;
-};
+import { Card, CardContent } from "./ui/card";
+import { cn } from "@/lib/utils";
 
 // const defaultAchievements = [
 // 	{ label: "Companies Supported", value: "300+" },
@@ -39,85 +9,134 @@ type AboutProps = {
 // 	{ label: "Recognized Awards", value: "10+" },
 // ];
 
-export default function AboutSection({
-	title = "About Me",
-	description = "I'm a fullstack wed developer with 3 years in web development. I've build many web app and website using modren technologies for best performance, nice UX/UI design and great SEO.",
-	mainImage = {
-		src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-		alt: "placeholder",
-	},
-	// achievementsTitle = "Our Achievements in Numbers",
-	// achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-	// achievements = defaultAchievements,
-}: AboutProps = {}) {
+const technologies = 
+  [
+    {
+      src: "/images/technos/laravel.png",
+			alt: "Laravel logo",
+			className: "h-20"
+    },
+    {
+      src: "/images/technos/next-js.webp",
+			alt: "Next.js logo",
+			className: "h-20"
+    },
+    {
+      src: "/images/technos/django.png",
+      alt: "Django logo",
+      className: "h-12"
+    },
+    {
+      src: "/images/technos/shadcn-ui.png",
+      alt: "Shadcn UI logo"
+    },
+    {
+      src: "/images/technos/tailwind-css.png",
+      alt: "Tailwind CSS logo",
+      className: "h-8"
+    }
+  ]
+
+export default function AboutSection() {
 	return (
-		<section id="about" className="py-32 relative bg-white">
+		<section id="about" className="pb-32 pt-16 lg:pb-50 lg:pt-24  relative bg-white">
 			<div className="max-w-6xl px-6 mx-auto">
+			  <h2 className="text-black text-center text-3xl lg:text-5xl font-semibold mb-12">About Me</h2>
 				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
-					<h2 className="text-3xl lg:text-5xl font-semibold">{title}</h2>
-					<p className="text-normal">{description}</p>
+					<h3 className="text-2xl lg:text-3xl md:text-center">My Experience</h3>
+					<div className="flex flex-col gap-4">
+  					<p className="text-center md:text-left first-letter:ml-8">
+   					  With 3 years of hands-on experience in software development, I've successfully contributed to numerous projects (Web apps and websites). My background includes full involvement in the software lifecycle, from requirements analysis and architecture design to testing and deployment, ensuring scalable and maintanable solutions.
+  					</p>
+  					<p className="text-center md:text-left first-letter:ml-8">
+  					  Throughout my career, I've worked with cross-functional teams, managed codebases of different complexity level and adapted quickly to envolving technologies. My experience in both frontend and backend development enables me to deliver effecient, user-center and high-performance apps.
+  					</p>
+					</div>
 				</div>
-				<div className="grid mb-14 gap-6 max-h-96 md:grid-cols-2 lg:grid-cols-3 *:rounded-xl lg:grid-rows-3">
-					<div className="lg:col-span-2">
+				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
+  				<div className="order-2 md:order-1 flex flex-col gap-4">
+   					<p className="text-center md:text-left first-letter:ml-8">					
+     					I'm a highly skilled software developer with strong expertise in technologies like React.js (Next.js), Laravel, Django, Tailwind CSS, SQL and more. My technical proficiency spans a wide range of areas, including full-stack web development, API design, database optimization, and soon, cloud integration.
+   					</p>
+   					<p className="text-center md:text-left first-letter:ml-8">					
+     					Beyond technical skills, I excel in problem-solving, clean code and architecture practices and continous learning. I'm passoniate about writing efficient, reliable and elegant code, while also maintaining a keen focus on collaboration, documentation and quality standard.
+   					</p>
+  				</div>
+					<h3 className="text-2xl lg:text-3xl md:text-center order-1 md:order-2">My Skils</h3>
+				</div>
+				{/*<div className="grid mb-14 gap-4 max-h-72 md:grid-cols-2 lg:grid-cols-3 *:rounded-lg lg:grid-rows-3">
+					<Card className="bg-white lg:col-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
+  					<CardContent className="size-full bg-white">
+  						<Image
+  							src="/images/technos/laravel.png"
+  							alt="Laravel logo"
+  							width={500}
+  							height={500}
+  							className="size-full object-contain scale-200"
+  						/>
+  					</CardContent>
+					</Card>
+					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
+					<CardContent className="p-4 size-full bg-white">
 						<Image
-							src={mainImage.src}
-							alt={mainImage.alt}
-							width={500}
-							height={40}
-							className="size-full object-cover"
-						/>
-					</div>
-					<div className="lg:row-span-2">
-						<Image
-							src={mainImage.src}
-							alt={mainImage.alt}
-							width={500}
-							height={500}
-							className="size-full object-cover"
-						/>
-					</div>
-					<div className="lg:row-span-2">
-						<Image
-							src={mainImage.src}
-							alt={mainImage.alt}
-							width={500}
-							height={500}
-							className="size-full object-cover"
-						/>
-					</div>
-					<div className="lg:row-span-2">
-						<Image
-							src={mainImage.src}
-							alt={mainImage.alt}
+							src="/images/technos/next-js.webp"
+							alt="Next.js logo"
 							width={500}
 							height={500}
-							className="size-full object-cover"
+							className="size-full object-contain"
 						/>
-					</div>
-					<div className="md:col-span-2 lg:col-span-1">
+					</CardContent>
+					</Card>
+					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
+					<CardContent className="p-4 size-full bg-white">
 						<Image
-							src={mainImage.src}
-							alt={mainImage.alt}
+							src="/images/technos/django.png"
+							alt="Django logo"
+							width={500}
+							height={500}
+							className="size-full object-contain"
+						/>
+					</CardContent>
+					</Card>
+					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
+					<CardContent className="p-4 size-full bg-white">
+						<Image
+							src="/images/technos/tailwind-css.png"
+							alt="Tailwind CSS logo"
+							width={500}
+							height={500}
+							className="size-full object-contain"
+						/>
+					</CardContent>
+					</Card>
+					<Card className="bg-white md:col-span-2 lg:col-span-1 overflow-hidden shadow-lg hover:shadow-xl transition">
+					<CardContent className="size-full bg-white">
+						<Image
+							src="/images/technos/shadcn-ui.png"
+							alt="Shadcn UI logo"
 							width={500}
 							height={20}
-							className="size-full object-cover"
+							className="size-full object-contain"
 						/>
-					</div>
-				</div>
-				{/*<div className="py-32">
-          <p className="text-center">{companiesTitle} </p>
+					</CardContent>
+					</Card>
+				</div>*/}
+				<div>
+          {/*<p className="text-center">{companiesTitle} </p>*/}
           <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {companies.map((company, idx) => (
-              <div className="flex items-center gap-3" key={company.src + idx}>
-                <img
-                  src={company.src}
-                  alt={company.alt}
-                  className="h-6 w-auto md:h-8"
+            {technologies.map((technology, index) => (
+              <div className="flex items-center gap-3" key={technology.src + index}>
+                <Image
+                  src={technology.src}
+                  alt={technology.alt}
+                  className={cn("h-12 w-auto", technology.className)}
+                  width={500}
+                  height={500}
                 />
               </div>
             ))}
           </div>
-        </div>*/}
+        </div>
 				{/*<div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
 					<div className="flex flex-col gap-4 text-center md:text-left">
 						<h2 className="text-4xl font-semibold">{achievementsTitle}</h2>

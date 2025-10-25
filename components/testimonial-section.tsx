@@ -53,23 +53,37 @@ function TestimonialCard({ item }: { item: (typeof items)[number] }) {
 
 export default function TestimonialSection() {
 	return (
-		<section id="testimonials" className="pb-24 lg:pt-24 bg-white dark:bg-black overflow-hidden">
+		<section id="testimonials" className="pb-40 lg:pt-24 bg-white dark:bg-black overflow-hidden relative">
 			<h2 className="text-3xl lg:text-5xl text-center font-bold mb-8">Testimonials</h2>
 			<p className="text-lg opacity-80 font-medium mb-16 text-center">What people say about my work</p>
-			<div className="relative max-w-6xl px-6 mx-auto overflow-hidden">
+			<div className="relative mx-auto overflow- min-h-96">
 				<div className="from-background absolute inset-y-0 left-0 z-10 w-30 bg-gradient-to-r to-transparent" />
 				<div className="from-background absolute inset-y-0 right-0 z-10 w-30 bg-gradient-to-l to-transparent" />
-				<Marquee className="py-2" direction="left" repeat={10}>
+				<Marquee className="py-2 rotate-4 md:rotate-10" direction="left" repeat={10}>
 					{[...items, ...items].map((item, index) => (
 						<TestimonialCard key={index} item={item} />
 					))}
 				</Marquee>
-				<Marquee className="py-2" direction="right">
+				<Marquee className="py-2 -rotate-4 translate-y-1/2" direction="right">
 					{[...items, ...items].map((item, index) => (
 						<TestimonialCard key={index} item={item} />
 					))}
 				</Marquee>
 			</div>
+			{/*<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+				<svg
+					className="block relative h-28 w-full"
+					data-name="Layer 1"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 1200 120"
+					preserveAspectRatio="none"
+				>
+					<path
+						d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+						className="fill-white"
+					></path>
+				</svg>
+			</div>*/}
 		</section>
 	);
 }
