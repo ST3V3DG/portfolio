@@ -14,6 +14,10 @@ const links = [
 		title: "Testimonial",
 		href: "#testimonial",
 	},
+	{
+		title: "FAQ",
+		href: "#faq",
+	},
 ];
 
 export default function Footer() {

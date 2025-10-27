@@ -270,7 +270,7 @@ const TimelineFeature = ({ timeline }: { timeline: Array<{ year: string; event: 
 					initial={{ opacity: 0, x: -10 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{
-						delay: (0.15 * Number.parseInt(item.year)) % 10,
+						delay: (0.15 * Number.parseInt(item.year, 10)) % 10,
 					}}
 				>
 					<div className="w-5 h-5 rounded-full bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-300 dark:border-neutral-600 flex-shrink-0 z-10 mt-0.5" />
@@ -514,7 +514,7 @@ function AIInput_Voice() {
 }
 
 const BentoCard = ({ item }: { item: BentoItem }) => {
-	const [isHovered, setIsHovered] = useState(false);
+	const [_isHovered, setIsHovered] = useState(false);
 	const x = useMotionValue(0);
 	const y = useMotionValue(0);
 	const rotateX = useTransform(y, [-100, 100], [2, -2]);

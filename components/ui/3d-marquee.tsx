@@ -30,12 +30,17 @@ export default function ThreeDMarquee({ images, className }: { images: WebsitesI
 									repeat: Infinity,
 									repeatType: "reverse",
 								}}
-								key={colIndex + "marquee"}
+								key={`${colIndex}marquee`}
 								className="flex flex-col items-start gap-8"
 							>
 								<GridLineVertical className="-left-4" offset="0" />
 								{subarray.map((image, imageIndex) => (
-									<Link href={image.href ?? ""} target="_blank" className="relative" key={imageIndex + String(image.src)}>
+									<Link
+										href={image.href ?? ""}
+										target="_blank"
+										className="relative"
+										key={imageIndex + String(image.src)}
+									>
 										<GridLineHorizontal className="-top-4" offset="0" />
 										<motion.img
 											whileHover={{

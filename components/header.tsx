@@ -28,9 +28,9 @@ export function Header() {
 			link: "#testimonials",
 		},
 		{
-      name: "FAQ",
-      link: "#faq"
-		}
+			name: "FAQ",
+			link: "#faq",
+		},
 	];
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

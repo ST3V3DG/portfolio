@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
+// import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 // const defaultAchievements = [
 // 	{ label: "Companies Supported", value: "300+" },
@@ -9,60 +14,162 @@ import { cn } from "@/lib/utils";
 // 	{ label: "Recognized Awards", value: "10+" },
 // ];
 
-const technologies = 
-  [
-    {
-      src: "/images/technos/laravel.png",
-			alt: "Laravel logo",
-			className: "h-20"
-    },
-    {
-      src: "/images/technos/next-js.webp",
-			alt: "Next.js logo",
-			className: "h-20"
-    },
-    {
-      src: "/images/technos/django.png",
-      alt: "Django logo",
-      className: "h-12"
-    },
-    {
-      src: "/images/technos/shadcn-ui.png",
-      alt: "Shadcn UI logo"
-    },
-    {
-      src: "/images/technos/tailwind-css.png",
-      alt: "Tailwind CSS logo",
-      className: "h-8"
-    }
-  ]
+const technologies = [
+	{
+		src: "/images/technos/laravel.png",
+		alt: "Laravel logo",
+		className: "h-20",
+	},
+	{
+		src: "/images/technos/next-js.webp",
+		alt: "Next.js logo",
+		className: "h-20",
+	},
+	{
+		src: "/images/technos/django.png",
+		alt: "Django logo",
+		className: "h-12",
+	},
+	{
+		src: "/images/technos/shadcn-ui.png",
+		alt: "Shadcn UI logo",
+	},
+	{
+		src: "/images/technos/tailwind-css.png",
+		alt: "Tailwind CSS logo",
+		className: "h-8",
+	},
+];
 
 export default function AboutSection() {
+	gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+	const fadeInElements = useRef<HTMLImageElement[]>([]);
+	
+	const pushRef = (element: HTMLImageElement) => {
+    if (element && !fadeInElements.current.includes(element)) {
+      fadeInElements.current.push(element);
+    }
+  };
+
+	useGSAP(
+		() => {
+			for (let i = 0; i <= 4; i++) {
+				gsap.from(fadeInElements.current[i], {
+					scrollTrigger: {
+						trigger: fadeInElements.current[i],
+						start: "top bottom",
+						end: "bottom 90%",
+						scrub: 2,
+						toggleActions: "play pause resume reset",
+					},
+					opacity: 0,
+					y: 50,
+					ease: "power3.inOut",
+				});
+			}
+
+			// gsap.from(".fade-in", {
+			//   scrollTrigger: {
+			//     trigger: ".fade-in",
+			//     start: "top bottom",
+			//     end: "bottom 50%",
+			//     markers: true,
+			//     scrub: 2,
+			//     toggleActions: "play pause resume reset",
+			//   },
+			//   opacity: 0,
+			//   y: 50,
+			//   ease: "power3.inOut",
+			//   stagger: 1,
+			// });
+		},
+	);
+
 	return (
-		<section id="about" className="pb-32 pt-16 lg:pb-50 lg:pt-24  relative bg-white">
+		<section id="about" className="pb-32 pt-16 lg:pb-20 lg:pt-24  relative bg-white">
 			<div className="max-w-6xl px-6 mx-auto">
-			  <h2 className="text-black text-center text-3xl lg:text-5xl font-semibold mb-12">About Me</h2>
+				<h2 className="text-black text-center text-3xl lg:text-5xl font-semibold mb-12">About Me</h2>
 				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
-					<h3 className="text-2xl lg:text-3xl md:text-center">My Experience</h3>
+					<div className="flex flex-col justify-between items-center">
+						<h3 className="text-2xl lg:text-3xl md:text-center">My Experience</h3>
+						<div className="hidden md:flex flex-wrap gap-4 flex-1 pt-8">
+							<Image
+								ref={pushRef}
+								src={technologies[0].src}
+								alt={technologies[0].alt}
+								width={300}
+								height={300}
+								className="self-start -rotate-10 fade-in"
+							/>
+							<Image
+							  ref={pushRef}
+								src={technologies[1].src}
+								alt={technologies[1].alt}
+								width={200}
+								height={200}
+								className="self-center rotate-10 ml-auto fade-in"
+							/>
+						</div>
+					</div>
 					<div className="flex flex-col gap-4">
-  					<p className="text-center md:text-left first-letter:ml-8">
-   					  With 3 years of hands-on experience in software development, I've successfully contributed to numerous projects (Web apps and websites). My background includes full involvement in the software lifecycle, from requirements analysis and architecture design to testing and deployment, ensuring scalable and maintanable solutions.
-  					</p>
-  					<p className="text-center md:text-left first-letter:ml-8">
-  					  Throughout my career, I've worked with cross-functional teams, managed codebases of different complexity level and adapted quickly to envolving technologies. My experience in both frontend and backend development enables me to deliver effecient, user-center and high-performance apps.
-  					</p>
+						<p className="text-center md:text-left first-letter:ml-8">
+							With 3 years of hands-on experience in software development, I've successfully contributed
+							to numerous projects (Web apps and websites). My background includes full involvement in the
+							software lifecycle, from requirements analysis and architecture design to testing and
+							deployment, ensuring scalable and maintanable solutions.
+						</p>
+						<p className="text-center md:text-left first-letter:ml-8">
+							Throughout my career, I've worked with cross-functional teams, managed codebases of
+							different complexity level and adapted quickly to envolving technologies. My experience in
+							both frontend and backend development enables me to deliver effecient, user-center and
+							high-performance apps.
+						</p>
 					</div>
 				</div>
 				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
-  				<div className="order-2 md:order-1 flex flex-col gap-4">
-   					<p className="text-center md:text-left first-letter:ml-8">					
-     					I'm a highly skilled software developer with strong expertise in technologies like React.js (Next.js), Laravel, Django, Tailwind CSS, SQL and more. My technical proficiency spans a wide range of areas, including full-stack web development, API design, database optimization, and soon, cloud integration.
-   					</p>
-   					<p className="text-center md:text-left first-letter:ml-8">					
-     					Beyond technical skills, I excel in problem-solving, clean code and architecture practices and continous learning. I'm passoniate about writing efficient, reliable and elegant code, while also maintaining a keen focus on collaboration, documentation and quality standard.
-   					</p>
-  				</div>
-					<h3 className="text-2xl lg:text-3xl md:text-center order-1 md:order-2">My Skils</h3>
+					<div className="order-2 md:order-1 flex flex-col gap-4">
+						<p className="text-center md:text-left first-letter:ml-8">
+							I'm a highly skilled software developer with strong expertise in technologies like React.js
+							(Next.js), Laravel, Django, Tailwind CSS, SQL and more. My technical proficiency spans a
+							wide range of areas, including full-stack web development, API design, database
+							optimization, and soon, cloud integration.
+						</p>
+						<p className="text-center md:text-left first-letter:ml-8">
+							Beyond technical skills, I excel in problem-solving, clean code and architecture practices
+							and continous learning. I'm passoniate about writing efficient, reliable and elegant code,
+							while also maintaining a keen focus on collaboration, documentation and quality standard.
+						</p>
+					</div>
+					<div className="flex flex-col justify-between items-center order-1 md:order-2">
+						<h3 className="text-2xl lg:text-3xl md:text-center">My Skils</h3>
+						<div className="hidden md:flex md:flex-wrap lg:flex-nowrap gap-4 flex-1 pt-8">
+							<Image
+							  ref={pushRef}
+								src={technologies[2].src}
+								alt={technologies[2].alt}
+								width={150}
+								height={150}
+								className="self-start -rotate-10 fade-in"
+							/>
+							<Image
+							  ref={pushRef}
+								src={technologies[3].src}
+								alt={technologies[3].alt}
+								width={200}
+								height={200}
+								className="self-end rotate-10 fade-in"
+							/>
+							<Image
+							  ref={pushRef}
+								src={technologies[4].src}
+								alt={technologies[4].alt}
+								width={200}
+								height={200}
+								className="self-center rotate-10 fade-in"
+							/>
+						</div>
+					</div>
 				</div>
 				{/*<div className="grid mb-14 gap-4 max-h-72 md:grid-cols-2 lg:grid-cols-3 *:rounded-lg lg:grid-rows-3">
 					<Card className="bg-white lg:col-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
@@ -122,21 +229,21 @@ export default function AboutSection() {
 					</Card>
 				</div>*/}
 				<div>
-          {/*<p className="text-center">{companiesTitle} </p>*/}
-          <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {technologies.map((technology, index) => (
-              <div className="flex items-center gap-3" key={technology.src + index}>
-                <Image
-                  src={technology.src}
-                  alt={technology.alt}
-                  className={cn("h-12 w-auto", technology.className)}
-                  width={500}
-                  height={500}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+					{/*<p className="text-center">{companiesTitle} </p>*/}
+					<div className="mt-8 md:hidden flex flex-wrap justify-center gap-8">
+						{technologies.map((technology, index) => (
+							<div className="flex items-center gap-3" key={technology.src + index}>
+								<Image
+									src={technology.src}
+									alt={technology.alt}
+									className={cn("h-12 w-auto", technology.className)}
+									width={500}
+									height={500}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
 				{/*<div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
 					<div className="flex flex-col gap-4 text-center md:text-left">
 						<h2 className="text-4xl font-semibold">{achievementsTitle}</h2>
