@@ -186,14 +186,14 @@ export function OrbitingImage({
 										damping: 7,
 									}}
 									className={cn(
-										"rounded-full border border-gray-100 bg-white/5 p-[15%] dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
+										"rounded-full border border-gray-100 bg-white/5 p-[10%] dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
 										className,
 									)}
 								>
 									<Image
 										src={image.url}
 										alt={image.name}
-										className="flex h-full w-full items-center justify-center rounded-full object-contain"
+										className="flex size-full items-center justify-center object-contain"
 										width={500}
 										height={500}
 									/>

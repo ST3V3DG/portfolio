@@ -8,8 +8,8 @@ const orbitingImagesData = [
 		startAt: 1.1,
 		images: [
 			{
-				name: "Drizzle ORM Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/drizzle-orm-logo.webp",
+				name: "Django Logo",
+				url: "/images/technos/django.webp",
 			},
 		],
 	},
@@ -20,8 +20,8 @@ const orbitingImagesData = [
 		startAt: 0.25,
 		images: [
 			{
-				name: "Deepseek Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/deepseek-logo.webp",
+				name: "Laravel Logo",
+				url: "/images/technos/laravel.webp",
 			},
 		],
 	},
@@ -32,8 +32,8 @@ const orbitingImagesData = [
 		startAt: 0.4375,
 		images: [
 			{
-				name: "Motion Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/motion-logo.webp",
+				name: "Shadcn UI Logo",
+				url: "/images/technos/shadcn-ui.webp",
 			},
 		],
 	},
@@ -45,22 +45,22 @@ const orbitingImagesData = [
 		images: [
 			{
 				name: "Tailwind Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/tailwindcss-logo.webp",
+				url: "/images/technos/tailwind-css.webp",
 			},
 		],
 	},
-	{
-		speed: 0,
-		radius: 136,
-		size: 40,
-		startAt: 0.65625,
-		images: [
-			{
-				name: "Edge Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/edge-logo.webp",
-			},
-		],
-	},
+	// {
+	// 	speed: 0,
+	// 	radius: 136,
+	// 	size: 40,
+	// 	startAt: 0.65625,
+	// 	images: [
+	// 		{
+	// 			name: "Next.js Logo",
+	// 			url: "/images/technos/next-js-removebg.webp",
+	// 		},
+	// 	],
+	// },
 	{
 		speed: 0,
 		radius: 130,
@@ -68,8 +68,8 @@ const orbitingImagesData = [
 		startAt: 0.78,
 		images: [
 			{
-				name: "Linear Logo",
-				url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/linear-logo.webp",
+				name: "Next.js Logo",
+				url: "/images/technos/next-js-removebg.webp",
 			},
 		],
 	},

@@ -46,6 +46,7 @@ export default function ThreeDMarquee({ images, className }: { images: WebsitesI
 											whileHover={{
 												y: -10,
 											}}
+											fetchPriority="low"
 											transition={{
 												duration: 0.3,
 												ease: "easeInOut",

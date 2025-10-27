@@ -1,23 +1,131 @@
 import { ChevronsDown } from "lucide-react";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Button } from "@/components/ui/button";
-import DotGrid from "./DotGrid";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { TypingText } from "@/components/ui/typing-text";
+import HeroImage from "./hero-image";
+import { ArrowRight, Star } from "lucide-react";
+import AvatarGroup from "./avatar-group";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export default function HeroSection() {
+	const transitionVariants = {
+		item: {
+			hidden: {
+				opacity: 0,
+				filter: "blur(12px)",
+				y: 12,
+			},
+			visible: {
+				opacity: 1,
+				filter: "blur(0px)",
+				y: 0,
+				transition: {
+					type: "spring",
+					bounce: 0.3,
+					duration: 1.5,
+				},
+			},
+		},
+	} satisfies { item: Variants };
+
 	return (
 		<section className="relative lg:h-dvh">
-			<DotGrid
-				className="-z-50"
-				dotSize={4}
-				gap={15}
-				baseColor="#232323"
-				activeColor="#ffffff"
-				proximity={120}
-				shockRadius={250}
-				shockStrength={5}
-				resistance={750}
-				returnDuration={1.5}
-			/>
+			<Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
+
+			<div className="pt-20 pb-60">
+				<div className="mx-auto grid max-w-6xl px-6 lg:grid-cols-7 gap-56 lg:gap-0 items-center">
+					<div className="text-center lg:col-span-5 lg:text-left w-full flex flex-col items-center lg:items-start">
+						<AnimatedGroup variants={transitionVariants}>
+							<Link
+								href="#contact"
+								className="hover:bg-background backdrop-blur-3xl dark:hover:border-t-border bg-white/10 group mx-auto flex w-fit items-center gap-4 rounded-full border p-0.5 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
+							>
+								<span className="text-foreground text-sm">A outstanding websites creator</span>
+								<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+
+								<div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
+									<div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+										<span className="flex size-6">
+											<ArrowRight className="m-auto size-3" />
+										</span>
+										<span className="flex size-6">
+											<ArrowRight className="m-auto size-3" />
+										</span>
+									</div>
+								</div>
+							</Link>
+						</AnimatedGroup>
+						<h1 className="mt-8 text-nowrap text-5xl font-bold md:text-6xl lg:mt-4 xl:text-7xl text-blue-700 z-10">
+							Hey there,
+							<br />
+							<TypingText
+								texts={["I'm Steve D!", "I'm a developer!", "nice to meet you!"]}
+								className="italic font-serif"
+								loop={true}
+								cursor="_"
+								cursorClassName="w-8 overflow-hidden hidden md:block"
+							/>
+						</h1>
+						<div className="mt-4 text-pretty max-w-2xl">
+							I increase web presence of my clients by creating{" "}
+							<PointerHighlight
+								containerClassName="inline-flex"
+								pointerClassName="text-blue-700"
+								rectangleClassName="border-blue-700 rounded-xs border-2"
+							>
+								<span className="text-nowrap py-1 px-2 italic font-serif text-2xl">
+									amazing websites
+								</span>
+							</PointerHighlight>{" "}
+							to convert more visitors.
+						</div>
+
+						<div className="flex gap-4 flex-col md:flex-row mt-8 md:mt-4 z-50">
+							<div>
+								<AvatarGroup />
+							</div>
+							<div className="flex flex-col items-center md:items-start justify-center gap-1">
+								<div className="flex items-center justify-center md:justify-start gap-0.5 w-full">
+									<Star className="fill-amber-300 text-amber-300 size-4" />
+									<Star className="fill-amber-300 text-amber-300 size-4" />
+									<Star className="fill-amber-300 text-amber-300 size-4" />
+									<Star className="fill-amber-300 text-amber-300 size-4" />
+									<Star className="fill-amber-300 text-amber-300 size-4" />
+								</div>
+								<p className="text-xs text-white/70">Trust by many people</p>
+							</div>
+						</div>
+
+						<div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+							<Button
+								asChild
+								size="lg"
+								className="px-0 text-base before:absolute before:top-0 before:left-0 before:w-full before:border-2 before:border-blue-700 before:h-full before:rounded-full before:-z-10 relative rounded-full hover:bg-transparent bg-transparent group"
+							>
+								<Link href="#">
+									<span className="px-5 rounded-full flex items-center text-nowrap text-white size-full transition duration-300 bg-blue-700 group-hover:-translate-y-2 group-active:-translate-y-1 font-serif text-lg italic">
+										Contact me
+									</span>
+								</Link>
+							</Button>
+							<Button key={2} asChild size="lg" variant="ghost" className="rounded-full">
+								<Link
+									href="#"
+									className="dark:hover:bg-transparent relative px-5 text-base hover:before:ring hover:before:ring-white/5 before:absolute before:bottom-0 before:w-[80%] before:h-0.5 before:transition-all before:duration-300 before:rounded-full before:bg-white/5 hover:before:size-full before:z-50 z-50"
+								>
+									<span className="text-nowrap">Request demos</span>
+								</Link>
+							</Button>
+						</div>
+					</div>
+					<div className="w-full">
+						<HeroImage className="scale-120 lg:scale-125" />
+					</div>
+				</div>
+			</div>
 
 			<div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
 				<svg

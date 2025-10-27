@@ -312,7 +312,7 @@ const DotGrid: React.FC<DotGridProps> = ({
 		<div className={cn("flex items-center justify-center size-full relative", className)} style={style}>
 			<div ref={wrapperRef} className="size-full relative">
 				<canvas ref={canvasRef} className="absolute inset-0 size-full pointer-events-none" />
-				<div className="pt-36 pb-60">
+				<div className="pt-28 pb-60">
 					<div className="mx-auto grid max-w-6xl px-6 lg:grid-cols-7 gap-56 lg:gap-0 items-center">
 						<div className="text-center lg:col-span-5 lg:text-left w-full flex flex-col items-center lg:items-start">
 							<AnimatedGroup variants={transitionVariants}>
