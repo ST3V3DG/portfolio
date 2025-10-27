@@ -1,14 +1,13 @@
-import { ChevronsDown } from "lucide-react";
 import type { Variants } from "framer-motion";
+import { ArrowRight, ChevronsDown, Star } from "lucide-react";
 import Link from "next/link";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Button } from "@/components/ui/button";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { TypingText } from "@/components/ui/typing-text";
-import HeroImage from "./hero-image";
-import { ArrowRight, Star } from "lucide-react";
-import AvatarGroup from "./avatar-group";
 import { Spotlight } from "@/components/ui/spotlight";
+import { TypingText } from "@/components/ui/typing-text";
+import AvatarGroup from "./avatar-group";
+import HeroImage from "./hero-image";
 
 export default function HeroSection() {
 	const transitionVariants = {

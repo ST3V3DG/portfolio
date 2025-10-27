@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, MotionProps, useInView, UseInViewOptions, Variants } from "motion/react";
-import { cn } from "@/lib/utils";
+import { MotionProps, motion, UseInViewOptions, useInView, Variants } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type AnimationVariant =
 	| "fadeIn"

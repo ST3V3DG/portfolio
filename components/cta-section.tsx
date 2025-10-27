@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 type CtaProps = {
 	title?: string;

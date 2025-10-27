@@ -1,11 +1,11 @@
 "use client";
-import Image from "next/image";
-import gsap from "gsap";
+
 import { useGSAP } from "@gsap/react";
-import { cn } from "@/lib/utils";
-// import { useRef } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
 // const defaultAchievements = [
 // 	{ label: "Companies Supported", value: "300+" },

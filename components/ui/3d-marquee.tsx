@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { WebsitesImages } from "../projects-section";
-import Link from "next/link";
 
 export default function ThreeDMarquee({ images, className }: { images: WebsitesImages[]; className?: string }) {
 	// Split the images array into 4 equal parts

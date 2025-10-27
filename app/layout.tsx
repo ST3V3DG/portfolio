@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
 	weight: "400",
@@ -22,6 +23,7 @@ export default function RootLayout({
 		<html lang="en" className="dark scroll-smooth">
 			<body className={`${poppins.className} antialiased`} suppressHydrationWarning>
 				{children}
+				<SpeedInsights />
 			</body>
 		</html>
 	);
