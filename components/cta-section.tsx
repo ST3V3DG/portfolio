@@ -41,7 +41,10 @@ export default function CtaSection({
 						<p className="text-muted-foreground text-normal">{description}</p>
 						<Button className="mt-6 rounded-full cursor-pointer p-0 group gap-0" asChild>
 							<Link href={buttonUrl} target="_blank" className="flex items-center pl-3 justify-center">
-								<span>{buttonText}</span> <span className="h-full aspect-square flex items-center justify-center rounded-full group-hover:translate-x-1 transition"><ArrowRight className="size-4" /></span>
+								<span>{buttonText}</span>{" "}
+								<span className="h-full aspect-square flex items-center justify-center rounded-full group-hover:translate-x-1 transition">
+									<ArrowRight className="size-4" />
+								</span>
 							</Link>
 						</Button>
 					</div>

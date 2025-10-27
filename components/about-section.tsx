@@ -45,46 +45,44 @@ export default function AboutSection() {
 	gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 	const fadeInElements = useRef<HTMLImageElement[]>([]);
-	
+
 	const pushRef = (element: HTMLImageElement) => {
-    if (element && !fadeInElements.current.includes(element)) {
-      fadeInElements.current.push(element);
-    }
-  };
+		if (element && !fadeInElements.current.includes(element)) {
+			fadeInElements.current.push(element);
+		}
+	};
 
-	useGSAP(
-		() => {
-			for (let i = 0; i <= 4; i++) {
-				gsap.from(fadeInElements.current[i], {
-					scrollTrigger: {
-						trigger: fadeInElements.current[i],
-						start: "top bottom",
-						end: "bottom 90%",
-						scrub: 2,
-						toggleActions: "play pause resume reset",
-					},
-					opacity: 0,
-					y: 50,
-					ease: "power3.inOut",
-				});
-			}
+	useGSAP(() => {
+		for (let i = 0; i <= 4; i++) {
+			gsap.from(fadeInElements.current[i], {
+				scrollTrigger: {
+					trigger: fadeInElements.current[i],
+					start: "top bottom",
+					end: "bottom 90%",
+					scrub: 2,
+					toggleActions: "play pause resume reset",
+				},
+				opacity: 0,
+				y: 50,
+				ease: "power3.inOut",
+			});
+		}
 
-			// gsap.from(".fade-in", {
-			//   scrollTrigger: {
-			//     trigger: ".fade-in",
-			//     start: "top bottom",
-			//     end: "bottom 50%",
-			//     markers: true,
-			//     scrub: 2,
-			//     toggleActions: "play pause resume reset",
-			//   },
-			//   opacity: 0,
-			//   y: 50,
-			//   ease: "power3.inOut",
-			//   stagger: 1,
-			// });
-		},
-	);
+		// gsap.from(".fade-in", {
+		//   scrollTrigger: {
+		//     trigger: ".fade-in",
+		//     start: "top bottom",
+		//     end: "bottom 50%",
+		//     markers: true,
+		//     scrub: 2,
+		//     toggleActions: "play pause resume reset",
+		//   },
+		//   opacity: 0,
+		//   y: 50,
+		//   ease: "power3.inOut",
+		//   stagger: 1,
+		// });
+	});
 
 	return (
 		<section id="about" className="pb-32 pt-16 lg:pb-20 lg:pt-24  relative bg-white">
@@ -103,7 +101,7 @@ export default function AboutSection() {
 								className="self-start -rotate-10 fade-in"
 							/>
 							<Image
-							  ref={pushRef}
+								ref={pushRef}
 								src={technologies[1].src}
 								alt={technologies[1].alt}
 								width={200}
@@ -145,7 +143,7 @@ export default function AboutSection() {
 						<h3 className="text-2xl lg:text-3xl md:text-center">My Skils</h3>
 						<div className="hidden md:flex md:flex-wrap lg:flex-nowrap gap-4 flex-1 pt-8">
 							<Image
-							  ref={pushRef}
+								ref={pushRef}
 								src={technologies[2].src}
 								alt={technologies[2].alt}
 								width={150}
@@ -153,7 +151,7 @@ export default function AboutSection() {
 								className="self-start -rotate-10 fade-in"
 							/>
 							<Image
-							  ref={pushRef}
+								ref={pushRef}
 								src={technologies[3].src}
 								alt={technologies[3].alt}
 								width={200}
@@ -161,7 +159,7 @@ export default function AboutSection() {
 								className="self-end rotate-10 fade-in"
 							/>
 							<Image
-							  ref={pushRef}
+								ref={pushRef}
 								src={technologies[4].src}
 								alt={technologies[4].alt}
 								width={200}

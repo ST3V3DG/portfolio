@@ -359,21 +359,21 @@ const DotGrid: React.FC<DotGridProps> = ({
 								</PointerHighlight>{" "}
 								to convert more visitors.
 							</div>
-							
+
 							<div className="flex gap-4 flex-col md:flex-row mt-4 z-50">
-							  <div>
+								<div>
 									<AvatarGroup />
-									</div>
-									<div className="flex flex-col items-center md:items-start justify-between">
+								</div>
+								<div className="flex flex-col items-center md:items-start justify-between">
 									<div className="flex items-center justify-between">
-									<Star className="fill-amber-300 text-amber-300 size-5" />
-									<Star className="fill-amber-300 text-amber-300 size-5" />
-									<Star className="fill-amber-300 text-amber-300 size-5" />
-									<Star className="fill-amber-300 text-amber-300 size-5" />
-									<Star className="fill-amber-300 text-amber-300 size-5" />
+										<Star className="fill-amber-300 text-amber-300 size-5" />
+										<Star className="fill-amber-300 text-amber-300 size-5" />
+										<Star className="fill-amber-300 text-amber-300 size-5" />
+										<Star className="fill-amber-300 text-amber-300 size-5" />
+										<Star className="fill-amber-300 text-amber-300 size-5" />
 									</div>
 									<p className="text-sm">Trust by many people</p>
-									</div>
+								</div>
 							</div>
 
 							<div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
