@@ -91,14 +91,14 @@ export default function AboutSection() {
 				<div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left text-black">
 					<div className="flex flex-col justify-between items-center">
 						<h3 className="text-2xl lg:text-3xl md:text-center">My Experience</h3>
-						<div className="hidden md:flex flex-wrap gap-4 flex-1 pt-8">
+						<div className="hidden md:flex md:flex-col gap-4 flex-1 pt-8 w-full">
 							<Image
 								ref={pushRef}
 								src={technologies[0].src}
 								alt={technologies[0].alt}
 								width={300}
 								height={300}
-								className="self-start -rotate-10 fade-in"
+								className="lg:self-start fade-in"
 							/>
 							<Image
 								ref={pushRef}
@@ -106,7 +106,7 @@ export default function AboutSection() {
 								alt={technologies[1].alt}
 								width={200}
 								height={200}
-								className="self-center rotate-10 ml-auto fade-in"
+								className="lg:self-end ml-auto lg:ml-0 fade-in"
 							/>
 						</div>
 					</div>
@@ -141,14 +141,14 @@ export default function AboutSection() {
 					</div>
 					<div className="flex flex-col justify-between items-center order-1 md:order-2">
 						<h3 className="text-2xl lg:text-3xl md:text-center">My Skils</h3>
-						<div className="hidden md:flex md:flex-wrap lg:flex-nowrap gap-4 flex-1 pt-8">
+						<div className="hidden md:flex md:flex-col flex-1 pt-8 w-full justify-between">
 							<Image
 								ref={pushRef}
 								src={technologies[2].src}
 								alt={technologies[2].alt}
 								width={150}
 								height={150}
-								className="self-start -rotate-10 fade-in"
+								className="lg:self-start fade-in"
 							/>
 							<Image
 								ref={pushRef}
@@ -156,7 +156,7 @@ export default function AboutSection() {
 								alt={technologies[3].alt}
 								width={200}
 								height={200}
-								className="self-end rotate-10 fade-in"
+								className="lg:self-center mx-auto lg:mx-0 fade-in"
 							/>
 							<Image
 								ref={pushRef}
@@ -164,7 +164,7 @@ export default function AboutSection() {
 								alt={technologies[4].alt}
 								width={200}
 								height={200}
-								className="self-center rotate-10 fade-in"
+								className="lg:self-end ml-auto lg:mx-0 fade-in"
 							/>
 						</div>
 					</div>
