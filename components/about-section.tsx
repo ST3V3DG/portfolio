@@ -21,21 +21,21 @@ const technologies = [
 		className: "h-20",
 	},
 	{
-		src: "/images/technos/next-js.webp",
+		src: "/images/technos/next-js-brand.webp",
 		alt: "Next.js logo",
 		className: "h-20",
 	},
 	{
-		src: "/images/technos/django.png",
+		src: "/images/technos/django-brand.png",
 		alt: "Django logo",
 		className: "h-12",
 	},
 	{
-		src: "/images/technos/shadcn-ui.png",
+		src: "/images/technos/shadcn-ui-brand.png",
 		alt: "Shadcn UI logo",
 	},
 	{
-		src: "/images/technos/tailwind-css.png",
+		src: "/images/technos/tailwind-css-brand.png",
 		alt: "Tailwind CSS logo",
 		className: "h-8",
 	},
