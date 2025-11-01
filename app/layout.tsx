@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-	title: "Steve .D |  Portfolio",
+	title: "Steve .D | Portfolio",
 	description:
 		"Amazing website creator using modern technologies for best perforfance, UI/UX, ranking and rate conversion.",
 };

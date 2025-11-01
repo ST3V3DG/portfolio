@@ -139,7 +139,7 @@
 		@apply bg-background text-foreground;
 	}
 	.bg-underline::before {
-		animation: expand-width 0.8s ease-out forwards;
+		animation: expand-width 1s ease-out 3s forwards;
 	}
 	@keyframes expand-width {
 		from {
@@ -151,7 +151,7 @@
 	}
 }
 
-/*@keyframes spotlight {
+@keyframes spotlight {
 	0% {
 		opacity: 0;
 		transform: translate(-72%, -62%) scale(0.5);
@@ -160,4 +160,4 @@
 		opacity: 1;
 		transform: translate(-50%, -40%) scale(1);
 	}
-}*/
+}
