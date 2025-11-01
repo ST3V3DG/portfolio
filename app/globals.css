@@ -138,13 +138,20 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	/*.fade-in {
-	    animation-timeline: view(auto 200px);
-		animation: 1.2s ease-in fade-in !important;
-	}*/
+	.bg-underline::before {
+		animation: expand-width 0.8s ease-out forwards;
+	}
+	@keyframes expand-width {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
 }
 
-@keyframes spotlight {
+/*@keyframes spotlight {
 	0% {
 		opacity: 0;
 		transform: translate(-72%, -62%) scale(0.5);
@@ -153,4 +160,4 @@
 		opacity: 1;
 		transform: translate(-50%, -40%) scale(1);
 	}
-}
+}*/

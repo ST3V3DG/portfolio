@@ -55,8 +55,8 @@ export function InfiniteSlider({
 		} else {
 			controls = animate(translation, [from, to], {
 				ease: "linear",
-				duration: duration,
-				repeat: Infinity,
+				duration,
+				repeat: Number.POSITIVE_INFINITY,
 				repeatType: "loop",
 				repeatDelay: 0,
 				onRepeat: () => {
@@ -85,12 +85,12 @@ export function InfiniteSlider({
 		<div className={cn("overflow-hidden", className)}>
 			<motion.div
 				className="flex w-max"
+				ref={ref}
 				style={{
 					...(direction === "horizontal" ? { x: translation } : { y: translation }),
 					gap: `${gap}px`,
 					flexDirection: direction === "horizontal" ? "row" : "column",
 				}}
-				ref={ref}
 				{...hoverProps}
 			>
 				{children}

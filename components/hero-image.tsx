@@ -90,25 +90,25 @@ const orbitingImagesData = [
 export default function HeroImage({ className }: { className?: string }) {
 	return (
 		<CloudOrbit
+			className={className}
 			duration={3}
-			size={160}
 			images={[
 				{
 					name: "Charlie Avatar",
 					url: "https://cdn.badtz-ui.com/images/components/cloud-orbit/avatar-1.webp",
 				},
 			]}
-			className={className}
+			size={160}
 		>
 			{orbitingImagesData.map((orbit, index) => (
 				<OrbitingImage
+					duration={3}
+					images={orbit.images}
 					key={`orbit-${index}`}
-					speed={orbit.speed}
 					radius={orbit.radius}
 					size={orbit.size}
+					speed={orbit.speed}
 					startAt={orbit.startAt}
-					images={orbit.images}
-					duration={3}
 				/>
 			))}
 		</CloudOrbit>

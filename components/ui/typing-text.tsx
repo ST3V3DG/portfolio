@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionProps, motion, UseInViewOptions, useInView, Variants } from "motion/react";
+import { type MotionProps, motion, type UseInViewOptions, useInView, type Variants } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +54,7 @@ const cursorVariants: Variants = {
 		opacity: [0, 0, 1, 1],
 		transition: {
 			duration: 1,
-			repeat: Infinity,
+			repeat: Number.POSITIVE_INFINITY,
 			repeatDelay: 0,
 			ease: "linear",
 			times: [0, 0.5, 0.5, 1],
@@ -88,13 +88,15 @@ export function TypingText({
 	const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
 	// Determine if we should start animation
-	const shouldStart = !startOnView || (isInView && (!once || !hasAnimated));
+	const shouldStart = !startOnView || (isInView && !(once && hasAnimated));
 
 	const textArray = texts && texts.length > 0 ? texts : [text];
 	const currentText = textArray[currentTextIndex] ?? "";
 
 	useEffect(() => {
-		if (!shouldStart) return;
+		if (!shouldStart) {
+			return;
+		}
 		const timeout = setTimeout(() => {
 			setIsTyping(true);
 			setHasAnimated(true);
@@ -104,7 +106,9 @@ export function TypingText({
 	}, [delay, shouldStart]);
 
 	useEffect(() => {
-		if (!isTyping) return;
+		if (!isTyping) {
+			return;
+		}
 
 		if (currentIndex < currentText.length) {
 			const timeout = setTimeout(() => {
@@ -113,19 +117,18 @@ export function TypingText({
 			}, speed);
 
 			return () => clearTimeout(timeout);
-		} else {
-			// Typing complete
-			onComplete?.();
+		}
+		// Typing complete
+		onComplete?.();
 
-			if (loop && texts && texts.length > 1) {
-				const timeout = setTimeout(() => {
-					setDisplayText("");
-					setCurrentIndex(0);
-					setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-				}, pauseDuration);
+		if (loop && texts && texts.length > 1) {
+			const timeout = setTimeout(() => {
+				setDisplayText("");
+				setCurrentIndex(0);
+				setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+			}, pauseDuration);
 
-				return () => clearTimeout(timeout);
-			}
+			return () => clearTimeout(timeout);
 		}
 	}, [currentIndex, currentText, isTyping, speed, loop, texts, pauseDuration, onComplete]);
 
@@ -141,26 +144,26 @@ export function TypingText({
 
 	return (
 		<MotionComponent
+			animate={startOnView ? undefined : "show"}
+			className={cn("whitespace-pre-wrap", className)}
+			exit="exit"
+			initial="hidden"
 			ref={ref}
 			variants={finalVariants.container as Variants}
-			initial="hidden"
-			whileInView={startOnView ? "show" : undefined}
-			animate={startOnView ? undefined : "show"}
-			exit="exit"
-			className={cn("whitespace-pre-wrap", className)}
 			viewport={{ once }}
+			whileInView={startOnView ? "show" : undefined}
 			{...props}
 		>
 			<span style={{ display: "inline-flex", alignItems: "center" }}>
 				{displayText}
 				{showCursor && (
 					<motion.span
-						variants={cursorVariants}
 						animate="blinking"
 						className={cn(
-							"inline-block ms-1 font-normal text-foreground select-none w-px",
-							cursorClassName,
+							"ms-1 inline-block w-px select-none font-normal text-foreground",
+							cursorClassName
 						)}
+						variants={cursorVariants}
 					>
 						{cursor}
 					</motion.span>

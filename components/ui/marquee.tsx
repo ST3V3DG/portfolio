@@ -17,23 +17,21 @@ export function Marquee({
 	return (
 		<div
 			{...props}
-			className={cn("group flex [gap:var(--gap)] overflow-hidden [--gap:1rem]", className)}
+			className={cn("group flex overflow-hidden [--gap:1rem] [gap:var(--gap)]", className)}
 			style={{ "--duration": `${duration}s` } as React.CSSProperties}
 		>
-			{Array(repeat)
-				.fill(0)
-				.map((_, i) => (
-					<div
-						key={i}
-						className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-							"animate-marquee-left": direction === "left",
-							"animate-marquee-right": direction === "right",
-							"group-hover:[animation-play-state:paused]": true,
-						})}
-					>
-						{children}
-					</div>
-				))}
+			{new Array(repeat).fill(0).map((_, i) => (
+				<div
+					className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+						"animate-marquee-left": direction === "left",
+						"animate-marquee-right": direction === "right",
+						"group-hover:[animation-play-state:paused]": true,
+					})}
+					key={i}
+				>
+					{children}
+				</div>
+			))}
 		</div>
 	);
 }

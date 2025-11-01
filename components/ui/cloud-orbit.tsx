@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import * as React from "react";
+import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type ImageType = {
@@ -12,18 +12,18 @@ type ImageType = {
 
 type CloudOrbitProps = {
 	duration?: number;
-	children?: React.ReactNode;
+	children?: ReactNode;
 	size?: number;
 	className?: string;
 	images?: ImageType[];
-	[key: string]: string | number | boolean | React.ReactNode | ImageType[] | undefined;
+	[key: string]: string | number | boolean | ReactNode | ImageType[] | undefined;
 };
 
 export function CloudOrbit({ duration = 2, children, size = 200, className, images = [], ...props }: CloudOrbitProps) {
-	const [currentIndex, setCurrentIndex] = React.useState(0);
-	const lastTimestamp = React.useRef(0);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const lastTimestamp = useRef(0);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let animationFrameId: number;
 
 		const updateFrame = (timestamp: number) => {
@@ -48,12 +48,12 @@ export function CloudOrbit({ duration = 2, children, size = 200, className, imag
 
 	return (
 		<div
+			className={cn("relative flex size-full select-none items-center justify-center rounded-full", className)}
 			style={
 				{
 					"--size": `${size}px`,
-				} as React.CSSProperties
+				} as CSSProperties
 			}
-			className={cn("relative flex size-full items-center justify-center rounded-full select-none", className)}
 			{...props}
 		>
 			<AnimatePresence>
@@ -62,24 +62,26 @@ export function CloudOrbit({ duration = 2, children, size = 200, className, imag
 						(image, index) =>
 							index === currentIndex && (
 								<motion.img
+									alt={image.name}
+									animate={{ opacity: 1, scale: [0.8, 1] }}
+									className={cn(
+										"absolute z-10 rounded-[inherit] border border-gray-100 bg-white/5 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
+										className
+									)}
+									exit={{ opacity: 0, scale: [1, 0.8] }}
+									height={size}
+									initial={{ opacity: 0, scale: 0.8 }}
 									key={image.url}
 									src={image.url}
-									alt={image.name}
-									initial={{ opacity: 0, scale: 0.8 }}
-									animate={{ opacity: 1, scale: [0.8, 1] }}
-									exit={{ opacity: 0, scale: [1, 0.8] }}
 									transition={{
 										type: "spring",
 										stiffness: 100,
 										damping: 7,
 									}}
-									className={cn(
-										"absolute z-10 rounded-[inherit] border border-gray-100 bg-white/5 dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
-										className,
-									)}
-									style={{ width: size, height: size }}
+									width={size}
+									// style={{ width: size, height: size }}
 								/>
-							),
+							)
 					)}
 			</AnimatePresence>
 			{children}
@@ -95,7 +97,7 @@ type OrbitingImageProps = {
 	className?: string;
 	images?: ImageType[];
 	duration?: number;
-	[key: string]: string | number | boolean | React.ReactNode | ImageType[] | undefined;
+	[key: string]: string | number | boolean | ReactNode | ImageType[] | undefined;
 };
 
 export function OrbitingImage({
@@ -108,10 +110,10 @@ export function OrbitingImage({
 	duration = 2,
 	...props
 }: OrbitingImageProps) {
-	const [currentIndex, setCurrentIndex] = React.useState(0);
-	const lastTimestamp = React.useRef(0);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const lastTimestamp = useRef(0);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let animationFrameId: number;
 
 		const updateFrame = (timestamp: number) => {
@@ -136,15 +138,6 @@ export function OrbitingImage({
 
 	return (
 		<motion.div
-			style={{
-				width: size,
-				height: size,
-				position: "absolute",
-				left: "50%",
-				top: "50%",
-				marginLeft: -size / 2,
-				marginTop: -size / 2,
-			}}
 			animate={{
 				transform: [
 					`rotate(${startAt * 360}deg) translateY(-${radius}px) rotate(-${startAt * 360}deg)`,
@@ -154,15 +147,24 @@ export function OrbitingImage({
 					`rotate(${startAt * 360 + 360}deg) translateY(-${radius}px) rotate(-${startAt * 360 + 360}deg)`,
 				],
 			}}
-			transition={{
-				duration: speed,
-				repeat: Infinity,
-				ease: "linear",
-			}}
 			className={cn(
 				"absolute z-[5] flex transform-gpu items-center justify-center rounded-full p-[5%]",
-				className,
+				className
 			)}
+			style={{
+				width: size,
+				height: size,
+				position: "absolute",
+				left: "50%",
+				top: "50%",
+				marginLeft: -size / 2,
+				marginTop: -size / 2,
+			}}
+			transition={{
+				duration: speed,
+				repeat: Number.POSITIVE_INFINITY,
+				ease: "linear",
+			}}
 			{...props}
 		>
 			<AnimatePresence>
@@ -171,34 +173,34 @@ export function OrbitingImage({
 						(image, index) =>
 							index === currentIndex && (
 								<motion.div
+									animate={{ opacity: 1, scale: [0.8, 1] }}
+									className={cn(
+										"rounded-full border border-gray-100 bg-white/5 p-[10%] dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
+										className
+									)}
+									exit={{ opacity: 0, scale: [1, 0.8] }}
+									initial={{ opacity: 0, scale: 0.8 }}
 									key={image.url}
 									style={{
 										width: `${size}px`,
 										height: `${size}px`,
 										position: "absolute",
 									}}
-									initial={{ opacity: 0, scale: 0.8 }}
-									animate={{ opacity: 1, scale: [0.8, 1] }}
-									exit={{ opacity: 0, scale: [1, 0.8] }}
 									transition={{
 										type: "spring",
 										stiffness: 100,
 										damping: 7,
 									}}
-									className={cn(
-										"rounded-full border border-gray-100 bg-white/5 p-[10%] dark:border-zinc-900 dark:from-zinc-900 dark:to-zinc-800",
-										className,
-									)}
 								>
 									<Image
-										src={image.url}
 										alt={image.name}
 										className="flex size-full items-center justify-center object-contain"
-										width={500}
 										height={500}
+										src={image.url}
+										width={500}
 									/>
 								</motion.div>
-							),
+							)
 					)}
 			</AnimatePresence>
 		</motion.div>

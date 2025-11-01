@@ -23,10 +23,11 @@ export const DirectionAwareHover = ({
 	const [direction, setDirection] = useState<"top" | "bottom" | "left" | "right" | string>("left");
 
 	const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-		if (!ref.current) return;
+		if (!ref.current) {
+			return;
+		}
 
 		const direction = getDirection(event, ref.current);
-		console.log("direction", direction);
 		switch (direction) {
 			case 0:
 				setDirection("top");
@@ -50,45 +51,45 @@ export const DirectionAwareHover = ({
 		const { width: w, height: h, left, top } = obj.getBoundingClientRect();
 		const x = ev.clientX - left - (w / 2) * (w > h ? h / w : 1);
 		const y = ev.clientY - top - (h / 2) * (h > w ? w / h : 1);
-		const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+		const d = Math.round(Math.atan2(y, x) / 1.570_796_33 + 5) % 4;
 		return d;
 	};
 
 	return (
 		<motion.div
+			className={cn(
+				"group/card relative h-60 w-60 overflow-hidden rounded-lg bg-transparent md:h-96 md:w-96",
+				className
+			)}
 			onMouseEnter={handleMouseEnter}
 			ref={ref}
-			className={cn(
-				"md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative",
-				className,
-			)}
 		>
 			<AnimatePresence mode="wait">
-				<motion.div className="relative h-full w-full" initial="initial" whileHover={direction} exit="exit">
-					<motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
+				<motion.div className="relative size-full" exit="exit" initial="initial" whileHover={direction}>
+					<motion.div className="absolute inset-0 z-10 hidden size-full bg-black/40 transition duration-500 group-hover/card:block" />
 					<motion.div
-						variants={variants}
-						className="h-full w-full relative bg-gray-50 dark:bg-black"
+						className="relative size-full bg-gray-50 dark:bg-black"
 						transition={{
 							duration: 0.2,
 							ease: "easeOut",
 						}}
+						variants={variants}
 					>
 						<Image
 							alt="image"
-							className={cn("h-full w-full object-cover scale-[1.15]", imageClassName)}
-							width="1000"
+							className={cn("size-full scale-[1.15] object-cover", imageClassName)}
 							height="1000"
 							src={imageUrl}
+							width="1000"
 						/>
 					</motion.div>
 					<motion.div
-						variants={textVariants}
+						className={cn("absolute bottom-4 left-4 z-40 text-white", childrenClassName)}
 						transition={{
 							duration: 0.5,
 							ease: "easeOut",
 						}}
-						className={cn("text-white absolute bottom-4 left-4 z-40", childrenClassName)}
+						variants={textVariants}
 					>
 						{children}
 					</motion.div>

@@ -36,13 +36,13 @@ export function Header() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="fixed w-full z-50">
+		<header className="fixed z-50 w-full">
 			<Navbar>
 				{/* Desktop Navigation */}
 				<NavBody>
 					<NavbarLogo />
 					<NavItems items={navItems} />
-					<NavbarButton href="#contact" className="rounded-full">
+					<NavbarButton className="rounded-full" href="#contact">
 						Contact
 					</NavbarButton>
 				</NavBody>
@@ -60,10 +60,10 @@ export function Header() {
 					<MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
 						{navItems.map((item, index) => (
 							<Link
-								key={`mobile-link-${index}`}
-								href={item.link}
-								onClick={() => setIsMobileMenuOpen(false)}
 								className="relative text-neutral-600 dark:text-neutral-300"
+								href={item.link}
+								key={`mobile-link-${index}`}
+								onClick={() => setIsMobileMenuOpen(false)}
 							>
 								<span className="block">{item.name}</span>
 							</Link>

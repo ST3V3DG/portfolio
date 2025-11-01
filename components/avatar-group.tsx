@@ -13,10 +13,10 @@ export default function AvatarGroup() {
 	];
 
 	return (
-		<div className="flex items-center -space-x-2 *:ring-3 *:ring-background">
+		<div className="-space-x-2 flex items-center *:ring-3 *:ring-background">
 			{users.slice(0, 4).map((user, index) => (
-				<Avatar key={index} className="size-10">
-					<AvatarImage src={user.image} alt={user.name} />
+				<Avatar className="size-10" key={index}>
+					<AvatarImage alt={user.name} src={user.image} />
 					<AvatarFallback>
 						{user.name
 							.split(" ")
@@ -26,7 +26,7 @@ export default function AvatarGroup() {
 				</Avatar>
 			))}
 			{users.length > 4 && (
-				<Avatar className="z-10 text-sm font-medium text-muted-foreground size-10">
+				<Avatar className="z-10 size-10 font-medium text-muted-foreground text-sm">
 					<AvatarFallback>+{users.slice(4).reduce((acc, user) => acc + (user.count || 1), 0)}</AvatarFallback>
 				</Avatar>
 			)}

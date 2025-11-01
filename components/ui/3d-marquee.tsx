@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { WebsitesImages } from "../projects-section";
+import type { WebsitesImages } from "../projects-section";
 
 export default function ThreeDMarquee({ images, className }: { images: WebsitesImages[]; className?: string }) {
 	// Split the images array into 4 equal parts
@@ -17,46 +17,46 @@ export default function ThreeDMarquee({ images, className }: { images: WebsitesI
 			<div className="flex size-full items-center justify-center">
 				<div className="size-[1720px] shrink-0 scale-50">
 					<div
+						className="transform-3d relative top-96 right-1/2 grid size-full origin-top-left grid-cols-2 gap-8 sm:translate-x-1/6"
 						style={{
 							transform: "rotateX(55deg) rotateY(0deg) rotateZ(-45deg)",
 						}}
-						className="relative top-96 right-1/2 grid size-full origin-top-left grid-cols-2 gap-8 transform-3d sm:translate-x-1/6"
 					>
 						{chunks.map((subarray, colIndex) => (
 							<motion.div
 								animate={{ y: colIndex % 2 === 0 ? 150 : -150 }}
+								className="flex flex-col items-start gap-8"
+								key={`${colIndex}marquee`}
 								transition={{
 									duration: colIndex % 2 === 0 ? 10 : 15,
-									repeat: Infinity,
+									repeat: Number.POSITIVE_INFINITY,
 									repeatType: "reverse",
 								}}
-								key={`${colIndex}marquee`}
-								className="flex flex-col items-start gap-8"
 							>
 								<GridLineVertical className="-left-4" offset="0" />
 								{subarray.map((image, imageIndex) => (
 									<Link
-										href={image.href ?? ""}
-										target="_blank"
 										className="relative"
+										href={image.href ?? ""}
 										key={imageIndex + String(image.src)}
+										target="_blank"
 									>
 										<GridLineHorizontal className="-top-4" offset="0" />
 										<motion.img
-											whileHover={{
-												y: -10,
-											}}
+											alt={`${imageIndex + 1}`}
+											className="aspect-[9/16] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
 											fetchPriority="low"
+											height={700}
+											key={imageIndex + String(image.src)}
+											src={String(image.src)}
 											transition={{
 												duration: 0.3,
 												ease: "easeInOut",
 											}}
-											key={imageIndex + String(image.src)}
-											src={String(image.src)}
-											alt={`${imageIndex + 1}`}
-											className="aspect-[9/16] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
+											whileHover={{
+												y: -10,
+											}}
 											width={970}
-											height={700}
 										/>
 									</Link>
 								))}
@@ -72,6 +72,16 @@ export default function ThreeDMarquee({ images, className }: { images: WebsitesI
 const GridLineHorizontal = ({ className, offset }: { className?: string; offset?: string }) => {
 	return (
 		<div
+			className={cn(
+				"absolute left-[calc(var(--offset)/2*-1)] h-[var(--height)] w-[calc(100%+var(--offset))]",
+				"bg-[linear-gradient(to_right,var(--color),var(--color)_50%,transparent_0,transparent)]",
+				"[background-size:var(--width)_var(--height)]",
+				"[mask:linear-gradient(to_left,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_right,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
+				"[mask-composite:exclude]",
+				"z-30",
+				"dark:bg-[linear-gradient(to_right,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
+				className
+			)}
 			style={
 				{
 					"--background": "#ffffff",
@@ -84,23 +94,23 @@ const GridLineHorizontal = ({ className, offset }: { className?: string; offset?
 					maskComposite: "exclude",
 				} as React.CSSProperties
 			}
-			className={cn(
-				"absolute left-[calc(var(--offset)/2*-1)] h-[var(--height)] w-[calc(100%+var(--offset))]",
-				"bg-[linear-gradient(to_right,var(--color),var(--color)_50%,transparent_0,transparent)]",
-				"[background-size:var(--width)_var(--height)]",
-				"[mask:linear-gradient(to_left,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_right,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
-				"[mask-composite:exclude]",
-				"z-30",
-				"dark:bg-[linear-gradient(to_right,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-				className,
-			)}
-		></div>
+		/>
 	);
 };
 
 const GridLineVertical = ({ className, offset }: { className?: string; offset?: string }) => {
 	return (
 		<div
+			className={cn(
+				"absolute top-[calc(var(--offset)/2*-1)] h-[calc(100%+var(--offset))] w-[var(--width)]",
+				"bg-[linear-gradient(to_bottom,var(--color),var(--color)_50%,transparent_0,transparent)]",
+				"[background-size:var(--width)_var(--height)]",
+				"[mask:linear-gradient(to_top,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_bottom,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
+				"[mask-composite:exclude]",
+				"z-30",
+				"dark:bg-[linear-gradient(to_bottom,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
+				className
+			)}
 			style={
 				{
 					"--background": "#ffffff",
@@ -113,16 +123,6 @@ const GridLineVertical = ({ className, offset }: { className?: string; offset?: 
 					maskComposite: "exclude",
 				} as React.CSSProperties
 			}
-			className={cn(
-				"absolute top-[calc(var(--offset)/2*-1)] h-[calc(100%+var(--offset))] w-[var(--width)]",
-				"bg-[linear-gradient(to_bottom,var(--color),var(--color)_50%,transparent_0,transparent)]",
-				"[background-size:var(--width)_var(--height)]",
-				"[mask:linear-gradient(to_top,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_bottom,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
-				"[mask-composite:exclude]",
-				"z-30",
-				"dark:bg-[linear-gradient(to_bottom,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-				className,
-			)}
-		></div>
+		/>
 	);
 };

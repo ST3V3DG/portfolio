@@ -105,34 +105,32 @@ const staggercontainer: Variants = {
 	},
 };
 
-const Requirements = ({ items }: { items: string[] }) => {
-	return (
-		<ul className="mt-2 space-y-1.5">
-			{items.map((item, index) => (
-				<motion.li
-					key={`requirements-${item.toLowerCase().replace(/\s+/g, "-")}`}
-					initial={{ opacity: 0, x: -10 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ delay: 0.1 * index }}
-					className="flex items-center gap-2"
-				>
-					<CheckCircle className="size-4 text-emerald-500 dark:text-emerald-400 flex-shrink-0" />
-					<span className="text-sm text-neutral-700 dark:text-neutral-300">{item}</span>
-				</motion.li>
-			))}
-		</ul>
-	);
-};
+const Requirements = ({ items }: { items: string[] }) => (
+	<ul className="mt-2 space-y-1.5">
+		{items.map((item, index) => (
+			<motion.li
+				animate={{ opacity: 1, x: 0 }}
+				className="flex items-center gap-2"
+				initial={{ opacity: 0, x: -10 }}
+				key={`requirements-${item.toLowerCase().replace(/\s+/g, "-")}`}
+				transition={{ delay: 0.1 * index }}
+			>
+				<CheckCircle className="size-4 flex-shrink-0 text-emerald-500 dark:text-emerald-400" />
+				<span className="text-neutral-700 text-sm dark:text-neutral-300">{item}</span>
+			</motion.li>
+		))}
+	</ul>
+);
 
 function LandingPage({ image, href }: { image: string | undefined; href: string | undefined }) {
 	return (
-		<Link href={href ?? "#"} target="_blank" className="mt-4 rounded-lg size-full overflow-hidden">
+		<Link className="mt-4 size-full overflow-hidden rounded-lg" href={href ?? "#"} target="_blank">
 			<Image
-				src={image || "/images/optiride/optiride.webp"}
 				alt="Optiride landing page"
-				width={500}
+				className="hover:-translate-y-[142rem] w-full rounded-lg transition duration-[20s] ease-linear"
 				height={500}
-				className="w-full rounded-lg hover:-translate-y-[142rem] transition duration-[20s] ease-linear"
+				src={image || "/images/optiride/optiride.webp"}
+				width={500}
 			/>
 		</Link>
 	);
@@ -158,7 +156,7 @@ function Website({ images }: { images: WebsitesImages[] | undefined }) {
 		},
 	];
 	return (
-		<div className="mx-auto mt-10 size-full rounded-lg bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800 overflow-hidden">
+		<div className="mx-auto mt-10 size-full overflow-hidden rounded-lg bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
 			<ThreeDMarquee images={images} />
 		</div>
 	);
@@ -184,10 +182,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 	return (
 		<motion.div
-			variants={fadeInUp}
-			whileHover={{ y: -5 }}
-			transition={{ type: "spring", stiffness: 300, damping: 20 }}
-			className="size-full  "
+			className="size-full"
 			onMouseMove={handleMouseMove}
 			style={{
 				rotateX,
@@ -195,16 +190,19 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 				transformStyle: "preserve-3d",
 				minHeight: "24rem",
 			}}
+			transition={{ type: "spring", stiffness: 300, damping: 20 }}
+			variants={fadeInUp}
+			whileHover={{ y: -5 }}
 		>
 			<div
-				className={`group relative flex flex-col gap-4 h-full rounded-xl p-5 bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30 border border-neutral-200/60 dark:border-neutral-800/60 before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent before:opacity-100 before:transition-opacity before:duration-500 after:absolute after:inset-0 after:rounded-xl after:bg-neutral-50/70 dark:after:bg-neutral-900/70 after:z-[-1] backdrop-blur-[4px] shadow-[0_4px_20px_rgb(0,0,0,0.04)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] hover:border-neutral-300/50 dark:hover:border-neutral-700/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:backdrop-blur-[6px] hover:bg-gradient-to-b hover:from-neutral-50/60 hover:via-neutral-50/30 hover:to-neutral-50/20 dark:hover:from-neutral-800/60 dark:hover:via-neutral-800/30 dark:hover:to-neutral-800/20 transition-all duration-500 ease-out ${item.className}`}
+				className={`group relative flex h-full flex-col gap-4 rounded-xl border border-neutral-200/60 bg-gradient-to-b from-neutral-50/60 via-neutral-50/40 to-neutral-50/30 p-5 shadow-[0_4px_20px_rgb(0,0,0,0.04)] backdrop-blur-[4px] transition-all duration-500 ease-out before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-b before:from-white/10 before:via-white/20 before:to-transparent before:opacity-100 before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-[-1] after:rounded-xl after:bg-neutral-50/70 hover:border-neutral-300/50 hover:bg-gradient-to-b hover:from-neutral-50/60 hover:via-neutral-50/30 hover:to-neutral-50/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:backdrop-blur-[6px] dark:border-neutral-800/60 dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-900/30 dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] dark:hover:border-neutral-700/50 dark:hover:from-neutral-800/60 dark:hover:via-neutral-800/30 dark:hover:to-neutral-800/20 dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] dark:after:bg-neutral-900/70 dark:before:from-black/10 dark:before:via-black/20 dark:before:to-transparent ${item.className}`}
 				// tabIndex={0}
 				// aria-label={`${item.title} - ${item.description}`}
 			>
-				<div className="relative flex flex-col gap-3 h-full translate-z-5">
-					<div className="space-y-2 flex-1 flex flex-col overflow-hidden">
+				<div className="translate-z-5 relative flex h-full flex-col gap-3">
+					<div className="flex flex-1 flex-col space-y-2 overflow-hidden">
 						<div className="flex items-center justify-between">
-							<h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
+							<h3 className="font-semibold text-neutral-900 text-xl tracking-tight transition-colors duration-300 group-hover:text-neutral-700 dark:text-neutral-100 dark:group-hover:text-neutral-300">
 								{item.title}
 							</h3>
 							{/*<div className="text-neutral-400 dark:text-neutral-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -212,7 +210,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							</div>*/}
 						</div>
 
-						<p className="text-sm text-neutral-600 dark:text-neutral-400 tracking-tight">
+						<p className="text-neutral-600 text-sm tracking-tight dark:text-neutral-400">
 							{item.description}
 						</p>
 
@@ -221,7 +219,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 							<Requirements items={item.requirementsItems} />
 						)}
 
-						{item.feature === "landing-page" && <LandingPage image={item.image} href={item.href} />}
+						{item.feature === "landing-page" && <LandingPage href={item.href} image={item.image} />}
 
 						{item.feature === "website" && <Website images={item.images} />}
 					</div>
@@ -233,23 +231,23 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function ProjectsSection() {
 	return (
-		<section id="projects" className="relative py-24 bg-white dark:bg-black">
-			<div className="max-w-6xl px-6 mx-auto">
-				<h2 className="text-3xl lg:text-5xl text-center font-bold mb-8">Projects</h2>
-				<p className="text-lg opacity-80 font-medium mb-16 text-center">What I've done for other people</p>
+		<section className="relative bg-white py-24 dark:bg-black" id="projects">
+			<div className="mx-auto max-w-6xl px-6">
+				<h2 className="mb-8 text-center font-bold text-3xl lg:text-5xl">Projects</h2>
+				<p className="mb-16 text-center font-medium text-lg opacity-80">What I've done for other people</p>
 				{/* Bento Grid */}
 				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
-					variants={staggercontainer}
 					className="grid gap-6"
+					initial="hidden"
+					variants={staggercontainer}
+					viewport={{ once: true }}
+					whileInView="visible"
 				>
-					<div className="grid md:grid-cols-3 gap-6 *:max-h-[400px]">
-						<motion.div variants={fadeInUp} className="md:col-span-1">
+					<div className="grid gap-6 *:max-h-[400px] md:grid-cols-3">
+						<motion.div className="md:col-span-1" variants={fadeInUp}>
 							<BentoCard item={bentoItems[0]} />
 						</motion.div>
-						<motion.div variants={fadeInUp} className="md:col-span-2">
+						<motion.div className="md:col-span-2" variants={fadeInUp}>
 							<BentoCard item={bentoItems[1]} />
 						</motion.div>
 					</div>

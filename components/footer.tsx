@@ -21,12 +21,12 @@ const links = [
 
 export default function Footer() {
 	return (
-		<footer className="py-12 bg-black border-t border-muted">
+		<footer className="overflow-y-hidden border-muted border-t bg-black py-12 md:pb-0">
 			<div className="mx-auto max-w-5xl px-6">
 				<Link
-					href="/"
 					aria-label="go home"
-					className="flex items-center justify-center mx-auto font-extrabold italic rounded-full bg-white p-2 text-black size-10 text-center"
+					className="mx-auto flex size-10 items-center justify-center rounded-full bg-white p-2 text-center font-extrabold text-black italic"
+					href="/"
 				>
 					SD
 				</Link>
@@ -34,9 +34,9 @@ export default function Footer() {
 				<div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
 					{links.map((link, index) => (
 						<Link
-							key={index}
+							className="block text-muted-foreground duration-150 hover:text-primary"
 							href={link.href}
-							className="text-muted-foreground hover:text-primary block duration-150"
+							key={index}
 						>
 							<span>{link.title}</span>
 						</Link>
@@ -169,11 +169,14 @@ export default function Footer() {
 						</svg>
 					</Link>
 				</div>*/}
-				<span className="text-muted-foreground block text-center text-sm">
+				<span className="block text-center text-muted-foreground text-sm">
 					{" "}
 					© {new Date().getFullYear()} STEVE D, All rights reserved
 				</span>
 			</div>
+			<p className="hidden overflow-hidden pt-12 text-center font-black text-[15rem] text-white/5 italic leading-48 md:block xl:tracking-[2.15rem]">
+				STEVE<span className="hidden lg:inline-block">.D</span>
+			</p>
 		</footer>
 	);
 }

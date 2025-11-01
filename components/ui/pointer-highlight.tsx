@@ -46,6 +46,7 @@ export function PointerHighlight({
 			{children}
 			{dimensions.width > 0 && dimensions.height > 0 && (
 				<motion.div
+					animate={{ opacity: 1, scale: 1 }}
 					className="pointer-events-none absolute inset-0 z-0"
 					initial={{
 						opacity: 0,
@@ -53,35 +54,29 @@ export function PointerHighlight({
 						originX: 0,
 						originY: 0,
 					}}
-					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
 					<motion.div
 						className={cn(
 							"absolute inset-0 border border-neutral-800 dark:border-neutral-200",
-							rectangleClassName,
+							rectangleClassName
 						)}
 						initial={{
 							width: 0,
 							height: 0,
 						}}
-						whileInView={{
-							width: dimensions.width,
-							height: dimensions.height,
-						}}
 						transition={{
 							duration: 1,
 							ease: "easeInOut",
+						}}
+						whileInView={{
+							width: dimensions.width,
+							height: dimensions.height,
 						}}
 					/>
 					<motion.div
 						className="pointer-events-none absolute"
 						initial={{ opacity: 0 }}
-						whileInView={{
-							opacity: 1,
-							x: dimensions.width + 4,
-							y: dimensions.height + 4,
-						}}
 						style={{
 							rotate: -90,
 						}}
@@ -89,6 +84,11 @@ export function PointerHighlight({
 							opacity: { duration: 0.1, ease: "easeInOut" },
 							duration: 1,
 							ease: "easeInOut",
+						}}
+						whileInView={{
+							opacity: 1,
+							x: dimensions.width + 4,
+							y: dimensions.height + 4,
 						}}
 					>
 						<Pointer className={cn("h-5 w-5 text-blue-500", pointerClassName)} />
@@ -99,21 +99,19 @@ export function PointerHighlight({
 	);
 }
 
-const Pointer = ({ ...props }: React.SVGProps<SVGSVGElement>) => {
-	return (
-		<svg
-			stroke="currentColor"
-			fill="currentColor"
-			strokeWidth="1"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			viewBox="0 0 16 16"
-			height="1em"
-			width="1em"
-			xmlns="http://www.w3.org/2000/svg"
-			{...props}
-		>
-			<path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
-		</svg>
-	);
-};
+const Pointer = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
+	<svg
+		fill="currentColor"
+		height="1em"
+		stroke="currentColor"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		strokeWidth="1"
+		viewBox="0 0 16 16"
+		width="1em"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	>
+		<path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+	</svg>
+);
