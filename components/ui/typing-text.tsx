@@ -2,6 +2,7 @@
 
 import { type MotionProps, motion, type UseInViewOptions, useInView, type Variants } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { cn } from "@/lib/utils";
 
 type AnimationVariant =
@@ -86,6 +87,10 @@ export function TypingText({
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isTyping, setIsTyping] = useState(false);
 	const [currentTextIndex, setCurrentTextIndex] = useState(0);
+	const isMobile = useIsMobile();
+
+	texts = texts ?? isMobile ? ["I'm Steve D!"] : ["I'm Steve D!", "I'm a developer!", "nice to meet you!"];
+	
 
 	// Determine if we should start animation
 	const shouldStart = !startOnView || (isInView && !(once && hasAnimated));

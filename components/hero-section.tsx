@@ -7,7 +7,6 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { TypingText } from "@/components/ui/typing-text";
 import AvatarGroup from "./avatar-group";
 import Model from "./3d-model";
-// import HeroImage from "./hero-image";
 
 export default function HeroSection() {
 	const transitionVariants = {
@@ -29,13 +28,12 @@ export default function HeroSection() {
 			},
 		},
 	} satisfies { item: Variants };
-
+	
 	return (
 		<section className="relative lg:h-dvh">
 			<Spotlight className="-top-40 md:-top-20 left-0 md:left-60" fill="white" />
 
 			<div className="place-center mx-auto flex h-full max-w-6xl items-center justify-center px-6 pt-28 pb-40 lg:pt-0 lg:pb-0">
-				{/*<div className="grid min-w-full items-center gap-8 md:grid-rows-1 lg:grid-cols-7 lg:gap-0">*/}
 				<div className="flex w-full flex-col items-center text-center lg:items-start lg:text-left">
 					<AnimatedGroup className="z-10" variants={transitionVariants}>
 						<Link
@@ -65,7 +63,6 @@ export default function HeroSection() {
 							cursor="_"
 							cursorClassName="w-8 overflow-hidden hidden md:block"
 							loop={true}
-							texts={["I'm Steve D!", "I'm a developer!", "nice to meet you!"]}
 						/>
 					</h1>
 					<div className="z-10 mt-4 max-w-xl text-pretty text-gray-300">
@@ -119,7 +116,6 @@ export default function HeroSection() {
 					</div>
 				</div>
 			</div>
-			{/*</div>*/}
 
 			<div className="absolute top-0 right-0 h-dvh w-full">
 				<Model />
