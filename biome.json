@@ -43,6 +43,9 @@
       },
       "nursery": {
         "noShadow": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
       }
     },
     "domains": {
