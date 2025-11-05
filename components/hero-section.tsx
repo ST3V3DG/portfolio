@@ -107,7 +107,7 @@ export default function HeroSection() {
 						</Button>
 						<Button asChild className="rounded-full" key={2} size="lg" variant="ghost">
 							<Link
-								className="group relative z-10 z-50 px-5 text-base before:absolute before:bottom-0 before:z-50 before:h-0.5 before:w-[80%] before:rounded-full before:bg-white/5 before:transition-all before:duration-300 hover:before:size-full hover:before:ring hover:before:ring-white/5 dark:hover:bg-transparent"
+								className="group relative z-10 px-5 text-base before:absolute before:bottom-0 before:z-50 before:h-0.5 before:w-[80%] before:rounded-full before:bg-white/5 before:transition-all before:duration-300 hover:before:size-full hover:before:ring hover:before:ring-white/5 dark:hover:bg-transparent"
 								href="#projects"
 							>
 								<span>
@@ -121,7 +121,7 @@ export default function HeroSection() {
 			</div>
 			{/*</div>*/}
 
-			<div className="absolute top-0 right-0 size-full lg:row-start-1">
+			<div className="absolute top-0 right-0 h-dvh w-full">
 				<Model />
 			</div>
 

@@ -1,9 +1,7 @@
 "use client";
 
-// import { useGSAP } from '@gsap/react';
+import { useGSAP } from "@gsap/react";
 import { useGLTF } from "@react-three/drei";
-// import { useFrame } from '@react-three/fiber';
-// import gsap from 'gsap';
 import { useRef } from "react";
 import type { Group, Mesh, MeshPhysicalMaterial, MeshStandardMaterial } from "three";
 import type { GLTF } from "three-stdlib";
@@ -89,17 +87,18 @@ type GLTFResult = GLTF & {
 
 export function MacBookPro() {
 	const groupRef = useRef<Group>(null);
-	const { nodes, materials } = useGLTF("/3d/macbook_pro_14-inch_m5.glb") as GLTFResult;
-	// useFrame((_, delta: number) => {
-	//   groupRef.current?.rotation.z += 0.1 * delta
-	//   groupRef.current?.rotation.x += 0.1 * delta
-	// });
+	const { nodes, materials } = useGLTF("/3d/macbook_pro_14-inch_m5.glb") as unknown as GLTFResult;
 
-	// useGSAP(() => {
-	//   gsap.to(groupRef.current, {
-	//     translateY: .1
-	//   })
-	// });
+	useGSAP(() => {
+		if (!groupRef.current) {
+			return;
+		}
+		groupRef.current.position.setY(-0.08);
+		groupRef.current.position.setX(-0.08);
+		groupRef.current.rotation.x = Math.PI / 36;
+		groupRef.current.rotation.y = (34 * Math.PI) / 36;
+		groupRef.current.rotation.z = Math.PI / 24;
+	});
 
 	return (
 		<group dispose={null} ref={groupRef}>

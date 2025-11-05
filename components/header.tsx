@@ -43,7 +43,7 @@ export function Header() {
 					<NavbarLogo />
 					<NavItems items={navItems} />
 					<NavbarButton className="rounded-full" href="#contact">
-						Contact
+						<span>Contact</span>
 					</NavbarButton>
 				</NavBody>
 

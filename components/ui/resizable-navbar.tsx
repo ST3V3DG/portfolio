@@ -213,9 +213,12 @@ export const NavbarButton = ({
 	children: React.ReactNode;
 	className?: string;
 	variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (React.ComponentPropsWithoutRef<"a"> | React.ComponentPropsWithoutRef<"button">)) => {
+} & (
+	| (React.ComponentPropsWithoutRef<"a"> & { as?: "a" })
+	| (React.ComponentPropsWithoutRef<"button"> & { as: "button" })
+)) => {
 	const baseStyles =
-		"px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-300 inline-block text-center";
+		"px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
 	const variantStyles = {
 		primary:
