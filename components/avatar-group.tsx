@@ -4,11 +4,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function AvatarGroup() {
 	const users = [
-		{ name: "Sophie Martin", image: "/avatars/avatar-15.jpg" },
-		{ name: "Leo Anderson", image: "/avatars/avatar-16.jpg" },
-		{ name: "Chloe Thompson", image: "/avatars/avatar-17.jpg" },
-		{ name: "Max Rodriguez", image: "/avatars/avatar-18.jpg" },
-		{ name: "Zoe Garcia", image: "/avatars/avatar-19.jpg" },
+		{ name: "Sophie Martin", image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp" },
+		{ name: "Leo Anderson", image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp" },
+		{ name: "Chloe Thompson", image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp" },
+		{ name: "Max Rodriguez", image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp" },
+		{ name: "Zoe Garcia", image: "/https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-5.webp" },
 		{ name: "Additional Users", count: 3 },
 	];
 
