@@ -28,7 +28,7 @@ export default function HeroSection() {
 			},
 		},
 	} satisfies { item: Variants };
-	
+
 	return (
 		<section className="relative lg:h-dvh">
 			<Spotlight className="-top-40 md:-top-20 left-0 md:left-60" fill="white" />

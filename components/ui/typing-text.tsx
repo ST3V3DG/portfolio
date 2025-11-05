@@ -89,8 +89,7 @@ export function TypingText({
 	const [currentTextIndex, setCurrentTextIndex] = useState(0);
 	const isMobile = useIsMobile();
 
-	texts = texts ?? isMobile ? ["I'm Steve D!"] : ["I'm Steve D!", "I'm a developer!", "nice to meet you!"];
-	
+	texts = (texts ?? isMobile) ? ["I'm Steve D!"] : ["I'm Steve D!", "I'm a developer!", "nice to meet you!"];
 
 	// Determine if we should start animation
 	const shouldStart = !startOnView || (isInView && !(once && hasAnimated));
