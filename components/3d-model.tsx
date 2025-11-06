@@ -9,7 +9,7 @@ import { MacBookPro } from "./3d-macbook-pro";
 export default function Model() {
 	const isMobile = useIsMobile();
 	return (
-		<Canvas camera={{ position: [0, 0, -30], fov: 0.5, near: 1 }}>
+		<Canvas camera={{ position: [0, 0, -30], fov: 0.5, near: 1 }} className="cursor-grab active:cursor-grabbing">
 			{!isMobile && <OrbitControls enableZoom={false} />}
 			<ambientLight intensity={0.5} />
 			<directionalLight />
