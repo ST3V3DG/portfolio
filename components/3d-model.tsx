@@ -3,12 +3,14 @@
 import { Float, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { MacBookPro } from "./3d-macbook-pro";
 
 export default function Model() {
+	const isMobile = useIsMobile();
 	return (
 		<Canvas camera={{ position: [0, 0, -30], fov: 0.5, near: 1 }}>
-			<OrbitControls enableZoom={false} />
+			{!isMobile && <OrbitControls enableZoom={false} />}
 			<ambientLight intensity={0.5} />
 			<directionalLight />
 			<Float floatIntensity={0.5} floatingRange={[-0.01, 0.01]} rotationIntensity={0.5} speed={1}>
