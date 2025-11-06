@@ -59,12 +59,16 @@ export default function TestimonialSection() {
 			<div className="overflow- relative mx-auto min-h-96">
 				<div className="absolute inset-y-0 left-0 z-10 w-30 bg-gradient-to-r from-background to-transparent" />
 				<div className="absolute inset-y-0 right-0 z-10 w-30 bg-gradient-to-l from-background to-transparent" />
-				<Marquee className="rotate-4 py-2 md:rotate-10" direction="left" repeat={10}>
+				<Marquee
+					className="md:-translate-x-4 rotate-4 py-2 md:w-[110%] md:rotate-10"
+					direction="left"
+					repeat={10}
+				>
 					{[...items, ...items].map((item, index) => (
 						<TestimonialCard item={item} key={index} />
 					))}
 				</Marquee>
-				<Marquee className="-rotate-4 translate-y-1/2 py-2" direction="right">
+				<Marquee className="-rotate-4 md:-translate-x-2 translate-y-1/2 py-2 md:w-[110%]" direction="right">
 					{[...items, ...items].map((item, index) => (
 						<TestimonialCard item={item} key={index} />
 					))}
