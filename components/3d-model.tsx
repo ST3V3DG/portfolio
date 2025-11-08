@@ -11,8 +11,13 @@ export default function Model() {
 	return (
 		<Canvas camera={{ position: [0, 0, -30], fov: 0.5, near: 1 }} className="cursor-grab active:cursor-grabbing">
 			{!isMobile && <OrbitControls enableZoom={false} />}
-			<ambientLight intensity={0.5} />
-			<directionalLight />
+			<ambientLight color="#ffffff" intensity={1} />
+			<directionalLight intensity={0.5} position={[-5, -5, -5]} />
+			<directionalLight intensity={0.5} position={[5, -5, -5]} />
+			<directionalLight intensity={0.5} position={[-5, -5, 5]} />
+			<directionalLight intensity={0.5} position={[5, -5, 5]} />
+			<directionalLight intensity={0.5} position={[-5, 5, 5]} />
+			<directionalLight intensity={0.5} position={[5, 5, 5]} />
 			<Float floatIntensity={0.5} floatingRange={[-0.01, 0.01]} rotationIntensity={0.5} speed={1}>
 				<Suspense>
 					<MacBookPro />
