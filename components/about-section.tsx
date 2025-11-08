@@ -7,13 +7,6 @@ import Image from "next/image";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-// const defaultAchievements = [
-// 	{ label: "Companies Supported", value: "300+" },
-// 	{ label: "Projects Finalized", value: "800+" },
-// 	{ label: "Happy Customers", value: "99%" },
-// 	{ label: "Recognized Awards", value: "10+" },
-// ];
-
 const technologies = [
 	{
 		src: "/images/technos/laravel-brand.png",
@@ -59,29 +52,13 @@ export default function AboutSection() {
 					trigger: fadeInElements.current[i],
 					start: "top bottom",
 					end: "bottom 90%",
-					scrub: 2,
-					toggleActions: "play pause resume reset",
+					scrub: 1,
 				},
 				opacity: 0,
 				y: 50,
 				ease: "power3.inOut",
 			});
 		}
-
-		// gsap.from(".fade-in", {
-		//   scrollTrigger: {
-		//     trigger: ".fade-in",
-		//     start: "top bottom",
-		//     end: "bottom 50%",
-		//     markers: true,
-		//     scrub: 2,
-		//     toggleActions: "play pause resume reset",
-		//   },
-		//   opacity: 0,
-		//   y: 50,
-		//   ease: "power3.inOut",
-		//   stagger: 1,
-		// });
 	});
 
 	return (
@@ -169,65 +146,7 @@ export default function AboutSection() {
 						</div>
 					</div>
 				</div>
-				{/*<div className="grid mb-14 gap-4 max-h-72 md:grid-cols-2 lg:grid-cols-3 *:rounded-lg lg:grid-rows-3">
-					<Card className="bg-white lg:col-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
-  					<CardContent className="size-full bg-white">
-  						<Image
-  							src="/images/technos/laravel.png"
-  							alt="Laravel logo"
-  							width={500}
-  							height={500}
-  							className="size-full object-contain scale-200"
-  						/>
-  					</CardContent>
-					</Card>
-					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
-					<CardContent className="p-4 size-full bg-white">
-						<Image
-							src="/images/technos/next-js.webp"
-							alt="Next.js logo"
-							width={500}
-							height={500}
-							className="size-full object-contain"
-						/>
-					</CardContent>
-					</Card>
-					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
-					<CardContent className="p-4 size-full bg-white">
-						<Image
-							src="/images/technos/django.png"
-							alt="Django logo"
-							width={500}
-							height={500}
-							className="size-full object-contain"
-						/>
-					</CardContent>
-					</Card>
-					<Card className="bg-white lg:row-span-2 overflow-hidden shadow-lg hover:shadow-xl transition">
-					<CardContent className="p-4 size-full bg-white">
-						<Image
-							src="/images/technos/tailwind-css.png"
-							alt="Tailwind CSS logo"
-							width={500}
-							height={500}
-							className="size-full object-contain"
-						/>
-					</CardContent>
-					</Card>
-					<Card className="bg-white md:col-span-2 lg:col-span-1 overflow-hidden shadow-lg hover:shadow-xl transition">
-					<CardContent className="size-full bg-white">
-						<Image
-							src="/images/technos/shadcn-ui.png"
-							alt="Shadcn UI logo"
-							width={500}
-							height={20}
-							className="size-full object-contain"
-						/>
-					</CardContent>
-					</Card>
-				</div>*/}
 				<div>
-					{/*<p className="text-center">{companiesTitle} </p>*/}
 					<div className="mt-8 flex flex-wrap justify-center gap-8 md:hidden">
 						{technologies.map((technology, index) => (
 							<div className="flex items-center gap-3" key={technology.src + index}>
@@ -242,21 +161,6 @@ export default function AboutSection() {
 						))}
 					</div>
 				</div>
-				{/*<div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
-					<div className="flex flex-col gap-4 text-center md:text-left">
-						<h2 className="text-4xl font-semibold">{achievementsTitle}</h2>
-						<p className="text-muted-foreground max-w-xl">{achievementsDescription}</p>
-					</div>
-					<div className="mt-10 flex flex-wrap justify-between gap-10 text-center">
-						{achievements.map((item, idx) => (
-							<div className="flex flex-col gap-4" key={item.label + idx}>
-								<p>{item.label}</p>
-								<span className="text-4xl font-semibold md:text-5xl">{item.value}</span>
-							</div>
-						))}
-					</div>
-					<div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
-				</div>*/}
 			</div>
 			<div className="absolute bottom-0 left-0 w-full rotate-180 overflow-hidden">
 				<svg
