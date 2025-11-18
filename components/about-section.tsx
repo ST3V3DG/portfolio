@@ -11,7 +11,7 @@ const technologies = [
 	{
 		src: "/images/technos/laravel-brand.png",
 		alt: "Laravel logo",
-		className: "h-20",
+		className: "h-20 -mb-12",
 	},
 	{
 		src: "/images/technos/next-js-brand.webp",
@@ -22,6 +22,11 @@ const technologies = [
 		src: "/images/technos/django-brand.png",
 		alt: "Django logo",
 		className: "h-12",
+	},
+	{
+		src: "/images/technos/typescript-brand.png",
+		alt: "Typescript logo",
+		className: "h-20 -mb-10 -mt-16",
 	},
 	{
 		src: "/images/technos/shadcn-ui-brand.png",
@@ -68,22 +73,30 @@ export default function AboutSection() {
 				<div className="mb-14 grid gap-5 text-center text-black md:grid-cols-2 md:text-left">
 					<div className="flex flex-col items-center justify-between">
 						<h3 className="text-2xl md:text-center lg:text-3xl">My Experience</h3>
-						<div className="hidden w-full flex-1 gap-4 pt-8 md:flex md:flex-col">
+						<div className="hidden flex-1 pt-8 md:flex md:w-[75%] md:flex-col">
 							<Image
 								alt={technologies[0].alt}
 								className="fade-in lg:self-start"
-								height={300}
+								height={200}
 								ref={pushRef}
 								src={technologies[0].src}
-								width={300}
+								width={200}
 							/>
 							<Image
 								alt={technologies[1].alt}
 								className="fade-in ml-auto lg:ml-0 lg:self-end"
-								height={200}
+								height={150}
 								ref={pushRef}
 								src={technologies[1].src}
-								width={200}
+								width={150}
+							/>
+							<Image
+								alt={technologies[2].alt}
+								className="fade-in lg:self-start"
+								height={150}
+								ref={pushRef}
+								src={technologies[2].src}
+								width={150}
 							/>
 						</div>
 					</div>
@@ -118,18 +131,10 @@ export default function AboutSection() {
 					</div>
 					<div className="order-1 flex flex-col items-center justify-between md:order-2">
 						<h3 className="text-2xl md:text-center lg:text-3xl">My Skils</h3>
-						<div className="hidden w-full flex-1 justify-between pt-8 md:flex md:flex-col">
-							<Image
-								alt={technologies[2].alt}
-								className="fade-in lg:self-start"
-								height={150}
-								ref={pushRef}
-								src={technologies[2].src}
-								width={150}
-							/>
+						<div className="hidden flex-1 justify-between pt-8 md:flex md:w-[75%] md:flex-col">
 							<Image
 								alt={technologies[3].alt}
-								className="fade-in mx-auto lg:mx-0 lg:self-center"
+								className="fade-in lg:self-start"
 								height={200}
 								ref={pushRef}
 								src={technologies[3].src}
@@ -137,10 +142,18 @@ export default function AboutSection() {
 							/>
 							<Image
 								alt={technologies[4].alt}
-								className="fade-in ml-auto lg:mx-0 lg:self-end"
+								className="fade-in mx-auto lg:mx-0 lg:self-center"
 								height={200}
 								ref={pushRef}
 								src={technologies[4].src}
+								width={200}
+							/>
+							<Image
+								alt={technologies[5].alt}
+								className="fade-in mt-10 ml-auto lg:mx-0 lg:self-end"
+								height={200}
+								ref={pushRef}
+								src={technologies[5].src}
 								width={200}
 							/>
 						</div>
