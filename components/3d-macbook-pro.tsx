@@ -98,8 +98,8 @@ export function MacBookPro() {
 		}
 
 		groupRef.current?.position.setY(-0.12);
-		groupRef.current.rotation.x = -Math.PI / 10;
-		groupRef.current.rotation.y = (7 * Math.PI) / 8;
+		groupRef.current.rotation.x = -Math.PI / 6;
+		groupRef.current.rotation.y = (4 * Math.PI) / 5;
 		// groupRef.current.rotation.z = Math.PI  / 2;
 
 		matchMedia.add("(width < 48rem)", () => {
