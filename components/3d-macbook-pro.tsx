@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import { useGLTF } from "@react-three/drei";
+import gsap from "gsap";
 import { useRef } from "react";
 import type { Group, Mesh, MeshPhysicalMaterial, MeshStandardMaterial } from "three";
 import type { GLTF } from "three-stdlib";
@@ -90,14 +91,28 @@ export function MacBookPro() {
 	const { nodes, materials } = useGLTF("/3d/macbook_pro_14-inch_m5.glb") as unknown as GLTFResult;
 
 	useGSAP(() => {
+		const matchMedia = gsap.matchMedia();
+
 		if (!groupRef.current) {
 			return;
 		}
-		groupRef.current.position.setY(-0.08);
-		groupRef.current.position.setX(-0.08);
-		groupRef.current.rotation.x = Math.PI / 36;
-		groupRef.current.rotation.y = (34 * Math.PI) / 36;
-		groupRef.current.rotation.z = Math.PI / 24;
+
+		groupRef.current?.position.setY(-0.12);
+		groupRef.current.rotation.x = -Math.PI / 10;
+		groupRef.current.rotation.y = (7 * Math.PI) / 8;
+		// groupRef.current.rotation.z = Math.PI  / 2;
+
+		matchMedia.add("(width < 48rem)", () => {
+			groupRef.current?.position.setX(-0.02);
+		});
+
+		matchMedia.add("(width >= 48rem and width < 96rem)", () => {
+			groupRef.current?.position.setX(-0.08);
+		});
+
+		matchMedia.add("(width >= 96rem)", () => {
+			groupRef.current?.position.setX(-0.07);
+		});
 	});
 
 	return (
