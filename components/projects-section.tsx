@@ -5,7 +5,6 @@ import { motion, useMotionValue, useTransform, type Variants } from "motion/reac
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-// import Gallery from "./gallery";
 import ThreeDMarquee from "./ui/3d-marquee";
 
 export type WebsitesImages = {
@@ -439,7 +438,6 @@ export default function ProjectsSection() {
 						</motion.div>
 					</div>
 				</motion.div>
-				{/* <Gallery /> */}
 			</div>
 		</section>
 	);
