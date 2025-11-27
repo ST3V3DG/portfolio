@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,7 @@ const technologies = [
 ];
 
 export default function AboutSection() {
-	gsap.registerPlugin(useGSAP);
+	gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 	const fadeInElements = useRef<HTMLImageElement[]>([]);
 
