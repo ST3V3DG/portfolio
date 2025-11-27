@@ -10,32 +10,32 @@ const technologies = [
 	{
 		src: "/images/technos/laravel-brand.png",
 		alt: "Laravel logo",
-		className: "object-cover h-20 md:-mb-12",
+		className: "h-20 md:-mb-12",
 	},
 	{
 		src: "/images/technos/next-js-brand.webp",
 		alt: "Next.js logo",
-		className: "object-cover h-20 self-start",
+		className: "h-20 self-start",
 	},
 	{
 		src: "/images/technos/django-brand.png",
 		alt: "Django logo",
-		className: "object-cover h-12",
+		className: "h-12",
 	},
 	{
 		src: "/images/technos/typescript-brand.png",
 		alt: "Typescript logo",
-		className: "object-cover h-20 -mb-10 -mt-16",
+		className: "h-20 -mb-10 -mt-16",
 	},
 	{
 		src: "/images/technos/shadcn-ui-brand.png",
 		alt: "Shadcn UI logo",
-		className: "object-cover"
+		className: "",
 	},
 	{
 		src: "/images/technos/tailwind-css-brand.png",
 		alt: "Tailwind CSS logo",
-		className: "object-cover h-8",
+		className: "h-8",
 	},
 ];
 
@@ -160,9 +160,9 @@ export default function AboutSection() {
 					</div>
 				</div>
 				<div>
-					<div className="mt-8 grid grid-cols-2 justify-items-center gap-4 md:hidden">
+					<div className="mx-auto mt-8 grid max-w-160 grid-cols-2 justify-items-center gap-4 md:hidden">
 						{technologies.map((technology, index) => (
-							<div className={`flex items-center ${index > 3 ? "col-span-2" : ""}`} key={technology.src + index}>
+							<div className="flex items-center" key={technology.src + index}>
 								<Image
 									alt={technology.alt}
 									className={cn("h-12 w-auto", technology.className)}
