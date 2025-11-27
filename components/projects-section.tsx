@@ -5,6 +5,7 @@ import { motion, useMotionValue, useTransform, type Variants } from "motion/reac
 import Image from "next/image";
 import Link from "next/link";
 import ThreeDMarquee from "./ui/3d-marquee";
+import Gallery from "./gallery";
 
 export type WebsitesImages = {
 	src?: string;
@@ -231,7 +232,7 @@ const BentoCard = ({ item }: { item: BentoItem }) => {
 
 export default function ProjectsSection() {
 	return (
-		<section className="relative bg-white py-24 dark:bg-black" id="projects">
+		<section className="relative bg-white pt-24 pb-16 dark:bg-black" id="projects">
 			<div className="mx-auto max-w-6xl px-6">
 				<h2 className="mb-8 text-center font-bold text-3xl lg:text-5xl">Projects</h2>
 				<p className="mb-16 text-center font-medium text-lg opacity-80">What I've done for other people</p>
@@ -258,6 +259,7 @@ export default function ProjectsSection() {
 					</div>
 				</motion.div>
 			</div>
+			<Gallery />
 		</section>
 	);
 }

@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
 				pathname: "/shadcnblocks/block/logos/company/**",
 				search: "",
 			},
+			{
+				protocol: "https",
+				hostname: "cdn.shadcnstudio.com",
+				port: "",
+				pathname: "/ss-assets/blocks/marketing/gallery/**",
+				search: "",
+			},
 		],
 	},
 };
