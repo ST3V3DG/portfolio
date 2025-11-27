@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 // import Gallery from "./gallery";
 import ThreeDMarquee from "./ui/3d-marquee";
 
-type WebsitesImages = {
+export type WebsitesImages = {
 	src?: string;
 	href?: string;
 };
