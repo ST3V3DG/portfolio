@@ -115,20 +115,24 @@ const bentoItems: BentoItem[] = [
 				type: "grid",
 				images: [
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-9.png",
-						alt: "Silhouettes on beach",
+						src: "/images/mds/mds_admin_auth_user.png",
+						alt: "MDS admin panel users list",
+						href: "https://stevedg.pythonanywhere.com/admin/auth/user/",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-8.png",
-						alt: "Snowy mountain peaks",
+						src: "/images/mds/mds_admin_personnel_affectation.png",
+						alt: "MDS admin panel affectations list",
+						href: "https://stevedg.pythonanywhere.com/admin/personnel/affectation/",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-7.png",
-						alt: "Rolling green hills",
+						src: "/images/mds/mds_admin_personnel_candidature.png",
+						alt: "MDS admin panel candidatures list",
+						href: "https://stevedg.pythonanywhere.com/admin/personnel/candidature/",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-6.png",
-						alt: "Sunset landscape",
+						src: "/images/mds/mds_admin_personnel_projet.png",
+						alt: "MDS admin panel projects list",
+						href: "https://stevedg.pythonanywhere.com/admin/personnel/projet/",
 					},
 				],
 			},
@@ -136,20 +140,24 @@ const bentoItems: BentoItem[] = [
 				type: "grid",
 				images: [
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-4.png",
-						alt: "Silhouettes on beach",
+						src: "/images/hotelscan/hotelscan_clients.png",
+						alt: "HotelScan admin panel clients list",
+						href: "https://hotel.focusrent.cm/clients",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-3.png",
-						alt: "Snowy mountain peaks",
+						src: "/images/hotelscan/hotelscan_employees.png",
+						alt: "HotelScan admin panel employees list",
+						href: "https://hotel.focusrent.cm/employees",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-2.png",
-						alt: "Rolling green hills",
+						src: "/images/hotelscan/hotelscan_reservations.png",
+						alt: "HotelScan admin panel reservations list",
+						href: "https://hotel.focusrent.cm/reservations",
 					},
 					{
-						src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-1.png",
-						alt: "Sunset landscape",
+						src: "/images/hotelscan/hotelscan_rooms.png",
+						alt: "HotelScan admin panel rooms list",
+						href: "https://hotel.focusrent.cm/rooms",
 					},
 				],
 			},
@@ -190,67 +198,6 @@ const staggercontainer: Variants = {
 	},
 };
 
-// const sections = [
-// 	{
-// 		images: [
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-10.png",
-// 				alt: "Coastal cliffs and ocean view",
-// 			},
-// 		],
-// 	},
-// 	{
-// 		type: "grid",
-// 		images: [
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-9.png",
-// 				alt: "Silhouettes on beach",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-8.png",
-// 				alt: "Snowy mountain peaks",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-7.png",
-// 				alt: "Rolling green hills",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-6.png",
-// 				alt: "Sunset landscape",
-// 			},
-// 		],
-// 	},
-// 	{
-// 		type: "grid",
-// 		images: [
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-4.png",
-// 				alt: "Silhouettes on beach",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-3.png",
-// 				alt: "Snowy mountain peaks",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-2.png",
-// 				alt: "Rolling green hills",
-// 			},
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-1.png",
-// 				alt: "Sunset landscape",
-// 			},
-// 		],
-// 	},
-// 	{
-// 		images: [
-// 			{
-// 				src: "https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/gallery/image-5.png",
-// 				alt: "Coastal cliffs and ocean view",
-// 			},
-// 		],
-// 	},
-// ];
-
 const Requirements = ({ items }: { items: string[] }) => (
 	<ul className="mt-2 space-y-1.5">
 		{items.map((item, index) => (
@@ -288,7 +235,7 @@ function Gallery({ sections }: { sections: GallerySection[] | undefined }) {
 			{sections?.map((section, sectionIndex) => (
 				<div className={cn({ "grid grid-cols-2 gap-6": section.type === "grid" })} key={sectionIndex}>
 					{section.images?.map((image, imageIndex) => (
-						<Link href={image.href ?? "#"} key={imageIndex}>
+						<Link href={image.href ?? "#"} key={imageIndex} target="_blank">
 							<div className="aspect-video size-full overflow-hidden rounded-lg">
 								<Image
 									alt={image.alt}
