@@ -52,7 +52,7 @@ export default function AboutSection() {
 	};
 
 	useGSAP(() => {
-		for (let i = 0; i <= fadeInElements.current.length; i += 1) {
+		for (let i = 0; i <= fadeInElements.current.length - 1; i += 1) {
 			gsap.from(fadeInElements.current[i], {
 				scrollTrigger: {
 					trigger: fadeInElements.current[i],
