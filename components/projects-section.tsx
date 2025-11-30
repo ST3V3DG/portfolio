@@ -22,6 +22,7 @@ type GallerySection = {
 	type?: string;
 	images: GalleryImage[];
 	translatable?: boolean;
+	height?: string;
 };
 
 type BentoItem = {
@@ -112,56 +113,29 @@ const bentoItems: BentoItem[] = [
 				],
 			},
 			{
-				type: "grid",
+				height: "2200",
 				images: [
 					{
-						src: "/images/mds/mds_admin_auth_user.png",
-						alt: "MDS admin panel users list",
-						href: "https://stevedg.pythonanywhere.com/admin/auth/user/",
-					},
-					{
-						src: "/images/mds/mds_admin_personnel_affectation.png",
-						alt: "MDS admin panel affectations list",
-						href: "https://stevedg.pythonanywhere.com/admin/personnel/affectation/",
-					},
-					{
-						src: "/images/mds/mds_admin_personnel_candidature.png",
-						alt: "MDS admin panel candidatures list",
-						href: "https://stevedg.pythonanywhere.com/admin/personnel/candidature/",
-					},
-					{
-						src: "/images/mds/mds_admin_personnel_projet.png",
-						alt: "MDS admin panel projects list",
-						href: "https://stevedg.pythonanywhere.com/admin/personnel/projet/",
+						src: "/images/eden-cosmetics/eden-cosmetics.webp",
+						alt: "Eden cosmetics",
+						href: "https://eden-cosmetics.vercel.app",
 					},
 				],
+				translatable: true,
 			},
 			{
-				type: "grid",
+				height: "1420",
 				images: [
 					{
-						src: "/images/hotelscan/hotelscan_clients.png",
-						alt: "HotelScan admin panel clients list",
-						href: "https://hotel.focusrent.cm/clients",
-					},
-					{
-						src: "/images/hotelscan/hotelscan_employees.png",
-						alt: "HotelScan admin panel employees list",
-						href: "https://hotel.focusrent.cm/employees",
-					},
-					{
-						src: "/images/hotelscan/hotelscan_reservations.png",
-						alt: "HotelScan admin panel reservations list",
-						href: "https://hotel.focusrent.cm/reservations",
-					},
-					{
-						src: "/images/hotelscan/hotelscan_rooms.png",
-						alt: "HotelScan admin panel rooms list",
-						href: "https://hotel.focusrent.cm/rooms",
+						src: "/images/crypto-trade/crypto-trade.webp",
+						alt: "Crypto trade",
+						href: "https://crypto-trade-alpha.vercel.app",
 					},
 				],
+				translatable: true,
 			},
 			{
+				height: "1850",
 				images: [
 					{
 						src: "/images/afric-digital/afric-digital.webp",
@@ -239,9 +213,14 @@ function Gallery({ sections }: { sections: GallerySection[] | undefined }) {
 							<div className="aspect-video size-full overflow-hidden rounded-lg">
 								<Image
 									alt={image.alt}
-									className={`w-full rounded-lg object-contain ${section.translatable ? "hover:-translate-y-[1850px] transition duration-[20s] ease-linear" : ""}`}
+									className={`w-full rounded-lg object-contain ${section.translatable ? "transition duration-[20s] ease-linear hover:translate-y-(--scroll-height)" : ""}`}
 									height={500}
 									src={image.src}
+									style={
+										section.translatable && section.height
+											? ({ "--scroll-height": `-${section.height}px` } as React.CSSProperties)
+											: undefined
+									}
 									width={500}
 								/>
 							</div>
