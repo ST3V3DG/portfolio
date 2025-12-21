@@ -19,7 +19,7 @@ export default function Projects() {
             scrollTrigger: {
                 trigger: "#projects",
                 start: "top center",
-                end: "bottom top",
+                end: "bottom center",
                 scrub: 2,
             },
         });
