@@ -3,7 +3,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { createContext, useRef, useState } from "react";
 
 export const PagePreloaderContext = createContext<gsap.core.Timeline | undefined>(undefined);
@@ -11,6 +10,11 @@ export const PagePreloaderContext = createContext<gsap.core.Timeline | undefined
 export default function PagePreloader({ children }: { children: React.ReactNode }) {
 	const [tl, setTl] = useState<gsap.core.Timeline>();
 	const svgLineRef = useRef<SVGPathElement>(null);
+
+	function scrollToTop() {
+		window.scrollTo(0, 0);
+		disableScroll();
+	}
 
 	// left: 37, up: 38, right: 39, down: 40,
 	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -51,13 +55,13 @@ export default function PagePreloader({ children }: { children: React.ReactNode 
 
 
 
-	gsap.registerPlugin(ScrollToPlugin, useGSAP);
+	gsap.registerPlugin(useGSAP);
 
 	useGSAP(() => {
 		const tl = gsap.timeline();
 		const preloader = document.getElementById("preloader");
 
-		gsap.to(window, { duration: 0, scrollTo: 0, onComplete: disableScroll });
+		scrollToTop();
 
 		if (!svgLineRef.current) return;
 
