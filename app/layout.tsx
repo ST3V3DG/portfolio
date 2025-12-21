@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import SmoothScroll from "@/providers/smooth-scroll";
 
 export const metadata: Metadata = {
@@ -19,6 +21,8 @@ export default function RootLayout({
           className={`font-archivo antialiased`}
         >
           {children}
+          <SpeedInsights />
+          <Analytics />
         </body>
       </SmoothScroll>
     </html>
