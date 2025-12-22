@@ -11,7 +11,7 @@ export default function CallToAction() {
                 </div>
                 <div className="flex items-center justify-center gap-2 p-4 md:border-l *:rounded-none *:cursor-pointer">
                     <Button variant="secondary">Contact Sales</Button>
-                    <Button className="bg-accent text-primary hover:bg-accent/80 transition duration-300">Get Started</Button>
+                    <Button className="bg-accent text-background hover:bg-accent/80 transition duration-300">Get Started</Button>
                 </div>
             </div>
         </section>

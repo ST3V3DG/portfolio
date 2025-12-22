@@ -41,6 +41,7 @@ export function Contact() {
                     <Link
                         className="font-medium font-mono text-sm tracking-wide hover:underline"
                         href={`mailto:${APP_EMAIL}`}
+                        aria-label="Email"
                     >
                         {APP_EMAIL}
                     </Link>
@@ -64,12 +65,14 @@ export function Contact() {
                         <Link
                             className="block font-medium font-mono text-sm tracking-wide hover:underline"
                             href={`tel:${APP_PHONE}`}
+                            aria-label="Phone 1"
                         >
                             {APP_PHONE}
                         </Link>
                         <Link
                             className="block font-medium font-mono text-sm tracking-wide hover:underline"
                             href={`tel:${APP_PHONE_2}`}
+                            aria-label="Phone 2"
                         >
                             {APP_PHONE_2}
                         </Link>
@@ -83,7 +86,7 @@ export function Contact() {
                 </h2>
                 <div className="flex flex-wrap items-center gap-2">
                     {socialLinks.map((link) => (
-                        <Link
+                        <Link aria-label={link.label}
                             className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
                             href={link.href}
                             key={link.label}

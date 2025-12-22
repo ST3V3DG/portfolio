@@ -8,23 +8,23 @@ import { useRef, useState } from "react";
 
 const headerLinks = [
 	{
-		title: "Home",
+		label: "Home",
 		href: "#hero",
 	},
 	{
-		title: "About",
+		label: "About",
 		href: "#about",
 	},
 	{
-		title: "Projects",
+		label: "Projects",
 		href: "#projects",
 	},
 	{
-		title: "Testimonials",
+		label: "Testimonials",
 		href: "#testimonials",
 	},
 	{
-		title: "Contact",
+		label: "Contact",
 		href: "#contact",
 	},
 ];
@@ -78,14 +78,14 @@ export default function Header() {
 	return (
 		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display focus-within:outline-none **:focus-within:outline-none">
 			<div className="size-full flex justify-between bg-background px-6 border-b">
-				<Link href="/" className="text-xl font-bold py-6 w-26">
+				<Link aria-label="home" href="/" className="text-xl font-bold py-6 w-26">
 					
 				</Link>
 				<nav className="hidden md:block">
 					<ul className={`grid grid-cols-5 gap-4 text-center h-full`}>
 						{headerLinks.map((link, index) => (
-							<li className={`flex justify-center items-center relative before:absolute before:bottom-1.5 before:left-0 before:h-1 before:bg-accent before:w-full before:scale-x-0 hover:before:scale-x-90 before:content-[''] before:transition before:duration-300 ${link.title === "Contact" ? "bg-accent text-primary hover:bg-transparent transition duration-300" : ""}`} key={index}>
-								<Link className="py-4 px-2" href={link.href}>{link.title}</Link>
+							<li className={`flex justify-center items-center relative before:absolute before:bottom-1.5 before:left-0 before:h-1 before:bg-accent before:w-full before:scale-x-0 hover:before:scale-x-90 before:content-[''] before:transition before:duration-300 ${link.label === "Contact" ? "bg-accent text-background hover:text-primary hover:bg-transparent transition duration-300" : ""}`} key={index}>
+								<Link aria-label={link.label} className="py-4 px-2" href={link.href}>{link.label}</Link>
 							</li>
 						))}
 					</ul>
@@ -101,7 +101,7 @@ export default function Header() {
 					<ul className="flex flex-col gap-2 p-2 *:p-2 *:border-b *:border-accent h-[calc(100%-4rem)] justify-center text-5xl text-primary">
 						{headerLinks.map((link, index) => (
 							<li key={index}>
-								<Link href={link.href} onClick={() => setOpen(!open)}>{link.title}</Link>
+								<Link aria-label={link.label} href={link.href} onClick={() => setOpen(!open)}>{link.label}</Link>
 							</li>
 						))}
 					</ul>
