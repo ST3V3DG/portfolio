@@ -102,7 +102,7 @@ export default function Projects() {
             </div>
             <div className="lg:col-span-4 lg:row-span-1">
                 <Link aria-label="mck medical care" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://mckmedicalcare.vercel.app/">
-                    <Image alt="project image" className="w-full aspect-video object-cover group-hover:scale-110 transition duration-300" height={2000} src="/images/iphone-mck-medical-care.png" width={2000} />
+                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={2000} src="/images/iphone-mck-medical-care.png" width={2000} />
                     <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
                         <h3 className="flex items-center gap-1"><span>MCK Medical Care</span><ExternalLink className="size-3 stroke-4" /></h3>
