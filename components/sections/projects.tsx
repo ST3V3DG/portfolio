@@ -100,9 +100,23 @@ export default function Projects() {
                     </div>
                 </Link>
             </div>
+            <div className="lg:col-span-4 lg:row-span-1">
+                <Link aria-label="mck medical care" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://mckmedicalcare.vercel.app/">
+                    <Image alt="project image" className="w-full aspect-video object-cover group-hover:scale-110 transition duration-300" height={2000} src="/images/iphone-mck-medical-care.png" width={2000} />
+                    <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
+                        <h3 className="flex items-center gap-1"><span>MCK Medical Care</span><ExternalLink className="size-3 stroke-4" /></h3>
+                        <ul className="flex flex-col justify-between items-end font-clash-display">
+                            <li>Medical</li>
+                            <li>Care</li>
+                            <li>Trip</li>
+                        </ul>
+                    </div>
+                </Link>
+            </div>
         </div>
-        <svg className="absolute hidden lg:block -top-2 right-0 size-[calc(100%+20px)] -z-1" viewBox="0 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <svg className="absolute hidden lg:block -top-2 right-0 w-full h-[calc(100%+25px)] -z-1" viewBox="0 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
             <path d="M56.5002 0C56.5002 0 0.5 50 0.5 108C0.5 230 205.5 209 253 209C300.5 209 339.5 232 339.5 296C339.5 360 208.741 498.737 228 546.5C253 608.5 356.5 598 356.5 672.5C356.5 747 269.5 823.5 269.5 823.5" stroke="var(--secondary)" strokeWidth="8" />
         </svg>
-    </section>;
+    </section>
 }
