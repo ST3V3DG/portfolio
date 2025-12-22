@@ -78,7 +78,7 @@ export default function Header() {
 	return (
 		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display focus-within:outline-none **:focus-within:outline-none">
 			<div className="size-full flex justify-between bg-background px-6 border-b">
-				<Link href="/" className="text-xl font-bold py-6 px-2">
+				<Link href="/" className="text-xl font-bold py-6 w-26">
 					
 				</Link>
 				<nav className="hidden md:block">

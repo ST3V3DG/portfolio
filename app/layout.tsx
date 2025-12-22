@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import SmoothScroll from "@/providers/smooth-scroll";
 
 export const metadata: Metadata = {
   title: "Steve.D | Portfolio",
@@ -16,7 +15,6 @@ export default function RootLayout({
 }>) {
   return (
     <html className="dark scroll-smooth" lang="en" suppressHydrationWarning>
-      <SmoothScroll>
         <body
           className={`font-archivo antialiased`}
         >
@@ -24,7 +22,6 @@ export default function RootLayout({
           <SpeedInsights />
           <Analytics />
         </body>
-      </SmoothScroll>
     </html>
   );
 }

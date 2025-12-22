@@ -43,7 +43,7 @@ export default function Hero() {
                             relaxation={0.9}
                             className="grayscale hidden lg:block"
                         />
-                        <Image alt="Hero image" className="grayscale lg:hidden" height={500} src="https://static.vecteezy.com/system/resources/thumbnails/065/464/910/small/a-man-with-a-beard-smiles-for-the-camera-free-photo.jpeg" width={500} />
+                        <Image alt="Hero image" className="grayscale size-full object-cover lg:hidden" height={500} src="https://static.vecteezy.com/system/resources/thumbnails/065/464/910/small/a-man-with-a-beard-smiles-for-the-camera-free-photo.jpeg" width={500} />
                     </div>
                 </div>
             </div>

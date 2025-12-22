@@ -46,7 +46,7 @@ export default function Projects() {
             </div>
             <div className="lg:col-span-2 lg:row-span-1">
                 <Link className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://crypto-trade-alpha.vercel.app/">
-                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={500} src="/images/iphone-crypto-trade-alpha.png" width={500} />
+                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/iphone-crypto-trade-alpha.png" width={1500} />
                     <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
                         <h3 className="flex items-center gap-1"><span>Crypto Trade Alpha</span><ExternalLink className="size-3 stroke-4" /></h3>
@@ -60,7 +60,7 @@ export default function Projects() {
             </div>
             <div className="lg:col-span-2 lg:row-span-1">
                 <Link className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://fashionstudio.vercel.app/">
-                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={500} src="/images/mac-fashion-studio.png" width={500} />
+                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/mac-fashion-studio.png" width={1500} />
                     <div className="absolute inset-0 bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
                         <h3 className="flex items-center gap-1"><span>Fashion Studio</span><ExternalLink className="size-3 stroke-4" /></h3>
@@ -88,7 +88,7 @@ export default function Projects() {
             </div>
             <div className="lg:col-span-1 lg:row-span-1">
                 <Link className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://stevethedeveloper.vercel.app/">
-                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={500} src="/images/ipad-air-steve-the-developer.png" width={500} />
+                    <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/ipad-air-steve-the-developer.png" width={1500} />
                     <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
                         <h3 className="flex items-center gap-1"><span>Steve.D</span><ExternalLink className="size-3 stroke-4" /></h3>
