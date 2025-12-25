@@ -48,54 +48,56 @@ const faqs = [
 
 export function FrequentlyAskQuestion() {
     return (
-        <section className="bg-secondary grid min-h-screen w-full grid-cols-1 md:grid-cols-2 focus-within:outline-none">
-            <div className="px-4 pt-12 pb-6 focus-within:outline-none">
-                <div className="space-y-5 focus-within:outline-none">
-                    <h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-muted-foreground">
-                        Quick answers to common questions me and my work. Open any question to
-                        learn more.
-                    </p>
-                    <p className="text-muted-foreground focus-within:outline-none">
-                        {"Can't find what you're looking for? "}
-                        <Link className="text-primary hover:underline" href="#contact">
-                            Contact Me
-                        </Link>
-                    </p>
+        <section className="bg-secondary">
+            <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2 focus-within:outline-none max-w-7xl mx-auto border-x">
+                <div className="px-4 pt-12 pb-6 focus-within:outline-none">
+                    <div className="space-y-5 focus-within:outline-none">
+                        <h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="text-muted-foreground">
+                            Quick answers to common questions me and my work. Open any question to
+                            learn more.
+                        </p>
+                        <p className="text-muted-foreground focus-within:outline-none">
+                            {"Can't find what you're looking for? "}
+                            <Link className="text-primary hover:underline" href="#contact">
+                                Contact Me
+                            </Link>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div className="relative place-content-center focus-within:outline-none">
-                {/* vertical guide line */}
-                <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
-                />
-
-                <Accordion className="focus-within:outline-none" collapsible type="single">
-                    {faqs.map((item) => (
-                        <AccordionItem
-                            className="group relative border-b pl-5 first:border-t last:border-b focus-within:outline-none"
-                            key={item.id}
-                            value={item.id}
-                        >
-                            {/*  plus */}
-                            <Plus
-                                aria-hidden="true"
-                                className="-bottom-[5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
-                            />
-
-                            <AccordionTrigger className="px-4 py-4 text-[15px] leading-6 hover:no-underline cursor-pointer focus:ring-0">
-                                {item.title}
-                            </AccordionTrigger>
-
-                            <AccordionContent className="p-4 text-muted-foreground">
-                                {item.content}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+                <div className="relative place-content-center focus-within:outline-none">
+                    {/* vertical guide line */}
+                    <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
+                    />
+    
+                    <Accordion className="focus-within:outline-none" collapsible type="single">
+                        {faqs.map((item) => (
+                            <AccordionItem
+                                className="group relative border-b pl-5 first:border-t last:border-b focus-within:outline-none"
+                                key={item.id}
+                                value={item.id}
+                            >
+                                {/*  plus */}
+                                <Plus
+                                    aria-hidden="true"
+                                    className="-bottom-[5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
+                                />
+    
+                                <AccordionTrigger className="px-4 py-4 text-[15px] leading-6 hover:no-underline cursor-pointer focus:ring-0">
+                                    {item.title}
+                                </AccordionTrigger>
+    
+                                <AccordionContent className="p-4 text-muted-foreground">
+                                    {item.content}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </div>
         </section>
     );

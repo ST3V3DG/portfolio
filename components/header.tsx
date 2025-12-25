@@ -76,8 +76,8 @@ export default function Header() {
 		}
 	});
 	return (
-		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display focus-within:outline-none **:focus-within:outline-none">
-			<div className="size-full flex justify-between bg-background px-6 border-b">
+		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display border-b focus-within:outline-none **:focus-within:outline-none">
+			<div className="size-full max-w-7xl mx-auto flex justify-between bg-background">
 				<Link aria-label="home" href="/" className="text-xl font-bold py-6 w-26">
 					
 				</Link>

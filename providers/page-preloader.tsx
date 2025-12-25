@@ -48,7 +48,7 @@ export default function PagePreloader({ children }: { children: React.ReactNode 
 			.to(svgLineRef.current!.parentElement!.parentElement!, {
 				top: "0%",
 				left: "0%",
-				xPercent: -55,
+				xPercent: -50,
 				transformOrigin: "bottom right",
 				scale: 0.35,
 				duration: 1,

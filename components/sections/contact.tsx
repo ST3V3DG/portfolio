@@ -24,81 +24,83 @@ export function Contact() {
     ];
 
     return (
-        <section id="contact" className="pt-32 lg:border-x bg-background">
-            <div className="flex grow flex-col justify-center md:items-center gap-4 ">
-                <h2 className="text-5xl md:text-7xl text-accent">Contact me</h2>
-                <p className="mb-16 text-base text-muted-foreground">
-                    Contact me for any questions or inquiries.
-                </p>
-            </div>
-            <BorderSeparator />
-            <div className="grid md:grid-cols-3">
-                <Box
-                    description="We respond to all emails within 24 hours."
-                    icon={Mail}
-                    title="Email"
-                >
-                    <Link
-                        className="font-medium font-mono text-sm tracking-wide hover:underline"
-                        href={`mailto:${APP_EMAIL}`}
-                        aria-label="Email"
+        <section id="contact" className="bg-background">
+            <div className="pt-32 lg:border-x max-w-7xl mx-auto">
+                <div className="flex grow flex-col justify-center md:items-center gap-4 ">
+                    <h2 className="text-5xl md:text-7xl text-accent">Contact me</h2>
+                    <p className="mb-16 text-base text-muted-foreground">
+                        Contact me for any questions or inquiries.
+                    </p>
+                </div>
+                <BorderSeparator />
+                <div className="grid md:grid-cols-3">
+                    <Box
+                        description="We respond to all emails within 24 hours."
+                        icon={Mail}
+                        title="Email"
                     >
-                        {APP_EMAIL}
-                    </Link>
-                </Box>
-                <Box
-                    description="Drop by our office for a chat."
-                    icon={MapPin}
-                    title="Location"
-                >
-                    <span className="font-medium font-mono text-sm tracking-wide">
-                        Littoral-Douala, Cameroon
-                    </span>
-                </Box>
-                <Box
-                    className="border-b-0 md:border-r-0"
-                    description="We're available Mon-Fri, 9am-5pm."
-                    icon={Phone}
-                    title="Phone"
-                >
-                    <div>
                         <Link
-                            className="block font-medium font-mono text-sm tracking-wide hover:underline"
-                            href={`tel:${APP_PHONE}`}
-                            aria-label="Phone 1"
+                            className="font-medium font-mono text-sm tracking-wide hover:underline"
+                            href={`mailto:${APP_EMAIL}`}
+                            aria-label="Email"
                         >
-                            {APP_PHONE}
+                            {APP_EMAIL}
                         </Link>
-                        <Link
-                            className="block font-medium font-mono text-sm tracking-wide hover:underline"
-                            href={`tel:${APP_PHONE_2}`}
-                            aria-label="Phone 2"
-                        >
-                            {APP_PHONE_2}
-                        </Link>
+                    </Box>
+                    <Box
+                        description="Drop by our office for a chat."
+                        icon={MapPin}
+                        title="Location"
+                    >
+                        <span className="font-medium font-mono text-sm tracking-wide">
+                            Littoral-Douala, Cameroon
+                        </span>
+                    </Box>
+                    <Box
+                        className="border-b-0 md:border-r-0"
+                        description="We're available Mon-Fri, 9am-5pm."
+                        icon={Phone}
+                        title="Phone"
+                    >
+                        <div>
+                            <Link
+                                className="block font-medium font-mono text-sm tracking-wide hover:underline"
+                                href={`tel:${APP_PHONE}`}
+                                aria-label="Phone 1"
+                            >
+                                {APP_PHONE}
+                            </Link>
+                            <Link
+                                className="block font-medium font-mono text-sm tracking-wide hover:underline"
+                                href={`tel:${APP_PHONE_2}`}
+                                aria-label="Phone 2"
+                            >
+                                {APP_PHONE_2}
+                            </Link>
+                        </div>
+                    </Box>
+                </div>
+                <BorderSeparator />
+                <div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
+                    <h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
+                        Find me <span className="text-accent">online</span>
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-2">
+                        {socialLinks.map((link) => (
+                            <Link aria-label={link.label}
+                                className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
+                                href={link.href}
+                                key={link.label}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                <link.icon className="size-3.5 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
+                                <span className="font-medium font-mono text-xs tracking-wide">
+                                    {link.label}
+                                </span>
+                            </Link>
+                        ))}
                     </div>
-                </Box>
-            </div>
-            <BorderSeparator />
-            <div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
-                <h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
-                    Find me <span className="text-accent">online</span>
-                </h2>
-                <div className="flex flex-wrap items-center gap-2">
-                    {socialLinks.map((link) => (
-                        <Link aria-label={link.label}
-                            className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
-                            href={link.href}
-                            key={link.label}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            <link.icon className="size-3.5 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
-                            <span className="font-medium font-mono text-xs tracking-wide">
-                                {link.label}
-                            </span>
-                        </Link>
-                    ))}
                 </div>
             </div>
         </section>
@@ -125,7 +127,7 @@ function Box({
     ...props
 }: ContactBox) {
     return (
-        <div
+        <section
             className={cn(
                 "flex flex-col justify-between border-b md:border-r md:border-b-0",
                 className
@@ -141,7 +143,7 @@ function Box({
             {/* <div className="border-t p-4">
                 <p className="text-muted-foreground text-sm">{description}</p>
             </div> */}
-        </div>
+        </section>
     );
 }
 
