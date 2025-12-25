@@ -24,7 +24,7 @@ export function Contact() {
     ];
 
     return (
-        <section id="contact" className="px-6 pt-32 lg:border-x bg-background">
+        <section id="contact" className="pt-32 lg:border-x bg-background">
             <div className="flex grow flex-col justify-center md:items-center gap-4 ">
                 <h2 className="text-5xl md:text-7xl text-accent">Contact me</h2>
                 <p className="mb-16 text-base text-muted-foreground">
@@ -131,13 +131,13 @@ function Box({
                 className
             )}
         >
-            <div className="flex items-center gap-x-3 border-b bg-secondary/50 p-4 dark:bg-secondary/20">
+            <div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20">
                 <props.icon className="size-5 text-muted-foreground" strokeWidth={1} />
                 <h2 className="font-heading font-medium text-lg tracking-wider">
                     {title}
                 </h2>
             </div>
-            <div className="flex items-center gap-x-2 p-4 py-12">{children}</div>
+            <div className="flex items-center gap-x-2 p-12">{children}</div>
             {/* <div className="border-t p-4">
                 <p className="text-muted-foreground text-sm">{description}</p>
             </div> */}

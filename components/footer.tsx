@@ -53,7 +53,7 @@ export default function Footer({
     legalLinks = defaultLegalLinks,
 }: FooterProps) {
     return (
-        <footer className="p-6 pb-0 flex flex-col justify-center items-center bg-secondary lg:sticky lg:bottom-0 lg:left-0 lg:right-0">
+        <footer className="p-6 pb-0 flex flex-col justify-center items-center bg-background lg:sticky lg:bottom-0 lg:left-0 lg:right-0">
             <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
                 <div className="flex grow flex-col justify-between gap-6 lg:items-start">
                     {/* Logo */}
