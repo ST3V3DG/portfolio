@@ -116,7 +116,7 @@ export default function Projects() {
                     </Link>
                 </div>
             </div>
-            <svg className="absolute hidden lg:block -top-16 left-0 w-full h-[calc(110%)] -z-1" viewBox="0 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+            <svg className="absolute hidden lg:block -top-16 left-0 w-full h-[calc(110%)] -z-1" viewBox="-10 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
                 <path d="M33.4762 0.309937C33.4762 0.309937 -26.8329 76.2484 15.6671 116.31C58.167 156.371 138.586 157.603 138.586 157.603C192.167 157.603 313.667 140.31 313.667 210.31C280.167 301.81 85.667 186.31 55.167 301.81C55.167 420.31 356.167 338.31 313.667 441.81C296.699 483.133 175.45 575.357 138.586 618.31C62.4045 707.074 55.167 791.31 55.167 791.31" stroke="var(--secondary)" strokeWidth="8" />
             </svg>
         </div>
