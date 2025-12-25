@@ -41,8 +41,8 @@ const defaultSocialLinks: FooterProps["socialLinks"] = [
 ];
 
 const defaultLegalLinks: FooterProps["legalLinks"] = [
-    { label: "Terms and Conditions", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+    // { label: "Terms and Conditions", href: "#" },
+    // { label: "Privacy Policy", href: "#" },
 ];
 
 export default function Footer({
