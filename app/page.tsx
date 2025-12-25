@@ -11,6 +11,7 @@ import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
 import Testimonials from "@/components/sections/testimonials";
 import PagePreloader from "@/providers/page-preloader";
+import { FrequentlyAskQuestion } from '@/components/sections/faq';
 
 export default function Home() {
   const lenisRef = useRef<LenisRef>(null);
@@ -28,6 +29,7 @@ export default function Home() {
             <Testimonials />
             <Contact />
             <CallToAction />
+            <FrequentlyAskQuestion />
           </main>
         </div>
         <Footer />
