@@ -24,7 +24,7 @@ const faqs = [
         id: "item-3",
         title: "What features does my services include?",
         content:
-            "I offer a sophisticated and professional website design, with a focus on user experience, conversion rate optimization, search engines optimization (SEO), performance and accessibility.",
+            "I offer a sophisticate and professional website design, with a focus on user experience, conversion rate optimization, search engines optimization (SEO), performance and accessibility.",
     },
     {
         id: "item-4",
@@ -48,9 +48,9 @@ const faqs = [
 
 export function FrequentlyAskQuestion() {
     return (
-        <section className="bg-secondary">
-            <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2 focus-within:outline-none max-w-7xl mx-auto border-x">
-                <div className="px-4 pt-12 pb-6 focus-within:outline-none">
+        <section className="bg-secondary py-32">
+            <div className="grid md:min-h-screen w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
+                <div className="px-4 focus-within:outline-none">
                     <div className="space-y-5 focus-within:outline-none">
                         <h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black">
                             Frequently Asked Questions
@@ -73,7 +73,7 @@ export function FrequentlyAskQuestion() {
                         aria-hidden="true"
                         className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
                     />
-    
+
                     <Accordion className="focus-within:outline-none" collapsible type="single">
                         {faqs.map((item) => (
                             <AccordionItem
@@ -86,11 +86,11 @@ export function FrequentlyAskQuestion() {
                                     aria-hidden="true"
                                     className="-bottom-[5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
                                 />
-    
+
                                 <AccordionTrigger className="px-4 py-4 text-[15px] leading-6 hover:no-underline cursor-pointer focus:ring-0">
                                     {item.title}
                                 </AccordionTrigger>
-    
+
                                 <AccordionContent className="p-4 text-muted-foreground">
                                     {item.content}
                                 </AccordionContent>

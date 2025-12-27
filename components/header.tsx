@@ -41,7 +41,7 @@ export default function Header() {
 		gsap.set(mobileMenuRef.current, {
 			top: "-100%",
 		});
-		
+
 		// const splitText = new SplitText(mobileMenuRef.current?.querySelectorAll("li") as unknown as HTMLElement[], {
 		// 	type: "chars",
 		// 	autoSplit: true,
@@ -64,7 +64,7 @@ export default function Header() {
 		}, "-=0.5");
 	}, { dependencies: [mobileMenuRef] });
 
-	const { contextSafe } = useGSAP({dependencies: [tl, open], scope: headerRef, revertOnUpdate: true });
+	const { contextSafe } = useGSAP({ dependencies: [tl, open], scope: headerRef, revertOnUpdate: true });
 
 	const animateMobileMenu = contextSafe(() => {
 		if (!open) {
@@ -77,15 +77,15 @@ export default function Header() {
 	});
 	return (
 		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display border-b focus-within:outline-none **:focus-within:outline-none">
-			<div className="size-full max-w-7xl mx-auto flex justify-between bg-background">
+			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background">
 				<Link aria-label="home" href="/" className="text-xl font-bold py-6 w-26">
-					
+
 				</Link>
 				<nav className="hidden md:block">
 					<ul className={`grid grid-cols-5 gap-4 text-center h-full`}>
 						{headerLinks.map((link, index) => (
 							<li className={`flex justify-center items-center relative before:absolute before:bottom-1.5 before:left-0 before:h-1 before:bg-accent before:w-full before:scale-x-0 hover:before:scale-x-90 before:content-[''] before:transition before:duration-300 ${link.label === "Contact" ? "bg-accent text-background hover:text-primary hover:bg-transparent transition duration-300" : ""}`} key={index}>
-								<Link aria-label={link.label} className="py-4 px-2" href={link.href}>{link.label}</Link>
+								<Link aria-label={link.label} className="py-4 px-2 w-full" href={link.href}>{link.label}</Link>
 							</li>
 						))}
 					</ul>

@@ -1,6 +1,7 @@
 "use client";
 
-import { type LucideIcon, Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import type React from "react";
 import { cn } from "@/lib/utils";
@@ -17,17 +18,17 @@ export function Contact() {
             label: "GitHub",
         },
         {
-            icon: Linkedin,
+            icon: LinkedinIcon,
             href: "https://www.linkedin.com/in/steve-diego-takoudjou-53332926b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BAw%2B0rmZJQM2%2Bpe9jCQQBug%3D%3D",
-            label: "Twitter",
+            label: "LinkedIn",
         },
     ];
 
     return (
         <section id="contact" className="bg-background">
-            <div className="pt-32 lg:border-x max-w-7xl mx-auto">
+            <div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
                 <div className="flex grow flex-col justify-center md:items-center gap-4 ">
-                    <h2 className="text-5xl md:text-7xl text-accent">Contact me</h2>
+                    <h2 className="text-5xl md:text-7xl text-accent">Contact Me</h2>
                     <p className="mb-16 text-base text-muted-foreground">
                         Contact me for any questions or inquiries.
                     </p>
@@ -91,7 +92,7 @@ export function Contact() {
                                 className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
                                 href={link.href}
                                 key={link.label}
-                                rel="noopener noreferrer"
+                                // rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 <link.icon className="size-3.5 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
@@ -107,9 +108,9 @@ export function Contact() {
     );
 }
 
-function BorderSeparator({ className }: React.ComponentProps<"div">) {
+export function BorderSeparator({ className }: React.ComponentProps<"div">) {
     return (
-        <div className={cn("absolute inset-x-0 h-px w-full border-b", className)} />
+        <div aria-hidden="true" className={cn("absolute inset-x-0 h-px w-full border-b", className)} />
     );
 }
 
@@ -147,7 +148,7 @@ function Box({
     );
 }
 
-const GithubIcon = (props: React.ComponentProps<"svg">) => (
+export const GithubIcon = (props: React.ComponentProps<"svg">) => (
     <svg fill="currentColor" viewBox="0 0 1024 1024" aria-label="Github" role="img" {...props}>
         <path
             clipRule="evenodd"
@@ -155,6 +156,18 @@ const GithubIcon = (props: React.ComponentProps<"svg">) => (
             fillRule="evenodd"
             transform="scale(64)"
         />
+    </svg>
+);
+
+export const LinkedinIcon = (props: React.ComponentProps<"svg">) => (
+    <svg aria-label="Linkedin" role="img" viewBox="0 0 382 382" fill="currentColor" {...props}>
+
+        <g strokeWidth="0" />
+
+        <g strokeLinecap="round" strokeLinejoin="round" />
+
+        <g> <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z" /> </g>
+
     </svg>
 );
 

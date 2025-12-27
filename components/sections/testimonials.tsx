@@ -14,23 +14,23 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        quote: "The attention to detail and creative approach completely transformed our brand's online presence. Highly recommended!",
         author: {
-            name: "Customer Name",
-            role: "Role",
+            name: "Sarah Johnson",
+            role: "Marketing Director, TechCare",
             avatar: {
-                src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp",
+                src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp",
                 alt: "Customer Name",
             },
         },
     },
     {
-        quote: "Elig doloremque mollitia fugiat omnis! Explicabo.",
+        quote: "Delivered an exceptional platform that is fast, responsive, and incredibly easy to manage. A true professional.",
         author: {
-            name: "Customer Name",
-            role: "Role",
+            name: "Michael Chen",
+            role: "CTO, TechCare",
             avatar: {
-                src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp",
+                src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp",
                 alt: "Customer Name",
             },
         },
@@ -40,10 +40,10 @@ const testimonials: Testimonial[] = [
 export default function Testimonial() {
     return (
         <section id="testimonials" className="bg-secondary">
-            <div className="py-32 flex flex-col justify-center items-center gap-16 max-w-7xl mx-auto">
+            <div className="py-32 flex flex-col justify-center items-center gap-16 max-w-7xl px-6 mx-auto">
                 <div className="flex flex-col gap-2 items-center justify-center text-center">
                     <h2 className="md:text-7xl text-5xl text-accent">Testimonials</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <p>What clients say about working with me.</p>
                 </div>
                 <div className="flex flex-col gap-16 md:flex-row items-center text-center max-w-5xl">
                     {testimonials.map((testimonial, index) => (

@@ -24,13 +24,13 @@ export default function Projects() {
             },
         });
     });
-    return <section id="projects" className="bg-background">
-        <div className="py-32 flex flex-col gap-12 bg-background relative z-1 max-w-7xl mx-auto">
-            <div className="flex flex-col gap-4 justify-between text-center">
+    return <section id="projects" className="bg-background focus-within:outline-none">
+        <div className="py-32 flex flex-col gap-12 bg-background relative z-1 max-w-7xl px-6 mx-auto focus-within:outline-none">
+            <div className="flex flex-col gap-4 justify-between text-center focus-within:outline-none">
                 <h2 className="md:text-7xl text-5xl text-accent">Projects</h2>
                 <p>Check out some of my projects below</p>
             </div>
-            <div className="grid lg:grid-cols-4 gap-4 grow *:border *:overflow-hidden">
+            <div className="grid lg:grid-cols-4 gap-4 grow *:border *:overflow-hidden focus-within:outline-none">
                 <div className="lg:col-span-2 lg:row-span-2">
                     <Link aria-label="eden cosmetics" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://eden-cosmetics.vercel.app/">
                         <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/mac-eden-cosmetics.png" width={1500} />
@@ -101,15 +101,29 @@ export default function Projects() {
                         </div>
                     </Link>
                 </div>
-                <div className="lg:col-span-4 lg:row-span-1">
+                <div className="lg:col-span-2 lg:row-span-1">
                     <Link aria-label="mck medical care" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://mckmedicalcare.vercel.app/">
-                        <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={2000} src="/images/iphone-mck-medical-care.png" width={2000} />
+                        <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/iphone-mck-medical-care.png" width={1500} />
                         <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
                             <h3 className="flex items-center gap-1"><span>MCK Medical Care</span><ExternalLink className="size-3 stroke-4" /></h3>
                             <ul className="flex flex-col justify-between items-end font-clash-display">
                                 <li>Medical</li>
+                                <li>Travel</li>
                                 <li>Care</li>
+                            </ul>
+                        </div>
+                    </Link>
+                </div>
+                <div className="lg:col-span-2 lg:row-span-1">
+                    <Link aria-label="optiride" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://optiride.vercel.app/">
+                        <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/ipad-optiride.png" width={1500} />
+                        <div className="absolute inset-0  bg-linear-to-b from-transparent to-black to-75% opacity-0 group-hover:opacity-50 transition duration- pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
+                            <h3 className="flex items-center gap-1"><span>OptiRide</span><ExternalLink className="size-3 stroke-4" /></h3>
+                            <ul className="flex flex-col justify-between items-end font-clash-display">
+                                <li>Carpooling</li>
+                                <li>Ride</li>
                                 <li>Trip</li>
                             </ul>
                         </div>
