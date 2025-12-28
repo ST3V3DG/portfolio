@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { BorderSeparator } from "@/components/sections/contact";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CallToAction() {
     const t = useTranslations('CTA');
@@ -17,7 +18,7 @@ export default function CallToAction() {
                             </h2>
                         </div>
                         <div className="flex items-center justify-center gap-2 p-4 md:border-l *:rounded-none *:cursor-pointer">
-                            <Button className="bg-accent font-bold text-background hover:bg-accent/80 transition duration-300" size="lg">{t('letStart')}</Button>
+                            <Button asChild className="bg-accent font-bold text-background hover:bg-accent/80 transition duration-300" size="lg"><Link href="https://wa.me/+237676068279" target="_blank">{t('letStart')}</Link></Button>
                         </div>
                     </div>
                     <BorderSeparator />
