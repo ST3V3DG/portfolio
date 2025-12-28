@@ -9,10 +9,10 @@ export default function CallToAction() {
     return (
         <section id="cta" className="bg-background">
             <div className="mx-auto max-w-7xl max-md:px-6">
-                <div className="border-x">
+                <div className="lg:border-x">
                     <BorderSeparator />
                     <div className="flex flex-col justify-between md:flex-row w-full">
-                        <div className="border-b p-4 md:border-b-0 flex items-center">
+                        <div className="p-4 flex items-center">
                             <h2 className="text-center font-bold text-lg md:text-left md:text-2xl">
                                 {t('title')}
                             </h2>
