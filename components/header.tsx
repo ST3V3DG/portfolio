@@ -2,35 +2,39 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import SplitText from "gsap/SplitText";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
+import Link from "next/link";
+import SplitText from "gsap/SplitText";
 
-const headerLinks = [
-	{
-		label: "Home",
-		href: "#hero",
-	},
-	{
-		label: "About",
-		href: "#about",
-	},
-	{
-		label: "Projects",
-		href: "#projects",
-	},
-	{
-		label: "Testimonials",
-		href: "#testimonials",
-	},
-	{
-		label: "Contact",
-		href: "#contact",
-	},
-];
 
 export default function Header() {
 	gsap.registerPlugin(SplitText);
+
+	const t = useTranslations('Navigation');
+
+	const headerLinks = [
+		{
+			label: t("home"),
+			href: "#hero",
+		},
+		{
+			label: t("about"),
+			href: "#about",
+		},
+		{
+			label: t("projects"),
+			href: "#projects",
+		},
+		{
+			label: t("testimonials"),
+			href: "#testimonials",
+		},
+		{
+			label: t("contact"),
+			href: "#contact",
+		},
+	];
 
 	const [open, setOpen] = useState<boolean>(false);
 	const headerRef = useRef<HTMLDivElement>(null);

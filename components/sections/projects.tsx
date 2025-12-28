@@ -7,8 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
+    const t = useTranslations('Projects');
+
     useGSAP(() => {
         gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
@@ -27,8 +30,8 @@ export default function Projects() {
     return <section id="projects" className="bg-background focus-within:outline-none">
         <div className="py-32 flex flex-col gap-12 bg-background relative z-1 max-w-7xl px-6 mx-auto focus-within:outline-none">
             <div className="flex flex-col gap-4 justify-between text-center focus-within:outline-none">
-                <h2 className="md:text-7xl text-5xl text-accent">Projects</h2>
-                <p>Check out some of my projects below</p>
+                <h2 className="md:text-7xl text-5xl text-accent">{t('title')}</h2>
+                <p>{t('description')}</p>
             </div>
             <div className="grid lg:grid-cols-4 gap-4 grow *:border *:overflow-hidden focus-within:outline-none">
                 <div className="lg:col-span-2 lg:row-span-2">

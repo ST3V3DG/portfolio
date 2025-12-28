@@ -3,14 +3,21 @@
 import type { LucideIcon } from "lucide-react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import type React from "react";
 import { cn } from "@/lib/utils";
 
-const APP_EMAIL = "stevediego2004@gmail.com";
-const APP_PHONE = "+237 676 06 82 79";
-const APP_PHONE_2 = "";
-
 export function Contact() {
+    const t = useTranslations('Contact');
+
+    const EMAIL = t('email');
+    const PHONE = t('phone1');
+    const PHONE_2 = t('phone2');
+    const ADDRESS = t('address');
+    const DESCRIPTION_1 = t('description1');
+    const DESCRIPTION_2 = t('description2');
+    const DESCRIPTION_3 = t('description3');
+
     const socialLinks = [
         {
             icon: GithubIcon,
@@ -28,55 +35,57 @@ export function Contact() {
         <section id="contact" className="bg-background">
             <div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
                 <div className="flex grow flex-col justify-center md:items-center gap-4 ">
-                    <h2 className="text-5xl md:text-7xl text-accent">Contact Me</h2>
+                    <h2 className="text-5xl md:text-7xl text-accent">{t('title')}</h2>
                     <p className="mb-16 text-base text-muted-foreground">
-                        Contact me for any questions or inquiries.
+                        {t('description')}
                     </p>
                 </div>
                 <BorderSeparator />
                 <div className="grid md:grid-cols-3">
                     <Box
-                        description="We respond to all emails within 24 hours."
+                        description={DESCRIPTION_1}
                         icon={Mail}
                         title="Email"
                     >
                         <Link
                             className="font-medium font-mono text-sm tracking-wide hover:underline"
-                            href={`mailto:${APP_EMAIL}`}
+                            href={`mailto:${EMAIL}`}
                             aria-label="Email"
                         >
-                            {APP_EMAIL}
+                            {EMAIL}
                         </Link>
                     </Box>
                     <Box
-                        description="Drop by our office for a chat."
+                        description={DESCRIPTION_2}
                         icon={MapPin}
                         title="Location"
                     >
                         <span className="font-medium font-mono text-sm tracking-wide">
-                            Littoral-Douala, Cameroon
+                            {ADDRESS}
                         </span>
                     </Box>
                     <Box
                         className="border-b-0 md:border-r-0"
-                        description="We're available Mon-Fri, 9am-5pm."
+                        description={DESCRIPTION_3}
                         icon={Phone}
                         title="Phone"
                     >
                         <div>
                             <Link
                                 className="block font-medium font-mono text-sm tracking-wide hover:underline"
-                                href={`tel:${APP_PHONE}`}
+                                href={`tel:${PHONE}`}
                                 aria-label="Phone 1"
+                                target="_blank"
                             >
-                                {APP_PHONE}
+                                {PHONE}
                             </Link>
                             <Link
                                 className="block font-medium font-mono text-sm tracking-wide hover:underline"
-                                href={`tel:${APP_PHONE_2}`}
+                                href={`tel:${PHONE_2}`}
                                 aria-label="Phone 2"
+                                target="_blank"
                             >
-                                {APP_PHONE_2}
+                                {PHONE_2}
                             </Link>
                         </div>
                     </Box>
@@ -84,7 +93,11 @@ export function Contact() {
                 <BorderSeparator />
                 <div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
                     <h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
-                        Find me <span className="text-accent">online</span>
+                        {t.rich('title2', {
+                            span: (chunks) => (
+                                <span className="text-accent">{chunks}</span>
+                            ),
+                        })}
                     </h2>
                     <div className="flex flex-wrap items-center gap-2">
                         {socialLinks.map((link) => (

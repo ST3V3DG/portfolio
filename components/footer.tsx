@@ -1,13 +1,14 @@
 import { Binary, CodeXml, Container, SquareTerminal, Webhook } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import type React from "react";
-import { GithubIcon, LinkedinIcon } from "./sections/contact";
+import { GithubIcon, LinkedinIcon } from "@/components/sections/contact";
 
-type FooterProps = {
-    sections?: Array<{
+type Footer = {
+    section?: {
         title: string;
         links: Array<{ label: string; href: string; icon: React.ReactElement }>;
-    }>;
+    };
     description?: string;
     socialLinks?: Array<{
         icon: React.ReactElement;
@@ -21,36 +22,37 @@ type FooterProps = {
     }>;
 }
 
-const defaultSections: FooterProps["sections"] = [
-    {
-        title: "Useful Links",
-        links: [
-            { label: "Home", href: "#hero", icon: <Binary className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-            { label: "About", href: "#about", icon: <CodeXml className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-            { label: "Projects", href: "#projects", icon: <Container className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-            { label: "Testimonials", href: "#testimonials", icon: <SquareTerminal className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-            { label: "Contact", href: "#contact", icon: <Webhook className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-        ],
-    },
-];
+export default function Footer() {
 
-const defaultSocialLinks: FooterProps["socialLinks"] = [
-    { icon: <GithubIcon className="size-5" />, href: "https://github.com/ST3V3DG", label: "Github" },
-    { icon: <LinkedinIcon className="size-5" />, href: "https://www.linkedin.com/in/steve-diego-takoudjou-53332926b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BAw%2B0rmZJQM2%2Bpe9jCQQBug%3D%3D", label: "LinkedIn" },
-];
+    const tf = useTranslations("Footer");
+    const tn = useTranslations("Navigation");
 
-const defaultLegalLinks: FooterProps["legalLinks"] = [
-    // { label: "Terms and Conditions", href: "#" },
-    // { label: "Privacy Policy", href: "#" },
-];
+    const description = tf("description");
+    const copyright = tf("copyright", { date: new Date().getFullYear() });
 
-export default function Footer({
-    sections = defaultSections,
-    description = "A passionate developer building modern web applications with a focus on user experience and performance.",
-    socialLinks = defaultSocialLinks,
-    copyright = `© ${new Date().getFullYear()} Steve.D. All rights reserved.`,
-    legalLinks = defaultLegalLinks,
-}: FooterProps) {
+    const section: Footer["section"] =
+        {
+            title: tf("section.title"),
+            links: [
+                { label: tn("home"), href: "#hero", icon: <Binary className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+                { label: tn("about"), href: "#about", icon: <CodeXml className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+                { label: tn("projects"), href: "#projects", icon: <Container className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+                { label: tn("testimonials"), href: "#testimonials", icon: <SquareTerminal className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+                { label: tn("contact"), href: "#contact", icon: <Webhook className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+            ],
+        };
+    
+
+    const socialLinks: Footer["socialLinks"] = [
+        { icon: <GithubIcon className="size-5" />, href: "https://github.com/ST3V3DG", label: "Github" },
+        { icon: <LinkedinIcon className="size-5" />, href: "https://www.linkedin.com/in/steve-diego-takoudjou-53332926b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BAw%2B0rmZJQM2%2Bpe9jCQQBug%3D%3D", label: "LinkedIn" },
+    ];
+
+    const legalLinks: Footer["legalLinks"] = [
+        // { label: tf("legal.privacy"), href: "#" },
+        // { label: tf("legal.terms"), href: "#" },
+    ];
+
     return (
         <footer className="bg-background pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none">
             <div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
@@ -81,8 +83,7 @@ export default function Footer({
                         </ul>
                     </div>
                     <div className="focus-within:outline-none lg:col-span-3">
-                        {sections?.map((section, sectionIdx) => (
-                            <div className="ml-auto text-end focus-within:outline-none" key={sectionIdx}>
+                            <div className="ml-auto text-end focus-within:outline-none">
                                 <h3 className="mb-4 font-bold text-2xl">{section.title}</h3>
                                 <ul className="text-muted-foreground lg:text-7xl text-3xl focus-within:outline-none">
                                     {section.links.map((link, linkIdx) => (
@@ -98,7 +99,6 @@ export default function Footer({
                                     ))}
                                 </ul>
                             </div>
-                        ))}
                     </div>
                 </div>
                 <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-lg font-medium text-muted-foreground md:flex-row md:items-center md:text-left">

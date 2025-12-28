@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useContext } from "react";
 import Logos from "@/components/logos";
 import { PagePreloaderContext } from "@/providers/page-preloader";
@@ -10,6 +11,8 @@ import { PagePreloaderContext } from "@/providers/page-preloader";
 export default function Hero() {
     gsap.registerPlugin(useGSAP);
     const tl = useContext(PagePreloaderContext);
+
+    const t = useTranslations('Hero');
 
     useGSAP(() => {
         tl?.to("h1 div > span:nth-child(1)", {
@@ -24,21 +27,21 @@ export default function Hero() {
             <div className="pt-16 md:h-dvh max-w-7xl px-6 mx-auto">
                 <div className="grid lg:grid-rows-5 grid-cols-1 gap-12 size-full">
                     <h1 className="text-[clamp(3rem,7vw,6rem)] lg:leading-none text-accent lg:row-span-2">
-                        <div>Minimalistic and Premium</div>
+                        <div>{t("titleLine1")}</div>
                         {" "}
                         <div className="overflow-hidden w-fit relative z-20">
                             <span aria-hidden="true" className="absolute -left-full bottom-0 size-full bg-primary -z-1" />
-                            <span className="mix-blend-luminosity">looking website creator</span>
+                            <span className="mix-blend-luminosity">{t("titleLine2")}</span>
                         </div>
                     </h1>
                     <div className="flex md:flex-row flex-col justify-between gap-12 lg:row-span-3">
                         <div className="md:w-1/2 flex flex-col justify-between gap-6">
                             <div className="flex flex-col gap-4 opacity-50 text-lg">
                                 <p>
-                                    Make your brand stand out with a modern and sophisticate looking website for you or your business to showcase your products and services.
+                                    {t("description1")}
                                 </p>
                                 <p>
-                                    I'm specialized in creating high-performance and visually stunning digital experiences that drive results and elevate your brand identity to the next level.
+                                    {t("description2")}
                                 </p>
                             </div>
                             <Logos />
