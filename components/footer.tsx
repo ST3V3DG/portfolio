@@ -1,8 +1,14 @@
-import { Binary, CodeXml, Container, SquareTerminal, Webhook } from "lucide-react";
+"use client";
+
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 import type React from "react";
+import { Binary, CodeXml, Container, SquareTerminal, Webhook } from "lucide-react";
+import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { GithubIcon, LinkedinIcon } from "@/components/sections/contact";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type Footer = {
     section?: {
@@ -23,6 +29,25 @@ type Footer = {
 }
 
 export default function Footer() {
+
+    const footerRef = useRef<HTMLDivElement>(null);
+
+    gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+    useGSAP(() => {
+        gsap.set(footerRef.current, {
+            opacity: 0,
+        });
+
+        gsap.to(footerRef.current, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: document.getElementById("cta"),
+                start: "bottom bottom",
+                scrub: true,
+            },
+        });
+    });
 
     const tf = useTranslations("Footer");
     const tn = useTranslations("Navigation");
@@ -54,7 +79,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-background pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none">
+        <footer className="bg-background-grainy pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none" ref={footerRef}>
             <div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
                 <div className="grid grid-cols-1 lg:grid-cols-5 w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">
                     <div className="flex flex-col justify-between gap-6 lg:items-start focus-within:outline-none lg:col-span-2">

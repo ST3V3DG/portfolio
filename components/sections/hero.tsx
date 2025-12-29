@@ -23,7 +23,7 @@ export default function Hero() {
     }, { dependencies: [tl] });
 
     return (
-        <section id="hero" className="bg-background">
+        <section id="hero" className="bg-background-grainy">
             <div className="pt-16 md:h-dvh max-w-7xl px-6 mx-auto">
                 <div className="grid lg:grid-rows-5 grid-cols-1 gap-12 size-full">
                     <h1 className="text-[clamp(3rem,7vw,6rem)] lg:leading-none text-accent lg:row-span-2">
@@ -47,7 +47,7 @@ export default function Hero() {
                             <Logos />
                         </div>
                         <div className="md:w-1/2">
-                            <Image alt="Hero image" className="grayscale size-full object-cover" height={500} src="https://static.vecteezy.com/system/resources/thumbnails/065/464/910/small/a-man-with-a-beard-smiles-for-the-camera-free-photo.jpeg" width={500} />
+                            <Image alt="Hero image" className="grayscale hover:grayscale-0 transition duration-300 size-full object-cover" height={500} src="https://static.vecteezy.com/system/resources/thumbnails/065/464/910/small/a-man-with-a-beard-smiles-for-the-camera-free-photo.jpeg" width={500} />
                         </div>
                     </div>
                 </div>

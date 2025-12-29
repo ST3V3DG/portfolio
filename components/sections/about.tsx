@@ -13,22 +13,22 @@ export default function About() {
 		{
 			title: t("item1.title"),
 			description: t("item1.description"),
-			icon: <Webhook className="size-40 opacity-10 translate-x-1/3 self-end" strokeLinecap="inherit" />
+			icon: <Webhook className="size-40 opacity-10 translate-x-1/3 self-end group-hover:translate-x-0 transition-all duration-300" strokeLinecap="inherit" />
 		},
 		{
 			title: t("item2.title"),
 			description: t("item2.description"),
-			icon: <Binary className="size-40 opacity-10 translate-x-1/3 self-end" strokeLinecap="inherit" />
+			icon: <Binary className="size-40 opacity-10 translate-x-1/3 self-end group-hover:translate-x-0 transition-all duration-300" strokeLinecap="inherit" />
 		},
 		{
 			title: t("item3.title"),
 			description: t("item3.description"),
-			icon: <SquareTerminal className="size-40 opacity-10 translate-x-1/3 self-end" strokeLinecap="inherit" />
+			icon: <SquareTerminal className="size-40 opacity-10 translate-x-1/3 self-end group-hover:translate-x-0 transition-all duration-300" strokeLinecap="inherit" />
 		},
 		{
 			title: t("item4.title"),
 			description: t("item4.description"),
-			icon: <CodeXml className="size-40 opacity-10 translate-x-1/3 self-end" strokeLinecap="inherit" />
+			icon: <CodeXml className="size-40 opacity-10 translate-x-1/3 self-end group-hover:translate-x-0 transition-all duration-300" strokeLinecap="inherit" />
 		},
 	];
 

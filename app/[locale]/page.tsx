@@ -13,6 +13,7 @@ import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
 import Testimonials from "@/components/sections/testimonials";
 import PagePreloader from "@/providers/page-preloader";
+import Cursor from '@/components/cursor';
 
 export default function Home() {
     const lenisRef = useRef<LenisRef>(null);
@@ -28,13 +29,14 @@ export default function Home() {
                         <About />
                         <Projects />
                         <Testimonials />
+                        <FrequentlyAskQuestion />
                         <Contact />
                         <CallToAction />
-                        <FrequentlyAskQuestion />
                     </main>
                 </div>
-                <LangSwitcher />
                 <Footer />
+                <Cursor />
+                <LangSwitcher />
             </PagePreloader>
         </>
     );

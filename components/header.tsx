@@ -1,11 +1,11 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { useTranslations } from "next-intl";
-import { useRef, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import { useEffect, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
 
 
 export default function Header() {
@@ -40,16 +40,30 @@ export default function Header() {
 	const headerRef = useRef<HTMLDivElement>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 	const tl = useRef<gsap.core.Timeline>(null);
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 0) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
+
+		handleScroll();
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	useGSAP(() => {
 		gsap.set(mobileMenuRef.current, {
 			top: "-100%",
 		});
-
-		// const splitText = new SplitText(mobileMenuRef.current?.querySelectorAll("li") as unknown as HTMLElement[], {
-		// 	type: "chars",
-		// 	autoSplit: true,
-		// });
 
 		tl.current = gsap.timeline({
 			paused: true,
@@ -80,8 +94,8 @@ export default function Header() {
 		}
 	});
 	return (
-		<header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-background font-clash-display border-b focus-within:outline-none **:focus-within:outline-none">
-			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background">
+		<header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 bg-background-grainy font-clash-display focus-within:outline-none **:focus-within:outline-none ${scrolled ? "border-b" : ""}`}>
+			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background-grainy">
 				<Link aria-label="home" href="/" className="text-xl font-bold py-6 w-26">
 
 				</Link>

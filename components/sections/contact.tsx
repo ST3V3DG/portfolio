@@ -32,7 +32,7 @@ export function Contact() {
     ];
 
     return (
-        <section id="contact" className="bg-background">
+        <section id="contact" className="bg-secondary">
             <div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
                 <div className="flex grow flex-col justify-center md:items-center gap-4 ">
                     <h2 className="text-5xl md:text-7xl text-accent">{t('title')}</h2>

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
+import { getTranslations } from 'next-intl/server';
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -6,7 +7,6 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from "@/i18n/routing";
-import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: { params: string }) {
   const t = await getTranslations({ locale: params, namespace: 'Metadata' });

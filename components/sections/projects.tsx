@@ -27,8 +27,8 @@ export default function Projects() {
             },
         });
     });
-    return <section id="projects" className="bg-background focus-within:outline-none">
-        <div className="py-32 flex flex-col gap-12 bg-background relative z-1 max-w-7xl px-6 mx-auto focus-within:outline-none">
+    return <section id="projects" className="bg-background-grainy focus-within:outline-none">
+        <div className="py-32 flex flex-col gap-12 bg-background-grainy relative z-1 max-w-7xl px-6 mx-auto focus-within:outline-none">
             <div className="flex flex-col gap-4 justify-between text-center focus-within:outline-none">
                 <h2 className="md:text-7xl text-5xl text-accent">{t('title')}</h2>
                 <p>{t('description')}</p>
@@ -133,9 +133,9 @@ export default function Projects() {
                     </Link>
                 </div>
             </div>
-            <svg className="absolute hidden lg:block -top-16 left-0 w-full h-[calc(110%)] -z-1" viewBox="-10 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
-                <path d="M33.4762 0.309937C33.4762 0.309937 -26.8329 76.2484 15.6671 116.31C58.167 156.371 138.586 157.603 138.586 157.603C192.167 157.603 313.667 140.31 313.667 210.31C280.167 301.81 85.667 186.31 55.167 301.81C55.167 420.31 356.167 338.31 313.667 441.81C296.699 483.133 175.45 575.357 138.586 618.31C62.4045 707.074 55.167 791.31 55.167 791.31" stroke="var(--secondary)" strokeWidth="8" />
-            </svg>
+            {/* <svg className="absolute hidden lg:block -top-16 left-0 w-full h-[calc(110%)] -z-1" viewBox="-10 0 332 825" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                <path d="M24.2444 0.268311C24.2444 0.268311 -21.7472 72.2068 14.2858 112.268C50.3187 152.33 120.5 155.268 120.5 155.268C165.928 155.268 335.5 190.768 275.5 285.768C229 359.393 40.1447 267.768 14.2858 383.268C14.2858 501.768 348.033 456.268 312 559.768C297.613 601.091 116.255 671.315 84.9999 714.268C20.4106 803.033 24.2444 912.268 24.2444 912.268" stroke="var(--secondary)" strokeWidth="8" />
+            </svg> */}
         </div>
     </section>
 }

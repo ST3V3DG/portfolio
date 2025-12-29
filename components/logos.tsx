@@ -61,7 +61,7 @@ const logos: logo[] = [
 
 export default function Logos() {
     return (
-            <div>
+            <div className="mb-2">
                 <InfiniteSlider
                     speedOnHover={20}
                     speed={40}
