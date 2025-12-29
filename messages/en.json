@@ -105,6 +105,8 @@
     }
   },
   "Footer": {
+    "description": "A passionate developer building modern web applications with a focus on user experience and performance.",
+    "copyright": "© {date} Steve.D. All rights reserved.",
     "legal": {
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
@@ -112,8 +114,6 @@
     },
     "section": {
       "title": "Usesfull Links"
-    },
-    "description": "A passionate developer building modern web applications with a focus on user experience and performance.",
-    "copyright": "© {date} Steve.D. All rights reserved."
+    }
   }
 }
