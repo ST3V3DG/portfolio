@@ -11,7 +11,7 @@ export default function CallToAction() {
             <div className="mx-auto max-w-7xl max-md:px-6">
                 <div className="lg:border-x">
                     <BorderSeparator />
-                    <div className="flex flex-col justify-between md:flex-row w-full">
+                    <div className="flex flex-col items-center justify-between md:flex-row w-full">
                         <div className="p-4 flex items-center">
                             <h2 className="text-center font-bold text-lg md:text-left md:text-2xl">
                                 {t('title')}
