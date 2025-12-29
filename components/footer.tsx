@@ -35,18 +35,22 @@ export default function Footer() {
     gsap.registerPlugin(useGSAP, ScrollTrigger);
 
     useGSAP(() => {
-        gsap.set(footerRef.current, {
-            opacity: 0,
-        });
+        const mm = gsap.matchMedia();
 
-        gsap.to(footerRef.current, {
-            opacity: 1,
-            scrollTrigger: {
-                trigger: document.getElementById("cta"),
-                start: "bottom bottom",
-                end: "bottom center",
-                scrub: true,
-            },
+        mm.add("(min-width: 1024px)", () => {
+            gsap.set(footerRef.current, {
+                opacity: 0,
+            });
+
+            gsap.to(footerRef.current, {
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: document.getElementById("cta"),
+                    start: "bottom bottom",
+                    end: "bottom center",
+                    scrub: true,
+                },
+            });
         });
     });
 
@@ -57,17 +61,17 @@ export default function Footer() {
     const copyright = tf("copyright", { date: new Date().getFullYear() });
 
     const section: Footer["section"] =
-        {
-            title: tf("section.title"),
-            links: [
-                { label: tn("home"), href: "#hero", icon: <Binary className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-                { label: tn("about"), href: "#about", icon: <CodeXml className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-                { label: tn("projects"), href: "#projects", icon: <Container className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-                { label: tn("testimonials"), href: "#testimonials", icon: <SquareTerminal className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-                { label: tn("contact"), href: "#contact", icon: <Webhook className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
-            ],
-        };
-    
+    {
+        title: tf("section.title"),
+        links: [
+            { label: tn("home"), href: "#hero", icon: <Binary className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+            { label: tn("about"), href: "#about", icon: <CodeXml className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+            { label: tn("projects"), href: "#projects", icon: <Container className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+            { label: tn("testimonials"), href: "#testimonials", icon: <SquareTerminal className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+            { label: tn("contact"), href: "#contact", icon: <Webhook className="size-28 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300" strokeLinecap="inherit" /> },
+        ],
+    };
+
 
     const socialLinks: Footer["socialLinks"] = [
         { icon: <GithubIcon className="size-5" />, href: "https://github.com/ST3V3DG", label: "Github" },
@@ -109,22 +113,22 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="focus-within:outline-none lg:col-span-3">
-                            <div className="ml-auto text-end focus-within:outline-none">
-                                <h3 className="mb-4 font-bold text-2xl">{section.title}</h3>
-                                <ul className="text-muted-foreground lg:text-7xl text-3xl focus-within:outline-none">
-                                    {section.links.map((link, linkIdx) => (
-                                        <li
-                                            key={linkIdx}
-                                            className="hover:text-accent transition duration-300"
-                                        >
-                                            <Link aria-label={link.label} className="flex items-center gap-4 h-20 justify-between overflow-hidden group" href={link.href}>
-                                                <div className="overflow-hidden">{link.icon}</div>
-                                                <span>{link.label}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div className="ml-auto text-end focus-within:outline-none">
+                            <h3 className="mb-4 font-bold text-2xl">{section.title}</h3>
+                            <ul className="text-muted-foreground lg:text-7xl text-3xl focus-within:outline-none">
+                                {section.links.map((link, linkIdx) => (
+                                    <li
+                                        key={linkIdx}
+                                        className="hover:text-accent transition duration-300"
+                                    >
+                                        <Link aria-label={link.label} className="flex items-center gap-4 h-20 justify-between overflow-hidden group" href={link.href}>
+                                            <div className="overflow-hidden">{link.icon}</div>
+                                            <span>{link.label}</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-lg font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
