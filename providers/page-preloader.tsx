@@ -55,7 +55,7 @@ export default function PagePreloader({ children }: { children: React.ReactNode 
 				ease: "power2.inOut",
 				onStart: () => {
 					preloader!.nextElementSibling!.classList.remove("bg-background-grainy");
-					preloader!.nextElementSibling!.classList.add("bg-transparent");
+					preloader!.nextElementSibling!.classList.add("bg-transparent", "pointer-events-none");
 				},
 				onUpdate: () => {
 					gsap.set(svgLineRef.current!, {
@@ -75,7 +75,7 @@ export default function PagePreloader({ children }: { children: React.ReactNode 
 				className="fixed place-items-center top-0 left-0 z-20 pointer-events-none bg-background h-dvh w-dvw"
 			>
 			</div>
-			<div className="fixed place-items-center top-0 -translate-x-1/2 left-1/2 z-20 pointer-events-none bg-background-grainy h-dvh w-dvw">
+			<div className="fixed place-items-center top-0 -translate-x-1/2 left-1/2 z-20 bg-background-grainy h-dvh w-dvw">
 				<div className="size-full max-w-7xl relative">
 					<svg aria-label="logo" className="absolute pointer-events-none" width="280" height="80" viewBox="0 0 281 82" fill="none" xmlns="http://www.w3.org/2000/svg"
 						role="img">
