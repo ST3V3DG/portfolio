@@ -44,6 +44,7 @@ export default function Footer() {
             scrollTrigger: {
                 trigger: document.getElementById("cta"),
                 start: "bottom bottom",
+                end: "bottom 80%",
                 scrub: true,
             },
         });
@@ -116,7 +117,7 @@ export default function Footer() {
                                             key={linkIdx}
                                             className="hover:text-accent transition duration-300"
                                         >
-                                            <Link aria-label={link.label} className="flex items-center gap-4 h-20 justify-between overflow-hidden group" href={link.href} target="_blank">
+                                            <Link aria-label={link.label} className="flex items-center gap-4 h-20 justify-between overflow-hidden group" href={link.href}>
                                                 <div className="overflow-hidden">{link.icon}</div>
                                                 <span>{link.label}</span>
                                             </Link>
