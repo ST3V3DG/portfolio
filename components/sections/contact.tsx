@@ -147,13 +147,13 @@ function Box({
                 className
             )}
         >
-            <div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20">
+            <div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20 justify-center">
                 <props.icon className="size-5 text-muted-foreground" strokeWidth={1} />
-                <h2 className="font-heading font-medium text-lg tracking-wider">
+                <h3 className="font-heading font-medium text-lg tracking-wider">
                     {title}
-                </h2>
+                </h3>
             </div>
-            <div className="flex items-center gap-x-2 p-12">{children}</div>
+            <div className="flex items-center justify-center gap-x-2 p-12">{children}</div>
             {/* <div className="border-t p-4">
                 <p className="text-muted-foreground text-sm">{description}</p>
             </div> */}
