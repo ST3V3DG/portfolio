@@ -44,7 +44,7 @@ export default function Footer() {
             scrollTrigger: {
                 trigger: document.getElementById("cta"),
                 start: "bottom bottom",
-                end: "bottom 80%",
+                end: "bottom center",
                 scrub: true,
             },
         });
