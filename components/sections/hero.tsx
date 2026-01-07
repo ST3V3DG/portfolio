@@ -46,8 +46,14 @@ export default function Hero() {
                             </div>
                             <Logos />
                         </div>
-                        <div className="md:w-1/2">
-                            <Image alt="Hero image" className="grayscale hover:grayscale-0 transition duration-300 size-full object-cover" height={500} src="https://static.vecteezy.com/system/resources/thumbnails/065/464/910/small/a-man-with-a-beard-smiles-for-the-camera-free-photo.jpeg" width={500} />
+                        <div className="md:w-1/2 overflow-hidden">
+                            <Image
+                            alt="Hero image"
+                            className="hover:scale-110 transition duration-300 w-full object-cover"
+                            height={500}
+                            src="/images/i.png"
+                            width={500}
+                            />
                         </div>
                     </div>
                 </div>
