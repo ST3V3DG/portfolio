@@ -91,7 +91,7 @@ export default function Projects() {
                     </Link>
                 </div>
                 <div className="lg:col-span-1 lg:row-span-1">
-                    <Link aria-label="steve the developer" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://stevethedeveloper.vercel.app/">
+                    <Link aria-label="steve the developer v2" className="group relative lg:grayscale lg:hover:grayscale-0 transition duration-300" target="_blank" href="https://portfolio-steve-v2.vercel.app/">
                         <Image alt="project image" className="size-full object-cover group-hover:scale-110 transition duration-300" height={1500} src="/images/ipad-air-steve-the-developer.png" width={1500} />
                         <div className="absolute inset-0  bg-linear-to-b from-transparent to-black lg:to-75% lg:opacity-0 lg:group-hover:opacity-50 transition duration-300 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 right-0 lg:opacity-0 lg:group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
