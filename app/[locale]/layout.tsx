@@ -43,7 +43,7 @@ export async function generateMetadata({
 			description: t("description"),
 			images: [
 				{
-					url: `${baseUrl}/images/og-image.png`,
+					url: `${baseUrl}/images/twitter-image.jpg`,
 					width: 1280,
 					height: 800,
 					alt: t("title"),
@@ -57,7 +57,7 @@ export async function generateMetadata({
 			// creator: "@stevediego",
 			images: [
 				{
-					url: `${baseUrl}/images/og-image.png`,
+					url: `${baseUrl}/images/opengraph-image.jpg`,
 					width: 1280,
 					height: 800,
 					alt: t("title"),
