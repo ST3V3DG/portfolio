@@ -1,119 +1,122 @@
 {
-  "Metadata": {
-    "title": "Steve.D | Portfolio",
-    "description": "I'm a passionate developer who likes to create modern web applications and websites with a focus on user experience and performance."
-  },
-  "lang": {
-    "current": "en",
-    "switch": "fr"
-  },
-  "Navigation": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "testimonials": "Testimonials",
-    "contact": "Contact",
-    "faq": "FAQ"
-  },
-  "Hero": {
-    "titleLine1": "Minimalistic and Premium",
-    "titleLine2": "looking website creator",
-    "description1": "Make your brand stand out with a modern and sophisticate looking website for you or your business to showcase your products and services.",
-    "description2": "I'm specialized in creating high-performance and visually stunning digital experiences that drive results and elevate your brand identity to the next level."
-  },
-  "About": {
-    "title": "About Me",
-    "description": "Passionate about building high-quality websites and applications that are not only visually stunning but also performant and accessible.",
-    "item1": {
-      "title": "01",
-      "description": "Seamless Integration. Connecting disparate systems with robust APIs and services to create a unified and efficient ecosystem."
-    },
-    "item2": {
-      "title": "02",
-      "description": "Clean Architecture. Writing distinct, readable, and maintainable code that simplifies future updates and team collaboration."
-    },
-    "item3": {
-      "title": "03",
-      "description": "Efficient Workflow. Leveraging modern tools to streamline the development process."
-    },
-    "item4": {
-      "title": "04",
-      "description": "Handle responsiveness. Ensuring a seamless experience across all devices."
-    }
-  },
-  "Projects": {
-    "title": "Projects",
-    "description": "Check out some of my projects below"
-  },
-  "Testimonials": {
-    "title": "Testimonials",
-    "description": "What clients say about working with me.",
-    "item1": {
-      "quote": "The attention to detail and creative approach completely transformed our brand's online presence. Highly recommended!",
-      "authorName": "Sarah Johnson",
-      "authorRole": "Marketing Director, TechCare"
-    },
-    "item2": {
-      "quote": "Delivered an exceptional platform that is fast, responsive, and incredibly easy to manage. A true professional.",
-      "authorName": "Michael Chen",
-      "authorRole": "CTO, TechCare"
-    }
-  },
-  "Contact": {
-    "title": "Contact Me",
-    "title2": "Find me <span>online</span>",
-    "description": "I am available for freelance work. Connect with me via email or social media.",
-    "email": "stevediego2004@gmail.com",
-    "phone1": "+237 676 06 82 79",
-    "phone2": "",
-    "address": "Littoral-Douala, Cameroon",
-    "description1": "We respond to all emails within 24 hours.",
-    "description2": "Drop by our office for a chat.",
-    "description3": "We're available Mon-Fri, 9am-5pm."
-  },
-  "CTA": {
-    "title": "Let your website shape your digital footprint.",
-    "letStart": "Let Start"
-  },
-  "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Quick answers to common questions me and my work. Open any question to learn more.",
-    "contactMe": "Contact Me",
-    "item1": {
-      "question": "What services do you offer?",
-      "answer": "I offer a range of web development services including custom website design, full-stack application development, performance optimization, and SEO enhancements."
-    },
-    "item2": {
-      "question": "How long does it take to build a website?",
-      "answer": "The timeline depends on the complexity of the project. A simple portfolio site might take 1-2 weeks, while a full-featured web application could take 4-8 weeks or more."
-    },
-    "item3": {
-      "question": "Do you provide ongoing support?",
-      "answer": "Yes, I offer maintenance packages to ensure your website remains secure, up-to-date, and performing optimally after launch."
-    },
-    "item4": {
-      "question": "What is your pricing structure?",
-      "answer": "Pricing varies based on project scope and requirements. Feel free to contact me for a detailed quote tailored to your specific needs."
-    },
-    "item5": {
-      "question": "What payment methods do you accept?",
-      "answer": "For now, I accept payments through PayPal, Orange Money, and MTN Mobile Money."
-    },
-    "item6": {
-      "question": "Can you handle hosting?",
-      "answer": "Yeah, I can handle buying the domain name and put your website online."
-    }
-  },
-  "Footer": {
-    "description": "A passionate developer building modern web applications with a focus on user experience and performance.",
-    "copyright": "© {date} Steve.D. All rights reserved.",
-    "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
-    },
-    "section": {
-      "title": "Useful Links"
-    }
-  }
+	"Metadata": {
+		"title": "Steve.D | Portfolio",
+		"description": "I'm a passionate developer who likes to create modern web applications and websites with a focus on user experience and performance.",
+		"keywords": "developer, web developer, front-end developer, back-end developer, front-end, back-end, web, application, website, application development, website development, performance, user experience, responsive, accessibility, integration, design, ux, ui, ux/ui, user experience, user interface, user interface design, user interface design, web design, webdesign, html, css, javascript, react, nextjs, typescript, tailwindcss, postcss, nextjs",
+		"author": "Steve.D",
+		"viewport": "width=device-width, initial-scale=1.0"
+	},
+	"lang": {
+		"current": "en",
+		"switch": "fr"
+	},
+	"Navigation": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"testimonials": "Testimonials",
+		"contact": "Contact",
+		"faq": "FAQ"
+	},
+	"Hero": {
+		"titleLine1": "Minimalistic and Premium",
+		"titleLine2": "looking website creator",
+		"description1": "Make your brand stand out with a modern and sophisticate looking website for you or your business to showcase your products and services.",
+		"description2": "I'm specialized in creating high-performance and visually stunning digital experiences that drive results and elevate your brand identity to the next level."
+	},
+	"About": {
+		"title": "About Me",
+		"description": "Passionate about building high-quality websites and applications that are not only visually stunning but also performant and accessible.",
+		"item1": {
+			"title": "01",
+			"description": "Seamless Integration. Connecting disparate systems with robust APIs and services to create a unified and efficient ecosystem."
+		},
+		"item2": {
+			"title": "02",
+			"description": "Clean Architecture. Writing distinct, readable, and maintainable code that simplifies future updates and team collaboration."
+		},
+		"item3": {
+			"title": "03",
+			"description": "Efficient Workflow. Leveraging modern tools to streamline the development process."
+		},
+		"item4": {
+			"title": "04",
+			"description": "Handle responsiveness. Ensuring a seamless experience across all devices."
+		}
+	},
+	"Projects": {
+		"title": "Projects",
+		"description": "Check out some of my projects below"
+	},
+	"Testimonials": {
+		"title": "Testimonials",
+		"description": "What clients say about working with me.",
+		"item1": {
+			"quote": "The attention to detail and creative approach completely transformed our brand's online presence. Highly recommended!",
+			"authorName": "Sarah Johnson",
+			"authorRole": "Marketing Director, TechCare"
+		},
+		"item2": {
+			"quote": "Delivered an exceptional platform that is fast, responsive, and incredibly easy to manage. A true professional.",
+			"authorName": "Michael Chen",
+			"authorRole": "CTO, TechCare"
+		}
+	},
+	"Contact": {
+		"title": "Contact Me",
+		"title2": "Find me <span>online</span>",
+		"description": "I am available for freelance work. Connect with me via email or social media.",
+		"email": "stevediego2004@gmail.com",
+		"phone1": "+237 676 06 82 79",
+		"phone2": "",
+		"address": "Littoral-Douala, Cameroon",
+		"description1": "We respond to all emails within 24 hours.",
+		"description2": "Drop by our office for a chat.",
+		"description3": "We're available Mon-Fri, 9am-5pm."
+	},
+	"CTA": {
+		"title": "Let your website shape your digital footprint.",
+		"letStart": "Let Start"
+	},
+	"FAQ": {
+		"title": "Frequently Asked Questions",
+		"description": "Quick answers to common questions me and my work. Open any question to learn more.",
+		"contactMe": "Contact Me",
+		"item1": {
+			"question": "What services do you offer?",
+			"answer": "I offer a range of web development services including custom website design, full-stack application development, performance optimization, and SEO enhancements."
+		},
+		"item2": {
+			"question": "How long does it take to build a website?",
+			"answer": "The timeline depends on the complexity of the project. A simple portfolio site might take 1-2 weeks, while a full-featured web application could take 4-8 weeks or more."
+		},
+		"item3": {
+			"question": "Do you provide ongoing support?",
+			"answer": "Yes, I offer maintenance packages to ensure your website remains secure, up-to-date, and performing optimally after launch."
+		},
+		"item4": {
+			"question": "What is your pricing structure?",
+			"answer": "Pricing varies based on project scope and requirements. Feel free to contact me for a detailed quote tailored to your specific needs."
+		},
+		"item5": {
+			"question": "What payment methods do you accept?",
+			"answer": "For now, I accept payments through PayPal, Orange Money, and MTN Mobile Money."
+		},
+		"item6": {
+			"question": "Can you handle hosting?",
+			"answer": "Yeah, I can handle buying the domain name and put your website online."
+		}
+	},
+	"Footer": {
+		"description": "A passionate developer building modern web applications with a focus on user experience and performance.",
+		"copyright": "© {date} Steve.D. All rights reserved.",
+		"legal": {
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Service",
+			"cookies": "Cookie Policy"
+		},
+		"section": {
+			"title": "Useful Links"
+		}
+	}
 }
