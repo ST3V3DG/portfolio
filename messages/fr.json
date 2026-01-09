@@ -1,122 +1,122 @@
 {
-	"Metadata": {
-		"title": "Steve.D | Portfolio",
-		"description": "Je suis un développeur passionné par la création d'applications et de sites web modernes en mettant l'accent sur l'expérience utilisateur et la performance.",
-		"keywords": "développeur, développeur web, développeur front-end, développeur back-end, front-end, back-end, web, application, site web, création d'application, création de site web, performance, expérience utilisateur, responsive, accessibilité, intégration, design, ux, ui, ux/ui, user experience, user interface, user interface design, user interface design, web design, webdesign, html, css, javascript, react, nextjs, typescript, tailwindcss, postcss, nextjs",
-		"author": "Steve.D",
-		"viewport": "width=device-width, initial-scale=1.0"
-	},
-	"lang": {
-		"current": "fr",
-		"switch": "en"
-	},
-	"Navigation": {
-		"home": "Accueil",
-		"about": "À propos",
-		"projects": "Projets",
-		"testimonials": "Témoignages",
-		"contact": "Contact",
-		"faq": "FAQ"
-	},
-	"Hero": {
-		"titleLine1": "Créateur de sites web",
-		"titleLine2": "minimalistes et premium",
-		"description1": "Démarquez votre marque avec un site web moderne et sophistiqué pour présenter vos produits et services.",
-		"description2": "Je suis spécialisé dans la création d'expériences numériques performantes et visuellement époustouflantes qui génèrent des résultats et élèvent votre identité de marque."
-	},
-	"About": {
-		"title": "À propos de moi",
-		"description": "Passionné par la création de sites web et d'applications de haute qualité, non seulement visuellement époustouflants, mais aussi performants et accessibles.",
-		"item1": {
-			"title": "01",
-			"description": "Intégration transparente. Connexion de systèmes disparates avec des API et services robustes pour créer un écosystème unifié et efficace."
-		},
-		"item2": {
-			"title": "02",
-			"description": "Architecture propre. Écriture de code distinct, lisible et maintenable facilitant les futures mises à jour et la collaboration en équipe."
-		},
-		"item3": {
-			"title": "03",
-			"description": "Flux de travail efficace. Utilisation d'outils modernes pour rationaliser le processus de développement."
-		},
-		"item4": {
-			"title": "04",
-			"description": "Gestion de la réactivité. Assurer une expérience fluide sur tous les appareils."
-		}
-	},
-	"Projects": {
-		"title": "Projets",
-		"description": "Découvrez certains de mes projets ci-dessous"
-	},
-	"Testimonials": {
-		"title": "Témoignages",
-		"description": "Ce que les clients disent de mon travail.",
-		"item1": {
-			"quote": "Le souci du détail et l'approche créative ont complètement transformé la présence en ligne de notre marque. Hautement recommandé !",
-			"authorName": "Sarah Johnson",
-			"authorRole": "Directrice Marketing, TechCare"
-		},
-		"item2": {
-			"quote": "A livré une plateforme exceptionnelle, rapide, réactive et incroyablement facile à gérer. Un vrai professionnel.",
-			"authorName": "Michael Chen",
-			"authorRole": "CTO, TechCare"
-		}
-	},
-	"Contact": {
-		"title": "Me contacter",
-		"title2": "Trouvez-moi <span>en ligne</span>",
-		"description": "Je suis disponible pour des missions freelance. Connectez-vous avec moi via email ou les réseaux sociaux.",
-		"email": "stevediego2004@gmail.com",
-		"phone1": "+237 676 06 82 79",
-		"phone2": "",
-		"address": "Littoral-Douala, Cameroun",
-		"description1": "Nous répondons à tous les courriels dans un délai de 24 heures.",
-		"description2": "Visitez notre bureau pour un chat.",
-		"description3": "Nous sommes disponibles du lundi au vendredi, de 9h à 17h."
-	},
-	"CTA": {
-		"title": "Laissez votre site web façonner votre empreinte numérique.",
-		"letStart": "C'est parti"
-	},
-	"FAQ": {
-		"title": "Foire Aux Questions",
-		"description": "Réponses rapides aux questions courantes sur moi et mon travail. Ouvrez n'importe quelle question pour en savoir plus.",
-		"contactMe": "Contactez Moi",
-		"item1": {
-			"question": "Quels services proposez-vous ?",
-			"answer": "Je propose une gamme de services de développement web incluant la conception de sites sur mesure, le développement d'applications full-stack, l'optimisation des performances et le SEO."
-		},
-		"item2": {
-			"question": "Combien de temps faut-il pour créer un site ?",
-			"answer": "Le délai dépend de la complexité du projet. Un site vitrine simple peut prendre 1 à 2 semaines, tandis qu'une application web complète peut nécessiter 4 à 8 semaines ou plus."
-		},
-		"item3": {
-			"question": "Proposez-vous un support continu ?",
-			"answer": "Oui, je propose des forfaits de maintenance pour garantir que votre site reste sécurisé, à jour et performant après le lancement."
-		},
-		"item4": {
-			"question": "Quelle est votre structure tarifaire ?",
-			"answer": "Les tarifs varient selon l'envergure et les exigences du projet. N'hésitez pas à me contacter pour un devis détaillé adapté à vos besoins."
-		},
-		"item5": {
-			"question": "Quels sont les moyens de paiement que vous acceptez ?",
-			"answer": "Pour l'instant, je accepte les paiements par PayPal, Orange Money, et MTN Mobile Money."
-		},
-		"item6": {
-			"question": "Pouvez-vous gérer l'hébergement ?",
-			"answer": "Oui, je peux gérer l'achat du nom de domaine et mettre votre site web en ligne."
-		}
-	},
-	"Footer": {
-		"description": "Un développeur passionné qui crée des applications web modernes en mettant l'accent sur l'expérience utilisateur et la performance.",
-		"copyright": "© {date} Steve.D. Tous droits réservés.",
-		"legal": {
-			"privacy": "Politique de confidentialité",
-			"terms": "Conditions d'utilisation",
-			"cookies": "Politique de cookies"
-		},
-		"section": {
-			"title": "Liens Utils"
-		}
-	}
+  "Metadata": {
+    "title": "Steve.D | Portfolio de Développeur Web Expert - Création d'Applications Web Modernes et Performantes",
+    "description": "Découvrez le portfolio de Steve.D, un développeur web professionnel spécialisé dans la création de sites et d'applications web performants, visuellement percutants et centrés sur l'utilisateur.",
+    "keywords": "développeur, développeur web, développeur front-end, développeur back-end, front-end, back-end, web, application, site web, création d'application, création de site web, performance, expérience utilisateur, responsive, accessibilité, intégration, design, ux, ui, ux/ui, user experience, user interface, user interface design, user interface design, web design, webdesign, html, css, javascript, react, nextjs, typescript, tailwindcss, postcss, nextjs",
+    "author": "Steve.D",
+    "viewport": "width=device-width, initial-scale=1.0"
+  },
+  "lang": {
+    "current": "fr",
+    "switch": "en"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "testimonials": "Témoignages",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "Hero": {
+    "titleLine1": "Créateur de sites web",
+    "titleLine2": "minimalistes et premium",
+    "description1": "Démarquez votre marque avec un site web moderne et sophistiqué pour présenter vos produits et services.",
+    "description2": "Je suis spécialisé dans la création d'expériences numériques performantes et visuellement époustouflantes qui génèrent des résultats et élèvent votre identité de marque."
+  },
+  "About": {
+    "title": "À propos de moi",
+    "description": "Passionné par la création de sites web et d'applications de haute qualité, non seulement visuellement époustouflants, mais aussi performants et accessibles.",
+    "item1": {
+      "title": "01",
+      "description": "Intégration transparente. Connexion de systèmes disparates avec des API et services robustes pour créer un écosystème unifié et efficace."
+    },
+    "item2": {
+      "title": "02",
+      "description": "Architecture propre. Écriture de code distinct, lisible et maintenable facilitant les futures mises à jour et la collaboration en équipe."
+    },
+    "item3": {
+      "title": "03",
+      "description": "Flux de travail efficace. Utilisation d'outils modernes pour rationaliser le processus de développement."
+    },
+    "item4": {
+      "title": "04",
+      "description": "Gestion de la réactivité. Assurer une expérience fluide sur tous les appareils."
+    }
+  },
+  "Projects": {
+    "title": "Projets",
+    "description": "Découvrez certains de mes projets ci-dessous"
+  },
+  "Testimonials": {
+    "title": "Témoignages",
+    "description": "Ce que les clients disent de mon travail.",
+    "item1": {
+      "quote": "Le souci du détail et l'approche créative ont complètement transformé la présence en ligne de notre marque. Hautement recommandé !",
+      "authorName": "Sarah Johnson",
+      "authorRole": "Directrice Marketing, TechCare"
+    },
+    "item2": {
+      "quote": "A livré une plateforme exceptionnelle, rapide, réactive et incroyablement facile à gérer. Un vrai professionnel.",
+      "authorName": "Michael Chen",
+      "authorRole": "CTO, TechCare"
+    }
+  },
+  "Contact": {
+    "title": "Me contacter",
+    "title2": "Trouvez-moi <span>en ligne</span>",
+    "description": "Je suis disponible pour des missions freelance. Connectez-vous avec moi via email ou les réseaux sociaux.",
+    "email": "stevediego2004@gmail.com",
+    "phone1": "+237 676 06 82 79",
+    "phone2": "",
+    "address": "Littoral-Douala, Cameroun",
+    "description1": "Nous répondons à tous les courriels dans un délai de 24 heures.",
+    "description2": "Visitez notre bureau pour un chat.",
+    "description3": "Nous sommes disponibles du lundi au vendredi, de 9h à 17h."
+  },
+  "CTA": {
+    "title": "Laissez votre site web façonner votre empreinte numérique.",
+    "letStart": "C'est parti"
+  },
+  "FAQ": {
+    "title": "Foire Aux Questions",
+    "description": "Réponses rapides aux questions courantes sur moi et mon travail. Ouvrez n'importe quelle question pour en savoir plus.",
+    "contactMe": "Contactez Moi",
+    "item1": {
+      "question": "Quels services proposez-vous ?",
+      "answer": "Je propose une gamme de services de développement web incluant la conception de sites sur mesure, le développement d'applications full-stack, l'optimisation des performances et le SEO."
+    },
+    "item2": {
+      "question": "Combien de temps faut-il pour créer un site ?",
+      "answer": "Le délai dépend de la complexité du projet. Un site vitrine simple peut prendre 1 à 2 semaines, tandis qu'une application web complète peut nécessiter 4 à 8 semaines ou plus."
+    },
+    "item3": {
+      "question": "Proposez-vous un support continu ?",
+      "answer": "Oui, je propose des forfaits de maintenance pour garantir que votre site reste sécurisé, à jour et performant après le lancement."
+    },
+    "item4": {
+      "question": "Quelle est votre structure tarifaire ?",
+      "answer": "Les tarifs varient selon l'envergure et les exigences du projet. N'hésitez pas à me contacter pour un devis détaillé adapté à vos besoins."
+    },
+    "item5": {
+      "question": "Quels sont les moyens de paiement que vous acceptez ?",
+      "answer": "Pour l'instant, je accepte les paiements par PayPal, Orange Money, et MTN Mobile Money."
+    },
+    "item6": {
+      "question": "Pouvez-vous gérer l'hébergement ?",
+      "answer": "Oui, je peux gérer l'achat du nom de domaine et mettre votre site web en ligne."
+    }
+  },
+  "Footer": {
+    "description": "Un développeur passionné qui crée des applications web modernes en mettant l'accent sur l'expérience utilisateur et la performance.",
+    "copyright": "© {date} Steve.D. Tous droits réservés.",
+    "legal": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "cookies": "Politique de cookies"
+    },
+    "section": {
+      "title": "Liens Utils"
+    }
+  }
 }
