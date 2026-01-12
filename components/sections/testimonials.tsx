@@ -55,9 +55,9 @@ export default function Testimonial() {
 							key={index}
 							className="flex flex-col items-center text-center"
 						>
-							<p className="mb-8 max-w-4xl px-8 font-medium lg:text-xl">
+							<blockquote className="mb-8 max-w-4xl px-8 font-medium lg:text-xl">
 								&ldquo;{testimonial.quote}&rdquo;
-							</p>
+							</blockquote>
 							<div className="flex items-center gap-2 md:gap-4">
 								<Avatar className="size-12">
 									<AvatarImage
