@@ -181,6 +181,16 @@ export default async function RootLayout({
         name: t("Metadata.author"),
         url: `${baseUrl}/${locale}`,
         image: `${baseUrl}/images/i.png`,
+        birthDate: new Date(2004, 6, 26),
+        birthPlace: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: locality,
+            addressRegion: region,
+            addressCountry: countryCode,
+          },
+        },
         jobTitle: "Web Developer",
         description: t("Metadata.description"),
         address: {
@@ -199,18 +209,6 @@ export default async function RootLayout({
             description: t("FAQ.item1.answer"),
           },
         },
-        review: [
-          {
-            "@type": "Review",
-            reviewBody: t("Testimonials.item1.quote"),
-            author: review1Author,
-          },
-          {
-            "@type": "Review",
-            reviewBody: t("Testimonials.item2.quote"),
-            author: review2Author,
-          },
-        ],
       },
     ],
   };
