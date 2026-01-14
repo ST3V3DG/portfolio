@@ -80,7 +80,7 @@ export async function generateMetadata({
       crawlDelay: 10,
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: locale === "en" ? "/" : `${baseUrl}/${locale}`,
     },
   };
 }
