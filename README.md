@@ -3,7 +3,8 @@
 ## About Me🪪
 Web Developer passionate about building high-performance, scalable web systems. With over 3 years of full-stack experience, I master modern technologies to deliver robust, optimized applications. I am currently focusing on system design and design patterns to produce cleaner, more maintainable code and to pursue roles such as software architect. I enjoy continuous learning and contributing to open-source projects.
 
-**Contact**: 📧stevediego2004@gmail.com | 🌐https://stevethedeveloper.vercel.app
+**Contact**: 📧stevediego2004@gmail.com 
+**Website**: 🌐https://stevethedeveloper.vercel.app
 
 ## Technical Skills🛠️
 - **Frontend**: Next.js, TypeScript, TailwindCSS, Zustand, GSAP
