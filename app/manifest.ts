@@ -13,28 +13,14 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
 		theme_color: "#000",
 		icons: [
 			{
-				src: "public/images/manifest-icon-192.maskable.png",
+				src: "/images/manifest-icon-192.maskable.png",
 				sizes: "192x192",
 				type: "image/png",
-				purpose: "any",
 			},
 			{
-				src: "public/images/manifest-icon-192.maskable.png",
-				sizes: "192x192",
-				type: "image/png",
-				purpose: "maskable",
-			},
-			{
-				src: "public/images/manifest-icon-512.maskable.png",
+				src: "/images/manifest-icon-512.maskable.png",
 				sizes: "512x512",
 				type: "image/png",
-				purpose: "any",
-			},
-			{
-				src: "public/images/manifest-icon-512.maskable.png",
-				sizes: "512x512",
-				type: "image/png",
-				purpose: "maskable",
 			},
 		],
 	};
