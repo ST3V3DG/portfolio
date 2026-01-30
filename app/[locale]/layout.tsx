@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Viewport } from "next";
@@ -224,6 +225,7 @@ export default async function RootLayout({
 					name="google-site-verification"
 					content="YIqmFaOlEo5Ks76j-xH2p2aFMdA-DY1onnGt2OV3GQE"
 				/>
+				<GoogleTagManager gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ" gtmId="G-3JJCEDQEWQ" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
