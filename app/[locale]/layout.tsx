@@ -82,6 +82,10 @@ export async function generateMetadata({
 		},
 		alternates: {
 		  canonical: locale === "en" ? `${baseUrl}/` : `${baseUrl}/${locale}`,
+		  languages: {
+		    'en': `${baseUrl}/`,
+		    'fr': `${baseUrl}/fr`,
+		  },
 		},
 	};
 }
