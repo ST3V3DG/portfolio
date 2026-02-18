@@ -29,7 +29,7 @@ export default function Hero() {
 		<section id="hero" className="bg-background-grainy">
 			<div className="pt-16 md:h-dvh max-w-7xl px-6 mx-auto">
 				<div className="grid grid-rows-5 grid-cols-1 size-full">
-					<h1 className="text-[clamp(4rem,12vw,5rem)] xl:text-8xl 2xl:text-[7rem] leading-none text-pretty capitalize text-accent row-span-2">
+					<h1 className="text-[clamp(4rem,12vw,5rem)] xl:text-8xl 2xl:text-[7rem] leading-none text-balance capitalize text-accent row-span-2">
 						<div>{t("titleLine1")}</div>{" "}
 						<div className="overflow-hidden w-fit relative z-20">
 							<span
