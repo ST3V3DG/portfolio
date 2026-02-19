@@ -6,6 +6,7 @@ const STATIC_ASSETS = [
 	"/",
 	"/fr",
 	"/offline.html",
+	"/offline.css",
 	"/images/favicon-196.png",
 	"/images/apple-icon-180.png",
 	"/images/manifest-icon-192.maskable.png",
