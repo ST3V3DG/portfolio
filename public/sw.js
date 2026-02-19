@@ -5,6 +5,7 @@ const DYNAMIC_CACHE = "web-cv-dynamic-v1";
 const STATIC_ASSETS = [
 	"/",
 	"/fr",
+	"/en",
 	"/offline.html",
 	"/offline.css",
 	"/images/favicon-196.png",
