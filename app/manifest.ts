@@ -8,6 +8,7 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
 		short_name: "Steve.D",
 		description: t("description"),
 		start_url: `/`,
+		scope: "/",
 		display: "standalone",
 		background_color: "#000",
 		theme_color: "#000",

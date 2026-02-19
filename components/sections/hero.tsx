@@ -26,9 +26,9 @@ export default function Hero() {
 	);
 
 	return (
-		<section id="hero" className="bg-background-grainy">
-			<div className="pt-16 md:h-dvh max-w-7xl px-6 mx-auto">
-				<div className="grid grid-rows-5 grid-cols-1 size-full">
+		<section id="hero" className="bg-background-grainy lg:h-screen">
+			<div className="pt-16 max-w-7xl px-6 mx-auto">
+				<div className="grid grid-rows-6 grid-cols-1 size-full">
 					<h1 className="text-[clamp(4rem,12vw,5rem)] xl:text-8xl 2xl:text-[7rem] leading-none text-balance capitalize text-accent row-span-2">
 						<div>{t("titleLine1")}</div>{" "}
 						<div className="overflow-hidden w-fit relative z-20">
@@ -41,7 +41,7 @@ export default function Hero() {
 							</span>
 						</div>
 					</h1>
-					<div className="flex lg:flex-row flex-col justify-between gap-12 row-span-3">
+					<div className="flex lg:flex-row flex-col justify-between gap-12 row-span-4">
 						<div className="lg:w-1/2 flex flex-col justify-between gap-6">
 							<div className="flex flex-col gap-4 opacity-50 text-lg">
 								<p>{t("description1")}</p>

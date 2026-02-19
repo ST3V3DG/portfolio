@@ -1,4 +1,4 @@
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Viewport } from "next";
@@ -81,11 +81,11 @@ export async function generateMetadata({
 			crawlDelay: 10,
 		},
 		alternates: {
-		  canonical: locale === "en" ? `${baseUrl}/` : `${baseUrl}/${locale}`,
-		  languages: {
-		    'en': `${baseUrl}/`,
-		    'fr': `${baseUrl}/fr`,
-		  },
+			canonical: locale === "en" ? `${baseUrl}/` : `${baseUrl}/${locale}`,
+			languages: {
+				en: `${baseUrl}/`,
+				fr: `${baseUrl}/fr`,
+			},
 		},
 	};
 }
@@ -229,7 +229,10 @@ export default async function RootLayout({
 					name="google-site-verification"
 					content="YIqmFaOlEo5Ks76j-xH2p2aFMdA-DY1onnGt2OV3GQE"
 				/>
-				<GoogleTagManager gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ" gtmId="G-3JJCEDQEWQ" />
+				<GoogleTagManager
+					gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ"
+					gtmId="G-3JJCEDQEWQ"
+				/>
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
@@ -251,6 +254,23 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body className="font-archivo antialiased">
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							if ('serviceWorker' in navigator) {
+								window.addEventListener('load', () => {
+									navigator.serviceWorker.register('/sw.js')
+										.then(registration => {
+											console.log('SW registered:', registration.scope);
+										})
+										.catch(error => {
+											console.log('SW registration failed:', error);
+										});
+								});
+							}
+						`,
+					}}
+				/>
 				<NextIntlClientProvider messages={messages}>
 					{children}
 					<SpeedInsights />
