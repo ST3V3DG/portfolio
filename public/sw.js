@@ -32,7 +32,7 @@ const STATIC_ASSETS = [
 	"/svgs/next-js.svg",
 	"/svgs/postman.svg",
 	"/svgs/S.D.svg",
-	"/svgs/typscript.svg",
+	"/svgs/typescript.svg",
 ];
 
 const _FONT_EXTENSIONS = [".woff2", ".woff", ".ttf", ".otf"];
