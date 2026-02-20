@@ -117,11 +117,11 @@
     },
     "section": {
       "title": "Useful Links"
-    },
-    "NotFound": {
-      "title": "Not Found",
-      "description": "The page you are looking for does not exist.",
-      "backHome": "Back to Home"
     }
+  },
+  "NotFound": {
+    "title": "Not Found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to Home"
   }
 }
