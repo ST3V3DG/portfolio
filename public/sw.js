@@ -12,6 +12,17 @@ const STATIC_ASSETS = [
 	"/images/apple-icon-180.png",
 	"/images/manifest-icon-192.maskable.png",
 	"/images/manifest-icon-512.maskable.png",
+	"images/ipad-air-steve-the-developer.png",
+	"/images/ipad-optiride.png",
+	"/images/iphone-crypto-trade-alpha.png",
+	"/images/iphone-mck-medical-care.png",
+	"/images/mac-eden-cosmetics.png",
+	"/images/mac-fashion-studio.png",
+	"/images/mac-odysia.png",
+	"/images/noise-bg.svg",
+	"/fonts/Archivo-Regular.woff2",
+	"/fonts/ClashDisplay-Semibold.woff2",
+	"/fonts/Rosaline-Regular.woff2",
 ];
 
 const _FONT_EXTENSIONS = [".woff2", ".woff", ".ttf", ".otf"];
