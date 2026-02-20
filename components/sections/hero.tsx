@@ -29,7 +29,7 @@ export default function Hero() {
     <section id="hero" className="bg-background-grainy">
       <div className="pt-16 max-w-7xl px-6 mx-auto lg:h-screen">
         <div className="flex flex-col gap-12 justify-between size-full">
-          <h1 className="text-[clamp(4rem,8vw,7rem)] leading-none text-balance capitalize text-accent">
+          <h1 className="text-[clamp(4rem,8vw,7rem)] leading-none text-balance capitalize text-accent grow-2">
             <div>{t("titleLine1")}</div>{" "}
             <div className="overflow-hidden w-fit relative z-20">
               <span
@@ -39,7 +39,7 @@ export default function Hero() {
               <span className="mix-blend-luminosity">{t("titleLine2")}</span>
             </div>
           </h1>
-          <div className="flex lg:flex-row flex-col justify-start lg:justify-between gap-12">
+          <div className="flex lg:flex-row flex-col grow-3 justify-start lg:justify-between gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between gap-6">
               <div className="flex flex-col gap-4 opacity-50 text-lg">
                 <p>{t("description1")}</p>

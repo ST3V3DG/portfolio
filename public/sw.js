@@ -23,6 +23,16 @@ const STATIC_ASSETS = [
 	"/fonts/Archivo-Regular.woff2",
 	"/fonts/ClashDisplay-Semibold.woff2",
 	"/fonts/Rosaline-Regular.woff2",
+	"/svgs/django.svg",
+	"/svgs/git.svg",
+	"/svgs/github.svg",
+	"/svgs/greensock.svg",
+	"/svgs/laravel.svg",
+	"/svgs/linux.svg",
+	"/svgs/next-js.svg",
+	"/svgs/postman.svg",
+	"/svgs/S.D.svg",
+	"/svgs/typscript.svg",
 ];
 
 const _FONT_EXTENSIONS = [".woff2", ".woff", ".ttf", ".otf"];
