@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section id="hero" className="bg-background-grainy">
       <div className="pt-16 max-w-7xl px-6 mx-auto lg:h-screen">
-        <div className="grid grid-rows-3 grid-cols-1 size-full lg:gap-40">
+        <div className="grid grid-rows-3 grid-cols-1 size-full xl:gap-38">
           <h1 className="text-[2.5rem] sm:text-[6rem] md:text-[4rem] lg:text-[5.5rem] 2xl:text-[7rem] leading-none text-balance capitalize text-accent">
             <div>{t("titleLine1")}</div>{" "}
             <div className="overflow-hidden w-fit relative z-20">
