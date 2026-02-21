@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="bg-background-grainy">
-      <div className="pt-16 max-w-7xl px-6 mx-auto lg:h-screen">
+      <div className="pt-16 max-w-7xl px-6 mx-auto lg:min-h-screen overflow-hidden">
         <div className="flex flex-col gap-12 justify-between size-full">
           <h1 className="text-[clamp(4rem,8vw,7rem)] leading-none text-balance capitalize text-accent grow-2">
             <div>{t("titleLine1")}</div>{" "}
