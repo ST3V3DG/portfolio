@@ -35,14 +35,14 @@ export default function LangSwitcher() {
 						variant="ghost"
 						asChild
 					>
-						<Link href={t("current")}>{t("current")}</Link>
+						<Link href={`/${t("current")}`}>{t("current")}</Link>
 					</Button>
 					<Button
 						className="border hover:bg-accent/80 rounded-none h-1/2 uppercase"
 						variant="ghost"
 						asChild
 					>
-						<Link href={t("switch")}>{t("switch")}</Link>
+						<Link href={`/${t("switch")}`}>{t("switch")}</Link>
 					</Button>
 				</div>
 			</div>
