@@ -1,183 +1,324 @@
 @font-face {
-    font-family: "ClashDisplay";
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url("./fonts/ClashDisplay-Semibold.woff2") format("woff2");
+	font-family: "ClashDisplay";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url("./fonts/ClashDisplay-Semibold.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "Archivo";
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url("./fonts/Archivo-Regular.woff2") format("woff2");
+	font-family: "Archivo";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url("./fonts/Archivo-Regular.woff2") format("woff2");
 }
 
 :root {
-    --accent-color: oklch(0.64 0.16 31.23);
+	--accent-color: oklch(0.64 0.16 31.23);
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    font-family: "Archivo", sans-serif;
-    color: oklch(0.99 0 0);
-    background-image: url('/images/noise-bg.svg');
-    background-size: cover;
-    background-blend-mode: overlay;
-    background-color:  color-mix(in oklab, oklch(0.1 0 0) 90%, transparent);
+	font-family: "Archivo", sans-serif;
+	color: oklch(0.99 0 0);
+	background-image: url("/images/noise-bg.svg");
+	background-size: cover;
+	background-blend-mode: overlay;
+	background-color: color-mix(in oklab, oklch(0.1 0 0) 90%, transparent);
 }
 
 .container {
-    text-align: center;
-    max-width: 400px;
+	text-align: center;
+	max-width: 400px;
 }
 
 .text-9xl {
-    font-size: 8rem;
-    line-height: 1;
+	font-size: 8rem;
+	line-height: 1;
 }
 
 .md\:text-4xl {
-    @media (width >= 48rem) {
-        font-size: 2.25rem;
-        line-height: calc(2.5 / 2.25);
-    }
+	@media (width >= 48rem) {
+		font-size: 2.25rem;
+		line-height: calc(2.5 / 2.25);
+	}
 }
 
 .text-2xl {
-    font-size: 1.5rem;
-    line-height: calc(2 / 1.5);
+	font-size: 1.5rem;
+	line-height: calc(2 / 1.5);
 }
 
 .font-clash-display {
-    font-family: "ClashDisplay", serif;
+	font-family: "ClashDisplay", serif;
 }
 
 .text-accent {
-    color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .font-medium {
-    font-weight: 500;
-}
-
-.text-background {
-    color: oklch(0.1 0 0);
+	font-weight: 500;
 }
 
 .text-gray-400 {
-    color: #9ca3af;
+	color: #9ca3af;
 }
 
 .bg-white {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 .bg-accent {
-    background-color: var(--accent-color);
+	background-color: var(--accent-color);
 }
 
 .text-black {
-    color: #000;
+	color: #000;
 }
 
 .text-lg {
-    font-size: 1.125rem;
-    line-height: calc(1.75 / 1.125);
+	font-size: 1.125rem;
+	line-height: calc(1.75 / 1.125);
 }
 
 .mb-6 {
-    margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .mt-4 {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .mb-8 {
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .py-2 {
-    padding-block: 0.5rem;
+	padding-block: 0.5rem;
 }
 
 .px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 
 .rounded-none {
-    border-radius: 0;
+	border-radius: 0;
 }
 
 .grid {
-    display: grid;
+	display: grid;
 }
 
 .h-screen {
-    height: 100vh;
+	height: 100vh;
 }
 
 .place-content-center {
-    place-content: center;
+	place-content: center;
 }
 
 .px-6 {
-    padding-inline: 1.5rem;
+	padding-inline: 1.5rem;
 }
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 
 .w-fit {
-    width: fit-content;
+	width: fit-content;
 }
 
 .mx-auto {
-    margin-inline: auto;
+	margin-inline: auto;
 }
 
 .h10 {
-    height: 2.5rem;
+	height: 2.5rem;
 }
 
 .text-base {
-    font-size: 16px;
-    line-height: 1.5;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 .no-underline {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 200ms;
 }
 
 .duration-200 {
-    transition-duration: 200ms;
+	transition-duration: 200ms;
 }
 
 .hover\:opacity-90:hover {
-    opacity: 0.9;
+	opacity: 0.9;
 }
 
 .capitalize {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .max-w-md {
-  max-width: 28rem;
+	max-width: 28rem;
+}
+
+/* Lang Switcher Dropdown */
+.fixed {
+	position: fixed;
+}
+
+.right-4 {
+	right: 1rem;
+}
+
+.bottom-4 {
+	bottom: 1rem;
+}
+
+.z-10 {
+	z-index: 10;
+}
+
+.w-12 {
+	width: 3rem;
+}
+
+.h-36 {
+	height: 9rem;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.relative {
+	position: relative;
+}
+
+.h-full {
+	height: 100%;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.bottom-0 {
+	bottom: 0;
+}
+
+.left-0 {
+	left: 0;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.h-1\/3 {
+	height: 33.333333%;
+}
+
+.z-10 {
+	z-index: 10;
+}
+
+.rounded-none {
+	border-radius: 0;
+}
+
+.bg-accent {
+	background-color: var(--accent-color);
+}
+
+.hover\:bg-accent\/80:hover {
+	background-color: color-mix(in oklab, var(--accent-color) 80%, transparent);
+}
+
+.transition {
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-300 {
+	transition-duration: 300ms;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.h-24 {
+	height: 6rem;
+}
+
+.translate-y-full {
+	transform: translateY(100%);
+}
+
+.opacity-0 {
+	opacity: 0;
+}
+
+.border {
+	border-width: 1px;
+	border-style: solid;
+	border-color: oklch(0.55 0 0);
+}
+
+.border-b-0 {
+	border-bottom-width: 0;
+}
+
+.border-0 {
+	border-width: 0px;
+}
+
+.h-1\/2 {
+	height: 50%;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+a {
+	color: oklch(0.99 0 0);
+	text-decoration: none;
+}
+
+a:visited {
+	color: oklch(0.99 0 0);
+}
+
+.text-background {
+	color: oklch(0.1 0 0) !important;
 }
