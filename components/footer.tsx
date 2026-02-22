@@ -1,8 +1,5 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
 	Binary,
 	CodeXml,
@@ -13,7 +10,6 @@ import {
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import type React from "react";
-import { useRef } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/sections/contact";
 
 type Footer = {
@@ -35,30 +31,6 @@ type Footer = {
 };
 
 export default function Footer() {
-	const footerRef = useRef<HTMLDivElement>(null);
-
-	gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-	useGSAP(() => {
-		const mm = gsap.matchMedia();
-
-		mm.add("(min-width: 1024px)", () => {
-			gsap.set(footerRef.current, {
-				opacity: 0,
-			});
-
-			gsap.to(footerRef.current, {
-				opacity: 1,
-				scrollTrigger: {
-					trigger: document.getElementById("cta"),
-					start: "bottom bottom",
-					end: "bottom center",
-					scrub: true,
-				},
-			});
-		});
-	});
-
 	const tf = useTranslations("Footer");
 	const tn = useTranslations("Navigation");
 
@@ -142,7 +114,6 @@ export default function Footer() {
 	return (
 		<footer
 			className="bg-background-grainy pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none"
-			ref={footerRef}
 		>
 			<div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
 				<div className="grid grid-cols-1 lg:grid-cols-5 w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">

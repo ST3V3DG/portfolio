@@ -22,7 +22,7 @@ export default function Home() {
 		<>
 			<ReactLenis root ref={lenisRef} />
 			<PagePreloader>
-				<div className="relative z-1 w-full">
+				<div className="relative z-1 w-full bg-background">
 					<Header />
 					<main>
 						<Hero />
