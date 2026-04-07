@@ -59,7 +59,7 @@ export default function Testimonial() {
 								&ldquo;{testimonial.quote}&rdquo;
 							</blockquote>
 							<div className="flex items-center gap-2 md:gap-4">
-								<Avatar className="size-12">
+								<Avatar className="size-12 overflow-visible">
 									<AvatarImage
 										src={testimonial.author.avatar.src}
 										alt={testimonial.author.avatar.alt}
