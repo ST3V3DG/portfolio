@@ -1,9 +1,9 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import DrawSVGPlugin from "gsap/DrawSVGPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import DrawSVGPlugin from "gsap/DrawSVGPlugin";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,21 +12,22 @@ import { useTranslations } from "next-intl";
 export default function Projects() {
 	const t = useTranslations("Projects");
 
-	useGSAP(() => {
-		gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
+	// useGSAP(() => {
+	// 	gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
-		const svgTl = gsap.timeline();
+	// 	const svgTl = gsap.timeline();
 
-		svgTl.from("#projects svg path", {
-			drawSVG: 0,
-			scrollTrigger: {
-				trigger: "#projects",
-				start: "top center",
-				end: "bottom center",
-				scrub: 4,
-			},
-		});
-	});
+	// 	svgTl.from("#projects svg path", {
+	// 		drawSVG: 0,
+	// 		scrollTrigger: {
+	// 			trigger: "#projects",
+	// 			start: "top center",
+	// 			end: "bottom center",
+	// 			scrub: 4,
+	// 		},
+	// 	});
+	// });
+	
 	return (
 		<section
 			id="projects"
