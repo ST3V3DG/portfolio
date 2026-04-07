@@ -148,6 +148,7 @@
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
+		scrollbar-gutter: stable;
 	}
 
 	*:focus-within {
@@ -175,8 +176,9 @@
 	h6::selection,
 	p::selection,
 	span::selection,
-	a::selection,
-	::search-text {
+	a::selection
+	/*, ::search-text*/
+	{
 		@apply bg-primary text-primary-foreground;
 	}
 
