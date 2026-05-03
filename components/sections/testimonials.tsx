@@ -41,13 +41,15 @@ export default function Testimonial() {
 		},
 	];
 	return (
-		<section id="testimonials" className="bg-secondary">
+		<section id="testimonials">
 			<div className="py-32 flex flex-col justify-center items-center gap-16 max-w-7xl px-6 mx-auto">
 				<div className="flex flex-col gap-2 items-center justify-center text-center">
-					<h2 className="md:text-7xl text-5xl text-accent">
+					<h2 className="md:text-7xl text-5xl text-accent mb-4">
 						{t("title")}
 					</h2>
-					<p>{t("description")}</p>
+					<p className="max-w-120 mb-8 text-pretty mx-auto">
+						{t("description")}
+					</p>
 				</div>
 				<div className="flex flex-col gap-16 md:flex-row items-center text-center max-w-5xl">
 					{testimonials.map((testimonial, index) => (

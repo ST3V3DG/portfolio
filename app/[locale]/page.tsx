@@ -12,7 +12,7 @@ import CallToAction from "@/components/sections/cta";
 import { FrequentlyAskQuestion } from "@/components/sections/faq";
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
-import Testimonials from "@/components/sections/testimonials";
+import { Testimonials3D } from "@/components/sections/testimonials-3d";
 import PagePreloader from "@/providers/page-preloader";
 
 export default function Home() {
@@ -22,13 +22,13 @@ export default function Home() {
 		<>
 			<ReactLenis root ref={lenisRef} />
 			<PagePreloader>
-				<div className="relative z-1 w-full bg-background">
+				<div className="relative z-1 w-full bg-background border-b">
 					<Header />
 					<main>
 						<Hero />
 						<About />
 						<Projects />
-						<Testimonials />
+						<Testimonials3D />
 						<FrequentlyAskQuestion />
 						<Contact />
 						<CallToAction />

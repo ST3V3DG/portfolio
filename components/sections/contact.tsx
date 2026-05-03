@@ -32,13 +32,13 @@ export function Contact() {
 	];
 
 	return (
-		<section id="contact" className="bg-secondary">
+		<section id="contact">
 			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
-				<div className="flex grow flex-col justify-center md:items-center gap-4 ">
+				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
 					<h2 className="text-5xl md:text-7xl text-accent">
 						{t("title")}
 					</h2>
-					<p className="mb-16 text-base text-muted-foreground">
+					<p className="max-w-120 mb-8 text-pretty mx-auto">
 						{t("description")}
 					</p>
 				</div>

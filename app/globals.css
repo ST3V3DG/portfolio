@@ -68,7 +68,7 @@
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
-	
+
 	--container-sm: 40rem;
 	--container-md: 48rem;
 	--container-lg: 64rem;
@@ -147,8 +147,9 @@
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50;
+		@apply border-border outline-ring/50 cursor-none;
 		scrollbar-gutter: stable;
+		transition-behavior: allow-discrete;
 	}
 
 	*:focus-within {
@@ -157,6 +158,14 @@
 
 	body {
 		@apply bg-background text-foreground font-archivo;
+	}
+
+	.bg-grainy {
+		@apply bg-background/90 bg-[url('/svgs/noise-bg.svg')] bg-cover bg-blend-overlay;
+	}
+
+	body:has(a:hover, button:hover) #cursor {
+		@apply size-12 animate-pulse;
 	}
 
 	h1,
@@ -176,9 +185,7 @@
 	h6::selection,
 	p::selection,
 	span::selection,
-	a::selection
-	/*, ::search-text*/
-	{
+	a::selection /*, ::search-text*/ {
 		@apply bg-primary text-primary-foreground;
 	}
 
@@ -210,22 +217,5 @@
 @custom-variant standalone {
 	@media (display-mode: standalone) {
 		@slot;
-	}
-}
-
-@layer base {
-	* {
-		@apply border-border outline-ring/50 lg:cursor-none;
-	}
-	body {
-		@apply bg-background text-foreground;
-	}
-
-	.bg-background-grainy {
-		@apply bg-background/90 bg-[url('/images/noise-bg.svg')] bg-cover bg-blend-overlay;
-	}
-
-	body:has(a:hover, button:hover) #cursor {
-		@apply size-12;
 	}
 }

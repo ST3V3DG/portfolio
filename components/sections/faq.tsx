@@ -45,7 +45,7 @@ export function FrequentlyAskQuestion() {
 	];
 
 	return (
-		<section className="bg-background-grainy py-32">
+		<section className="py-32">
 			<div className="grid md:min-h-screen w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
 				<div className="px-4 focus-within:outline-none">
 					<div className="space-y-5 focus-within:outline-none">

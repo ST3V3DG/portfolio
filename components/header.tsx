@@ -3,12 +3,15 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { PagePreloaderContext } from "@/providers/page-preloader";
 
 export default function Header() {
-	gsap.registerPlugin(SplitText);
+	gsap.registerPlugin(SplitText, useGSAP);
+	const tl = useContext(PagePreloaderContext);
 
 	const t = useTranslations("Navigation");
 
@@ -38,7 +41,7 @@ export default function Header() {
 	const [open, setOpen] = useState<boolean>(false);
 	const headerRef = useRef<HTMLDivElement>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
-	const tl = useRef<gsap.core.Timeline>(null);
+	const mobileMenuToggleTimeline = useRef<gsap.core.Timeline>(null);
 	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
@@ -65,11 +68,21 @@ export default function Header() {
 				top: "-100%",
 			});
 
-			tl.current = gsap.timeline({
+			tl?.from(
+				"header",
+				{
+					opacity: 0,
+					duration: 1,
+					ease: "power1.out",
+				},
+				"<",
+			);
+
+			mobileMenuToggleTimeline.current = gsap.timeline({
 				paused: true,
 			});
 
-			tl.current
+			mobileMenuToggleTimeline.current
 				.to(mobileMenuRef.current, {
 					top: 0,
 					duration: 1,
@@ -89,35 +102,42 @@ export default function Header() {
 					"-=0.5",
 				);
 		},
-		{ dependencies: [mobileMenuRef] },
+		{ dependencies: [mobileMenuRef, tl] },
 	);
 
 	const { contextSafe } = useGSAP({
-		dependencies: [tl, open],
+		dependencies: [mobileMenuToggleTimeline, open],
 		scope: headerRef,
 		revertOnUpdate: true,
 	});
 
 	const animateMobileMenu = contextSafe(() => {
 		if (!open) {
-			tl.current?.play();
+			mobileMenuToggleTimeline.current?.play();
 			setOpen(!open);
 		} else {
-			tl.current?.reverse();
+			mobileMenuToggleTimeline.current?.reverse();
 			setOpen(!open);
 		}
 	});
 	return (
 		<header
 			ref={headerRef}
-			className={`fixed top-0 left-0 right-0 z-50 bg-background-grainy font-clash-display focus-within:outline-none **:focus-within:outline-none ${scrolled ? "border-b" : ""}`}
+			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none **:focus-within:outline-none ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
 		>
-			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background-grainy">
+			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background">
 				<Link
 					aria-label="home"
 					href="/"
-					className="text-xl font-bold py-6 w-26"
-				></Link>
+					className="text-xl font-bold py-6"
+				>
+					<Image
+						src="/svgs/S.D.svg"
+						alt="logo"
+						height={50}
+						width={100}
+					/>
+				</Link>
 				<nav className="hidden md:block">
 					<ul className={`grid grid-cols-5 gap-4 text-center h-full`}>
 						{headerLinks.map((link, index) => (

@@ -219,11 +219,7 @@ export default async function RootLayout({
 	};
 
 	return (
-		<html
-			className="dark scroll-smooth"
-			lang={locale}
-			suppressHydrationWarning
-		>
+		<html className="dark" lang={locale} suppressHydrationWarning>
 			<head>
 				<meta
 					name="google-site-verification"
