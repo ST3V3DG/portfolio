@@ -33,6 +33,10 @@ export default function Header() {
 			href: "#testimonials",
 		},
 		{
+			label: t("faq"),
+			href: "#faq",
+		},
+		{
 			label: t("contact"),
 			href: "#contact",
 		},
@@ -134,12 +138,12 @@ export default function Header() {
 					<Image
 						src="/svgs/S.D.svg"
 						alt="logo"
-						height={50}
-						width={100}
+						height={60}
+						width={120}
 					/>
 				</Link>
-				<nav className="hidden md:block">
-					<ul className={`grid grid-cols-5 gap-4 text-center h-full`}>
+				<nav className="hidden md:block flex-nowrap">
+					<ul className={`grid grid-cols-6 gap-4 text-center h-full`}>
 						{headerLinks.map((link, index) => (
 							<li
 								className={`flex justify-center items-center relative before:absolute before:bottom-1.5 before:left-0 before:h-1 before:bg-accent before:w-full before:scale-x-0 hover:before:scale-x-90 before:content-[''] before:transition before:duration-300 ${link.label === "Contact" ? "bg-accent text-background hover:text-primary hover:bg-transparent transition duration-300" : ""}`}

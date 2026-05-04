@@ -13,7 +13,7 @@ export default function CallToAction() {
 					<Separator />
 					<div className="flex flex-col items-center justify-between md:flex-row w-full">
 						<div className="p-4 flex items-center">
-							<h2 className="text-center font-bold text-lg md:text-left md:text-2xl">
+							<h2 className="text-center font-bold text-2xl md:text-left md:text-4xl">
 								{t("title")}
 							</h2>
 						</div>

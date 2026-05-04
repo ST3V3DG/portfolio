@@ -66,14 +66,15 @@ export function FrequentlyAskQuestion() {
 			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
 				<div className="px-4 focus-within:outline-none">
 					<div className="space-y-5 focus-within:outline-none">
-						<h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black text-accent">
+						<h2 className="text-balance font-bold md:text-7xl text-5xl lg:font-black text-accent">
 							{t("title")}
 						</h2>
-						<p className="text-muted-foreground">
+						<p className="text-muted-foreground text-2xl">
 							{t("description")}
 						</p>
-						<p className="text-muted-foreground focus-within:outline-none">
+						<p className="text-muted-foreground focus-within:outline-none text-2xl">
 							{"Can't find what you're looking for? "}
+							{t("paragraph")}{" "}
 							<Link
 								className="text-primary hover:underline"
 								href="#contact"

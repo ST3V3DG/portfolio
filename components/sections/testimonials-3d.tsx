@@ -115,12 +115,12 @@ export function Testimonials3D() {
 	);
 
 	return (
-		<section ref={containerRef} className="overflow-x-hidden border-b">
+		<section id="testimonials" ref={containerRef} className="overflow-x-hidden border-b">
 			<div className="flex max-w-7xl px-6 pb-6 mx-auto min-h-screen flex-col items-center justify-center py-8 text-center">
-				<h2 className="mb-4 text-5xl font-bold md:text-7xl text-accent">
+				<h2 className="mb-4 md:text-7xl lg:text-9xl text-5xl font-bold text-accent">
 					{t("title")}
 				</h2>
-				<p className="max-w-120 mb-8 text-pretty mx-auto">
+				<p className="max-w-120 mb-8 text-pretty mx-auto text-2xl">
 					{t("description")}
 				</p>
 			</div>

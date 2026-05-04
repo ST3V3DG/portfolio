@@ -24,7 +24,7 @@ export default function Home() {
 			<PagePreloader>
 				<div className="relative z-1 w-full bg-background border-b">
 					<Header />
-					<main>
+					<main className="isolate">
 						<Hero />
 						<About />
 						<Projects />

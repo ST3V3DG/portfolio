@@ -81,6 +81,7 @@
 	"FAQ": {
 		"title": "Foire Aux Questions",
 		"description": "Réponses rapides aux questions courantes sur moi et mon travail. Ouvrez n'importe quelle question pour en savoir plus.",
+		"paragraph": "Vous ne trouvez pas la réponse à votre question ?",
 		"contactMe": "Contactez Moi",
 		"item1": {
 			"question": "Quels services proposez-vous ?",

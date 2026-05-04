@@ -157,11 +157,19 @@
 	}
 
 	body {
-		@apply bg-background text-foreground font-archivo;
+		@apply bg-background text-foreground font-archivo text-lg;
 	}
 
 	.bg-grainy {
 		@apply bg-background/90 bg-[url('/svgs/noise-bg.svg')] bg-cover bg-blend-overlay;
+	}
+	
+	.pin-spacer {
+	    @apply pointer-events-auto;
+	}
+	
+	#faq:focus-within {
+        @apply outline-none;
 	}
 
 	body:has(a:hover, button:hover) #cursor {

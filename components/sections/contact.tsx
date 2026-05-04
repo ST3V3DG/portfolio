@@ -36,10 +36,10 @@ export function Contact() {
 		<section className="bg-background z-1 border-t" id="contact">
 			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto min-h-screen">
 				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
-					<h2 className="text-5xl md:text-7xl text-accent">
+					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
 						{t("title")}
 					</h2>
-					<p className="max-w-120 mb-8 text-pretty mx-auto">
+					<p className="max-w-120 mb-8 text-pretty mx-auto text-2xl">
 						{t("description")}
 					</p>
 				</div>
@@ -48,7 +48,7 @@ export function Contact() {
   					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
   						<address className="not-italic">
   							<Link
-  								className="font-medium font-mono text-sm tracking-wide hover:underline"
+  								className="font-medium font-mono tracking-wide hover:underline"
   								href={`mailto:${EMAIL}`}
   								aria-label="Email"
   							>
@@ -61,7 +61,7 @@ export function Contact() {
   						icon={MapPin}
   						title="Location"
   					>
-  						<address className="not-italic font-medium font-mono text-sm tracking-wide">
+  						<address className="not-italic font-medium font-mono tracking-wide">
   							{ADDRESS}
   						</address>
   					</Box>
@@ -74,7 +74,7 @@ export function Contact() {
   						<div>
   							<address className="not-italic">
   								<Link
-  									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+  									className="block font-medium font-mono tracking-wide hover:underline"
   									href={`tel:${PHONE}`}
   									aria-label="Phone 1"
   									target="_blank"
@@ -95,7 +95,7 @@ export function Contact() {
   				</div>
 				<Separator />
 				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
-					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
+					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-5xl">
 						{t.rich("title2", {
 							span: (chunks) => (
 								<span className="text-accent">{chunks}</span>
@@ -112,8 +112,8 @@ export function Contact() {
 								// rel="noopener noreferrer"
 								target="_blank"
 							>
-								<link.icon className="size-3.5 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
-								<span className="font-medium font-mono text-xs tracking-wide">
+								<link.icon className="size-6 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
+								<span className="font-medium font-mono tracking-wide">
 									{link.label}
 								</span>
 							</Link>
@@ -147,7 +147,7 @@ function Box({
 		>
 			<div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20 lg:justify-center">
 				<props.icon
-					className="size-5 text-muted-foreground"
+					className="size-6 text-muted-foreground"
 					strokeWidth={1}
 				/>
 				<h3 className="font-heading font-medium text-lg tracking-wider">
@@ -157,7 +157,7 @@ function Box({
 			<div className="flex items-center lg:justify-center gap-x-2 p-12">
 				{children}
 			</div>
-			{/* <div className="border-t p-4">
+			 {/*<div className="border-t p-4">
                 <p className="text-muted-foreground text-sm">{description}</p>
             </div> */}
 		</section>

@@ -22,6 +22,7 @@ export default function About() {
 			tl.to("#hero-image-box", {
 				top: "150%",
 				left: "50%",
+				rotate: 10,
 				xPercent: -50,
 				yPercent: -50,
 				scrollTrigger: {
@@ -177,13 +178,13 @@ export default function About() {
 				</div>
 
 				<div
-					className="flex flex-col gap-2 items-center justify-center text-center lg:opacity-0 lg:scale-150 md:max-lg:absolute md:max-lg:inset-0 mb-12 md:mb-0"
+					className="flex flex-col gap-2 items-center justify-center text-center lg:opacity-0 md:max-lg:absolute md:max-lg:inset-0 mb-12 md:mb-0"
 					ref={headingBoxRef}
 				>
-					<h2 className="md:text-7xl text-5xl text-accent mb-4">
+					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent mb-4">
 						{t("title")}
 					</h2>
-					<p className="max-w-120 text-pretty mx-auto mix-blend-exclusion">
+					<p className="max-w-120 text-pretty mx-auto mix-blend-exclusion text-2xl">
 						{t("description")}
 					</p>
 				</div>
