@@ -18,7 +18,7 @@ export default function About() {
 		const tl = gsap.timeline();
 		const matchMedia = gsap.matchMedia();
 
-		matchMedia.add("(width > 64rem)", () => {
+		matchMedia.add("(min-width: 64rem)", () => {
 			tl.to("#hero-image-box", {
 				top: "150%",
 				left: "50%",
@@ -63,7 +63,7 @@ export default function About() {
 
 		const aboutCardsAndHeadingTimeline = gsap.timeline();
 
-		matchMedia.add("(48rem < width < 64rem)", () => {
+		matchMedia.add("(min-width: 48rem)", () => {
 			aboutCardsAndHeadingTimeline
 				.to(headingBoxRef.current, {
 					opacity: 1,
@@ -87,7 +87,7 @@ export default function About() {
 			});
 		});
 
-		matchMedia.add("(width < 48rem)", () => {
+		matchMedia.add("(max-width: 48rem)", () => {
 			const aboutCards = document.querySelectorAll(".about-card");
 
 			aboutCards.forEach((aboutCard) => {
