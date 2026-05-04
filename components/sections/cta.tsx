@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { BorderSeparator } from "@/components/sections/contact";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export default function CallToAction() {
 	const t = useTranslations("CTA");
 
 	return (
-		<section id="cta">
+		<section className="bg-background z-1" id="cta">
 			<div className="mx-auto max-w-7xl max-md:px-6">
 				<div className="lg:border-x">
-					<BorderSeparator />
+					<Separator />
 					<div className="flex flex-col items-center justify-between md:flex-row w-full">
 						<div className="p-4 flex items-center">
 							<h2 className="text-center font-bold text-lg md:text-left md:text-2xl">
@@ -32,8 +32,8 @@ export default function CallToAction() {
 							</Button>
 						</div>
 					</div>
-					<BorderSeparator />
-					<div aria-hidden="true" className="h-32" />
+					{/*<Separator />*/}
+					{/*<div aria-hidden="true" className="h-32" />*/}
 				</div>
 			</div>
 		</section>

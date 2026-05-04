@@ -1,3 +1,8 @@
+"use client"; 
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -10,6 +15,18 @@ import {
 
 export function FrequentlyAskQuestion() {
 	const t = useTranslations("FAQ");
+	gsap.registerPlugin(ScrollTrigger);
+	
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: "#contact",
+      pin: "#faq",
+      start: "top 130%",
+      end: "bottom bottom",
+      pinSpacing: false,
+      scrub: true,
+    });
+  });
 
 	const faqs = [
 		{
@@ -45,8 +62,8 @@ export function FrequentlyAskQuestion() {
 	];
 
 	return (
-		<section className="py-32">
-			<div className="grid md:min-h-screen w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
+		<section id="faq" className="py-32 -z-1">
+			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
 				<div className="px-4 focus-within:outline-none">
 					<div className="space-y-5 focus-within:outline-none">
 						<h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black text-accent">
@@ -70,7 +87,7 @@ export function FrequentlyAskQuestion() {
 					{/* vertical guide line */}
 					<div
 						aria-hidden="true"
-						className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
+						className="pointer-events-none absolute inset-y-0 left-3 h-[90%] w-px bg-border focus-within:outline-none"
 					/>
 
 					<Accordion
@@ -87,7 +104,7 @@ export function FrequentlyAskQuestion() {
 								{/*  plus */}
 								<Plus
 									aria-hidden="true"
-									className="-bottom-[5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
+									className="bottom-[-5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
 								/>
 
 								<AccordionTrigger className="px-4 py-4 text-[16px] leading-6 hover:no-underline focus:ring-0">

@@ -69,6 +69,7 @@ export default function About() {
 					opacity: 1,
 				})
 				.to(headingBoxRef.current, {
+				  delay: 2,
 					opacity: 0,
 				})
 				.to(".about-card", {
@@ -82,7 +83,7 @@ export default function About() {
 				trigger: "#about",
 				pin: true,
 				start: "top top",
-				end: "+=150%",
+				end: "+=200%",
 				scrub: true,
 			});
 		});
@@ -93,7 +94,6 @@ export default function About() {
 			aboutCards.forEach((aboutCard) => {
 				gsap.to(aboutCard, {
 					opacity: 1,
-					y: -50,
 					scrollTrigger: {
 						trigger: aboutCard,
 						start: "top bottom",
@@ -158,7 +158,7 @@ export default function About() {
 					{abouts.map((item, index) => (
 						<div
 							className={cn(
-								"grid grid-cols-3 gap-2 overflow-hidden transition-all duration-300 origin-left group about-card opacity-0 translate-y-2.5",
+								"grid grid-cols-3 gap-2 overflow-hidden transition-all duration-300 origin-left group about-card opacity-0",
 								item.className,
 							)}
 							key={index}

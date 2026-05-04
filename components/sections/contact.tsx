@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import type React from "react";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
@@ -32,8 +33,8 @@ export function Contact() {
 	];
 
 	return (
-		<section id="contact">
-			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
+		<section className="bg-background z-1 border-t" id="contact">
+			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto min-h-screen">
 				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
 					<h2 className="text-5xl md:text-7xl text-accent">
 						{t("title")}
@@ -42,57 +43,57 @@ export function Contact() {
 						{t("description")}
 					</p>
 				</div>
-				<BorderSeparator />
-				<div className="grid md:grid-cols-3">
-					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
-						<address className="not-italic">
-							<Link
-								className="font-medium font-mono text-sm tracking-wide hover:underline"
-								href={`mailto:${EMAIL}`}
-								aria-label="Email"
-							>
-								{EMAIL}
-							</Link>
-						</address>
-					</Box>
-					<Box
-						description={DESCRIPTION_2}
-						icon={MapPin}
-						title="Location"
-					>
-						<address className="not-italic font-medium font-mono text-sm tracking-wide">
-							{ADDRESS}
-						</address>
-					</Box>
-					<Box
-						className="border-b-0 md:border-r-0"
-						description={DESCRIPTION_3}
-						icon={Phone}
-						title="Phone"
-					>
-						<div>
-							<address className="not-italic">
-								<Link
-									className="block font-medium font-mono text-sm tracking-wide hover:underline"
-									href={`tel:${PHONE}`}
-									aria-label="Phone 1"
-									target="_blank"
-								>
-									{PHONE}
-								</Link>
-								<Link
-									className="block font-medium font-mono text-sm tracking-wide hover:underline"
-									href={`tel:${PHONE_2}`}
-									aria-label="Phone 2"
-									target="_blank"
-								>
-									{PHONE_2}
-								</Link>
-							</address>
-						</div>
-					</Box>
-				</div>
-				<BorderSeparator />
+				<Separator />
+  				<div className="grid md:grid-cols-3">
+  					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
+  						<address className="not-italic">
+  							<Link
+  								className="font-medium font-mono text-sm tracking-wide hover:underline"
+  								href={`mailto:${EMAIL}`}
+  								aria-label="Email"
+  							>
+  								{EMAIL}
+  							</Link>
+  						</address>
+  					</Box>
+  					<Box
+  						description={DESCRIPTION_2}
+  						icon={MapPin}
+  						title="Location"
+  					>
+  						<address className="not-italic font-medium font-mono text-sm tracking-wide">
+  							{ADDRESS}
+  						</address>
+  					</Box>
+  					<Box
+  						className="border-b-0 md:border-r-0"
+  						description={DESCRIPTION_3}
+  						icon={Phone}
+  						title="Phone"
+  					>
+  						<div>
+  							<address className="not-italic">
+  								<Link
+  									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+  									href={`tel:${PHONE}`}
+  									aria-label="Phone 1"
+  									target="_blank"
+  								>
+  									{PHONE}
+  								</Link>
+  								<Link
+  									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+  									href={`tel:${PHONE_2}`}
+  									aria-label="Phone 2"
+  									target="_blank"
+  								>
+  									{PHONE_2}
+  								</Link>
+  							</address>
+  						</div>
+  					</Box>
+  				</div>
+				<Separator />
 				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
 					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
 						{t.rich("title2", {
@@ -121,15 +122,6 @@ export function Contact() {
 				</div>
 			</div>
 		</section>
-	);
-}
-
-export function BorderSeparator({ className }: React.ComponentProps<"div">) {
-	return (
-		<div
-			aria-hidden="true"
-			className={cn("absolute inset-x-0 h-px w-full border-b", className)}
-		/>
 	);
 }
 
