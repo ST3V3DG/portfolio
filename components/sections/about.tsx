@@ -19,7 +19,7 @@ export default function About() {
 		const matchMedia = gsap.matchMedia();
 
 		matchMedia.add("(min-width: 64rem)", () => {
-			tl.to("#hero-image-box", {
+			tl.to("#hero-image-box-container", {
 				top: "150%",
 				left: "50%",
 				rotate: 10,
@@ -34,17 +34,17 @@ export default function About() {
 					onUpdate: (self) => {
 						if (self.progress > 0.1) {
 							document
-								.getElementById("hero-image-box")
+								.getElementById("hero-image-box-container")
 								?.classList.add("z-10");
 						} else {
 							document
-								.getElementById("hero-image-box")
+								.getElementById("hero-image-box-container")
 								?.classList.remove("z-10");
 						}
 					},
 					onLeave: () => {
 						document
-							.getElementById("hero-image-box")
+							.getElementById("hero-image-box-container")
 							?.classList.remove("lg:block");
 						document
 							.querySelector("[alt='About image']")
@@ -52,7 +52,7 @@ export default function About() {
 					},
 					onEnterBack: () => {
 						document
-							.getElementById("hero-image-box")
+							.getElementById("hero-image-box-container")
 							?.classList.add("lg:block");
 						document
 							.querySelector("[alt='About image']")

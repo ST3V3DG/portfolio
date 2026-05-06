@@ -46,7 +46,7 @@ export default function Footer() {
 				href: "#hero",
 				icon: (
 					<Binary
-						className="size-30 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
+						className="size-32 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
 						strokeLinecap="inherit"
 					/>
 				),
@@ -56,7 +56,7 @@ export default function Footer() {
 				href: "#about",
 				icon: (
 					<CodeXml
-						className="size-30 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
+						className="size-32 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
 						strokeLinecap="inherit"
 					/>
 				),
@@ -66,7 +66,7 @@ export default function Footer() {
 				href: "#projects",
 				icon: (
 					<Container
-						className="size-30 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
+						className="size-32 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
 						strokeLinecap="inherit"
 					/>
 				),
@@ -76,7 +76,7 @@ export default function Footer() {
 				href: "#testimonials",
 				icon: (
 					<SquareTerminal
-						className="size-30 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
+						className="size-32 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
 						strokeLinecap="inherit"
 					/>
 				),
@@ -86,7 +86,7 @@ export default function Footer() {
 				href: "#contact",
 				icon: (
 					<Webhook
-						className="size-30 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
+						className="size-32 opacity-50 -translate-x-1/4 group-hover:translate-x-0 translate-y-1/8 transition-transform duration-300"
 						strokeLinecap="inherit"
 					/>
 				),
@@ -113,7 +113,7 @@ export default function Footer() {
 	];
 
 	return (
-		<footer className="bg-background pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none">
+		<footer className="bg-background py-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)]">
 			<div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
 				<div className="flex flex-col lg:flex-row w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">
 					<div className="flex flex-col justify-between gap-6 lg:items-start focus-within:outline-none">

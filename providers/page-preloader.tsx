@@ -42,19 +42,19 @@ export default function PagePreloader({
 				{
 					fill: "var(--accent)",
 					duration: 1.5,
-					ease: "back.out",
+					ease: "ease.out",
 				},
 				"-=0.2",
 			)
-			.to(
-				svgLineRef.current,
-				{
-					opacity: 0.15,
-					duration: 1,
-					ease: "back.in",
-				},
-				"-=0.2",
-			)
+			// .to(
+			// 	svgLineRef.current,
+			// 	{
+			// 		opacity: 0.15,
+			// 		duration: 1,
+			// 		ease: "back.in",
+			// 	},
+			// 	"-=0.2",
+			// )
 			.to(preloader!, {
 				opacity: 0,
 				duration: 1,

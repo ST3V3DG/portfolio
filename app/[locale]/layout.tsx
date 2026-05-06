@@ -250,7 +250,7 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body className="font-archivo antialiased">
-				<script
+				{/*<script
 					dangerouslySetInnerHTML={{
 						__html: `
 							if ('serviceWorker' in navigator) {
@@ -266,7 +266,7 @@ export default async function RootLayout({
 							}
 						`,
 					}}
-				/>
+				/>*/}
 				<NextIntlClientProvider messages={messages}>
 					{children}
 					<SpeedInsights />
