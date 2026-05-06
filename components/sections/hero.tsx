@@ -99,7 +99,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative">
       <div className="lg:flex hidden fixed size-full top-0 left-0 justify-center z-10 pointer-events-none">
-        <div className="size-full relative pointer-events-none before:absolute before:inset-0 before:bg-background/90 before:will-change-auto before:transition-opacity before:duration-800 before:ease-in-out before:opacity-0 before:-z-10">
+        <div className="size-full relative pointer-events-none before:absolute before:inset-0 before:bg-background/90 before:will-change-auto before:transition-opacity before:duration-100 before:ease-in-out before:opacity-0 before:-z-100">
           <div
             className="w-1/3 aspect-3/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             id="background-image-box"
