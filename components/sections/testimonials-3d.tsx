@@ -76,25 +76,21 @@ export function Testimonials3D() {
       const divs = divRefs.current.filter(Boolean);
       if (divs.length === 0) return;
 
-      // const tl = gsap.timeline({
-      //   paused: true,
-      // });
+      const tl = gsap.timeline({
+        paused: true,
+      });
 
-      // tl.to(containerRef.current?.querySelector("div:nth-child(1)")!, { opacity: 0 });
+      tl.to(containerRef.current?.querySelector("div:nth-child(1)")!, { opacity: 0 });
 
-      // ScrollTrigger.create({
-      //   animation: tl,
-      //   onEnter: () => {
-      //     console.log(containerRef.current?.querySelector("div:nth-child(1)"));
-      //   },
-      //   trigger: "#testimonials",
-      //   start: "top top",
-      //   end: "+=200%",
-      //   pin: containerRef.current?.querySelector("div:nth-child(1)")!,
-      //   pinSpacing: false,
-      //   scrub: 1,
-      //   markers: true,
-      // });
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=50%",
+        pin: containerRef.current?.querySelector("div:nth-child(1)")!,
+        pinSpacing: false,
+        scrub: 1,
+      });
 
       const triggers: ScrollTrigger[] = [];
 

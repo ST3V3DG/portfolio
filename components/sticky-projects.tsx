@@ -30,22 +30,22 @@ export const StickyProjects = ({
   imageClassName,
 }: StickyProjectProps) => {
   const container = useRef(null);
-  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const imageBoxRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const imageElements = imageRefs.current;
-      const totalCards = imageElements.length;
+      const imageBoxElements = imageBoxRefs.current;
+      const totalCards = imageBoxElements.length;
 
-      if (!imageElements[0]) return;
+      if (!imageBoxElements[0]) return;
 
-      gsap.set(imageElements[0], { y: "0%", scale: 1, rotation: 0 });
+      gsap.set(imageBoxElements[0], { y: "0%", scale: 1, rotation: 0 });
 
       for (let i = 1; i < totalCards; i++) {
-        if (!imageElements[i]) continue;
-        gsap.set(imageElements[i], {
+        if (!imageBoxElements[i]) continue;
+        gsap.set(imageBoxElements[i], {
           y: "100%",
           scale: 1,
           rotation: 0,
@@ -64,8 +64,8 @@ export const StickyProjects = ({
       });
 
       for (let i = 0; i < totalCards - 1; i++) {
-        const currentImage = imageElements[i];
-        const nextImage = imageElements[i + 1];
+        const currentImage = imageBoxElements[i];
+        const nextImage = imageBoxElements[i + 1];
         const position = i;
         if (!currentImage || !nextImage) continue;
 
@@ -119,32 +119,35 @@ export const StickyProjects = ({
         >
           {cards.map((card, index) => (
             <Link href={card.url ?? "#"} key={card.id}>
-              <Image
-                src={card.image}
-                alt={card.alt || ""}
-                className={cn(
-                  "absolute size-full object-cover",
-                  imageClassName,
-                )}
+              <div
+                className="absolute size-full isolate"
                 ref={(element) => {
-                  imageRefs.current[index] = element;
-                }}
-                height={1000}
-                width={1500}
-              />
-
-              {/*<div className="absolute inset-0  bg-linear-to-b from-transparent to-black lg:to-75% lg:opacity-0 lg:group-hover:opacity-50 transition duration-300 pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 right-0 lg:opacity-0 lg:group-hover:opacity-100 text-accent transition duration-300 p-6 flex justify-between items-start">
-                <h3 className="flex items-center gap-1">
-                  <span>Eden Cosmetics</span>
-                  <ExternalLink className="size-3 stroke-4" />
-                </h3>
-                <ul className="flex flex-col justify-between items-end font-clash-display">
-                  <li>Cosmetics</li>
-                  <li>Eden</li>
-                  <li>Care</li>
-                </ul>
-              </div>*/}
+                  imageBoxRefs.current[index] = element;
+                }}>
+                <Image
+                  src={card.image}
+                  alt={card.alt || ""}
+                  className={cn(
+                    "size-full object-cover",
+                    imageClassName,
+                  )}
+                  height={1000}
+                  width={1500}
+                />
+  
+                <div className="absolute inset-0  bg-linear-to-b from-transparent to-black lg:to-120% pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start">
+                  <h3 className="flex items-center gap-1">
+                    <span>Eden Cosmetics</span>
+                    <ExternalLink className="size-3 stroke-4" />
+                  </h3>
+                  <ul className="flex flex-col justify-between items-end font-clash-display">
+                    <li>Cosmetics</li>
+                    <li>Eden</li>
+                    <li>Care</li>
+                  </ul>
+                </div>
+              </div>
             </Link>
           ))}
         </div>

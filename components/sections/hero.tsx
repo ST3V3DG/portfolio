@@ -189,9 +189,9 @@ export default function Hero() {
                   isFlipped ? "opacity-100" : "opacity-0",
                 )}
               >
-                <div className="flex flex-col items-center justify-center size-full p-4 gap-8">
-                <p className="indent-4 first-letter:text-6xl text-pretty">{t("description1")}</p>
-                <p className="indent-4 first-letter:text-6xl text-pretty">{t("description2")}</p>
+                <div className="flex flex-col items-center justify-center size-full p-6 gap-8">
+                <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description1")}</p>
+                <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description2")}</p>
                 </div>
               </div>
             </div>

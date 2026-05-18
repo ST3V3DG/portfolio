@@ -1,26 +1,26 @@
 import { useTranslations } from "next-intl";
 import { StickyProjects } from "@/components/sticky-projects";
 
+const projects = [
+	{
+		image: "/images/ipad-optiride.png",
+		alt: "",
+		id: 1,
+	},
+	{
+		image: "/images/ipad-optiride.png",
+		alt: "",
+		id: 2,
+	},
+	{
+		image: "/images/ipad-optiride.png",
+		alt: "",
+		id: 3,
+	},
+];
+
 export default function Projects() {
 	const t = useTranslations("Projects");
-
-	const projects = [
-		{
-			image: "/images/ipad-optiride.png",
-			alt: "",
-			id: 1,
-		},
-		{
-			image: "/images/ipad-optiride.png",
-			alt: "",
-			id: 2,
-		},
-		{
-			image: "/images/ipad-optiride.png",
-			alt: "",
-			id: 3,
-		},
-	];
 
 	return (
 		<section id="projects">

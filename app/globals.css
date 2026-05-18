@@ -172,7 +172,7 @@
         @apply outline-none;
 	}
 
-	body:has(a:hover, button:hover) #cursor {
+	body:has(a:hover, button:hover, #hero-image-box > *:hover) #cursor {
 		@apply size-12 animate-pulse;
 	}
 
