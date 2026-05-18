@@ -70,7 +70,7 @@ export default function About() {
 					opacity: 1,
 				})
 				.to(headingBoxRef.current, {
-				  delay: 2,
+				  delay: 1,
 					opacity: 0,
 				})
 				.to(".about-card", {
