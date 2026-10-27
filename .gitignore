@@ -45,3 +45,6 @@ certificates
 # agent skills (local only)
 .agents/
 skills-lock.json
+
+# local opencode config
+opencode.json
