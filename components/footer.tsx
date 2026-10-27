@@ -133,9 +133,9 @@ export default function Footer() {
 							{description}
 						</p>
 						<ul className="flex items-center space-x-6 text-muted-foreground focus-within:outline-none">
-							{socialLinks?.map((social, idx) => (
+							{socialLinks?.map((social, index) => (
 								<li
-									key={idx}
+									key={index}
 									className="hover:text-accent transition duration-300"
 								>
 									<Link
@@ -178,9 +178,9 @@ export default function Footer() {
 				<div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
 					<p className="order-2 lg:order-1">{copyright}</p>
 					<ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
-						{legalLinks?.map((link, idx) => (
+						{legalLinks?.map((link, index) => (
 							<li
-								key={idx}
+								key={index}
 								className="hover:text-accent transition duration-300"
 							>
 								<Link aria-label={link.label} href={link.href}>
