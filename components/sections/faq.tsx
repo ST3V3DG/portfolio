@@ -3,15 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Plus } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,16 +92,17 @@ export function FrequentlyAskQuestion() {
 						className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
 					/>
 
-					<Accordion
-						className="focus-within:outline-none"
-						collapsible
-						type="single"
+					<div
+            className="focus-within:outline-none"
+            data-slot="accordion"
+						data-orientation="vertical"
 					>
 						{faqs.map((item) => (
-							<AccordionItem
-								className="group relative border-b pl-5 first:border-t last:border-b focus-within:outline-none"
+              <details
+                name="faq-item"
+                className="group relative border-b pl-5 first:border-t last:border-b focus-within:outline-none"
+								data-orientation="vertical"
 								key={item.id}
-								value={item.id}
 							>
 								{/*  plus */}
 								<Plus
@@ -115,16 +110,17 @@ export function FrequentlyAskQuestion() {
 									className="bottom-[-5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
 								/>
 
-								<AccordionTrigger className="px-4 py-4 text-[16px] leading-6 hover:no-underline focus:ring-0">
-									{item.title}
-								</AccordionTrigger>
+								<summary  data-slot="accordion-trigger" className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 text-left font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 p-4 text-[16px] leading-6 hover:no-underline focus:ring-0">
+                  {item.title}
+									<ChevronDown className="size-4 lucide-chevron-down" />
+								</summary>
 
-								<AccordionContent className="p-4 text-muted-foreground">
+                <p data-orientation="vertical" data-slot="accordion-content" className="px-4 pb-4 overflow-hidden text-sm text-muted-foreground" style={{ "--radix-accordion-content-height": "var(--radix-collapsible-content-height)", "--radix-accordion-content-width": "var(--radix-collapsible-content-width)"}}>
 									{item.content}
-								</AccordionContent>
-							</AccordionItem>
+								</p>
+							</details>
 						))}
-					</Accordion>
+					</div>
 				</div>
 			</div>
 		</section>
