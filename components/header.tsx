@@ -143,7 +143,7 @@ export default function Header() {
 					className="py-2"
 				>
 					<Image
-						src="/svgs/S.D.svg"
+						src="/svgs/Steve.D.svg"
 						alt="logo"
 						className="h-16 w-32"
 						height={60}

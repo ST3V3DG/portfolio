@@ -32,7 +32,7 @@ const STATIC_ASSETS = [
 	"/svgs/linux.svg",
 	"/svgs/next-js.svg",
 	"/svgs/postman.svg",
-	"/svgs/S.D.svg",
+	"/svgs/Steve.D.svg",
 	"/svgs/typescript.svg",
 ];
 
