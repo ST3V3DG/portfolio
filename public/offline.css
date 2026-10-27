@@ -29,7 +29,7 @@
 body {
 	font-family: "Archivo", sans-serif;
 	color: oklch(0.99 0 0);
-	background-image: url("/images/noise-bg.svg");
+	background-image: url("/svgs/noise-bg.svg");
 	background-size: cover;
 	background-blend-mode: overlay;
 	background-color: color-mix(in oklab, oklch(0.1 0 0) 90%, transparent);
@@ -320,5 +320,5 @@ a:visited {
 }
 
 .text-background {
-	color: oklch(0.1 0 0) !important;
+	color: oklch(0.1 0 0);
 }

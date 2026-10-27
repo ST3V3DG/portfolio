@@ -1,3 +1,8 @@
+"use client"; 
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -8,8 +13,27 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function FrequentlyAskQuestion() {
 	const t = useTranslations("FAQ");
+	
+  useGSAP(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+    ScrollTrigger.create({
+      trigger: "#contact",
+      pin: "#faq",
+      start: "top bottom",
+      end: "bottom bottom",
+      pinSpacing: false,
+      scrub: true,
+    });
+  });
 
 	const faqs = [
 		{
@@ -45,18 +69,19 @@ export function FrequentlyAskQuestion() {
 	];
 
 	return (
-		<section className="bg-background-grainy py-32">
-			<div className="grid md:min-h-screen w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
-				<div className="px-4 focus-within:outline-none">
+		<section id="faq" className="-z-1">
+			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
+				<div className="px-4 focus-within:outline-none place-content-center">
 					<div className="space-y-5 focus-within:outline-none">
-						<h2 className="text-balance font-bold text-4xl md:text-6xl lg:font-black text-accent">
+						<h2 className="text-balance font-bold md:text-7xl text-5xl lg:font-black text-accent">
 							{t("title")}
 						</h2>
-						<p className="text-muted-foreground">
+						<p className="text-muted-foreground text-2xl">
 							{t("description")}
 						</p>
-						<p className="text-muted-foreground focus-within:outline-none">
+						<p className="text-muted-foreground focus-within:outline-none text-2xl">
 							{"Can't find what you're looking for? "}
+							{t("paragraph")}{" "}
 							<Link
 								className="text-primary hover:underline"
 								href="#contact"
@@ -87,7 +112,7 @@ export function FrequentlyAskQuestion() {
 								{/*  plus */}
 								<Plus
 									aria-hidden="true"
-									className="-bottom-[5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
+									className="bottom-[-5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
 								/>
 
 								<AccordionTrigger className="px-4 py-4 text-[16px] leading-6 hover:no-underline focus:ring-0">

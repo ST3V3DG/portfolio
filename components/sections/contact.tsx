@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import type React from "react";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
@@ -32,69 +33,69 @@ export function Contact() {
 	];
 
 	return (
-		<section id="contact" className="bg-secondary">
-			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto">
-				<div className="flex grow flex-col justify-center md:items-center gap-4 ">
-					<h2 className="text-5xl md:text-7xl text-accent">
+		<section className="bg-background z-1 border-t cv-auto" id="contact">
+			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto min-h-screen">
+				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
+					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
 						{t("title")}
 					</h2>
-					<p className="mb-16 text-base text-muted-foreground">
+					<p className="max-w-120 mb-8 text-pretty mx-auto text-2xl">
 						{t("description")}
 					</p>
 				</div>
-				<BorderSeparator />
-				<div className="grid md:grid-cols-3">
-					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
-						<address className="not-italic">
-							<Link
-								className="font-medium font-mono text-sm tracking-wide hover:underline"
-								href={`mailto:${EMAIL}`}
-								aria-label="Email"
-							>
-								{EMAIL}
-							</Link>
-						</address>
-					</Box>
-					<Box
-						description={DESCRIPTION_2}
-						icon={MapPin}
-						title="Location"
-					>
-						<address className="not-italic font-medium font-mono text-sm tracking-wide">
-							{ADDRESS}
-						</address>
-					</Box>
-					<Box
-						className="border-b-0 md:border-r-0"
-						description={DESCRIPTION_3}
-						icon={Phone}
-						title="Phone"
-					>
-						<div>
-							<address className="not-italic">
-								<Link
-									className="block font-medium font-mono text-sm tracking-wide hover:underline"
-									href={`tel:${PHONE}`}
-									aria-label="Phone 1"
-									target="_blank"
-								>
-									{PHONE}
-								</Link>
-								<Link
-									className="block font-medium font-mono text-sm tracking-wide hover:underline"
-									href={`tel:${PHONE_2}`}
-									aria-label="Phone 2"
-									target="_blank"
-								>
-									{PHONE_2}
-								</Link>
-							</address>
-						</div>
-					</Box>
-				</div>
-				<BorderSeparator />
+				<Separator />
+  				<div className="grid md:grid-cols-3">
+  					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
+  						<address className="not-italic">
+  							<Link
+  								className="font-medium font-mono tracking-wide hover:underline"
+  								href={`mailto:${EMAIL}`}
+  								aria-label="Email"
+  							>
+  								{EMAIL}
+  							</Link>
+  						</address>
+  					</Box>
+  					<Box
+  						description={DESCRIPTION_2}
+  						icon={MapPin}
+  						title="Location"
+  					>
+  						<address className="not-italic font-medium font-mono tracking-wide">
+  							{ADDRESS}
+  						</address>
+  					</Box>
+  					<Box
+  						className="border-b-0 md:border-r-0"
+  						description={DESCRIPTION_3}
+  						icon={Phone}
+  						title="Phone"
+  					>
+  						<div>
+  							<address className="not-italic">
+  								<Link
+  									className="block font-medium font-mono tracking-wide hover:underline"
+  									href={`tel:${PHONE}`}
+  									aria-label="Phone 1"
+  									target="_blank"
+  								>
+  									{PHONE}
+  								</Link>
+  								<Link
+  									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+  									href={`tel:${PHONE_2}`}
+  									aria-label="Phone 2"
+  									target="_blank"
+  								>
+  									{PHONE_2}
+  								</Link>
+  							</address>
+  						</div>
+  					</Box>
+  				</div>
+				<Separator />
 				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
-					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
+					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-5xl">
 						{t.rich("title2", {
 							span: (chunks) => (
 								<span className="text-accent">{chunks}</span>
@@ -108,11 +109,11 @@ export function Contact() {
 								className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
 								href={link.href}
 								key={link.label}
-								// rel="noopener noreferrer"
+								rel="noopener noreferrer"
 								target="_blank"
 							>
-								<link.icon className="size-3.5 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
-								<span className="font-medium font-mono text-xs tracking-wide">
+								<link.icon className="size-6 fill-current group-hover:fill-primary transition duration-300 stroke-0" />
+								<span className="font-medium font-mono tracking-wide">
 									{link.label}
 								</span>
 							</Link>
@@ -121,15 +122,6 @@ export function Contact() {
 				</div>
 			</div>
 		</section>
-	);
-}
-
-export function BorderSeparator({ className }: React.ComponentProps<"div">) {
-	return (
-		<div
-			aria-hidden="true"
-			className={cn("absolute inset-x-0 h-px w-full border-b", className)}
-		/>
 	);
 }
 
@@ -155,7 +147,7 @@ function Box({
 		>
 			<div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20 lg:justify-center">
 				<props.icon
-					className="size-5 text-muted-foreground"
+					className="size-6 text-muted-foreground"
 					strokeWidth={1}
 				/>
 				<h3 className="font-heading font-medium text-lg tracking-wider">
@@ -165,7 +157,7 @@ function Box({
 			<div className="flex items-center lg:justify-center gap-x-2 p-12">
 				{children}
 			</div>
-			{/* <div className="border-t p-4">
+			 {/*<div className="border-t p-4">
                 <p className="text-muted-foreground text-sm">{description}</p>
             </div> */}
 		</section>

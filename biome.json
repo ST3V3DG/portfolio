@@ -18,6 +18,10 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"a11y": {
+				"useKeyWithClickEvents": "off",
+				"noStaticElementInteractions": "off"
+			},
 			"security": {
 				"noDangerouslySetInnerHtml": "off"
 			},
