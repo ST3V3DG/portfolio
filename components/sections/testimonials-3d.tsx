@@ -73,6 +73,12 @@ export function Testimonials3D() {
 
   useGSAP(
     () => {
+      if (
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
       const divs = divRefs.current.filter(Boolean);
       if (divs.length === 0) return;
 
@@ -163,13 +169,13 @@ export function Testimonials3D() {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="div-3d-content relative h-[90%] w-full overflow-hidden md:aspect-9/14 md:w-auto origin-center">
+            <div className="div-3d-content relative size-full overflow-hidden md:aspect-9/12 md:w-auto origin-center">
               <Image
                 src={card.image}
                 alt={card.alt ?? card.name}
                 fill
                 className="object-cover"
-                // sizes="(max-width: 768px) 92vw, (max-width: 1024px) 50vw, 500px"
+                sizes="(max-width: 768px) 92vw, (max-width: 1024px) 50vw, 500px"
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/90 via-black/40 to-transparent p-6 md:p-10">
                 <div>

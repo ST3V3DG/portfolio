@@ -3,7 +3,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import CustomEase from "gsap/CustomEase";
+// import CustomEase from "gsap/CustomEase";
 import { createContext, useRef, useState } from "react";
 
 export const PagePreloaderContext = createContext<
@@ -22,9 +22,20 @@ export default function PagePreloader({
 		window.scrollTo(0, 0);
 	}
 
-	gsap.registerPlugin(CustomEase, useGSAP);
-
 	useGSAP(() => {
+		if (
+			typeof window !== "undefined" &&
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches
+		) {
+			const preloader = document.getElementById("preloader");
+			if (preloader) {
+				preloader.classList.add("hidden");
+				preloader.nextElementSibling?.classList.add("hidden");
+			}
+			setTl(gsap.timeline());
+			return;
+		}
+
 		const tl = gsap.timeline();
 		const preloader = document.getElementById("preloader");
 
@@ -41,19 +52,17 @@ export default function PagePreloader({
 				svgLineRef.current,
 				{
 					fill: "var(--accent)",
-					duration: 1.5,
-					ease: "back.out",
-				},
-				"+=0.2",
+					duration: 1,
+					ease: "back.in",
+				}
 			)
 			.to(
 				svgLineRef.current,
 				{
 					opacity: 0.2,
-					duration: 1,
+					duration: 1.5,
 					ease: "back.in",
-				},
-				"-=0.2",
+				}
 			)
 			.to(preloader!, {
 				opacity: 0,
@@ -67,7 +76,7 @@ export default function PagePreloader({
 				},
         onComplete: () => {
         },
-			});
+      });
 
 		setTl(tl);
 	});

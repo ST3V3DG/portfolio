@@ -13,15 +13,22 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function FrequentlyAskQuestion() {
 	const t = useTranslations("FAQ");
-	gsap.registerPlugin(ScrollTrigger);
 	
   useGSAP(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
     ScrollTrigger.create({
       trigger: "#contact",
       pin: "#faq",
-      start: "top 130%",
+      start: "top bottom",
       end: "bottom bottom",
       pinSpacing: false,
       scrub: true,
@@ -62,9 +69,9 @@ export function FrequentlyAskQuestion() {
 	];
 
 	return (
-		<section id="faq" className="py-32 -z-1">
+		<section id="faq" className="-z-1">
 			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
-				<div className="px-4 focus-within:outline-none">
+				<div className="px-4 focus-within:outline-none place-content-center">
 					<div className="space-y-5 focus-within:outline-none">
 						<h2 className="text-balance font-bold md:text-7xl text-5xl lg:font-black text-accent">
 							{t("title")}
@@ -88,7 +95,7 @@ export function FrequentlyAskQuestion() {
 					{/* vertical guide line */}
 					<div
 						aria-hidden="true"
-						className="pointer-events-none absolute inset-y-0 left-3 h-[90%] w-px bg-border focus-within:outline-none"
+						className="pointer-events-none absolute inset-y-0 left-3 h-full w-px bg-border focus-within:outline-none"
 					/>
 
 					<Accordion

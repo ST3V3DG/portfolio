@@ -4,50 +4,84 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { useRef } from "react";
 
-export default function Cursor() {
-	gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP);
 
+export default function Cursor() {
 	const cursorRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
-		document.addEventListener("mousemove", (event) => {
-			if (!cursorRef.current) return;
+		if (
+			typeof window !== "undefined" &&
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches
+		) {
+			return;
+		}
 
-			gsap.to(cursorRef.current, {
-				opacity: 1,
-				x: event.clientX,
-				y: event.clientY,
-				duration: 0.3,
-				ease: "power4.out",
-			});
+		if (!cursorRef.current) return;
+
+		const xTo = gsap.quickTo(cursorRef.current, "x", {
+			duration: 0.3,
+			ease: "power4.out",
+		});
+		const yTo = gsap.quickTo(cursorRef.current, "y", {
+			duration: 0.3,
+			ease: "power4.out",
 		});
 
-		document.addEventListener("mouseout", () => {
+		const handleMouseMove = (event: MouseEvent) => {
 			if (!cursorRef.current) return;
+			gsap.to(cursorRef.current, {
+				opacity: 1,
+				duration: 0.3,
+				ease: "power4.out",
+				overwrite: "auto",
+			});
+			xTo(event.clientX);
+			yTo(event.clientY);
+		};
 
+		const handleMouseOut = () => {
+			if (!cursorRef.current) return;
 			gsap.to(cursorRef.current, {
 				opacity: 0,
 				duration: 0.3,
 				ease: "power4.out",
 			});
+		};
+
+		document.addEventListener("mousemove", handleMouseMove);
+		document.addEventListener("mouseout", handleMouseOut);
+
+		const hoverTargets = document.querySelectorAll("a, button");
+		const handleEnter = () => {
+			if (!cursorRef.current) return;
+			gsap.to(cursorRef.current, {
+				scale: 2,
+				duration: 0.3,
+				ease: "power4.out",
+			});
+		};
+		const handleLeave = () => {
+			if (!cursorRef.current) return;
+			gsap.to(cursorRef.current, {
+				scale: 1,
+				duration: 0.3,
+				ease: "power4.out",
+			});
+		};
+		hoverTargets.forEach((el) => {
+			el.addEventListener("mouseenter", handleEnter);
+			el.addEventListener("mouseleave", handleLeave);
 		});
 
-		document.querySelectorAll("a, button").forEach((el) => {
-			el.addEventListener("mouseenter", () => {
-				gsap.to(cursorRef.current, {
-					scale: 2,
-					duration: 0.3,
-					ease: "power4.out",
-				});
+		return () => {
+			document.removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("mouseout", handleMouseOut);
+			hoverTargets.forEach((el) => {
+				el.removeEventListener("mouseenter", handleEnter);
+				el.removeEventListener("mouseleave", handleLeave);
 			});
-			el.addEventListener("mouseleave", () => {
-				gsap.to(cursorRef.current, {
-					scale: 1,
-					duration: 0.3,
-					ease: "power4.out",
-				});
-			});
-		});
+		};
 	});
 	return (
 		<div

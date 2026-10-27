@@ -9,16 +9,23 @@ import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function About() {
 	const headingBoxRef = useRef<HTMLDivElement>(null);
 	const t = useTranslations("About");
-	gsap.registerPlugin(ScrollTrigger);
 
 	useGSAP(() => {
-		const tl = gsap.timeline();
+		if (
+			typeof window !== "undefined" &&
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches
+		) {
+			return;
+		}
 		const matchMedia = gsap.matchMedia();
 
 		matchMedia.add("(min-width: 64rem)", () => {
+			const tl = gsap.timeline();
 			tl.to("#hero-image-box-container", {
 				top: "150%",
 				left: "50%",
@@ -60,11 +67,11 @@ export default function About() {
 					},
 				},
 			});
+			return () => tl.kill();
 		});
 
-		const aboutCardsAndHeadingTimeline = gsap.timeline();
-
 		matchMedia.add("(min-width: 48rem)", () => {
+			const aboutCardsAndHeadingTimeline = gsap.timeline();
 			aboutCardsAndHeadingTimeline
 				.to(headingBoxRef.current, {
 					opacity: 1,
@@ -79,30 +86,38 @@ export default function About() {
 					stagger: 0.5,
 				});
 
-			ScrollTrigger.create({
+			const st = ScrollTrigger.create({
 				animation: aboutCardsAndHeadingTimeline,
 				trigger: "#about",
 				pin: true,
-				start: "top top",
+				start: "top 16px",
 				end: "+=200%",
 				scrub: true,
 			});
+			return () => {
+				st.kill();
+				aboutCardsAndHeadingTimeline.kill();
+			};
 		});
 
 		matchMedia.add("(max-width: 48rem)", () => {
 			const aboutCards = document.querySelectorAll(".about-card");
 
+			const tweens: gsap.core.Tween[] = [];
 			aboutCards.forEach((aboutCard) => {
-				gsap.to(aboutCard, {
-					opacity: 1,
-					scrollTrigger: {
-						trigger: aboutCard,
-						start: "top bottom",
-						end: "bottom bottom",
-						scrub: 1,
-					},
-				});
+				tweens.push(
+					gsap.to(aboutCard, {
+						opacity: 1,
+						scrollTrigger: {
+							trigger: aboutCard,
+							start: "top bottom",
+							end: "bottom bottom",
+							scrub: 1,
+						},
+					}),
+				);
 			});
+			return () => tweens.forEach((t) => t.kill());
 		});
 	});
 
@@ -199,7 +214,7 @@ export default function About() {
 								alt="About image"
 								className="hover:scale-110 transition duration-300 size-full object-cover rotate-10 hidden"
 								height={1500}
-								priority
+								loading="lazy"
 								src="/images/i.png"
 								width={500}
 							/>

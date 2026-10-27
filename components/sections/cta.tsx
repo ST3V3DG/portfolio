@@ -7,24 +7,24 @@ export default function CallToAction() {
 	const t = useTranslations("CTA");
 
 	return (
-		<section className="bg-background z-1" id="cta">
+		<section className="bg-background z-1 cv-auto" id="cta">
 			<div className="mx-auto max-w-7xl max-md:px-6">
 				<div className="lg:border-x">
 					<Separator />
 					<div className="flex flex-col items-center justify-between md:flex-row w-full">
-						<div className="p-4 flex items-center">
-							<h2 className="text-center font-bold text-2xl md:text-left md:text-4xl">
+						<div className="p-6 flex items-center">
+							<h2 className="text-center font-bold text-2xl md:text-left md:text-3xl">
 								{t("title")}
 							</h2>
 						</div>
-						<div className="flex items-center justify-center gap-2 p-4 md:border-l *:rounded-none">
+						<div className="flex items-center justify-center gap-2 p-6 md:border-l *:rounded-none">
 							<Button
 								asChild
 								className="bg-accent font-bold text-background hover:bg-accent/80 transition duration-300"
 								size="lg"
 							>
 								<Link
-									href="https://wa.me/+237676068279"
+									href="#"
 									target="_blank"
 								>
 									{t("letStart")}

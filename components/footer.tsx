@@ -123,6 +123,7 @@ export default function Footer() {
 								<Image
 									src="/svgs/S.D.svg"
 									alt="logo"
+									className="h-16 w-32"
 									height={60}
 									width={120}
 								/>

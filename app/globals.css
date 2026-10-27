@@ -147,13 +147,23 @@
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50 cursor-none;
+		@apply border-border outline-ring/50;
 		scrollbar-gutter: stable;
-		transition-behavior: allow-discrete;
 	}
 
-	*:focus-within {
+	@media (pointer: fine) {
+		* {
+			cursor: none;
+		}
+	}
+
+	*:focus-visible {
 		@apply outline-foreground outline-[0.5px] rounded-none;
+	}
+
+	.cv-auto {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 100vh;
 	}
 
 	body {
@@ -225,5 +235,16 @@
 @custom-variant standalone {
 	@media (display-mode: standalone) {
 		@slot;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
 }

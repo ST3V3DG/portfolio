@@ -2,15 +2,15 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import SplitText from "gsap/SplitText";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useContext, useEffect, useRef, useState } from "react";
 import { PagePreloaderContext } from "@/providers/page-preloader";
 
+gsap.registerPlugin(useGSAP);
+
 export default function Header() {
-	gsap.registerPlugin(SplitText, useGSAP);
 	const tl = useContext(PagePreloaderContext);
 
 	const t = useTranslations("Navigation");
@@ -68,6 +68,13 @@ export default function Header() {
 
 	useGSAP(
 		() => {
+			if (
+				typeof window !== "undefined" &&
+				window.matchMedia("(prefers-reduced-motion: reduce)").matches
+			) {
+				gsap.set(mobileMenuRef.current, { top: "-100%" });
+				return;
+			}
 			gsap.set(mobileMenuRef.current, {
 				top: "-100%",
 			});
@@ -133,11 +140,12 @@ export default function Header() {
 				<Link
 					aria-label="home"
 					href="/"
-					className="text-xl font-bold py-6"
+					className="py-2"
 				>
 					<Image
 						src="/svgs/S.D.svg"
 						alt="logo"
+						className="h-16 w-32"
 						height={60}
 						width={120}
 					/>
@@ -164,7 +172,8 @@ export default function Header() {
 					className="md:hidden"
 					type="button"
 					onClick={() => animateMobileMenu()}
-					aria-label="open"
+					aria-expanded={open}
+					aria-label={open ? "Close menu" : "Open menu"}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

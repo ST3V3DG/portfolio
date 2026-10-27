@@ -31,6 +31,7 @@ export async function generateMetadata({
 	});
 
 	return {
+		metadataBase: new URL(baseUrl || "http://localhost:3000"),
 		title: t("title"),
 		description: t("description"),
 		keywords: t("keywords"),
@@ -225,14 +226,17 @@ export default async function RootLayout({
 					name="google-site-verification"
 					content="YIqmFaOlEo5Ks76j-xH2p2aFMdA-DY1onnGt2OV3GQE"
 				/>
-				<GoogleTagManager
-					gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ"
-					gtmId="G-3JJCEDQEWQ"
-				/>
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
 					content="black-translucent"
+				/>
+				<link
+					rel="preload"
+					href="/fonts/ClashDisplay-Semibold.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
 				/>
 				<link
 					rel="icon"
@@ -246,10 +250,16 @@ export default async function RootLayout({
 				/>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(JSONLD).replace(/</g, "\\u003c"),
+					}}
 				/>
 			</head>
 			<body className="font-archivo antialiased">
+				<GoogleTagManager
+					gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ"
+					gtmId="G-3JJCEDQEWQ"
+				/>
 				{/*<script
 					dangerouslySetInnerHTML={{
 						__html: `

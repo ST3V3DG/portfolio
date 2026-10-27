@@ -3,17 +3,21 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
 
-type CardData = {
+gsap.registerPlugin(ScrollTrigger);
+
+export type CardData = {
   id: number | string;
   image: string;
+  name: string;
   alt?: string;
   url?: string;
+  keywords: string[];
 };
 
 type StickyProjectProps = {
@@ -34,8 +38,12 @@ export const StickyProjects = ({
 
   useGSAP(
     () => {
-      gsap.registerPlugin(ScrollTrigger);
-
+      if (
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
       const imageBoxElements = imageBoxRefs.current;
       const totalCards = imageBoxElements.length;
 
@@ -60,6 +68,7 @@ export const StickyProjects = ({
           pin: true,
           scrub: 1,
           pinSpacing: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -91,8 +100,12 @@ export const StickyProjects = ({
         );
       }
 
+      let refreshTimeout: ReturnType<typeof setTimeout> | null = null;
       const resizeObserver = new ResizeObserver(() => {
-        ScrollTrigger.refresh();
+        if (refreshTimeout) clearTimeout(refreshTimeout);
+        refreshTimeout = setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 150);
       });
 
       if (container.current) {
@@ -100,9 +113,9 @@ export const StickyProjects = ({
       }
 
       return () => {
+        if (refreshTimeout) clearTimeout(refreshTimeout);
         resizeObserver.disconnect();
         scrollTimeline.kill();
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     },
     { scope: container },
@@ -118,33 +131,32 @@ export const StickyProjects = ({
           )}
         >
           {cards.map((card, index) => (
-            <Link href={card.url ?? "#"} key={card.id}>
+            <Link href={card.url ?? "#"} target="_blank" key={card.id}>
               <div
                 className="absolute size-full isolate"
                 ref={(element) => {
                   imageBoxRefs.current[index] = element;
-                }}>
+                }}
+              >
                 <Image
                   src={card.image}
                   alt={card.alt || ""}
-                  className={cn(
-                    "size-full object-cover",
-                    imageClassName,
-                  )}
+                  className={cn("size-full object-cover", imageClassName)}
                   height={1000}
+                  sizes="100vw"
                   width={1500}
                 />
-  
+
                 <div className="absolute inset-0  bg-linear-to-b from-transparent to-black lg:to-120% pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start">
                   <h3 className="flex items-center gap-1">
-                    <span>Eden Cosmetics</span>
-                    <ExternalLink className="size-3 stroke-4" />
+                    <span>{card.name}</span>
+                    <ExternalLink className="size-4 stroke-4" />
                   </h3>
                   <ul className="flex flex-col justify-between items-end font-clash-display">
-                    <li>Cosmetics</li>
-                    <li>Eden</li>
-                    <li>Care</li>
+                    {card.keywords.map((keyword, index) => {
+                      return <li key={index}>{keyword}</li>
+                    })}
                   </ul>
                 </div>
               </div>

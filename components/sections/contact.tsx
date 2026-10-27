@@ -33,7 +33,7 @@ export function Contact() {
 	];
 
 	return (
-		<section className="bg-background z-1 border-t" id="contact">
+		<section className="bg-background z-1 border-t cv-auto" id="contact">
 			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto min-h-screen">
 				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
 					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
@@ -109,7 +109,7 @@ export function Contact() {
 								className="flex items-center gap-x-2 border bg-card px-3 py-1.5 shadow hover:bg-accent transition duration- group"
 								href={link.href}
 								key={link.label}
-								// rel="noopener noreferrer"
+								rel="noopener noreferrer"
 								target="_blank"
 							>
 								<link.icon className="size-6 fill-current group-hover:fill-primary transition duration-300 stroke-0" />

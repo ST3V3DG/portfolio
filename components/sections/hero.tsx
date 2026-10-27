@@ -8,28 +8,40 @@ import { useTranslations } from "next-intl";
 import { useContext, useRef, useState } from "react";
 import Logos from "@/components/logos";
 import { PagePreloaderContext } from "@/providers/page-preloader";
-import { cn } from "@/lib/utils";
+
+gsap.registerPlugin(Flip, useGSAP);
 
 export default function Hero() {
-  gsap.registerPlugin(Flip, useGSAP);
   const pagePreloaderTL = useContext(PagePreloaderContext);
   const t = useTranslations("Hero");
   const foregroundScreenBoxRef = useRef<HTMLDivElement>(null);
   const heroImageBoxRef = useRef<HTMLDivElement>(null);
   const heroImageBoxContainerRef = useRef<HTMLDivElement>(null);
-  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const innerCardRef = useRef<HTMLDivElement>(null);
+  const frontRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const isFlippedRef = useRef<boolean>(false);
+  const isAnimatingRef = useRef<boolean>(false);
+  const [imageReady, setImageReady] = useState<boolean>(false);
 
   useGSAP(
     () => {
+      if (
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
       pagePreloaderTL
         ?.from(
           "#hero h1, #hero p",
           {
             opacity: 0,
-            duration: 0.5,
+            duration: 0.7,
             ease: "power3.inOut",
           },
-          // "<",
         )
         .fromTo("#hero div:has(> div > div > img):not(:has(> #hero-background-box))",
           {
@@ -44,74 +56,115 @@ export default function Hero() {
           },
         );
     },
-    { dependencies: [pagePreloaderTL] },
+    { dependencies: [pagePreloaderTL], scope: sectionRef },
   );
 
   const { contextSafe } = useGSAP({
     dependencies: [heroImageBoxRef, foregroundScreenBoxRef],
     revertOnUpdate: true,
+    scope: sectionRef,
   });
-  
-  function showHeroCardDescription() {
-    const state = Flip.getState([
-      foregroundScreenBoxRef.current,
-      heroImageBoxRef.current,
-    ]);
 
-    heroImageBoxRef.current &&
-      foregroundScreenBoxRef.current?.appendChild(heroImageBoxRef.current);
-
-    Flip.from(state, {
-      duration: 0.8,
-      absolute: true,
-      scale: true,
-      ease: "power1.inOut",
-      onStart: () => {
-        heroImageBoxContainerRef.current?.classList.remove("z-1");
-        heroImageBoxContainerRef.current?.classList.add("z-10");
-        setIsFlipped(!isFlipped);
-        foregroundScreenBoxRef.current?.parentElement?.classList.remove("before:opacity-0");
-        foregroundScreenBoxRef.current?.parentElement?.classList.add("pointer-events-auto");
-      },
-    });
-  };
-  
-  function hideHeroCardDescription() {
-    const state = Flip.getState([
-      foregroundScreenBoxRef.current,
-      heroImageBoxRef.current,
-    ]);
-
-    heroImageBoxRef.current &&
-      heroImageBoxContainerRef.current?.appendChild(heroImageBoxRef.current);
-
-    Flip.from(state, {
-      duration: 0.8,
-      absolute: true,
-      scale: true,
-      ease: "power1.inOut",
-      onStart: () => {
-        setIsFlipped(!isFlipped);
-        foregroundScreenBoxRef.current?.parentElement?.classList.remove("pointer-events-auto");
-        foregroundScreenBoxRef.current?.parentElement?.classList.add("before:opacity-0");
-      },
-      onComplete: () => {
-        heroImageBoxContainerRef.current?.classList.remove("z-10");
-        heroImageBoxContainerRef.current?.classList.add("z-1");
-      },
-    });
-}
-  ;
   const animateHeroImage = contextSafe(() => {
-    if (!isFlipped) {
+    if (!imageReady || isAnimatingRef.current) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      if (!isFlippedRef.current) {
+        showHeroCardDescription();
+      } else {
+        hideHeroCardDescription();
+      }
+      return;
+    }
+    if (!isFlippedRef.current) {
       showHeroCardDescription();
     } else {
       hideHeroCardDescription();
     }
   });
+  
+  function showHeroCardDescription() {
+    if (isAnimatingRef.current || !heroImageBoxRef.current || !foregroundScreenBoxRef.current) return;
+    isAnimatingRef.current = true;
+    isFlippedRef.current = true;
+
+    heroImageBoxContainerRef.current?.classList.remove("z-1");
+    heroImageBoxContainerRef.current?.classList.add("z-10");
+    foregroundScreenBoxRef.current.parentElement?.classList.remove("before:opacity-0");
+    foregroundScreenBoxRef.current.parentElement?.classList.add("pointer-events-auto");
+
+    const state = Flip.getState(heroImageBoxRef.current);
+
+    foregroundScreenBoxRef.current.appendChild(heroImageBoxRef.current);
+
+    Flip.from(state, {
+      duration: 0.8,
+      absolute: true,
+      scale: true,
+      ease: "power1.inOut",
+      immediateRender: true,
+      onComplete: () => {
+        isAnimatingRef.current = false;
+      },
+    });
+
+    // Animation conjointe de la rotation et de la transparence via GSAP
+    if (innerCardRef.current) {
+      gsap.to(innerCardRef.current, {
+        rotationY: 180,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
+    }
+    if (frontRef.current && backRef.current) {
+      gsap.to(frontRef.current, { opacity: 0, duration: 0.8, ease: "power1.inOut" });
+      gsap.to(backRef.current, { opacity: 1, duration: 0.8, ease: "power1.inOut" });
+    }
+  }
+  
+  function hideHeroCardDescription() {
+    if (isAnimatingRef.current || !heroImageBoxRef.current || !heroImageBoxContainerRef.current) return;
+    isAnimatingRef.current = true;
+    isFlippedRef.current = false;
+
+    foregroundScreenBoxRef.current?.parentElement?.classList.remove("pointer-events-auto");
+    foregroundScreenBoxRef.current?.parentElement?.classList.add("before:opacity-0");
+
+    const state = Flip.getState(heroImageBoxRef.current);
+
+    heroImageBoxContainerRef.current?.appendChild(heroImageBoxRef.current);
+
+    Flip.from(state, {
+      duration: 0.8,
+      absolute: true,
+      scale: true,
+      ease: "power1.inOut",
+      immediateRender: true,
+      onComplete: () => {
+        heroImageBoxContainerRef.current?.classList.remove("z-10");
+        heroImageBoxContainerRef.current?.classList.add("z-1");
+        isAnimatingRef.current = false;
+      },
+    });
+
+    // Animation conjointe inverse de la rotation et de la transparence via GSAP
+    if (innerCardRef.current) {
+      gsap.to(innerCardRef.current, {
+        rotationY: 0,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
+    }
+    if (frontRef.current && backRef.current) {
+      gsap.to(frontRef.current, { opacity: 1, duration: 0.8, ease: "power1.inOut" });
+      gsap.to(backRef.current, { opacity: 0, duration: 0.8, ease: "power1.inOut" });
+    }
+  }
 
   return (
-    <section id="hero" className="relative">
+    <section id="hero" ref={sectionRef} className="relative">
       <div className="lg:flex hidden fixed size-full top-0 left-0 justify-center z-10 pointer-events-none">
         <div className="size-full relative before:absolute before:inset-0 before:bg-background/90 before:will-change-auto before:transition-opacity before:duration-100 before:ease-in-out before:opacity-0 before:-z-100" onClick={() => hideHeroCardDescription()}>
           <div
@@ -155,43 +208,39 @@ export default function Hero() {
             className="size-full perspective-[2000px] pointer-events-auto"
             id="hero-image-box"
             ref={heroImageBoxRef}
-            onClick={() => animateHeroImage()}
+            onClick={() => {
+              if (imageReady && !isAnimatingRef.current) animateHeroImage();
+            }}
           >
+            {/* Carte interne pilotée par GSAP (rotationY) */}
             <div
-              className={cn(
-                "size-full relative isolate transform-3d will-change-transform transition-transform duration-800 ease-in-out",
-                isFlipped
-                  ? "rotate-y-180"
-                  : "rotate-y-0",
-              )}
+              className="size-full relative isolate transform-3d will-change-transform"
+              ref={innerCardRef}
             >
               {/* Front */}
-              <div
-                className={cn(
-                  "size-full absolute inset-0 backface-hidden rotate-y-0 transition-opacity duration-800 ease-in-out",
-                  // isFlipped ? "opacity-0" : "opacity-100",
-                )}
+              <div 
+                ref={frontRef}
+                className="size-full absolute inset-0 backface-hidden opacity-100"
               >
                 <Image
                   alt="Hero image"
                   className="size-full object-cover"
-                  height={1500}
+                  onLoad={() => setImageReady(true)}
                   priority
                   src="/images/i.png"
-                  width={500}
+                  width={900}
+                  height={1600}
                 />
               </div>
 
               {/* Back */}
-              <div
-                className={cn(
-                  "absolute inset-0 size-full rotate-y-180 transition-opacity duration-800 ease-in-out overflow-hidden bg-accent gap-4",
-                  isFlipped ? "opacity-100" : "opacity-0",
-                )}
+              <div 
+                ref={backRef}
+                className="absolute inset-0 size-full rotate-y-180 overflow-hidden bg-accent gap-4 opacity-0"
               >
                 <div className="flex flex-col items-center justify-center size-full p-6 gap-8">
-                <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description1")}</p>
-                <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description2")}</p>
+                  <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description1")}</p>
+                  <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description2")}</p>
                 </div>
               </div>
             </div>
@@ -205,20 +254,16 @@ export default function Hero() {
         </h1>
         <div className="flex flex-col justify-start lg:justify-between gap-12 pointer-events-auto">
           <div className="lg:w-1/2 flex flex-col justify-between gap-16">
-            {/*<div className="flex flex-col gap-4 opacity-50 text-lg">
-							<p>{t("description1")}</p>
-							<p>{t("description2")}</p>
-						</div>*/}
             <Logos />
           </div>
           <div className="lg:hidden overflow-hidden">
             <Image
               alt="Hero image"
               className="size-full object-cover"
-              height={1500}
               priority
               src="/images/i.png"
-              width={1500}
+              width={1600}
+              height={900}
             />
           </div>
         </div>

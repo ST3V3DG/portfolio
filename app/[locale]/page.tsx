@@ -1,7 +1,3 @@
-"use client";
-
-import { type LenisRef, ReactLenis } from "lenis/react";
-import { useRef } from "react";
 import Cursor from "@/components/cursor";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
@@ -13,31 +9,26 @@ import { FrequentlyAskQuestion } from "@/components/sections/faq";
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
 import { Testimonials3D } from "@/components/sections/testimonials-3d";
-import PagePreloader from "@/providers/page-preloader";
+import AppShell from "@/providers/app-shell";
 
 export default function Home() {
-	const lenisRef = useRef<LenisRef>(null);
-
 	return (
-		<>
-			<ReactLenis root ref={lenisRef} />
-			<PagePreloader>
-				<div className="relative z-1 w-full bg-background border-b">
-					<Header />
-					<main className="isolate">
-						<Hero />
-						<About />
-						<Projects />
-						<Testimonials3D />
-						<FrequentlyAskQuestion />
-						<Contact />
-						<CallToAction />
-					</main>
-				</div>
-				<Footer />
-				<Cursor />
-				<LangSwitcher />
-			</PagePreloader>
-		</>
+		<AppShell>
+			<div className="relative z-1 w-full bg-background border-b">
+				<Header />
+				<main className="isolate">
+					<Hero />
+					<About />
+					<Projects />
+					<Testimonials3D />
+					<FrequentlyAskQuestion />
+					<Contact />
+					<CallToAction />
+				</main>
+			</div>
+			<Footer />
+			<Cursor />
+			<LangSwitcher />
+		</AppShell>
 	);
 }
