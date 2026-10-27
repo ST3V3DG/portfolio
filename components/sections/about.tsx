@@ -80,8 +80,10 @@ export default function About() {
 				  delay: 1,
 					opacity: 0,
 				})
-				.to(".about-card", {
-					y: -10,
+        .fromTo(".about-card", {
+          y: 10,
+				}, {
+					y: 0,
 					opacity: 1,
 					stagger: 0.5,
 				});
@@ -168,7 +170,7 @@ export default function About() {
 	];
 
 	return (
-		<section id="about">
+		<section id="about" className="border-b">
 			<div className="py-32 flex flex-col justify-center items-center gap-16 max-w-7xl px-6 mx-auto relative min-h-screen">
 				<div className="lg:grid hidden absolute bottom-0 w-full h-[calc(100%-7rem)] place-content-center grid-cols-3 grid-rows-2">
 					{abouts.map((item, index) => (
