@@ -113,7 +113,7 @@ export default function Footer() {
 	];
 
 	return (
-		<footer className="bg-background py-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)]">
+		<footer className="bg-background py-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)] place-content-end">
 			<div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
 				<div className="flex flex-col lg:flex-row w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">
 					<div className="flex flex-col justify-between gap-6 lg:items-start focus-within:outline-none">

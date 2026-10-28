@@ -171,7 +171,7 @@ export default function About() {
 
 	return (
 		<section id="about" className="border-b">
-			<div className="py-32 flex flex-col justify-center items-center gap-16 max-w-7xl px-6 mx-auto relative min-h-screen">
+			<div className="@container py-32 flex flex-col justify-center items-center gap-16 max-w-7xl px-6 mx-auto relative min-h-screen">
 				<div className="lg:grid hidden absolute bottom-0 w-full h-[calc(100%-7rem)] place-content-center grid-cols-3 grid-rows-2">
 					{abouts.map((item, index) => (
 						<div
@@ -209,7 +209,7 @@ export default function About() {
 				<div className="lg:flex hidden absolute size-full top-0 left-0 justify-center -z-1">
 					<div className="size-full relative">
 						<div
-							className="w-1/3 aspect-3/4 bg-accent absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+							className="w-[33cqi] aspect-3/4 bg-accent absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 							id="background-image-box"
 						>
 							<Image

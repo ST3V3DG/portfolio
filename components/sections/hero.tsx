@@ -168,16 +168,16 @@ export default function Hero() {
       <div className="lg:flex hidden fixed size-full top-0 left-0 justify-center z-10 pointer-events-none">
         <div className="size-full relative before:absolute before:inset-0 before:bg-background/90 before:will-change-auto before:transition-opacity before:duration-100 before:ease-in-out before:opacity-0 before:-z-100" onClick={() => hideHeroCardDescription()}>
           <div
-            className="w-1/3 aspect-3/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="w-[33cqi] aspect-3/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             id="background-image-box"
             ref={foregroundScreenBoxRef}
           ></div>
         </div>
       </div>
-      <div className="pt-24 max-w-7xl px-6 pb-6 mx-auto min-h-screen flex flex-col justify-between pointer-events-none">
+      <div className="relative pt-24 max-w-7xl px-6 pb-6 mx-auto min-h-screen flex flex-col justify-between pointer-events-none">
         <div
           id="hero-background-box"
-          className="absolute inset-0 lg:flex items-center justify-center hidden pointer-events-none"
+          className="@container absolute inset-0 lg:flex items-center justify-center hidden pointer-events-none"
         >
           <div className="w-full max-w-4xl aspect-video px-6">
             <svg
@@ -200,7 +200,7 @@ export default function Hero() {
           </div>
         </div>
         <div
-          className="lg:block hidden absolute right-1/12 bottom-0 w-1/3 aspect-3/4 pointer-events-none"
+          className="lg:block hidden absolute right-6 bottom-0 w-[33cqi] aspect-3/4 pointer-events-none"
           ref={heroImageBoxContainerRef}
           id="hero-image-box-container"
         >
