@@ -147,7 +147,7 @@ export function Testimonials3D() {
       ref={containerRef}
       className="overflow-x-hidden border-b"
     >
-      <div className="flex max-w-7xl px-6 pb-6 mx-auto min-h-screen flex-col items-center justify-center py-8 text-center">
+      <div className="@container flex max-w-7xl px-6 pb-6 mx-auto min-h-screen flex-col items-center justify-center py-8 text-center">
         <h2 className="mb-4 md:text-7xl lg:text-9xl text-5xl font-bold text-accent">
           {t("title")}
         </h2>
@@ -169,7 +169,7 @@ export function Testimonials3D() {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="div-3d-content relative w-full overflow-hidden aspect-9/12 md:w-auto origin-center">
+            <div className="div-3d-content relative w-full overflow-hidden aspect-9/12 max-w-[33cqi] origin-center">
               <Image
                 src={card.image}
                 alt={card.alt ?? card.name}
