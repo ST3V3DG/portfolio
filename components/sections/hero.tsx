@@ -12,7 +12,7 @@ import { PagePreloaderContext } from "@/providers/page-preloader";
 gsap.registerPlugin(Flip, useGSAP);
 
 export default function Hero() {
-  const pagePreloaderTL = useContext(PagePreloaderContext);
+  const pagePreloaderTimeline = useContext(PagePreloaderContext);
   const t = useTranslations("Hero");
   const foregroundScreenBoxRef = useRef<HTMLDivElement>(null);
   const heroImageBoxRef = useRef<HTMLDivElement>(null);
@@ -34,13 +34,13 @@ export default function Hero() {
       ) {
         return;
       }
-      pagePreloaderTL
+      pagePreloaderTimeline
         ?.from(
           "#hero h1, #hero p",
           {
             opacity: 0,
             duration: 0.7,
-            ease: "power3.inOut",
+            ease: "power1.out",
           },
         )
         .fromTo("#hero div:has(> div > div > img):not(:has(> #hero-background-box))",
@@ -56,7 +56,7 @@ export default function Hero() {
           },
         );
     },
-    { dependencies: [pagePreloaderTL], scope: sectionRef },
+    { dependencies: [pagePreloaderTimeline], scope: sectionRef },
   );
 
   const { contextSafe } = useGSAP({
@@ -66,7 +66,7 @@ export default function Hero() {
   });
 
   const animateHeroImage = contextSafe(() => {
-    if (!imageReady || isAnimatingRef.current) return;
+    if (!imageReady) return;
     if (
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -86,8 +86,7 @@ export default function Hero() {
   });
   
   function showHeroCardDescription() {
-    if (isAnimatingRef.current || !heroImageBoxRef.current || !foregroundScreenBoxRef.current) return;
-    isAnimatingRef.current = true;
+    if (!heroImageBoxRef.current || !foregroundScreenBoxRef.current) return;
     isFlippedRef.current = true;
 
     heroImageBoxContainerRef.current?.classList.remove("z-1");
@@ -105,9 +104,6 @@ export default function Hero() {
       scale: true,
       ease: "power1.inOut",
       immediateRender: true,
-      onComplete: () => {
-        isAnimatingRef.current = false;
-      },
     });
 
     // Animation conjointe de la rotation et de la transparence via GSAP
@@ -125,8 +121,7 @@ export default function Hero() {
   }
   
   function hideHeroCardDescription() {
-    if (isAnimatingRef.current || !heroImageBoxRef.current || !heroImageBoxContainerRef.current) return;
-    isAnimatingRef.current = true;
+    if (!heroImageBoxRef.current || !heroImageBoxContainerRef.current) return;
     isFlippedRef.current = false;
 
     foregroundScreenBoxRef.current?.parentElement?.classList.remove("pointer-events-auto");
@@ -174,7 +169,8 @@ export default function Hero() {
           ></div>
         </div>
       </div>
-      <div className="relative pt-24 max-w-7xl px-6 pb-6 mx-auto min-h-screen flex flex-col justify-between pointer-events-none">
+      <div className="relative pt-24 max-w-7xl px-6 pb-6 mx-auto min-h-screen flex flex-col gap-12 pointer-events-none lg:grid lg:gap-0 lg:grid-cols-3 lg:grid-rows-2 lg:items-end">
+        
         <div
           id="hero-background-box"
           className="@container absolute inset-0 lg:flex items-center justify-center hidden pointer-events-none"
@@ -199,67 +195,26 @@ export default function Hero() {
             </svg>
           </div>
         </div>
-        <div
-          className="lg:block hidden absolute right-6 bottom-0 w-[33cqi] aspect-3/4 pointer-events-none"
-          ref={heroImageBoxContainerRef}
-          id="hero-image-box-container"
-        >
-          <div
-            className="size-full perspective-[2000px] pointer-events-auto"
-            id="hero-image-box"
-            ref={heroImageBoxRef}
-            onClick={() => {
-              if (imageReady && !isAnimatingRef.current) animateHeroImage();
-            }}
-          >
-            {/* Carte interne pilotée par GSAP (rotationY) */}
-            <div
-              className="size-full relative isolate transform-3d will-change-transform"
-              ref={innerCardRef}
-            >
-              {/* Front */}
-              <div 
-                ref={frontRef}
-                className="size-full absolute inset-0 backface-hidden opacity-100"
-              >
-                <Image
-                  alt="Hero image"
-                  className="size-full object-cover"
-                  onLoad={() => setImageReady(true)}
-                  priority
-                  src="/images/i.png"
-                  width={900}
-                  height={1600}
-                />
-              </div>
-
-              {/* Back */}
-              <div 
-                ref={backRef}
-                className="absolute inset-0 size-full rotate-y-180 overflow-hidden bg-accent gap-4 opacity-0"
-              >
-                <div className="flex flex-col items-center justify-center size-full p-6 gap-8">
-                  <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description1")}</p>
-                  <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description2")}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h1 className="text-6xl lg:text-9xl leading-none text-balance capitalize text-accent z-1 w-fit pointer-events-auto">
+        
+        <h1 className="text-5xl sm:text-9xl leading-none text-balance capitalize text-accent z-1 w-fit pointer-events-auto row-start-1 col-start-1 col-span-3 self-start">
           <div>{t("titleLine1")}</div>{" "}
           <div className="overflow-hidden w-fit relative">
             <span className="mix-blend-luminosity">{t("titleLine2")}</span>
           </div>
         </h1>
-        <div className="flex flex-col justify-start lg:justify-between gap-12 pointer-events-auto">
-          <div className="lg:w-1/2 flex flex-col justify-between gap-16">
-            <Logos />
+        
+        <div className="flex flex-col justify-start lg:justify-between gap-12 pointer-events-auto lg:col-span-2 lg:row-start-2 lg:col-start-1">
+          <div className="lg:hidden flex flex-col items-start justify-center gap-8">
+            <p className="text-pretty">{t("description1")}</p>
+            <p className="text-pretty">{t("description2")}</p>
+          </div>
+          <div className="flex flex-col justify-between gap-16">
+            <Logos className="-z-10" />
           </div>
           <div className="lg:hidden overflow-hidden">
             <Image
               alt="Hero image"
-              className="size-full object-cover"
+              className="w-full object-cover"
               priority
               src="/images/i.png"
               width={1600}
@@ -267,6 +222,66 @@ export default function Hero() {
             />
           </div>
         </div>
+        
+        <div
+          className="lg:block hidden lg:aspect-3/4 pointer-events-none lg:row-start-1 lg:row-span-2 lg:col-start-3"
+          id="hero-image-box-pin-wrapper"
+        >
+          <div
+            className="size-full"
+            ref={heroImageBoxContainerRef}
+            id="hero-image-box-container"
+          >
+            <div
+              className="size-full perspective-[2000px] pointer-events-auto"
+              id="hero-image-box"
+              ref={heroImageBoxRef}
+              onClick={() => {
+                if (imageReady) animateHeroImage();
+              }}
+            >
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 pointer-events-none bg-accent opacity-0"
+                id="hero-image-box-accent"
+              />
+              {/* Carte interne pilotée par GSAP (rotationY) */}
+              <div
+                className="size-full relative isolate transform-3d will-change-transform"
+                ref={innerCardRef}
+              >
+                {/* Front */}
+                <div
+                  ref={frontRef}
+                  className="size-full absolute inset-0 backface-hidden opacity-100"
+                >
+                  <Image
+                    alt="Hero image"
+                    className="size-full object-cover"
+                    onLoad={() => setImageReady(true)}
+                    priority
+                    src="/images/i.png"
+                    width={900}
+                    height={1600}
+                  />
+                  <div className="absolute inset-0 bg-black size-full opacity-0" />
+                </div>
+
+                {/* Back */}
+                <div
+                  ref={backRef}
+                  className="absolute inset-0 size-full rotate-y-180 overflow-hidden bg-accent gap-4 opacity-0"
+                >
+                  <div className="flex flex-col items-start justify-center size-full p-6 gap-8">
+                    <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description1")}</p>
+                    <p className="first-letter:float-left first-letter:text-6xl/14 text-pretty">{t("description2")}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
   );

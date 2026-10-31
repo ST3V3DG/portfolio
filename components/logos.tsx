@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { InfiniteSlider } from "./ui/infinite-slider";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { cn } from "@/lib/utils";
 
 type logo = {
 	src: string;
@@ -59,9 +60,9 @@ const logos: logo[] = [
 	},
 ];
 
-export default function Logos() {
+export default function Logos({className}: {className?: string}) {
 	return (
-		<div className="mb-2">
+		<div className={cn(className, "mb-2")}>
 			<InfiniteSlider
 				speedOnHover={20}
 				speed={40}

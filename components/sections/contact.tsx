@@ -34,7 +34,7 @@ export function Contact() {
 
 	return (
 		<section className="bg-background z-1 border-t cv-auto" id="contact">
-			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto min-h-screen">
+			<div className="pt-32 lg:border-x max-w-7xl max-md:px-6 mx-auto lg:min-h-screen">
 				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16">
 					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
 						{t("title")}
