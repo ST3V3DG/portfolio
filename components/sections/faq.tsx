@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ChevronDown, Plus } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -104,18 +104,13 @@ export function FrequentlyAskQuestion() {
 								data-orientation="vertical"
 								key={item.id}
 							>
-								{/*  plus */}
-								<Plus
-									aria-hidden="true"
-									className="bottom-[-5.5px] -translate-x-1/2 pointer-events-none absolute left-[12.5px] size-2.5 text-muted-foreground group-last:hidden"
-								/>
 
 								<summary  data-slot="accordion-trigger" className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 text-left font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 p-4 text-[16px] leading-6 hover:no-underline focus:ring-0">
                   {item.title}
 									<ChevronDown className="size-4 lucide-chevron-down" />
 								</summary>
 
-                <p data-orientation="vertical" data-slot="accordion-content" className="px-4 pb-4 overflow-hidden text-sm text-muted-foreground" style={{ "--radix-accordion-content-height": "var(--radix-collapsible-content-height)", "--radix-accordion-content-width": "var(--radix-collapsible-content-width)"}}>
+                <p data-orientation="vertical" data-slot="accordion-content" className="px-4 pb-4 overflow-hidden text-sm text-muted-foreground">
 									{item.content}
 								</p>
 							</details>

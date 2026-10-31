@@ -3,7 +3,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-// import CustomEase from "gsap/CustomEase";
 import { createContext, useRef, useState } from "react";
 
 export const PagePreloaderContext = createContext<
@@ -15,7 +14,7 @@ export default function PagePreloader({
 }: {
 	children: React.ReactNode;
 }) {
-	const [tl, setTl] = useState<gsap.core.Timeline>();
+	const [timeline, setTimeline] = useState<gsap.core.Timeline>();
 	const svgLineRef = useRef<SVGPathElement>(null);
 
 	function scrollToTop() {
@@ -32,18 +31,18 @@ export default function PagePreloader({
 				preloader.classList.add("hidden");
 				preloader.nextElementSibling?.classList.add("hidden");
 			}
-			setTl(gsap.timeline());
+			setTimeline(gsap.timeline());
 			return;
 		}
 
-		const tl = gsap.timeline();
+		const timeline = gsap.timeline();
 		const preloader = document.getElementById("preloader");
 
 		scrollToTop();
 
 		if (!svgLineRef.current) return;
 
-		tl.to(svgLineRef.current, {
+		timeline.to(svgLineRef.current, {
 			strokeDashoffset: 0,
 			duration: 5,
 			ease: "power1.inOut",
@@ -78,11 +77,11 @@ export default function PagePreloader({
         },
       });
 
-		setTl(tl);
+		setTimeline(timeline);
 	});
 
 	return (
-		<PagePreloaderContext.Provider value={tl}>
+		<PagePreloaderContext.Provider value={timeline}>
 			<div
 				id="preloader"
 				className="fixed place-items-center top-0 left-0 z-20 pointer-events-none bg-background h-screen w-full"

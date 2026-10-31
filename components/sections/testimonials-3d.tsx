@@ -169,7 +169,7 @@ export function Testimonials3D() {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="div-3d-content relative size-full overflow-hidden md:aspect-9/12 md:w-auto origin-center">
+            <div className="div-3d-content relative w-full overflow-hidden aspect-9/12 md:w-auto origin-center">
               <Image
                 src={card.image}
                 alt={card.alt ?? card.name}

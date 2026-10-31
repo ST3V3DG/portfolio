@@ -49,7 +49,7 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <div className="py-32 flex flex-col gap-12 relative z-1 max-w-7xl px-6 mx-auto">
+      <div className="py-32 flex flex-col gap-12 relative z-1 max-w-7xl px-6 mx-auto bg-background">
         <div className="flex flex-col gap-4 justify-between text-center">
           <h2 className="md:text-7xl lg:text-9xl text-5xl text-accent mb-4">
             {t("title")}

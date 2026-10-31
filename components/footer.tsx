@@ -113,7 +113,7 @@ export default function Footer() {
 	];
 
 	return (
-		<footer className="bg-background py-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)] place-content-end">
+		<footer className="bg-background pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)] place-content-end">
 			<div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
 				<div className="flex flex-col lg:flex-row w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">
 					<div className="flex flex-col justify-between gap-6 lg:items-start focus-within:outline-none">
@@ -153,15 +153,15 @@ export default function Footer() {
 							<h3 className="mb-4 font-bold text-2xl">
 								{section.title}
 							</h3>
-							<ul className="text-muted-foreground sm:text-7xl md:text-9xl text-4xl focus-within:outline-none">
-								{section.links.map((link, linkIdx) => (
+							<ul className="text-muted-foreground focus-within:outline-none">
+								{section.links.map((link, linkIndex) => (
 									<li
-										key={linkIdx}
+										key={linkIndex}
 										className="hover:text-accent transition duration-300"
 									>
 										<Link
 											aria-label={link.label}
-											className="flex items-center gap-4 h-20 justify-between overflow-hidden group"
+										className="flex items-center gap-4 h-20 justify-between overflow-hidden group sm:text-7xl md:text-9xl text-4xl"
 											href={link.href}
 										>
 											<div className="overflow-hidden">
