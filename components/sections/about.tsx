@@ -35,17 +35,19 @@ export default function About() {
         },
       });
 
-      timeline.add(
-        Flip.fit(
-          "#hero-image-box-container",
-          "#about #background-image-box > div",
-          {
-            duration: 1,
-            ease: "none",
-            rotate: 10,
-          },
-        ),
+      const fitTween = Flip.fit(
+        "#hero-image-box-container",
+        "#about #background-image-box > div",
+        {
+          duration: 1,
+          ease: "none",
+          rotate: 10,
+        },
       );
+
+      if (fitTween instanceof gsap.core.Tween) {
+        timeline.add(fitTween);
+      }
 
       // The accent backdrop lives inside the card so that the about text can
       // be stacked above the card without the backdrop covering it.
