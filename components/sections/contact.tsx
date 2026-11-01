@@ -145,7 +145,7 @@ function Box({
 				className,
 			)}
 		>
-			<div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20 lg:justify-center">
+			<div className="flex items-center gap-x-3 border-b bg-secondary/50 px-12 py-4 dark:bg-secondary/20 justify-center">
 				<props.icon
 					className="size-6 text-muted-foreground"
 					strokeWidth={1}
@@ -154,7 +154,7 @@ function Box({
 					{title}
 				</h3>
 			</div>
-			<div className="flex items-center lg:justify-center gap-x-2 p-12">
+			<div className="flex items-center justify-center gap-x-2 p-12">
 				{children}
 			</div>
 			 {/*<div className="border-t p-4">
