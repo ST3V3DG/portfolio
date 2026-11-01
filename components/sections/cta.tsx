@@ -7,17 +7,18 @@ export default function CallToAction() {
 	const t = useTranslations("CTA");
 
 	return (
-		<section className="bg-background z-1 cv-auto" id="cta">
-			<div className="mx-auto max-w-7xl max-md:px-6">
+		<section className="bg-background z-1 cv-auto border-b-px" id="cta">
+			<div className="mx-auto max-w-7xl">
 				<div className="lg:border-x">
 					<Separator />
-					<div className="flex flex-col items-center justify-between md:flex-row w-full">
-						<div className="p-6 flex items-center">
+					<div className="flex flex-col justify-center md:justify-between items-center gap-4 md:flex-row w-full *:py-12 md:*:py-6 md:*:px-6">
+						<div className="max-md:pb-0 flex items-center">
 							<h2 className="text-center font-bold text-2xl md:text-left md:text-3xl">
 								{t("title")}
 							</h2>
-						</div>
-						<div className="flex items-center justify-center gap-2 p-6 md:border-l *:rounded-none">
+            </div>
+						
+						<div className="flex items-center justify-center md:border-l gap-2 max-md:pt-0 *:rounded-none">
 							<Button
 								asChild
 								className="bg-accent font-bold text-background hover:bg-accent/80 transition duration-300"
