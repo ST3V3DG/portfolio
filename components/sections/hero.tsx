@@ -39,7 +39,7 @@ export default function Hero() {
           "#hero h1, #hero p",
           {
             opacity: 0,
-            duration: 0.7,
+            duration: 0.5,
             ease: "power1.out",
           },
         )
@@ -47,14 +47,17 @@ export default function Hero() {
           {
             y: 50,
             opacity: 0,
-            rotate: 0,
             duration: 1.5,
             ease: "power1.out",
           }, {
             y: 0,
             opacity: 1,
           },
-        );
+        )
+        .from(".mobile-hero-image", {
+          y: 10,
+          opacity: 0,
+        });
     },
     { dependencies: [pagePreloaderTimeline], scope: sectionRef },
   );
@@ -169,13 +172,13 @@ export default function Hero() {
           ></div>
         </div>
       </div>
-      <div className="relative pt-24 max-w-7xl px-6 pb-6 mx-auto min-h-screen flex flex-col gap-12 pointer-events-none lg:grid lg:gap-0 lg:grid-cols-3 lg:grid-rows-2 lg:items-end">
+      <div className="relative pt-24 max-w-7xl px-4 pb-6 mx-auto min-h-screen flex flex-col gap-12 pointer-events-none lg:grid lg:gap-0 lg:grid-cols-3 lg:grid-rows-2 lg:items-end">
         
         <div
           id="hero-background-box"
           className="@container absolute inset-0 lg:flex items-center justify-center hidden pointer-events-none"
         >
-          <div className="w-full max-w-4xl aspect-video px-6">
+          <div className="w-full max-w-4xl aspect-video px-4">
             <svg
               aria-label="logo"
               className="opacity-20 object-cover size-full"
@@ -211,7 +214,7 @@ export default function Hero() {
           <div className="flex flex-col justify-between gap-16">
             <Logos className="-z-10" />
           </div>
-          <div className="lg:hidden overflow-hidden">
+          <div className="lg:hidden overflow-hidden mobile-hero-image">
             <Image
               alt="Hero image"
               className="w-full object-cover"

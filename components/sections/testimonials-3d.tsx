@@ -86,7 +86,7 @@ export function Testimonials3D() {
         paused: true,
       });
 
-      tl.to(containerRef.current?.querySelector("div:nth-child(1)")!, { opacity: 0 });
+      tl.to(containerRef.current?.querySelector("div:nth-child(1)")!, { opacity: 0, duration: 1 });
 
       ScrollTrigger.create({
         animation: tl,
@@ -100,14 +100,14 @@ export function Testimonials3D() {
 
       const triggers: ScrollTrigger[] = [];
 
-      divs.forEach((divEl, index) => {
-        const content = divEl.querySelector(".div-3d-content");
+      divs.forEach((divElement, index) => {
+        const content = divElement.querySelector(".div-3d-content");
         if (!content) return;
 
         if (index < divs.length - 1) {
           triggers.push(
             ScrollTrigger.create({
-              trigger: divEl,
+              trigger: divElement,
               start: "top top",
               endTrigger: divs[divs.length - 1],
               end: "top top",
@@ -147,7 +147,7 @@ export function Testimonials3D() {
       ref={containerRef}
       className="overflow-x-hidden"
     >
-      <div className="flex max-w-7xl px-6 pb-6 mx-auto min-h-screen flex-col items-center justify-center py-8 text-center">
+      <div className="flex max-w-7xl px-4 pb-6 mx-auto min-h-screen flex-col items-center justify-center py-8 text-center">
         <h2 className="mb-4 md:text-7xl lg:text-9xl text-5xl font-bold text-accent">
           {t("title")}
         </h2>

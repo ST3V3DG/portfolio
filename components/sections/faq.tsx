@@ -64,8 +64,8 @@ export function FrequentlyAskQuestion() {
 
 	return (
 		<section id="faq" className="-z-1 md:py-0 py-24 mt-8 border-t">
-			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl px-6 mx-auto">
-				<div className="px-4 focus-within:outline-none place-content-center">
+			<div className="grid md:h-screen overflow-hidden w-full grid-cols-1 md:grid-cols-2 gap-16 focus-within:outline-none max-w-7xl md:px-4 mx-auto">
+			<div className="px-4 focus-within:outline-none place-content-center">
 					<div className="space-y-5 focus-within:outline-none">
 						<h2 className="text-balance font-bold md:text-7xl text-5xl lg:font-black text-accent">
 							{t("title")}
