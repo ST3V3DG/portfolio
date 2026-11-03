@@ -7,7 +7,7 @@ export default function CallToAction() {
 	const t = useTranslations("CTA");
 
 	return (
-		<section className="bg-background z-1 cv-auto border-b-px" id="cta">
+		<section className="bg-background z-1 cv-auto" id="cta">
 			<div className="mx-auto max-w-7xl px-4">
 				<div className="lg:border-x">
 					<Separator />
