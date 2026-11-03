@@ -73,8 +73,6 @@ export default function PagePreloader({
 					preloader!.nextElementSibling!.classList.add("hidden");
           preloader?.classList.add("hidden");
 				},
-        onComplete: () => {
-        },
       });
 
 		setTimeline(timeline);
@@ -87,7 +85,7 @@ export default function PagePreloader({
 				className="fixed place-items-center top-0 left-0 z-20 pointer-events-none bg-background h-screen w-full"
 			></div>
 			<div className="fixed inset-0 flex items-center justify-center z-20 bg-background h-screen w-full">
-				<div className="w-full max-w-4xl aspect-video px-6">
+				<div className="w-full max-w-4xl aspect-video px-4">
 					<svg
 						aria-label="logo"
 						className="pointer-events-none object-cover size-full"

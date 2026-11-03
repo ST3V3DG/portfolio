@@ -106,11 +106,6 @@ body {
 	padding-block: 0.5rem;
 }
 
-.px-6 {
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-}
-
 .rounded-none {
 	border-radius: 0;
 }
@@ -127,8 +122,8 @@ body {
 	place-content: center;
 }
 
-.px-6 {
-	padding-inline: 1.5rem;
+.px-4 {
+	padding-inline: 1rem;
 }
 
 .text-center {

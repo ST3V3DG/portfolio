@@ -99,7 +99,7 @@ export default function Header() {
 					duration: 1,
 					ease: "power4.inOut",
 				})
-				.from(
+				.fromTo(
 					mobileMenuRef.current?.querySelectorAll(
 						"li",
 					) as unknown as HTMLElement[],
@@ -108,9 +108,11 @@ export default function Header() {
 						opacity: 0,
 						duration: 1,
 						ease: "power4.inOut",
+          }, {
+            yPercent: 0,
+						opacity: 1,
 						stagger: 0.1,
 					},
-					"-=0.5",
 				);
 		},
 		{ dependencies: [mobileMenuRef, tl] },
@@ -136,7 +138,7 @@ export default function Header() {
 			ref={headerRef}
 			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none **:focus-within:outline-none ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
 		>
-			<div className="size-full max-w-7xl px-6 mx-auto flex justify-between bg-background">
+			<div className="size-full max-w-7xl px-4 mx-auto flex justify-between bg-background">
 				<Link
 					aria-label="home"
 					href="/"
@@ -145,7 +147,7 @@ export default function Header() {
 					<Image
 						src="/svgs/Steve.D.svg"
 						alt="logo"
-						className="h-16 w-32"
+						className="h-16"
 						height={60}
 						width={120}
 					/>
@@ -203,7 +205,7 @@ export default function Header() {
 			</div>
 			<div
 				ref={mobileMenuRef}
-				className="fixed md:hidden left-0 right-0 h-dvh -z-1 bg-background/90 flex flex-col gap-16 transition duration-300 px-6 focus-within:outline-none"
+				className="fixed md:hidden left-0 right-0 h-dvh -z-1 bg-background/90 flex flex-col gap-16 transition duration-300 px-4 focus-within:outline-none"
 			>
 				<nav className="h-full">
 					<ul className="flex flex-col gap-2 p-2 *:p-2 *:border-b *:border-accent h-[calc(100%-4rem)] justify-center text-5xl text-primary">

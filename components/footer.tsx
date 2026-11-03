@@ -108,13 +108,13 @@ export default function Footer() {
 	];
 
 	const legalLinks: Footer["legalLinks"] = [
-		// { label: tf("legal.privacy"), href: "#" },
-		// { label: tf("legal.terms"), href: "#" },
+		{ label: tf("legal.privacy"), href: "#" },
+		{ label: tf("legal.terms"), href: "#" },
 	];
 
 	return (
 		<footer className="bg-background pt-32 lg:sticky lg:bottom-0 lg:left-0 lg:right-0 focus-within:outline-none lg:h-[calc(100vh-5rem)] place-content-end">
-			<div className="flex flex-col justify-center items-center max-w-7xl px-6 mx-auto focus-within:outline-none">
+			<div className="flex flex-col justify-center items-center max-w-7xl px-4 mx-auto focus-within:outline-none">
 				<div className="flex flex-col lg:flex-row w-full justify-between gap-10 lg:items-start lg:text-left focus-within:outline-none">
 					<div className="flex flex-col justify-between gap-6 lg:items-start focus-within:outline-none">
 						{/* Logo */}
@@ -123,7 +123,7 @@ export default function Footer() {
 								<Image
 									src="/svgs/Steve.D.svg"
 									alt="logo"
-									className="h-16 w-32"
+									className="h-16"
 									height={60}
 									width={120}
 								/>
@@ -177,7 +177,7 @@ export default function Footer() {
 				</div>
 				<div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
 					<p className="order-2 lg:order-1">{copyright}</p>
-					<ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+					<ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row text-center">
 						{legalLinks?.map((link, index) => (
 							<li
 								key={index}
