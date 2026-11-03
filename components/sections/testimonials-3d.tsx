@@ -151,7 +151,7 @@ export function Testimonials3D() {
         <h2 className="mb-4 md:text-7xl lg:text-9xl text-5xl font-bold text-accent">
           {t("title")}
         </h2>
-        <p className="max-w-120 mb-8 text-pretty mx-auto text-2xl">
+        <p className="max-w-144 mb-8 text-pretty mx-auto text-2xl">
           {t("description")}
         </p>
       </div>

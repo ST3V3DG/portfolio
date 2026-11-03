@@ -34,67 +34,67 @@ export function Contact() {
 
 	return (
 		<section className="bg-background z-1 border-t cv-auto" id="contact">
-			<div className="pt-32 lg:border-x max-w-7xl mx-auto lg:min-h-screen">
-				<div className="flex grow flex-col justify-center md:items-center gap-4 text-center mb-16 px-4">
+			<div className="max-w-7xl mx-auto lg:min-h-screen px-4">
+				<div className="py-16 flex grow flex-col justify-center md:items-center gap-4 text-center px-4 lg:border-x">
 					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
 						{t("title")}
 					</h2>
-					<p className="max-w-120 mb-8 text-pretty mx-auto text-2xl">
+					<p className="max-w-144 mb-8 text-pretty mx-auto text-2xl">
 						{t("description")}
 					</p>
 				</div>
 				<Separator />
-  				<div className="grid md:grid-cols-3">
-  					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
-  						<address className="not-italic">
-  							<Link
-  								className="font-medium font-mono tracking-wide hover:underline"
-  								href={`mailto:${EMAIL}`}
-  								aria-label="Email"
-  							>
-  								{EMAIL}
-  							</Link>
-  						</address>
-  					</Box>
-  					<Box
-  						description={DESCRIPTION_2}
-  						icon={MapPin}
-  						title="Location"
-  					>
-  						<address className="not-italic font-medium font-mono tracking-wide">
-  							{ADDRESS}
-  						</address>
-  					</Box>
-  					<Box
-  						className="border-b-0 md:border-r-0"
-  						description={DESCRIPTION_3}
-  						icon={Phone}
-  						title="Phone"
-  					>
-  						<div>
-  							<address className="not-italic">
-  								<Link
-  									className="block font-medium font-mono tracking-wide hover:underline"
-  									href={`tel:${PHONE}`}
-  									aria-label="Phone 1"
-  									target="_blank"
-  								>
-  									{PHONE}
-  								</Link>
-  								<Link
-  									className="block font-medium font-mono text-sm tracking-wide hover:underline"
-  									href={`tel:${PHONE_2}`}
-  									aria-label="Phone 2"
-  									target="_blank"
-  								>
-  									{PHONE_2}
-  								</Link>
-  							</address>
-  						</div>
-  					</Box>
-  				</div>
+				<div className="grid md:grid-cols-3 lg:border-x">
+ 					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
+						<address className="not-italic">
+ 							<Link
+								className="font-medium font-mono tracking-wide hover:underline"
+								href={`mailto:${EMAIL}`}
+								aria-label="Email"
+ 							>
+								{EMAIL}
+ 							</Link>
+						</address>
+ 					</Box>
+ 					<Box
+						description={DESCRIPTION_2}
+						icon={MapPin}
+						title="Location"
+ 					>
+						<address className="not-italic font-medium font-mono tracking-wide">
+ 							{ADDRESS}
+						</address>
+ 					</Box>
+ 					<Box
+						className="border-b-0 md:border-r-0"
+						description={DESCRIPTION_3}
+						icon={Phone}
+						title="Phone"
+ 					>
+						<div>
+ 							<address className="not-italic">
+								<Link
+ 									className="block font-medium font-mono tracking-wide hover:underline"
+ 									href={`tel:${PHONE}`}
+ 									aria-label="Phone 1"
+ 									target="_blank"
+								>
+ 									{PHONE}
+								</Link>
+								<Link
+ 									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+ 									href={`tel:${PHONE_2}`}
+ 									aria-label="Phone 2"
+ 									target="_blank"
+								>
+ 									{PHONE_2}
+								</Link>
+ 							</address>
+						</div>
+ 					</Box>
+				</div>
 				<Separator />
-				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
+				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12 lg:border-x">
 					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-5xl">
 						{t.rich("title2", {
 							span: (chunks) => (

@@ -1,8 +1,8 @@
 {
 	"Metadata": {
-		"title": "Steve.D | Fullstack Web Developer Portfolio - Creating Modern & Performant Websites and Web Apps",
-		"description": "Explore the portfolio of Steve.D, a professional web developer specializing in building high-performance, visually stunning, and user-focused websites and applications.",
-		"keywords": "developer, web developer, front-end developer, back-end developer, front-end, back-end, web, application, website, application development, website development, performance, user experience, responsive, accessibility, integration, design, ux, ui, ux/ui, user experience, user interface, user interface design, user interface design, web design, webdesign, html, css, javascript, react, nextjs, typescript, tailwindcss, postcss, nextjs",
+		"title": "Steve.D | Full-Stack Web Developer in Douala",
+		"description": "Steve Diego builds fast websites and web apps with Next.js, Laravel and Django. Based in Douala, Cameroon. See recent projects and get a quote.",
+		"keywords": "full-stack developer, web developer, Next.js, Laravel, Django, TypeScript, React, TailwindCSS, GSAP, Douala, Cameroon, freelance developer, web application, website development, performance, accessibility",
 		"author": "Steve Diego TAKOUDJOU",
 		"viewport": "width=device-width, initial-scale=1.0"
 	},
@@ -19,97 +19,97 @@
 		"faq": "FAQ"
 	},
 	"Hero": {
-		"titleLine1": "Full-Stack Web",
-		"titleLine2": "Developer",
-		"description1": "Make your brand stand out with a modern and sophisticate looking website for you or your business to showcase your products and services.",
-		"description2": "I'm specialized in creating high-performance and visually stunning digital experiences that drive results and elevate your brand identity to the next level."
+		"titleLine1": "One developer",
+		"titleLine2": "front to back",
+		"description1": "I design and build websites and web apps with Next.js, Laravel and Django. One person handles the sketch, the code and the launch, so nothing gets lost between a designer and a developer.",
+		"description2": "Three years of full-stack work, including a carpooling platform, a hoodie store and an AI tool that writes software specs. Based in Douala, working with clients anywhere."
 	},
 	"About": {
 		"title": "About Me",
-		"description": "Passionate about building high-quality websites and applications that are not only visually stunning but also performant and accessible.",
+		"description": "I care how a site looks, how fast it loads, and whether it still works on a phone with two bars of signal. All three get checked before launch.",
 		"item1": {
 			"title": "01",
-			"description": "Seamless Integration. Connecting disparate systems with robust APIs and services to create a unified and efficient ecosystem."
+			"description": "One codebase, one person to call. I build the API, the database and the interface. When something breaks, the person who fixes it is the person who built it."
 		},
 		"item2": {
 			"title": "02",
-			"description": "Clean Architecture. Writing distinct, readable, and maintainable code that simplifies future updates and team collaboration."
+			"description": "Code the next developer can read. Typed, documented and organised by feature, so adding a page in year two costs about what it cost in week two."
 		},
 		"item3": {
 			"title": "03",
-			"description": "Efficient Workflow. Leveraging modern tools to streamline the development process."
+			"description": "Speed handled during the build. Images, fonts and scripts get sized and deferred before launch, so the site stays quick on a mid-range phone."
 		},
 		"item4": {
 			"title": "04",
-			"description": "Handle responsiveness. Ensuring a seamless experience across all devices."
+			"description": "You keep everything at the end. Domain, hosting, source code and accounts go to you, with a walkthrough of how to update the content yourself."
 		}
 	},
 	"Projects": {
 		"title": "Projects",
-		"description": "Check out some of my projects below"
+		"description": "Five recent builds: a fashion studio, a hotel, a carpooling app, a hoodie store and an AI tool for software specs. Open any of them."
 	},
 	"Testimonials": {
 		"title": "Testimonials",
-		"description": "What clients say about working with me.",
+		"description": "Client feedback, in their words.",
 		"item1": {
-			"quote": "The attention to detail and creative approach completely transformed our brand's online presence. Highly recommended!",
-			"authorName": "Sarah Johnson",
-			"authorRole": "Marketing Director, TechCare"
+			"quote": "He took the carpooling idea from a rough sketch to a working platform, front end and back end, faster than we expected. The dashboard is the part our drivers keep mentioning.",
+			"authorName": "[Client name]",
+			"authorRole": "Founder, OptiRide"
 		},
 		"item2": {
-			"quote": "Delivered an exceptional platform that is fast, responsive, and incredibly easy to manage. A true professional.",
-			"authorName": "Michael Chen",
-			"authorRole": "CTO, TechCare"
+			"quote": "We asked for a spec tool and got something our project managers use every week. Steve explained the AI side in plain language and left notes on how to run it.",
+			"authorName": "[Client name]",
+			"authorRole": "Product lead, Buildocs"
 		}
 	},
 	"Contact": {
 		"title": "Contact Me",
 		"title2": "Find me <span>online</span>",
-		"description": "I am available for freelance work. Connect with me via email or social media.",
+		"description": "I take on freelance projects alongside full-time work. Email is the fastest way to reach me.",
 		"email": "stevediego2004@gmail.com",
 		"phone1": "+237 676 06 82 79",
 		"phone2": "",
 		"address": "Littoral-Douala, Cameroon",
-		"description1": "We respond to all emails within 24 hours.",
-		"description2": "Drop by our office for a chat.",
-		"description3": "We're available Mon-Fri, 9am-5pm."
+		"description1": "For project enquiries and quotes. I reply within one working day.",
+		"description2": "Based in Douala. Most work happens over email and video calls.",
+		"description3": "Monday to Friday, 9am to 5pm (WAT)."
 	},
 	"CTA": {
-		"title": "Let your website shape your digital footprint.",
-		"letStart": "Let Start"
+		"title": "Most customers meet your website before they meet you.",
+		"letsStart": "Start a project"
 	},
 	"FAQ": {
 		"title": "Frequently Asked Questions",
-		"description": "Quick answers to common questions me and my work. Open any question to learn more.",
+		"description": "What clients usually ask before we start. Open any question, or email me if yours isn't here.",
 		"paragraph": "Can't find what you're looking for?",
-		"contactMe": "Contact Me",
+		"contactMe": "Email me",
 		"item1": {
 			"question": "What services do you offer?",
-			"answer": "I offer a range of web development services including custom website design, full-stack application development, performance optimization, and SEO enhancements."
+			"answer": "Custom websites, full-stack web apps, performance work on an existing site, and the hosting setup to get it online. Next.js and TypeScript on the front end, Laravel or Django on the back end."
 		},
 		"item2": {
 			"question": "How long does it take to build a website?",
-			"answer": "The timeline depends on the complexity of the project. A simple portfolio site might take 1-2 weeks, while a full-featured web application could take 4-8 weeks or more."
+			"answer": "A five-page marketing site takes one to two weeks. A web app with accounts, a database and a dashboard takes four to eight weeks. You get a date before we start, and I tell you early if it moves."
 		},
 		"item3": {
 			"question": "Do you provide ongoing support?",
-			"answer": "Yes, I offer maintenance packages to ensure your website remains secure, up-to-date, and performing optimally after launch."
+			"answer": "Yes. Monthly maintenance covers updates, backups, security patches and small changes. You can also take the code and run it yourself; I'll walk you through the handover."
 		},
 		"item4": {
 			"question": "What is your pricing structure?",
-			"answer": "Pricing varies based on project scope and requirements. Feel free to contact me for a detailed quote tailored to your specific needs."
+			"answer": "A fixed price per project, agreed in writing before work starts. Apps are quoted after a short scoping call, so the number you get is the number you pay."
 		},
 		"item5": {
 			"question": "What payment methods do you accept?",
-			"answer": "For now, I accept payments through PayPal, Orange Money, and MTN Mobile Money."
+			"answer": "PayPal, Orange Money and MTN Mobile Money. For larger projects we agree a payment schedule before the first line of code."
 		},
 		"item6": {
 			"question": "Can you handle hosting?",
-			"answer": "Yeah, I can handle buying the domain name and put your website online."
+			"answer": "Yes. I buy the domain, set up hosting and deploy the site, then hand you the login details. You keep ownership of the domain and every account."
 		}
 	},
 	"Footer": {
-		"description": "A passionate developer building modern web applications with a focus on user experience and performance.",
+		"description": "Full-stack developer in Douala, Cameroon. I build with Next.js, Laravel and Django, and I'm available for freelance work.",
 		"copyright": "© {date} Steve.D. All rights reserved.",
 		"legal": {
 			"privacy": "Privacy Policy",

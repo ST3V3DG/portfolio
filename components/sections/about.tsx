@@ -89,11 +89,13 @@ export default function About() {
         }, "+=0.5")
         .to(headingBoxRef.current, {
           opacity: 1,
+          duration: 5,
+          ease: "power1.out"
         }, "<")
         .to("#hero-image-box div div div", {
           opacity: 0,
-          duration: 1,
-          ease: "power1.out"
+          duration: 2,
+          ease: "power1.in"
         }, "+=1")
         .to(headingBoxRef.current, {
           opacity: 0,
@@ -246,7 +248,7 @@ export default function About() {
           <h2 className="md:text-7xl lg:text-9xl text-5xl text-accent mb-4">
             {t("title")}
           </h2>
-          <p className="max-w-120 text-pretty mx-auto mix-blend-exclusion text-2xl">
+          <p className="max-w-144 text-pretty mx-auto mix-blend-exclusion text-2xl">
             {t("description")}
           </p>
         </div>

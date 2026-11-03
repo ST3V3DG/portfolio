@@ -1,8 +1,8 @@
 {
 	"Metadata": {
-		"title": "Steve.D | Portfolio de Développeur Web Fullstack - Création de Site et d'Applications Web Modernes et Performantes",
-		"description": "Découvrez le portfolio de Steve.D, un développeur web professionnel spécialisé dans la création de sites et d'applications web performants, visuellement percutants et centrés sur l'utilisateur.",
-		"keywords": "développeur, développeur web, développeur front-end, développeur back-end, front-end, back-end, web, application, site web, création d'application, création de site web, performance, expérience utilisateur, responsive, accessibilité, intégration, design, ux, ui, ux/ui, user experience, user interface, user interface design, user interface design, web design, webdesign, html, css, javascript, react, nextjs, typescript, tailwindcss, postcss, nextjs",
+		"title": "Steve.D | Développeur web full-stack à Douala",
+		"description": "Steve Diego crée des sites et des applications web rapides avec Next.js, Laravel et Django. Basé à Douala, Cameroun. Découvrez ses projets et demandez un devis.",
+		"keywords": "développeur full-stack, développeur web, Next.js, Laravel, Django, TypeScript, React, TailwindCSS, GSAP, Douala, Cameroun, freelance, application web, création de site web, performance, accessibilité",
 		"author": "Steve Diego TAKOUDJOU",
 		"viewport": "width=device-width, initial-scale=1.0"
 	},
@@ -19,97 +19,97 @@
 		"faq": "FAQ"
 	},
 	"Hero": {
-		"titleLine1": "Développeur Web",
-		"titleLine2": "Full-Stack",
-		"description1": "Démarquez votre marque avec un site web moderne et sophistiqué pour présenter vos produits et services.",
-		"description2": "Je suis spécialisé dans la création d'expériences numériques performantes et visuellement époustouflantes qui génèrent des résultats et élèvent votre identité de marque."
+		"titleLine1": "Un développeur",
+		"titleLine2": "de A à Z",
+		"description1": "Je conçois et développe des sites et des applications web avec Next.js, Laravel et Django. Une seule personne gère la maquette, le code et la mise en ligne, donc rien ne se perd entre un designer et un développeur.",
+		"description2": "Trois ans de développement full-stack, dont une plateforme de covoiturage, une boutique de hoodies et un outil d'IA qui rédige des cahiers des charges logiciels. Basé à Douala, je travaille avec des clients partout."
 	},
 	"About": {
 		"title": "À propos de moi",
-		"description": "Passionné par la création de sites web et d'applications de haute qualité, non seulement visuellement époustouflants, mais aussi performants et accessibles.",
+		"description": "J'accorde de l'importance à l'apparence d'un site, à sa vitesse de chargement et au fait qu'il reste utilisable sur un téléphone avec deux barres de réseau. Ces trois points sont vérifiés avant la mise en ligne.",
 		"item1": {
 			"title": "01",
-			"description": "Intégration transparente. Connexion de systèmes disparates avec des API et services robustes pour créer un écosystème unifié et efficace."
+			"description": "Une seule base de code, une seule personne à appeler. Je développe l'API, la base de données et l'interface. Quand quelque chose casse, c'est la personne qui l'a construit qui le répare."
 		},
 		"item2": {
 			"title": "02",
-			"description": "Architecture propre. Écriture de code distinct, lisible et maintenable facilitant les futures mises à jour et la collaboration en équipe."
+			"description": "Du code que le prochain développeur peut lire. Typé, documenté et organisé par fonctionnalité, pour qu'ajouter une page en deuxième année coûte à peu près ce qu'elle a coûté en deuxième semaine."
 		},
 		"item3": {
 			"title": "03",
-			"description": "Flux de travail efficace. Utilisation d'outils modernes pour rationaliser le processus de développement."
+			"description": "La performance traitée pendant la construction. Images, polices et scripts sont dimensionnés et différés avant la mise en ligne, pour que le site reste rapide sur un téléphone de milieu de gamme."
 		},
 		"item4": {
 			"title": "04",
-			"description": "Gestion de la réactivité. Assurer une expérience fluide sur tous les appareils."
+			"description": "Vous gardez tout à la fin. Nom de domaine, hébergement, code source et comptes vous reviennent, avec une démonstration pour mettre le contenu à jour vous-même."
 		}
 	},
 	"Projects": {
 		"title": "Projets",
-		"description": "Découvrez certains de mes projets ci-dessous"
+		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, une application de covoiturage, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse."
 	},
 	"Testimonials": {
 		"title": "Témoignages",
-		"description": "Ce que les clients disent de mon travail.",
+		"description": "Ce que disent les clients, avec leurs mots.",
 		"item1": {
-			"quote": "Le souci du détail et l'approche créative ont complètement transformé la présence en ligne de notre marque. Hautement recommandé !",
-			"authorName": "Sarah Johnson",
-			"authorRole": "Directrice Marketing, TechCare"
+			"quote": "Il a fait passer l'idée de covoiturage d'un simple croquis à une plateforme fonctionnelle, front-end et back-end, plus vite que prévu. Le tableau de bord est ce dont nos chauffeurs parlent le plus.",
+			"authorName": "[Nom du client]",
+			"authorRole": "Fondateur, OptiRide"
 		},
 		"item2": {
-			"quote": "A livré une plateforme exceptionnelle, rapide, réactive et incroyablement facile à gérer. Un vrai professionnel.",
-			"authorName": "Michael Chen",
-			"authorRole": "CTO, TechCare"
+			"quote": "Nous avions demandé un outil de rédaction de specs et nous avons obtenu quelque chose que nos chefs de projet utilisent chaque semaine. Steve a expliqué la partie IA en termes simples et nous a laissé des notes pour le faire tourner.",
+			"authorName": "[Nom du client]",
+			"authorRole": "Responsable produit, Buildocs"
 		}
 	},
 	"Contact": {
 		"title": "Me contacter",
-		"title2": "Trouvez-moi <span>en ligne</span>",
-		"description": "Je suis disponible pour des missions freelance. Connectez-vous avec moi via email ou les réseaux sociaux.",
+		"title2": "Retrouvez-moi <span>en ligne</span>",
+		"description": "J'accepte des missions freelance en parallèle de mon activité principale. L'e-mail est le moyen le plus rapide de me joindre.",
 		"email": "stevediego2004@gmail.com",
 		"phone1": "+237 676 06 82 79",
 		"phone2": "",
 		"address": "Littoral-Douala, Cameroun",
-		"description1": "Nous répondons à tous les courriels dans un délai de 24 heures.",
-		"description2": "Visitez notre bureau pour un chat.",
-		"description3": "Nous sommes disponibles du lundi au vendredi, de 9h à 17h."
+		"description1": "Pour les demandes de projet et les devis. Je réponds sous un jour ouvré.",
+		"description2": "Basé à Douala. L'essentiel du travail se fait par e-mail et en visioconférence.",
+		"description3": "Du lundi au vendredi, de 9h à 17h (WAT)."
 	},
 	"CTA": {
-		"title": "Laissez votre site web façonner votre empreinte numérique.",
-		"letStart": "C'est parti"
+		"title": "La plupart de vos clients voient votre site avant de vous rencontrer.",
+		"letsStart": "Démarrer un projet"
 	},
 	"FAQ": {
 		"title": "Foire Aux Questions",
-		"description": "Réponses rapides aux questions courantes sur moi et mon travail. Ouvrez n'importe quelle question pour en savoir plus.",
-		"paragraph": "Vous ne trouvez pas la réponse à votre question ?",
-		"contactMe": "Contactez Moi",
+		"description": "Ce que les clients demandent avant de commencer. Ouvrez une question, ou écrivez-moi si la vôtre n'y est pas.",
+		"paragraph": "Vous ne trouvez pas ce que vous cherchez ?",
+		"contactMe": "Écrivez-moi",
 		"item1": {
 			"question": "Quels services proposez-vous ?",
-			"answer": "Je propose une gamme de services de développement web incluant la conception de sites sur mesure, le développement d'applications full-stack, l'optimisation des performances et le SEO."
+			"answer": "Des sites sur mesure, des applications web full-stack, l'optimisation des performances d'un site existant et la mise en place de l'hébergement. Next.js et TypeScript côté front-end, Laravel ou Django côté back-end."
 		},
 		"item2": {
 			"question": "Combien de temps faut-il pour créer un site ?",
-			"answer": "Le délai dépend de la complexité du projet. Un site vitrine simple peut prendre 1 à 2 semaines, tandis qu'une application web complète peut nécessiter 4 à 8 semaines ou plus."
+			"answer": "Un site vitrine de cinq pages prend une à deux semaines. Une application web avec des comptes, une base de données et un tableau de bord prend quatre à huit semaines. Vous avez une date avant de commencer, et je vous préviens tôt si elle change."
 		},
 		"item3": {
-			"question": "Proposez-vous un support continu ?",
-			"answer": "Oui, je propose des forfaits de maintenance pour garantir que votre site reste sécurisé, à jour et performant après le lancement."
+			"question": "Proposez-vous un suivi après la mise en ligne ?",
+			"answer": "Oui. La maintenance mensuelle couvre les mises à jour, les sauvegardes, les correctifs de sécurité et les petites modifications. Vous pouvez aussi récupérer le code et gérer le site vous-même ; je vous accompagne pour la reprise."
 		},
 		"item4": {
-			"question": "Quelle est votre structure tarifaire ?",
-			"answer": "Les tarifs varient selon l'envergure et les exigences du projet. N'hésitez pas à me contacter pour un devis détaillé adapté à vos besoins."
+			"question": "Comment fixez-vous vos tarifs ?",
+			"answer": "Un prix fixe par projet, convenu par écrit avant le début du travail. Les applications sont chiffrées après un court appel de cadrage, donc le montant annoncé est celui que vous payez."
 		},
 		"item5": {
-			"question": "Quels sont les moyens de paiement que vous acceptez ?",
-			"answer": "Pour l'instant, je accepte les paiements par PayPal, Orange Money, et MTN Mobile Money."
+			"question": "Quels moyens de paiement acceptez-vous ?",
+			"answer": "PayPal, Orange Money et MTN Mobile Money. Pour les projets plus importants, nous convenons d'un échéancier avant la première ligne de code."
 		},
 		"item6": {
 			"question": "Pouvez-vous gérer l'hébergement ?",
-			"answer": "Oui, je peux gérer l'achat du nom de domaine et mettre votre site web en ligne."
+			"answer": "Oui. J'achète le nom de domaine, je configure l'hébergement et je mets le site en ligne, puis je vous transmets les identifiants. Vous restez propriétaire du domaine et de tous les comptes."
 		}
 	},
 	"Footer": {
-		"description": "Un développeur passionné qui crée des applications web modernes en mettant l'accent sur l'expérience utilisateur et la performance.",
+		"description": "Développeur full-stack à Douala, au Cameroun. Je travaille avec Next.js, Laravel et Django, et je suis disponible pour des missions freelance.",
 		"copyright": "© {date} Steve.D. Tous droits réservés.",
 		"legal": {
 			"privacy": "Politique de confidentialité",
@@ -117,11 +117,11 @@
 			"cookies": "Politique de cookies"
 		},
 		"section": {
-			"title": "Liens Utils"
+			"title": "Liens utiles"
 		}
 	},
 	"NotFound": {
-		"title": "Non Trouvée",
+		"title": "Page introuvable",
 		"description": "La page que vous recherchez n'existe pas.",
 		"backHome": "Retour à l'accueil"
 	}

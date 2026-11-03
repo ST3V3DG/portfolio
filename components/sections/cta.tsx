@@ -8,7 +8,7 @@ export default function CallToAction() {
 
 	return (
 		<section className="bg-background z-1 cv-auto border-b-px" id="cta">
-			<div className="mx-auto max-w-7xl">
+			<div className="mx-auto max-w-7xl px-4">
 				<div className="lg:border-x">
 					<Separator />
 					<div className="flex flex-col justify-center md:justify-between items-center gap-4 md:flex-row w-full *:py-12 md:*:py-6 md:*:px-4">
@@ -28,7 +28,7 @@ export default function CallToAction() {
 									href="#"
 									target="_blank"
 								>
-									{t("letStart")}
+									{t("letsStart")}
 								</Link>
 							</Button>
 						</div>
