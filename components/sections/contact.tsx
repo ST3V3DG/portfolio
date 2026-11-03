@@ -45,53 +45,53 @@ export function Contact() {
 				</div>
 				<Separator />
 				<div className="grid md:grid-cols-3 lg:border-x">
- 					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
+					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
 						<address className="not-italic">
- 							<Link
+							<Link
 								className="font-medium font-mono tracking-wide hover:underline"
 								href={`mailto:${EMAIL}`}
 								aria-label="Email"
- 							>
+							>
 								{EMAIL}
- 							</Link>
+							</Link>
 						</address>
- 					</Box>
- 					<Box
+					</Box>
+					<Box
 						description={DESCRIPTION_2}
 						icon={MapPin}
 						title="Location"
- 					>
+					>
 						<address className="not-italic font-medium font-mono tracking-wide">
- 							{ADDRESS}
+							{ADDRESS}
 						</address>
- 					</Box>
- 					<Box
+					</Box>
+					<Box
 						className="border-b-0 md:border-r-0"
 						description={DESCRIPTION_3}
 						icon={Phone}
 						title="Phone"
- 					>
+					>
 						<div>
- 							<address className="not-italic">
+							<address className="not-italic">
 								<Link
- 									className="block font-medium font-mono tracking-wide hover:underline"
- 									href={`tel:${PHONE}`}
- 									aria-label="Phone 1"
- 									target="_blank"
+									className="block font-medium font-mono tracking-wide hover:underline"
+									href={`tel:${PHONE}`}
+									aria-label="Phone 1"
+									target="_blank"
 								>
- 									{PHONE}
+									{PHONE}
 								</Link>
 								<Link
- 									className="block font-medium font-mono text-sm tracking-wide hover:underline"
- 									href={`tel:${PHONE_2}`}
- 									aria-label="Phone 2"
- 									target="_blank"
+									className="block font-medium font-mono text-sm tracking-wide hover:underline"
+									href={`tel:${PHONE_2}`}
+									aria-label="Phone 2"
+									target="_blank"
 								>
- 									{PHONE_2}
+									{PHONE_2}
 								</Link>
- 							</address>
+							</address>
 						</div>
- 					</Box>
+					</Box>
 				</div>
 				<Separator />
 				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12 lg:border-x">
