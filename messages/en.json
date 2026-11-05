@@ -46,7 +46,7 @@
 	},
 	"Projects": {
 		"title": "Projects",
-		"description": "Five recent builds: a fashion studio, a hotel, a carpooling app, a hoodie store and an AI tool for software specs. Open any of them.",
+		"description": "Five recent builds: a fashion studio, a hotel, an enrolment manager, a hoodie store and an AI tool for software specs. Open any of them.",
 		"openProject": "Open {name} project details",
 		"viewDetails": "View details",
 		"close": "Close project details",
@@ -54,6 +54,7 @@
 		"descriptionLabel": "About the project",
 		"keywordsLabel": "Keywords",
 		"demoCredentials": "Demo credentials",
+		"demoNote": "Demo account for reviewing the dashboard. Please don't change or delete existing records.",
 		"username": "Username",
 		"password": "Password",
 		"visit": "Visit the project",
@@ -64,8 +65,8 @@
 			"odysiaHotel": {
 				"description": "A booking-first site for a boutique hotel. Warm photography, a room finder and a clear path from browsing to reservation, with the details travellers actually need before they book."
 			},
-			"optiRide": {
-				"description": "A carpooling platform that connects drivers with empty seats to passengers going the same way. Route search, trip matching and a driver dashboard, built front to back."
+			"mdsEnrollment": {
+				"description": "A back-office tool for managing student enrolment. Staff look up applicants, confirm registrations and keep records current from one dashboard, instead of a shared spreadsheet that two people cannot safely edit at once."
 			},
 			"buildocs": {
 				"description": "An AI-assisted workspace for software teams that turns rough product ideas into structured specs. Draft, review and hand off requirements without losing the decisions along the way."

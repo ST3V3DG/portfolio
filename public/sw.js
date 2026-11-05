@@ -1,6 +1,6 @@
-const CACHE_NAME = "web-cv-v1";
-const STATIC_CACHE = "web-cv-static-v1";
-const DYNAMIC_CACHE = "web-cv-dynamic-v1";
+const CACHE_NAME = "web-cv-v2";
+const STATIC_CACHE = "web-cv-static-v2";
+const DYNAMIC_CACHE = "web-cv-dynamic-v2";
 
 const STATIC_ASSETS = [
 	"/",
@@ -13,14 +13,11 @@ const STATIC_ASSETS = [
 	"/images/apple-icon-180.png",
 	"/images/manifest-icon-192.maskable.png",
 	"/images/manifest-icon-512.maskable.png",
-	"images/ipad-air-steve-the-developer.png",
-	"/images/ipad-optiride.png",
-	"/images/iphone-crypto-trade-alpha.png",
-	"/images/iphone-mck-medical-care.png",
-	"/images/mac-eden-cosmetics.png",
-	"/images/mac-fashion-studio.png",
+	"/images/rubber-laptop-mockup-fashion-studio.png",
 	"/images/mac-odysia.png",
-	"/images/noise-bg.svg",
+	"/images/ipad-mds.png",
+	"/images/mac-book-pro-16-buildocs.png",
+	"/images/laptop-hoodiego.png",
 	"/fonts/Archivo-Regular.woff2",
 	"/fonts/ClashDisplay-Semibold.woff2",
 	"/fonts/Rosaline-Regular.woff2",

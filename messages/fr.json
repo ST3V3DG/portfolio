@@ -46,7 +46,7 @@
 	},
 	"Projects": {
 		"title": "Projets",
-		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, une application de covoiturage, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse.",
+		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, un outil de gestion des inscriptions, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse.",
 		"openProject": "Ouvrir les détails du projet {name}",
 		"viewDetails": "Voir les détails",
 		"close": "Fermer les détails du projet",
@@ -54,6 +54,7 @@
 		"descriptionLabel": "À propos du projet",
 		"keywordsLabel": "Mots-clés",
 		"demoCredentials": "Identifiants de démonstration",
+		"demoNote": "Compte de démonstration pour découvrir le tableau de bord. Merci de ne pas modifier ni supprimer les données existantes.",
 		"username": "Identifiant",
 		"password": "Mot de passe",
 		"visit": "Voir le projet",
@@ -64,8 +65,8 @@
 			"odysiaHotel": {
 				"description": "Un site pensé pour la réservation d'un hôtel de charme. Photographies chaleureuses, recherche de chambres et un parcours clair de la découverte à la réservation, avec les informations dont les voyageurs ont vraiment besoin avant de réserver."
 			},
-			"optiRide": {
-				"description": "Une plateforme de covoiturage qui relie les conducteurs ayant des places libres aux passagers qui vont dans la même direction. Recherche d'itinéraires, mise en relation des trajets et tableau de bord conducteur, du front au back."
+			"mdsEnrollment": {
+				"description": "Un outil de gestion des inscriptions étudiantes. Le personnel retrouve les candidats, valide les inscriptions et met les dossiers à jour depuis un seul tableau de bord, au lieu d'un tableur partagé que deux personnes ne peuvent pas modifier sans risque."
 			},
 			"buildocs": {
 				"description": "Un espace de travail assisté par IA pour les équipes produit, qui transforme des idées encore floues en spécifications structurées. Rédiger, relire et transmettre les besoins sans perdre les décisions prises en route."

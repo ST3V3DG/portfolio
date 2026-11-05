@@ -5,10 +5,13 @@ type Project = CardData & {
 	translationKey:
 		| "fashionStudio"
 		| "odysiaHotel"
-		| "optiRide"
+		| "mdsEnrollment"
 		| "buildocs"
 		| "hoodiego";
 };
+
+const demoUsername = process.env.NEXT_PUBLIC_MDS_DEMO_USERNAME;
+const demoPassword = process.env.NEXT_PUBLIC_MDS_DEMO_PASSWORD;
 
 const projects: Project[] = [
 	{
@@ -34,13 +37,13 @@ const projects: Project[] = [
 		url: "https://stevedg.pythonanywhere.com/admin/login/?next=/admin/",
 		name: "MDS Enrollment Manager",
 		image: "/images/ipad-mds.png",
-		alt: "Optiride project on an Ipad",
+		alt: "MDS Enrollment Manager dashboard on an iPad",
 		keywords: ["Enrollment", "Manager", "MDS"],
-    translationKey: "optiRide",
-    credentials: {
-      username: "admin",
-      password: "1234",
-    },
+		translationKey: "mdsEnrollment",
+		credentials:
+			demoUsername && demoPassword
+				? { username: demoUsername, password: demoPassword }
+				: undefined,
 	},
 	{
 		id: 4,
@@ -56,7 +59,7 @@ const projects: Project[] = [
 		url: "https://hoodiego.vercel.app",
 		name: "Hoodiego",
 		image: "/images/laptop-hoodiego.png",
-		alt: "Buildocs website on a laptop",
+		alt: "Hoodiego hoodie store on a laptop",
 		keywords: ["Hoodies", "Orange", "Comfort"],
 		translationKey: "hoodiego",
 	},
@@ -69,6 +72,9 @@ export default function Projects() {
 		({ translationKey, ...project }) => ({
 			...project,
 			description: t(`items.${translationKey}.description`),
+			credentials: project.credentials
+				? { ...project.credentials, note: t("demoNote") }
+				: undefined,
 		}),
 	);
 
