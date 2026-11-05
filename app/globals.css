@@ -182,6 +182,39 @@
 	.pin-spacer {
 	    @apply pointer-events-auto;
 	}
+
+	.project-dialog {
+		overscroll-behavior: contain;
+	}
+
+	.project-dialog,
+	.project-dialog * {
+		scrollbar-gutter: auto;
+	}
+
+	.project-dialog .dialog-scroll {
+		scrollbar-gutter: stable;
+	}
+
+	.project-dialog::backdrop {
+		background: rgb(0 0 0 / 0.8);
+		backdrop-filter: blur(8px);
+		overflow: hidden;
+		overscroll-behavior: contain;
+		animation: project-dialog-backdrop-in 0.5s ease both;
+	}
+
+	@media (pointer: fine) {
+		.project-dialog,
+		.project-dialog * {
+			cursor: auto;
+		}
+
+		.project-dialog a,
+		.project-dialog button {
+			cursor: pointer;
+		}
+	}
 	
 	#faq:focus-within {
         @apply outline-none;
@@ -216,7 +249,7 @@
       height: auto;
     }
 
-	body:has(a:hover, button:hover, #hero-image-box > *:hover) #cursor {
+	body:has(a:hover, button:hover, [role="button"]:hover, #hero-image-box > *:hover) #cursor {
 		@apply size-12 animate-pulse;
 	}
 
@@ -263,6 +296,15 @@
 
 	::-webkit-scrollbar-thumb:active {
 		cursor: grabbing;
+	}
+}
+
+@keyframes project-dialog-backdrop-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
 

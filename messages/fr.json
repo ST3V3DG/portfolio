@@ -46,7 +46,34 @@
 	},
 	"Projects": {
 		"title": "Projets",
-		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, une application de covoiturage, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse."
+		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, une application de covoiturage, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse.",
+		"openProject": "Ouvrir les détails du projet {name}",
+		"viewDetails": "Voir les détails",
+		"close": "Fermer les détails du projet",
+		"projectLabel": "Projet {index}",
+		"descriptionLabel": "À propos du projet",
+		"keywordsLabel": "Mots-clés",
+		"demoCredentials": "Identifiants de démonstration",
+		"username": "Identifiant",
+		"password": "Mot de passe",
+		"visit": "Voir le projet",
+		"items": {
+			"fashionStudio": {
+				"description": "Une vitrine noir et blanc affirmée pour un studio de mode. Mise en page éditoriale, typographie XXL et une grille produit qui laisse les vêtements, et non l'interface, au premier plan. Conçue comme un lookbook, avec des images rapides et un parcours d'achat discret."
+			},
+			"odysiaHotel": {
+				"description": "Un site pensé pour la réservation d'un hôtel de charme. Photographies chaleureuses, recherche de chambres et un parcours clair de la découverte à la réservation, avec les informations dont les voyageurs ont vraiment besoin avant de réserver."
+			},
+			"optiRide": {
+				"description": "Une plateforme de covoiturage qui relie les conducteurs ayant des places libres aux passagers qui vont dans la même direction. Recherche d'itinéraires, mise en relation des trajets et tableau de bord conducteur, du front au back."
+			},
+			"buildocs": {
+				"description": "Un espace de travail assisté par IA pour les équipes produit, qui transforme des idées encore floues en spécifications structurées. Rédiger, relire et transmettre les besoins sans perdre les décisions prises en route."
+			},
+			"hoodiego": {
+				"description": "Une boutique de hoodies en petite série avec une identité orange affirmée. Fiches produit, choix des tailles et parcours d'achat pensés pour une marque qui vend quelques pièces bien, plutôt que tout à la fois."
+			}
+		}
 	},
 	"Testimonials": {
 		"title": "Témoignages",

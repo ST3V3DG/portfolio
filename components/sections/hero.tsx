@@ -23,7 +23,6 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
 
   const isFlippedRef = useRef<boolean>(false);
-  const isAnimatingRef = useRef<boolean>(false);
   const [imageReady, setImageReady] = useState<boolean>(false);
 
   useGSAP(
@@ -143,7 +142,6 @@ export default function Hero() {
       onComplete: () => {
         heroImageBoxContainerRef.current?.classList.remove("z-10");
         heroImageBoxContainerRef.current?.classList.add("z-1");
-        isAnimatingRef.current = false;
       },
     });
 

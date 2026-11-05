@@ -84,9 +84,9 @@ export default function About() {
       aboutCardsAndHeadingTimeline
         .to("#hero-image-box div div div", {
           opacity: 0.5,
-          duration: 1,
+          duration: 5,
           ease: "power1.out"
-        }, "+=0.5")
+        }, "+=5")
         .to(headingBoxRef.current, {
           opacity: 1,
           duration: 5,
@@ -94,11 +94,12 @@ export default function About() {
         }, "<")
         .to("#hero-image-box div div div", {
           opacity: 0,
-          duration: 2,
+          duration: 5,
           ease: "power1.in"
-        }, "+=1")
+        }, "+=5")
         .to(headingBoxRef.current, {
           opacity: 0,
+          duration: 5,
         }, "<")
         .fromTo(
           ".about-card",
@@ -117,10 +118,10 @@ export default function About() {
             y: -20,
             opacity: 0,
             stagger: 0.5,
-          }, "+=0.5")
+          }, "+=5")
         .to("#hero-image-box-container", {
           opacity: 0,
-          duration: 1.5,
+          duration: 5,
         });
 
       const scrollTrigger = ScrollTrigger.create({
