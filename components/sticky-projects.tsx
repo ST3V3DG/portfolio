@@ -178,6 +178,11 @@ export const StickyProjects = ({
 			return;
 		}
 
+		// The image must be able to leave the dialog while it flips back to the
+		// grid. Restore the dialog's overflow in onComplete so it remains a scroll
+		// container (and contains overscroll) once the animation is finished.
+		dialog.style.overflow = "visible";
+
 		if (detailsRef.current) {
 			gsap.to(detailsRef.current, {
 				opacity: 0,
@@ -196,6 +201,7 @@ export const StickyProjects = ({
 			absolute: true,
 			onComplete: () => {
 				dialog.close();
+				dialog.style.overflow = "";
 			},
 		});
 	});
@@ -217,9 +223,14 @@ export const StickyProjects = ({
 			}
 
 			if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+				dialog.style.overflow = "";
 				phaseRef.current = "open";
 				return;
 			}
+
+			// Let the flipped image render outside the dialog's bounds while it
+			// travels from the grid card into the modal.
+			dialog.style.overflow = "visible";
 
 			flipTimelineRef.current = Flip.from(state, {
 				targets: modalImage,
@@ -227,6 +238,7 @@ export const StickyProjects = ({
 				ease: "power4.inOut",
 				absolute: true,
 				onComplete: () => {
+					dialog.style.overflow = "";
 					phaseRef.current = "open";
 					flipTimelineRef.current = null;
 				},
@@ -271,6 +283,7 @@ export const StickyProjects = ({
 	const handleDialogClose = () => {
 		phaseRef.current = "idle";
 		flipTimelineRef.current = null;
+		if (dialogRef.current) dialogRef.current.style.overflow = "";
 		setActiveCard(null);
 	};
 
@@ -345,7 +358,7 @@ export const StickyProjects = ({
 
 			<dialog
 				aria-labelledby="project-dialog-title"
-				className="project-dialog m-0 h-dvh max-h-none w-full max-w-none overflow-visible border-0 bg-background p-0 text-foreground 2xl:m-auto 2xl:w-1/2 2xl:aspect-video 2xl:h-auto"
+				className="project-dialog m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-background p-0 text-foreground 2xl:m-auto 2xl:w-1/2 2xl:aspect-video 2xl:h-auto"
 				closedby="any"
 				onCancel={(event) => {
 					event.preventDefault();
@@ -495,7 +508,7 @@ export const StickyProjects = ({
 								</div>
 							</div>
 
-							<div className="relative order-1 min-h-0 bg-muted/20 lg:order-2">
+							<div className="relative order-1 min-h-0 lg:order-2">
 								<Image
 									alt={activeCard.card.alt || ""}
 									className="size-full object-cover"
@@ -506,7 +519,6 @@ export const StickyProjects = ({
 									src={activeCard.card.image}
 									width={1500}
 								/>
-								<div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-transparent lg:bg-linear-to-r" />
 							</div>
 						</div>
 
