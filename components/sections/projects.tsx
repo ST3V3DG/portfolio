@@ -31,12 +31,16 @@ const projects: Project[] = [
 	},
 	{
 		id: 3,
-		url: "https://optiride.vercel.app",
-		name: "OptiRide",
-		image: "/images/ipad-optiride.png",
+		url: "https://stevedg.pythonanywhere.com/admin/login/?next=/admin/",
+		name: "MDS Enrollment Manager",
+		image: "/images/ipad-mds.png",
 		alt: "Optiride project on an Ipad",
-		keywords: ["Carpooling", "Trip", "Ride"],
-		translationKey: "optiRide",
+		keywords: ["Enrollment", "Manager", "MDS"],
+    translationKey: "optiRide",
+    credentials: {
+      username: "admin",
+      password: "1234",
+    },
 	},
 	{
 		id: 4,

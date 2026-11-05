@@ -170,7 +170,7 @@ export default function Hero() {
           ></div>
         </div>
       </div>
-      <div className="relative pt-24 max-w-7xl px-4 pb-6 mx-auto min-h-screen flex flex-col gap-12 pointer-events-none lg:grid lg:gap-0 lg:grid-cols-3 lg:grid-rows-2 lg:items-end">
+      <div className="relative pt-24 max-w-7xl px-4 pb-4 mx-auto min-h-screen flex flex-col gap-12 pointer-events-none lg:grid lg:gap-0 lg:grid-cols-3 lg:grid-rows-2 lg:items-end">
         
         <div
           id="hero-background-box"

@@ -418,7 +418,7 @@ export const StickyProjects = ({
 
 									{activeCard.card.credentials && (
 										<div
-											className="rounded-xl border border-border bg-card/20 p-4"
+											className="border border-border bg-card/20 p-4"
 											data-dialog-reveal
 										>
 											<p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
