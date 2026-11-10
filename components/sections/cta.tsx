@@ -11,7 +11,7 @@ export default function CallToAction() {
 			<div className="mx-auto max-w-7xl px-4">
 				<div className="lg:border-x">
 					<Separator />
-					<div className="flex flex-col justify-center md:justify-between items-center gap-4 md:flex-row w-full *:py-12 md:*:py-6 md:*:px-4">
+					<div className="flex flex-col justify-center md:justify-between items-center gap-4 md:flex-row w-full *:py-12 md:*:p-4">
 						<div className="max-md:pb-0 flex items-center">
 							<h2 className="text-center font-bold text-2xl md:text-left md:text-3xl">
 								{t("title")}

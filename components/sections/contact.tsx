@@ -33,10 +33,10 @@ export function Contact() {
 	];
 
 	return (
-		<section className="bg-background z-1 border-t cv-auto" id="contact">
-			<div className="max-w-7xl mx-auto lg:min-h-screen px-4">
-				<div className="lg:border-x">
-				<div className="py-16 flex grow flex-col justify-center md:items-center gap-4 text-center px-4">
+		<section className="bg-background z-1 border-y cv-auto" id="contact">
+			<div className="max-w-7xl mx-auto px-4">
+				<div className="lg:min-h-screen lg:border-x flex flex-col justify-between">
+				<div className="py-16 flex flex-col justify-center md:items-center gap-4 text-center px-4">
 					<h2 className="md:text-7xl lg:text-9xl text-5xl text-accent">
 						{t("title")}
 					</h2>
@@ -44,8 +44,7 @@ export function Contact() {
 						{t("description")}
 					</p>
 				</div>
-				<Separator />
-				<div className="grid md:grid-cols-3">
+				<div className="grid md:grid-cols-3 border-y">
 					<Box description={DESCRIPTION_1} icon={Mail} title="Email">
 						<address className="not-italic">
 							<Link
@@ -94,9 +93,8 @@ export function Contact() {
 						</div>
 					</Box>
 				</div>
-				<Separator />
-				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12">
-					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-5xl">
+				<div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-12 grow">
+					<h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-7xl">
 						{t.rich("title2", {
 							span: (chunks) => (
 								<span className="text-accent">{chunks}</span>
