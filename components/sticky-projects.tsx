@@ -76,9 +76,9 @@ export const StickyProjects = ({
 
 			gsap.set(imageBoxElements[0], { y: "0%", scale: 1, rotation: 0 });
 
-			for (let i = 1; i < totalCards; i++) {
-				if (!imageBoxElements[i]) continue;
-				gsap.set(imageBoxElements[i], {
+			for (let index = 1; index < totalCards; index++) {
+				if (!imageBoxElements[index]) continue;
+				gsap.set(imageBoxElements[index], {
 					y: "100%",
 					scale: 1,
 					rotation: 0,
@@ -97,10 +97,10 @@ export const StickyProjects = ({
 				},
 			});
 
-			for (let i = 0; i < totalCards - 1; i++) {
-				const currentImage = imageBoxElements[i];
-				const nextImage = imageBoxElements[i + 1];
-				const position = i;
+			for (let index = 0; index < totalCards - 1; index++) {
+				const currentImage = imageBoxElements[index];
+				const nextImage = imageBoxElements[index + 1];
+				const position = index;
 				if (!currentImage || !nextImage) continue;
 
 				scrollTimeline.to(
@@ -323,14 +323,14 @@ export const StickyProjects = ({
 								width={1500}
 							/>
 
-							<div className="absolute inset-0  bg-linear-to-b from-transparent to-black lg:to-120% pointer-events-none"></div>
+							<div className="absolute inset-0 bg-linear-to-b from-transparent lg:from-70% to-black lg:to-120% pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"></div>
 
-							<span className="pointer-events-none absolute right-0 top-0 flex items-center gap-2 border bg-primary px-4 py-2 text-xs uppercase tracking-[0.2em] text-black opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
+							<span className="pointer-events-none absolute right-0 top-0 flex items-center gap-2 border bg-primary px-4 py-2 text-xs uppercase tracking-[0.2em] text-black opacity-100 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
 								{t("viewDetails")}
 								<Maximize2 className="size-4" />
 							</span>
 
-							<div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start">
+							<div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
 								<h3 className="flex items-center gap-1">
 									<span>{card.name}</span>
 									<Maximize2 className="size-4 stroke-4" />
@@ -358,7 +358,7 @@ export const StickyProjects = ({
 
 			<dialog
 				aria-labelledby="project-dialog-title"
-				className="project-dialog m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-background p-0 text-foreground 2xl:m-auto 2xl:w-1/2 2xl:aspect-video 2xl:h-auto"
+				className="project-dialog m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-background p-0 text-foreground 2xl:m-auto 2xl:w-3/4 2xl:aspect-video 2xl:h-auto"
 				closedby="any"
 				onCancel={(event) => {
 					event.preventDefault();

@@ -136,7 +136,7 @@ export default function Header() {
 	return (
 		<header
 			ref={headerRef}
-			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none **:focus-within:outline-none ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
+			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
 		>
 			<div className="size-full max-w-7xl px-4 mx-auto flex justify-between bg-background">
 				<Link
@@ -149,7 +149,8 @@ export default function Header() {
 						alt="logo"
 						className="h-16"
 						height={60}
-						width={120}
+            width={120}
+						loading="eager"
 					/>
 				</Link>
 				<nav className="hidden md:block flex-nowrap">
