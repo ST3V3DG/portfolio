@@ -5,7 +5,6 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import type React from "react";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
@@ -33,7 +32,7 @@ export function Contact() {
 	];
 
 	return (
-		<section className="bg-background z-1 border-y cv-auto" id="contact">
+		<section className="bg-background z-1 border-t cv-auto" id="contact">
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="lg:min-h-screen lg:border-x flex flex-col justify-between">
 				<div className="py-16 flex flex-col justify-center md:items-center gap-4 text-center px-4">

@@ -323,14 +323,14 @@ export const StickyProjects = ({
 								width={1500}
 							/>
 
-							<div className="absolute inset-0 bg-linear-to-b from-transparent lg:from-70% to-black lg:to-120% pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"></div>
+							<div className="absolute inset-0 bg-linear-to-b from-transparent lg:from-70% to-black lg:to-120% pointer-events-none"></div>
 
-							<span className="pointer-events-none absolute right-0 top-0 flex items-center gap-2 border bg-primary px-4 py-2 text-xs uppercase tracking-[0.2em] text-black opacity-100 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
+							<span className="pointer-events-none absolute right-0 top-0 flex items-center gap-2 border bg-primary px-4 py-2 text-xs uppercase tracking-[0.2em] text-black opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
 								{t("viewDetails")}
 								<Maximize2 className="size-4" />
 							</span>
 
-							<div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
+							<div className="absolute bottom-0 left-0 right-0 text-accent p-6 flex justify-between items-start">
 								<h3 className="flex items-center gap-1">
 									<span>{card.name}</span>
 									<Maximize2 className="size-4 stroke-4" />
@@ -524,9 +524,10 @@ export const StickyProjects = ({
 
 						<Button
 							aria-label={t("close")}
-							className="absolute right-4 top-4 z-20 md:right-6 md:top-6 rounded-none size-11"
+							className="absolute right-4 top-4 z-20 md:right-6 md:top-6 rounded-none"
 							onClick={closeProject}
-							type="button"
+              type="button"
+              size="lg========================"
 							variant="secondary"
 						>
 							<X className="size-4" />

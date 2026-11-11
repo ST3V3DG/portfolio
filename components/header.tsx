@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useContext, useEffect, useRef, useState } from "react";
+import { useLenis } from "lenis/react";
 import { PagePreloaderContext } from "@/providers/page-preloader";
 
 gsap.registerPlugin(useGSAP);
@@ -47,24 +48,41 @@ export default function Header() {
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 	const mobileMenuToggleTimeline = useRef<gsap.core.Timeline>(null);
 	const [scrolled, setScrolled] = useState(false);
+	const [hidden, setHidden] = useState(false);
 
+	// Initial scroll state (covers SSR / no-Lenis edge cases)
 	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 0) {
-				setScrolled(true);
-			} else {
-				setScrolled(false);
-			}
-		};
-
-		handleScroll();
-
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
+		setScrolled(window.scrollY > 0);
 	}, []);
+
+	// Drive the auto-hide behaviour from Lenis scroll events.
+	// Scroll-state queries (container-type: scroll-state) only expose
+	// `stuck` / `snapped` / `scrollable` states, i.e. *where* the scroll
+	// position is, never the scroll *direction*. They can therefore hide a
+	// header once the page is scrolled, but cannot bring it back the moment
+	// the user starts scrolling up again. Lenis exposes `direction`, so we
+	// use it to hide on scroll-down and reveal on scroll-up.
+	useLenis(
+		(lenis) => {
+			const scroll = lenis.scroll;
+			setScrolled(scroll > 0);
+
+			// Never hide while the mobile menu is open.
+			if (open) {
+				setHidden(false);
+				return;
+			}
+
+			if (scroll <= 8) {
+				setHidden(false);
+			} else if (lenis.direction === 1) {
+				setHidden(true);
+			} else if (lenis.direction === -1) {
+				setHidden(false);
+			}
+		},
+		[open],
+	);
 
 	useGSAP(
 		() => {
@@ -133,10 +151,18 @@ export default function Header() {
 			setOpen(!open);
 		}
 	});
+	// Keep the header visible whenever the mobile menu is toggled open.
+	useEffect(() => {
+		if (open) setHidden(false);
+	}, [open]);
+
 	return (
 		<header
 			ref={headerRef}
-			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
+			onFocusCapture={() => setHidden(false)}
+			className={`fixed top-0 left-0 right-0 z-50 font-clash-display focus-within:outline-none transition-transform duration-300 ease-out motion-reduce:transition-none ${
+				hidden ? "-translate-y-full" : "translate-y-0"
+			} ${scrolled ? "border-b bg-background" : "bg-transparent"}`}
 		>
 			<div className="size-full max-w-7xl px-4 mx-auto flex justify-between bg-background">
 				<Link
