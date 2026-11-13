@@ -73,6 +73,9 @@
 			},
 			"hoodiego": {
 				"description": "Une boutique de hoodies en petite série avec une identité orange affirmée. Fiches produit, choix des tailles et parcours d'achat pensés pour une marque qui vend quelques pièces bien, plutôt que tout à la fois."
+			},
+			"krys-male": {
+				"description": "Portfolio d’un illustrateur et concepteur de couvertures de livres. Créations originales disponibles, qu’il s’agisse de modèles prêts à l’emploi ou de réalisations sur mesure."
 			}
 		}
 	},

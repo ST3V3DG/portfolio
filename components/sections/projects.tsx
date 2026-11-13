@@ -7,7 +7,8 @@ type Project = CardData & {
 		| "odysiaHotel"
 		| "mdsEnrollment"
 		| "buildocs"
-		| "hoodiego";
+    | "hoodiego"
+    | "krys-male";
 };
 
 const demoUsername = process.env.NEXT_PUBLIC_MDS_DEMO_USERNAME;
@@ -62,6 +63,15 @@ const projects: Project[] = [
 		alt: "Hoodiego hoodie store on a laptop",
 		keywords: ["Hoodies", "Orange", "Comfort"],
 		translationKey: "hoodiego",
+	},
+	{
+		id: 6,
+		url: "https://krys-male.vercel.app",
+		name: "Krys-male",
+		image: "/images/krys-male-smartphone.png",
+		alt: "Illustrator portfolio on smartphones",
+		keywords: ["Illustration", "Creative", "Cover"],
+		translationKey: "krys-male",
 	},
 ];
 
