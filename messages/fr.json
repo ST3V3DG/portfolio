@@ -21,32 +21,32 @@
 	"Hero": {
 		"titleLine1": "Un développeur",
 		"titleLine2": "de A à Z",
-		"description1": "Je conçois et développe des sites et des applications web avec Next.js, Laravel et Django. Une seule personne gère la maquette, le code et la mise en ligne, donc rien ne se perd entre un designer et un développeur.",
-		"description2": "Trois ans de développement full-stack, dont une plateforme de covoiturage, une boutique de hoodies et un outil d'IA qui rédige des cahiers des charges logiciels. Basé à Douala, je travaille avec des clients partout."
+		"description1": "Je conçois et développe des sites et des applications web avec Next.js, Laravel et Django. Une seule personne gère le code et la mise en ligne, donc rien ne se perd entre le dévéloppement et la production.",
+		"description2": "Trois ans de développement full-stack, dont des sites web vitrines, une boutique de hoodies et un outil d'IA qui rédige des cahiers des charges logiciels. Basé à Douala, je travaille avec des clients partout."
 	},
 	"About": {
 		"title": "À propos de moi",
-		"description": "J'accorde de l'importance à l'apparence d'un site, à sa vitesse de chargement et au fait qu'il reste utilisable sur un téléphone avec deux barres de réseau. Ces trois points sont vérifiés avant la mise en ligne.",
+		"description": "J'accorde de l'importance à l'apparence d'un site, à sa vitesse de chargement et au fait qu'il reste utilisable même avec un réseau de mauvaise qualité. Ces trois points sont vérifiés avant la mise en ligne.",
 		"item1": {
 			"title": "01",
 			"description": "Une seule base de code, une seule personne à appeler. Je développe l'API, la base de données et l'interface. Quand quelque chose casse, c'est la personne qui l'a construit qui le répare."
 		},
 		"item2": {
 			"title": "02",
-			"description": "Du code que le prochain développeur peut lire. Typé, documenté et organisé par fonctionnalité, pour qu'ajouter une page en deuxième année coûte à peu près ce qu'elle a coûté en deuxième semaine."
+			"description": "Du code que le prochain développeur peut lire. Typé, documenté et organisé par fonctionnalité, pour qu'une mise à jour se fasse sans crainte."
 		},
 		"item3": {
 			"title": "03",
-			"description": "La performance traitée pendant la construction. Images, polices et scripts sont dimensionnés et différés avant la mise en ligne, pour que le site reste rapide sur un téléphone de milieu de gamme."
+			"description": "Vous gardez absolument tout à la fin de la mission. Nom de domaine, hébergement, code source et comptes vous reviennent."
 		},
 		"item4": {
 			"title": "04",
-			"description": "Vous gardez tout à la fin. Nom de domaine, hébergement, code source et comptes vous reviennent, avec une démonstration pour mettre le contenu à jour vous-même."
+			"description": "La performance traitée pendant la construction. Images, polices et scripts sont dimensionnés et différés avant la mise en ligne, pour que le site reste rapide sur un téléphone de milieu de gamme."
 		}
 	},
 	"Projects": {
 		"title": "Projets",
-		"description": "Cinq réalisations récentes : un studio de mode, un hôtel, un outil de gestion des inscriptions, une boutique de hoodies et un outil d'IA pour les cahiers des charges. Ouvrez celle qui vous intéresse.",
+		"description": "Quelques réalisations récentes : un studio de mode, un hôtel, un outil de gestion des inscriptions, une boutique de hoodies et un agent IA pour les cahiers des charges. Ouvrez celle qui vous intéresse.",
 		"openProject": "Ouvrir les détails du projet {name}",
 		"viewDetails": "Voir les détails",
 		"close": "Fermer les détails du projet",
@@ -66,7 +66,7 @@
 				"description": "Un site pensé pour la réservation d'un hôtel de charme. Photographies chaleureuses, recherche de chambres et un parcours clair de la découverte à la réservation, avec les informations dont les voyageurs ont vraiment besoin avant de réserver."
 			},
 			"mdsEnrollment": {
-				"description": "Un outil de gestion des inscriptions étudiantes. Le personnel retrouve les candidats, valide les inscriptions et met les dossiers à jour depuis un seul tableau de bord, au lieu d'un tableur partagé que deux personnes ne peuvent pas modifier sans risque."
+				"description": "Un outil de gestion des inscriptions d'enquêteurs. Le personnel retrouve les candidats, valide les inscriptions et met les dossiers à jour depuis un seul tableau de bord, au lieu d'un tableur partagé que deux personnes ne peuvent pas modifier sans risque."
 			},
 			"buildocs": {
 				"description": "Un espace de travail assisté par IA pour les équipes produit, qui transforme des idées encore floues en spécifications structurées. Rédiger, relire et transmettre les besoins sans perdre les décisions prises en route."
@@ -137,7 +137,7 @@
 		}
 	},
 	"Footer": {
-		"description": "Développeur full-stack à Douala, au Cameroun. Je travaille avec Next.js, Laravel et Django, et je suis disponible pour des missions freelance.",
+		"description": "Développeur full-stack à Douala, au Cameroun. Je travaille avec Next.js, Laravel et Django, et je suis disponible pour des missions freelance ou à temps plein.",
 		"copyright": "© {date} Steve.D. Tous droits réservés.",
 		"legal": {
 			"privacy": "Politique de confidentialité",

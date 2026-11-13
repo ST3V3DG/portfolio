@@ -323,7 +323,7 @@ export const StickyProjects = ({
 								width={1500}
 							/>
 
-							<div className="absolute inset-0 bg-linear-to-b from-transparent lg:from-70% to-black lg:to-120% pointer-events-none"></div>
+							<div className="absolute inset-0 bg-linear-to-b from-transparent lg:from-80% to-black lg:to-120% pointer-events-none"></div>
 
 							<span className="pointer-events-none absolute right-0 top-0 flex items-center gap-2 border bg-primary px-4 py-2 text-xs uppercase tracking-[0.2em] text-black opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
 								{t("viewDetails")}
