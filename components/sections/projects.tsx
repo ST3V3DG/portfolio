@@ -11,8 +11,10 @@ type Project = CardData & {
     | "krys-male";
 };
 
-const demoUsername = process.env.NEXT_PUBLIC_MDS_DEMO_USERNAME;
-const demoPassword = process.env.NEXT_PUBLIC_MDS_DEMO_PASSWORD;
+const MDSDemoUsername = process.env.NEXT_PUBLIC_MDS_DEMO_USERNAME;
+const MDSDemoPassword = process.env.NEXT_PUBLIC_MDS_DEMO_PASSWORD;
+const BuildocsDemoUsername = process.env.NEXT_PUBLIC_BUILDOCS_DEMO_USERNAME;
+const BuildocsDemoPassword = process.env.NEXT_PUBLIC_BUILDOCS_DEMO_PASSWORD;
 
 const projects: Project[] = [
 	{
@@ -42,18 +44,22 @@ const projects: Project[] = [
 		keywords: ["Enrollment", "Manager", "MDS"],
 		translationKey: "mdsEnrollment",
 		credentials:
-			demoUsername && demoPassword
-				? { username: demoUsername, password: demoPassword }
+			MDSDemoUsername && MDSDemoPassword
+			? { username: MDSDemoUsername, password: MDSDemoPassword }
 				: undefined,
 	},
 	{
 		id: 4,
-		url: "#",
+		url: "https://buildocs-agent.vercel.app/",
 		name: "Buildocs",
 		image: "/images/mac-book-pro-16-buildocs.png",
 		alt: "Buildocs project on a mac book pro 16 mockup",
 		keywords: ["Software", "Specs", "PM"],
 		translationKey: "buildocs",
+		credentials:
+			BuildocsDemoUsername && BuildocsDemoPassword
+			? { username: BuildocsDemoUsername, password: BuildocsDemoPassword }
+				: undefined,
 	},
 	{
 		id: 5,
