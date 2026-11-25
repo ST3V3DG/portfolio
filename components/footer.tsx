@@ -150,9 +150,9 @@ export default function Footer() {
 					</div>
 					<div className="focus-within:outline-none lg:grow-5">
 						<div className="ml-auto text-end focus-within:outline-none">
-							<h3 className="mb-4 font-bold text-2xl">
+							<h2 className="mb-4 font-bold text-2xl">
 								{section.title}
-							</h3>
+							</h2>
 							<ul className="text-muted-foreground focus-within:outline-none">
 								{section.links.map((link, linkIndex) => (
 									<li

@@ -182,9 +182,9 @@ export function Testimonials3D() {
                   <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
                     {card.number}
                   </span>
-                  <h2 className="mb-2 text-2xl font-extrabold leading-tight tracking-tight text-white md:text-3xl">
+                  <h3 className="mb-2 text-2xl font-extrabold leading-tight tracking-tight text-white md:text-3xl">
                     {card.name}
-                  </h2>
+                  </h3>
                   <p className="text-sm font-medium tracking-wide text-white/70 md:text-base">
                     {card.role}
                   </p>
