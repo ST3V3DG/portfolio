@@ -260,7 +260,7 @@ export default async function RootLayout({
 					gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=G-3JJCEDQEWQ"
 					gtmId="G-3JJCEDQEWQ"
 				/>
-				{/*<script
+				<script
 					dangerouslySetInnerHTML={{
 						__html: `
 							if ('serviceWorker' in navigator) {
@@ -276,7 +276,7 @@ export default async function RootLayout({
 							}
 						`,
 					}}
-				/>*/}
+				/>
 				<NextIntlClientProvider messages={messages}>
 					{children}
 					<SpeedInsights />

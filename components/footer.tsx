@@ -122,7 +122,7 @@ export default function Footer() {
 							<Link aria-label="home" href="/">
 								<Image
 									src="/svgs/Steve.D.svg"
-									alt="logo"
+									alt="Steve.D svg"
 									className="h-16"
 									height={60}
 									width={120}

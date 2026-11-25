@@ -87,7 +87,7 @@ export default function PagePreloader({
 			<div className="fixed inset-0 flex items-center justify-center z-20 bg-background h-screen w-full">
 				<div className="w-full max-w-4xl aspect-video px-4">
 					<svg
-						aria-label="logo"
+						aria-label="Steve.D svg"
 						className="pointer-events-none object-cover size-full"
 						width="281"
 						height="82"
