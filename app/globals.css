@@ -1,10 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/*div:has(> #about) {
-    background-color: red;
-}*/
-
 @font-face {
 	font-family: "ClashDisplay";
 	font-weight: 700;
@@ -306,6 +302,12 @@
 	to {
 		opacity: 1;
 	}
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.95;
+  }
 }
 
 @custom-variant standalone {

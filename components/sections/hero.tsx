@@ -258,7 +258,7 @@ export default function Hero() {
                 >
                   <Image
                     alt="Hero image"
-                    className="size-full object-cover"
+                    className="size-full object-cover motion-safe:animatepulse"
                     onLoad={() => setImageReady(true)}
                     priority
                     src="/images/i.png"
