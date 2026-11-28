@@ -8,7 +8,8 @@ type Project = CardData & {
 		| "mdsEnrollment"
 		| "buildocs"
     | "hoodiego"
-    | "krys-male";
+    | "krys-male"
+    | "ldv-design";
 };
 
 const MDSDemoUsername = process.env.NEXT_PUBLIC_MDS_DEMO_USERNAME;
@@ -78,6 +79,15 @@ const projects: Project[] = [
 		alt: "Illustrator portfolio on smartphones",
 		keywords: ["Illustration", "Creative", "Cover"],
 		translationKey: "krys-male",
+	},
+	{
+		id: 7,
+		url: "https://ldvdesign.vercel.app",
+		name: "LDV Design",
+		image: "/images/ldvdesign-imac.png",
+		alt: "Apparel agency website on an Imac",
+		keywords: ["Apparel", "Clothe", "Dress"],
+		translationKey: "ldv-design",
 	},
 ];
 
